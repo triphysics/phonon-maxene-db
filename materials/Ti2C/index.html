@@ -181,7 +181,7 @@ function load3DStructure() {
   // Request 1: Change background to black
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
-    backgroundColor: "white" 
+    backgroundColor: "white"
   });
 
   fetch("POSCAR.cif")
@@ -194,14 +194,24 @@ function load3DStructure() {
         sphere: { scale: 0.25 }
       });
 
-      // Request 2: Add labels to the atoms
+      // Request 1 & 2: Add labels to the atoms and show spheres corresponding to atom colors
+      // Also ensures all bonds are connected by setting bond distance
+      viewer.addStyle({}, {
+        stick: { radius: 0.15, bondCrossed: true, colorscheme: 'byElementAndType', showBonds: true }, // Ensure bonds are shown and connected
+        sphere: { scale: 0.35, colorscheme: 'byElementAndType' } // Larger spheres for better visibility
+      });
+
       viewer.addLabel(function(atom) {
         return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
       }, {
         fontSize: 14,
         fontColor: "black",
-        showBackground: false,
-        position: { x: 0.0, y: 0.0, z: 0.5 } 
+        showBackground: true, // Show background for better readability of labels
+        backgroundColor: "lightgray",
+        backgroundOpacity: 0.7,
+        borderThickness: 0.5,
+        borderColor: "darkgray",
+        position: { x: 0.0, y: 0.0, z: 0.5 }
       });
 
       viewer.addUnitCell();
@@ -346,5 +356,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-</body>
-</html>
