@@ -79,7 +79,7 @@
 <script>
   // Load structure
   let viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
-  $3Dmol.download("structure.cif", viewer, {}, function () {
+  $3Dmol.download("POSCAR.cif", viewer, {}, function () {
     viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
     viewer.showUnitCell(true);
     viewer.zoomTo();
