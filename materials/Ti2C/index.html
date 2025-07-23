@@ -110,13 +110,13 @@
 <body>
 <div class="container">
   <h1>Material: Ti<sub>2</sub>C (MAXene)</h1>
-  
+
   <div class="structure section">
     <h2>🧊 Crystal Structure</h2>
     <div id="structureStatus" class="loading">Loading crystal structure...</div>
     <div id="viewer"></div>
   </div>
-  
+
   <div class="section">
     <h2>🧮 Structural Details</h2>
     <div id="structuralStatus" class="loading">Loading structural data...</div>
@@ -129,7 +129,7 @@
       <tbody></tbody>
     </table>
   </div>
-  
+
   <div class="phonon section">
     <h2>🎵 Phonon Band Structure</h2>
     <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
@@ -138,14 +138,19 @@
 </div>
 
 <script>
+// FIXED: Embeds viewer correctly inside #viewer
 function load3DStructure() {
-  const viewer = $3Dmol.createViewer(document.getElementById("viewer"), { backgroundColor: "white" });	
+  const viewer = $3Dmol.createViewer(document.getElementById("viewer"), {
+    backgroundColor: "white"
+  });
+
   fetch("POSCAR.cif")
     .then(res => res.text())
     .then(cifData => {
       viewer.addModel(cifData, "cif");
       viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
-      viewer.zoomTo(); viewer.render();
+      viewer.zoomTo();
+      viewer.render();
       document.getElementById("structureStatus").innerHTML =
         `<div class="success">✓ Crystal structure loaded from POSCAR.cif</div>`;
     })
@@ -169,7 +174,6 @@ function loadStructuralData() {
       const positions = lines.slice(8, 8 + counts.reduce((a, b) => a + b, 0))
         .map(l => l.trim().split(/\s+/).slice(0, 3).map(Number));
 
-      // Lattice table
       const lt = document.querySelector("#latticeTable tbody");
       lt.innerHTML = '';
       lattice.forEach((vec, i) => {
@@ -177,7 +181,6 @@ function loadStructuralData() {
           <td>${vec[0].toFixed(4)}</td><td>${vec[1].toFixed(4)}</td><td>${vec[2].toFixed(4)}</td></tr>`;
       });
 
-      // Atom table
       const at = document.querySelector("#atomTable tbody");
       at.innerHTML = '';
       let idx = 0;
@@ -220,8 +223,15 @@ function loadPhononData() {
         });
       }
 
-      // Optional tick labels
-      const labels = data.labels ? data.labels.flat() : [];
+      // FIXED: Deduplicate label list to get G–M–K–G instead of G–M–M–K–K–G
+      const rawLabels = data.labels ? data.labels.flat() : [];
+      const labels = [rawLabels[0]];
+      for (let i = 1; i < rawLabels.length; i++) {
+        if (rawLabels[i] !== rawLabels[i - 1]) {
+          labels.push(rawLabels[i]);
+        }
+      }
+
       const segmentNq = data.segment_nqpoint || [];
       const labelPositions = [];
       let index = 0;
@@ -233,10 +243,20 @@ function loadPhononData() {
 
       const layout = {
         title: 'Phonon Band Structure',
-        xaxis: { title: 'Wave Vector', tickvals: labelPositions, ticktext: labels },
-        yaxis: { title: 'Frequency (THz)', zeroline: true },
+        xaxis: {
+          title: 'Wave Vector',
+          tickvals: labelPositions,
+          ticktext: labels,
+          showgrid: true
+        },
+        yaxis: {
+          title: 'Frequency (THz)',
+          zeroline: true,
+          showgrid: true
+        },
         plot_bgcolor: 'white',
-        paper_bgcolor: 'white'
+        paper_bgcolor: 'white',
+        margin: { l: 60, r: 30, t: 50, b: 60 }
       };
 
       Plotly.newPlot('phononPlot', traces, layout);
@@ -249,7 +269,7 @@ function loadPhononData() {
     });
 }
 
-// Init all on load
+// Init everything
 document.addEventListener('DOMContentLoaded', () => {
   load3DStructure();
   loadStructuralData();
@@ -258,4 +278,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
