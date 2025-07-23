@@ -170,7 +170,7 @@
             <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
         </span>
         <span style="display: inline-flex; align-items: center;">
-            <input type="checkbox" id="cb-packed" checked> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
+            <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
         </span>
         <span style="display: inline-flex; align-items: center;">
             <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
@@ -202,12 +202,12 @@
 
 <script>
 let viewer = null;
-let cifData = null; // To store the loaded structure data
+let cifData = null; 
 
 // State object to manage the viewer's appearance
 let viewerState = {
     showBonds: true,
-    showPackedCell: true,
+    useVDW: false, // For "Packed cell" (van der Waals radius)
     showLabels: false,
     supercell: [3, 3, 1]
 };
@@ -218,27 +218,35 @@ function updateViewer() {
 
     viewer.clear();
     viewer.addModel(cifData, "cif");
-
-    if (viewerState.showPackedCell) {
-        viewer.addUnitCell();
-    }
-
+    
+    // Always add the unit cell outline
+    viewer.addUnitCell();
     viewer.replicateUnitCell(...viewerState.supercell);
 
-    let style = { sphere: { scale: 0.25 } };
-    if (viewerState.showBonds) {
-        style.stick = { radius: 0.1 };
+    // Define styles based on the current state
+    let baseStyle = {};
+    if (viewerState.useVDW) {
+        // "Packed cell" view uses full van der Waals radius
+        baseStyle = { sphere: { colorscheme: 'Jmol' } };
+    } else {
+        // Default "ball-and-stick" view
+        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
     }
-    viewer.setStyle({}, style);
+    
+    if (viewerState.showBonds) {
+        baseStyle.stick = { radius: 0.15, colorscheme: 'Jmol' };
+    }
+    
+    viewer.setStyle({}, baseStyle);
 
+    // Add labels if enabled
     if (viewerState.showLabels) {
-        viewer.addLabel(function(atom) {
-            return atom.elem;
-        }, {
+        // FIXED: Use the 'prop' option to correctly fetch the element symbol for each atom.
+        viewer.addLabels({ prop: 'elem' }, {
             fontSize: 14,
             fontColor: "black",
             showBackground: false,
-            position: { x: 0.0, y: 0.0, z: 0.5 }
+            inFront: true // Ensures labels are not hidden by atoms
         });
     }
     
@@ -396,10 +404,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Event listeners for new controls ---
-  // Camera buttons
-  document.getElementById('cam-x').addEventListener('click', () => viewer && viewer.setView([1, 0, 0]));
-  document.getElementById('cam-y').addEventListener('click', () => viewer && viewer.setView([0, 1, 0])); // Top-down view
-  document.getElementById('cam-z').addEventListener('click', () => viewer && viewer.setView([0, 0, 1]));
+  // FIXED: Camera buttons now call viewer.render() to apply the view change.
+  document.getElementById('cam-x').addEventListener('click', () => { if (viewer) { viewer.setView([1, 0, 0]); viewer.render(); } });
+  document.getElementById('cam-y').addEventListener('click', () => { if (viewer) { viewer.setView([0, 1, 0]); viewer.render(); } });
+  document.getElementById('cam-z').addEventListener('click', () => { if (viewer) { viewer.setView([0, 0, 1]); viewer.render(); } });
 
   // Supercell inputs
   ['x', 'y', 'z'].forEach((axis, index) => {
@@ -417,10 +425,13 @@ document.addEventListener('DOMContentLoaded', () => {
     viewerState.showBonds = e.target.checked;
     updateViewer();
   });
+  
+  // FIXED: "Packed cell" now toggles the VDW radius view.
   document.getElementById('cb-packed').addEventListener('change', (e) => {
-    viewerState.showPackedCell = e.target.checked;
+    viewerState.useVDW = e.target.checked;
     updateViewer();
   });
+
   document.getElementById('cb-labels').addEventListener('change', (e) => {
     viewerState.showLabels = e.target.checked;
     updateViewer();
@@ -429,16 +440,13 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
-  // Get the folder name from the URL path
   const pathParts = window.location.pathname.split('/');
   const folderName = pathParts[pathParts.length - 2] || "Unknown";
 
-  // Format chemical formula with subscript numbers
   function formatFormula(formula) {
     return formula.replace(/(\d+)/g, '<sub>$1</sub>');
   }
 
-  // Set the material title
   document.getElementById("material-title").innerHTML =
     `Material: ${formatFormula(folderName)} (MAXene)`;
 </script>
