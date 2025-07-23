@@ -195,7 +195,7 @@ function load3DStructure() {
       });
 
       // Request 2: Add labels to the atoms
-      viewer.addLabels(function(atom) {
+      viewer.addLabel(function(atom) {
         return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
       }, {
         fontSize: 14,
