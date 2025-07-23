@@ -48,6 +48,31 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative; /* ✅ ADD THIS LINE */
     }
+    .viewer-controls {
+    text-align: center;
+    margin-bottom: 12px;
+    }
+    .viewer-controls button {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.2s ease-in-out;
+    }
+    .viewer-controls button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .viewer-controls button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
     #phononPlot {
       width: 100%;
       height: 450px;
@@ -116,8 +141,16 @@
   <div class="structure section">
     <h2>🧊 Crystal Structure</h2>
     <div id="structureStatus" class="loading">Loading crystal structure...</div>
+  
+    <div class="viewer-controls">
+      <button id="zoom-in-btn">🔍 Zoom In</button>
+      <button id="zoom-out-btn">🔎 Zoom Out</button>
+      <button id="home-btn">🏠 Reset View</button>
+    </div>
+    
     <div id="viewer"></div>
   </div>
+
 
   <div class="section">
     <h2>🧮 Structural Details</h2>
@@ -140,11 +173,15 @@
 </div>
 
 <script>
+// This viewer variable is now accessible to all functions in this script
+let viewer = null;
+
 // FIXED: Embeds viewer correctly inside #viewer
 function load3DStructure() {
-  const viewer = $3Dmol.createViewer('viewer', {
+  // Request 1: Change background to black
+  viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
-    backgroundColor: "white"
+    backgroundColor: "black" 
   });
 
   fetch("POSCAR.cif")
@@ -156,11 +193,20 @@ function load3DStructure() {
         stick: { radius: 0.1 },
         sphere: { scale: 0.25 }
       });
+
+      // Request 2: Add labels to the atoms
+      viewer.addLabels(function(atom) {
+        return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
+      }, {
+        fontSize: 14,
+        fontColor: "white",
+        showBackground: false,
+        position: { x: 0.0, y: 0.0, z: 0.5 } 
+      });
+
       viewer.addUnitCell();
-      // Center the camera and render the scene
       viewer.zoomTo();
       viewer.render();
-      
       document.getElementById("structureStatus").innerHTML =
         `<div class="success">✓ Crystal structure loaded and replicated 3x3x1. Bonds and unit cell are shown.</div>`;
     })
@@ -169,6 +215,7 @@ function load3DStructure() {
         `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
     });
 }
+
 
 function loadStructuralData() {
   fetch("POSCAR")
@@ -284,6 +331,19 @@ document.addEventListener('DOMContentLoaded', () => {
   load3DStructure();
   loadStructuralData();
   loadPhononData();
+
+  // Request 3: Add event listeners for the new control buttons
+  document.getElementById('zoom-in-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoom(1.2);
+  });
+
+  document.getElementById('zoom-out-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoom(0.8);
+  });
+
+  document.getElementById('home-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoomTo();
+  });
 });
 </script>
 </body>
