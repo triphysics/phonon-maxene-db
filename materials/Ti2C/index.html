@@ -176,9 +176,8 @@
 // This viewer variable is now accessible to all functions in this script
 let viewer = null;
 
-// FIXED: Embeds viewer correctly inside #viewer
+// FIXED: This function is updated to correctly render the structure, bonds, labels, and legend.
 function load3DStructure() {
-  // Request 1: Change background to black
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
     backgroundColor: "white"
@@ -188,37 +187,61 @@ function load3DStructure() {
     .then(res => res.text())
     .then(cifData => {
       viewer.addModel(cifData, "cif");
-      viewer.replicateUnitCell(3, 3, 1);
+
+      // Request 2 Fix: Replicate unit cell and connect bonds between cells
+      viewer.replicateUnitCell(3, 3, 1, true);
+
+      // Set a single, clear style for atoms and bonds
       viewer.setStyle({}, {
-        stick: { radius: 0.1 },
-        sphere: { scale: 0.25 }
+        stick: { radius: 0.15, colorscheme: 'byElementAndType' },
+        sphere: { scale: 0.35, colorscheme: 'byElementAndType' }
       });
 
-      // Request 1 & 2: Add labels to the atoms and show spheres corresponding to atom colors
-      // Also ensures all bonds are connected by setting bond distance
-      viewer.addStyle({}, {
-        stick: { radius: 0.15, bondCrossed: true, colorscheme: 'byElementAndType', showBonds: true }, // Ensure bonds are shown and connected
-        sphere: { scale: 0.35, colorscheme: 'byElementAndType' } // Larger spheres for better visibility
-      });
-
-      viewer.addLabel(function(atom) {
+      // Request 1 Fix: Correctly add labels to all atoms using 'addLabels'
+      viewer.addLabels(function(atom) {
         return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
       }, {
         fontSize: 14,
         fontColor: "black",
-        showBackground: true, // Show background for better readability of labels
+        showBackground: true,
         backgroundColor: "lightgray",
         backgroundOpacity: 0.7,
-        borderThickness: 0.5,
-        borderColor: "darkgray",
         position: { x: 0.0, y: 0.0, z: 0.5 }
       });
+      
+      // Request 1 Fix: Add a legend for elements
+      const atoms = viewer.getModel().selectedAtoms({});
+      const uniqueElements = [...new Set(atoms.map(atom => atom.elem))].sort();
+      
+      const legendLabels = uniqueElements.map(elem => {
+          const color = $3Dmol.rasmolElementColors[elem] || 'gray';
+          // Using a sphere style for the legend item
+          return [elem, { sphere: { color: color } }];
+      });
+
+      viewer.addLegend({
+          title: "Elements",
+          position: {
+              top: '20px',
+              right: '20px'
+          },
+          labels: legendLabels,
+          // Optional: Style the legend box itself
+          container: {
+            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+            borderColor: '#3498db',
+            borderWidth: 1,
+            borderRadius: 5,
+            padding: '5px'
+          }
+      });
+
 
       viewer.addUnitCell();
       viewer.zoomTo();
       viewer.render();
       document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded and replicated 3x3x1. Bonds and unit cell are shown.</div>`;
+        `<div class="success">✓ Crystal structure loaded. Bonds, labels, and legend are shown.</div>`;
     })
     .catch(err => {
       document.getElementById("structureStatus").innerHTML =
@@ -290,7 +313,6 @@ function loadPhononData() {
         });
       }
 
-      // FIXED: Deduplicate label list to get G–M–K–G instead of G–M–M–K–K–G
       const rawLabels = data.labels ? data.labels.flat() : [];
       const labels = [rawLabels[0]];
       for (let i = 1; i < rawLabels.length; i++) {
@@ -342,7 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStructuralData();
   loadPhononData();
 
-  // Request 3: Add event listeners for the new control buttons
   document.getElementById('zoom-in-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(1.2);
   });
@@ -356,3 +377,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+</body>
+</html>
