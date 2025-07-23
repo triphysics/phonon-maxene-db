@@ -1,387 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MAXene Material Viewer</title>
-  <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      max-width: 960px;
-      margin: auto;
-      padding: 1rem;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-    }
-    .container {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 8px;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      background: linear-gradient(45deg, #3498db, #2c3e50);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .structure, .phonon {
-      margin-top: 2rem;
-    }
-    #viewer {
-      width: 100%;
-      height: 450px;
-      border: 2px solid #3498db;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    #phononPlot {
-      width: 100%;
-      height: 450px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .info-table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .info-table th, .info-table td {
-      border: none;
-      padding: 12px 16px;
-      text-align: left;
-    }
-    .info-table th {
-      background: linear-gradient(45deg, #3498db, #2980b9);
-      color: white;
-      font-weight: 600;
-    }
-    .info-table tr:nth-child(even) {
-      background-color: #f8f9fa;
-    }
-    .info-table tr:hover {
-      background-color: #e3f2fd;
-    }
-    .section {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 8px;
-      border-left: 4px solid #3498db;
-    }
-    .loading {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
-    }
-    .error {
-      background: #ffebee;
-      color: #c62828;
-      padding: 1rem;
-      border-radius: 4px;
-      border-left: 4px solid #f44336;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>MAXene Material Viewer</title>
+    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            max-width: 960px;
+            margin: auto;
+            padding: 1rem;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 4px;
+        }
+        .structure, .phonon {
+            margin-top: 1rem;
+        }
+        #viewer {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ddd;
+        }
+        #phononPlot {
+            width: 100%;
+            height: 400px;
+        }
+        .info-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .info-table th, .info-table td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        .info-table th {
+            background-color: #f2f2f2;
+        }
+        .section {
+            margin-top: 2rem;
+        }
+        .error {
+            color: red;
+            padding: 10px;
+            background-color: #ffebee;
+            border: 1px solid #f44336;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <h1>Material: Ti<sub>2</sub>C (MAXene)</h1>
-  
-  <div class="structure section">
-    <h2>🧊 Crystal Structure</h2>
-    <div id="viewer"></div>
-  </div>
-  
-  <div class="section">
-    <h2>🧮 Structural Details</h2>
-    <table class="info-table" id="latticeTable">
-      <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
-      <tbody></tbody>
-    </table>
-    <table class="info-table" id="atomTable">
-      <thead><tr><th>Element</th><th>x (Å)</th><th>y (Å)</th><th>z (Å)</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-  
-  <div class="phonon section">
-    <h2>🎵 Phonon Band Structure</h2>
-    <div id="phononPlot"></div>
-  </div>
-</div>
+    <h1>Material: Ti<sub>2</sub>C</h1>
+    
+    <div class="structure section">
+        <h2>🧊 Structure</h2>
+        <div id="viewer"></div>
+        <div id="structureError" class="error" style="display: none;"></div>
+    </div>
+    
+    <div class="section">
+        <h2>🧮 Structural Details</h2>
+        <table class="info-table" id="latticeTable">
+            <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
+            <tbody></tbody>
+        </table>
+        <table class="info-table" id="atomTable">
+            <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <div class="phonon section">
+        <h2>🎵 Phonon Band Structure</h2>
+        <div id="phononPlot"></div>
+        <div id="phononError" class="error" style="display: none;"></div>
+    </div>
 
-<script>
-// Sample Ti2C MAXene structure data
-const sampleStructure = {
-  latticeVectors: [
-    [3.067, 0.000, 0.000],
-    [-1.534, 2.657, 0.000],
-    [0.000, 0.000, 13.640]
-  ],
-  atoms: [
-    {element: 'Ti', position: [0.0000, 0.0000, 0.0000]},
-    {element: 'Ti', position: [0.3333, 0.6667, 0.5000]},
-    {element: 'C', position: [0.0000, 0.0000, 0.2500]},
-    {element: 'C', position: [0.3333, 0.6667, 0.7500]}
-  ]
-};
-
-// Sample phonon data
-const samplePhononData = {
-  qpoints: [],
-  frequencies: [],
-  labels: ['Γ', 'M', 'K', 'Γ']
-};
-
-// Generate sample phonon dispersion data
-for (let i = 0; i <= 100; i++) {
-  const q = i / 100;
-  samplePhononData.qpoints.push(q);
-  
-  // Generate 9 phonon modes (3 atoms × 3 dimensions)
-  const frequencies = [];
-  frequencies.push(0.5 * Math.sin(Math.PI * q) + 0.1); // Acoustic mode 1
-  frequencies.push(0.8 * Math.sin(1.5 * Math.PI * q) + 0.2); // Acoustic mode 2
-  frequencies.push(1.2 * Math.sin(2 * Math.PI * q) + 0.3); // Acoustic mode 3
-  frequencies.push(3.5 + 2 * Math.sin(Math.PI * q)); // Optical mode 1
-  frequencies.push(5.2 + 1.5 * Math.cos(1.2 * Math.PI * q)); // Optical mode 2
-  frequencies.push(7.8 + Math.sin(0.8 * Math.PI * q)); // Optical mode 3
-  frequencies.push(12.5 + 2 * Math.cos(Math.PI * q)); // Optical mode 4
-  frequencies.push(15.2 + 1.8 * Math.sin(1.3 * Math.PI * q)); // Optical mode 5
-  frequencies.push(18.7 + Math.cos(0.9 * Math.PI * q)); // Optical mode 6
-  
-  samplePhononData.frequencies.push(frequencies);
-}
-
-// Initialize 3D molecular viewer
-function initializeViewer() {
-  try {
-    const viewer = $3Dmol.createViewer("viewer", { 
-      backgroundColor: "white",
-      antialias: true 
-    });
-    
-    // Create XYZ format string from sample data
-    let xyzData = `${sampleStructure.atoms.length}\nTi2C MAXene structure\n`;
-    
-    sampleStructure.atoms.forEach(atom => {
-      // Convert fractional to Cartesian coordinates
-      const [fx, fy, fz] = atom.position;
-      const [a1, a2, a3] = sampleStructure.latticeVectors;
-      
-      const x = fx * a1[0] + fy * a2[0] + fz * a3[0];
-      const y = fx * a1[1] + fy * a2[1] + fz * a3[1];
-      const z = fx * a1[2] + fy * a2[2] + fz * a3[2];
-      
-      xyzData += `${atom.element} ${x.toFixed(6)} ${y.toFixed(6)} ${z.toFixed(6)}\n`;
-    });
-    
-    // Add structure to viewer
-    viewer.addModel(xyzData, "xyz");
-    
-    // Set visualization style
-    viewer.setStyle({}, {
-      stick: { radius: 0.15, color: 'gray' },
-      sphere: { scale: 0.8 }
-    });
-    
-    // Color atoms by element
-    viewer.setStyle({elem: 'Ti'}, {
-      stick: { radius: 0.15 },
-      sphere: { scale: 0.8, color: '#c0c0c0' }
-    });
-    
-    viewer.setStyle({elem: 'C'}, {
-      stick: { radius: 0.15 },
-      sphere: { scale: 0.6, color: '#404040' }
-    });
-    
-    // Add unit cell
-    const vectors = sampleStructure.latticeVectors;
-    const unitCellLines = [];
-    
-    // Define unit cell edges
-    const corners = [
-      [0, 0, 0],
-      [vectors[0][0], vectors[0][1], vectors[0][2]],
-      [vectors[1][0], vectors[1][1], vectors[1][2]],
-      [vectors[2][0], vectors[2][1], vectors[2][2]],
-      [vectors[0][0] + vectors[1][0], vectors[0][1] + vectors[1][1], vectors[0][2] + vectors[1][2]],
-      [vectors[0][0] + vectors[2][0], vectors[0][1] + vectors[2][1], vectors[0][2] + vectors[2][2]],
-      [vectors[1][0] + vectors[2][0], vectors[1][1] + vectors[2][1], vectors[1][2] + vectors[2][2]],
-      [vectors[0][0] + vectors[1][0] + vectors[2][0], vectors[0][1] + vectors[1][1] + vectors[2][1], vectors[0][2] + vectors[1][2] + vectors[2][2]]
-    ];
-    
-    // Draw unit cell edges
-    const edges = [
-      [0,1], [0,2], [0,3], [1,4], [1,5], [2,4], [2,6], [3,5], [3,6], [4,7], [5,7], [6,7]
-    ];
-    
-    edges.forEach(([i, j]) => {
-      viewer.addCylinder({
-        start: {x: corners[i][0], y: corners[i][1], z: corners[i][2]},
-        end: {x: corners[j][0], y: corners[j][1], z: corners[j][2]},
-        radius: 0.05,
-        color: 'blue',
-        alpha: 0.7
-      });
-    });
-    
-    viewer.zoomTo();
-    viewer.render();
-    
-    console.log("3D structure loaded successfully");
-    
-  } catch (error) {
-    console.error("Error initializing 3D viewer:", error);
-    document.getElementById("viewer").innerHTML = '<div class="error">Error loading 3D structure viewer</div>';
-  }
-}
-
-// Populate structural details tables
-function populateStructuralData() {
-  try {
-    // Lattice vectors table
-    const latticeTable = document.querySelector("#latticeTable tbody");
-    latticeTable.innerHTML = '';
-    
-    sampleStructure.latticeVectors.forEach((vector, i) => {
-      const row = `
-        <tr>
-          <td><strong>a${i+1}</strong></td>
-          <td>${vector[0].toFixed(4)}</td>
-          <td>${vector[1].toFixed(4)}</td>
-          <td>${vector[2].toFixed(4)}</td>
-        </tr>
-      `;
-      latticeTable.innerHTML += row;
-    });
-    
-    // Atoms table
-    const atomTable = document.querySelector("#atomTable tbody");
-    atomTable.innerHTML = '';
-    
-    sampleStructure.atoms.forEach((atom, i) => {
-      // Convert to Cartesian coordinates
-      const [fx, fy, fz] = atom.position;
-      const [a1, a2, a3] = sampleStructure.latticeVectors;
-      
-      const x = fx * a1[0] + fy * a2[0] + fz * a3[0];
-      const y = fx * a1[1] + fy * a2[1] + fz * a3[1];
-      const z = fx * a1[2] + fy * a2[2] + fz * a3[2];
-      
-      const row = `
-        <tr>
-          <td><strong>${atom.element}</strong></td>
-          <td>${x.toFixed(4)}</td>
-          <td>${y.toFixed(4)}</td>
-          <td>${z.toFixed(4)}</td>
-        </tr>
-      `;
-      atomTable.innerHTML += row;
-    });
-    
-    console.log("Structural data populated successfully");
-    
-  } catch (error) {
-    console.error("Error populating structural data:", error);
-  }
-}
-
-// Plot phonon dispersion
-function plotPhononDispersion() {
-  try {
-    const traces = [];
-    const numModes = samplePhononData.frequencies[0].length;
-    
-    // Create traces for each phonon mode
-    for (let i = 0; i < numModes; i++) {
-      const frequencies = samplePhononData.frequencies.map(f => f[i]);
-      
-      traces.push({
-        x: samplePhononData.qpoints,
-        y: frequencies,
-        mode: 'lines',
-        line: { 
-          width: 2,
-          color: i < 3 ? `rgb(${50 + i*30}, 100, 200)` : `rgb(200, ${50 + i*20}, ${100 + i*15})`
-        },
-        name: i < 3 ? `Acoustic ${i+1}` : `Optical ${i-2}`,
-        showlegend: false
-      });
-    }
-    
-    const layout = {
-      title: {
-        text: 'Phonon Dispersion Relation for Ti₂C',
-        font: { size: 18, color: '#2c3e50' }
-      },
-      xaxis: { 
-        title: 'Wave Vector (q)',
-        showgrid: true,
-        gridcolor: '#e0e0e0',
-        tickvals: [0, 0.33, 0.67, 1.0],
-        ticktext: ['Γ', 'M', 'K', 'Γ']
-      },
-      yaxis: { 
-        title: 'Frequency (THz)',
-        showgrid: true,
-        gridcolor: '#e0e0e0'
-      },
-      plot_bgcolor: 'white',
-      paper_bgcolor: 'white',
-      margin: { l: 60, r: 40, t: 60, b: 60 },
-      font: { family: 'Arial, sans-serif', size: 12 }
-    };
-    
-    const config = {
-      responsive: true,
-      displayModeBar: true,
-      displaylogo: false,
-      modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d']
-    };
-    
-    Plotly.newPlot("phononPlot", traces, layout, config);
-    
-    console.log("Phonon dispersion plotted successfully");
-    
-  } catch (error) {
-    console.error("Error plotting phonon dispersion:", error);
-    document.getElementById("phononPlot").innerHTML = '<div class="error">Error loading phonon dispersion plot</div>';
-  }
-}
-
-// Initialize everything when page loads
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("Page loaded, initializing components...");
-  
-  // Initialize with a small delay to ensure libraries are loaded
-  setTimeout(() => {
-    initializeViewer();
-    populateStructuralData();
-    plotPhononDispersion();
-  }, 100);
-});
-
-// Handle window resize for responsive plots
-window.addEventListener('resize', function() {
-  if (document.getElementById('phononPlot')) {
-    Plotly.Plots.resize('phononPlot');
-  }
-});
-</script>
+    <script>
+        // Initialize 3Dmol viewer
+        let viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
+        
+        // Function to show error messages
+        function showError(elementId, message) {
+            const errorDiv = document.getElementById(elementId);
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+        
+        // Try to load structure file (check for CIF first, then POSCAR)
+        function loadStructure() {
+            // First try CIF format
+            fetch("POSCAR.cif")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('CIF file not found');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    viewer.addModel(data, "cif");
+                    viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+                    viewer.showUnitCell(true);
+                    viewer.zoomTo();
+                    viewer.render();
+                })
+                .catch(error => {
+                    console.log("CIF not found, trying POSCAR format...");
+                    // If CIF fails, try POSCAR format
+                    loadPOSCAR();
+                });
+        }
+        
+        function loadPOSCAR() {
+            fetch("POSCAR")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('POSCAR file not found');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Convert POSCAR to XYZ format for 3Dmol
+                    const xyzData = convertPOSCARToXYZ(data);
+                    viewer.addModel(xyzData, "xyz");
+                    viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+                    viewer.zoomTo();
+                    viewer.render();
+                })
+                .catch(error => {
+                    showError('structureError', 'Could not load structure files (POSCAR.cif or POSCAR). Please ensure files are in the correct directory.');
+                });
+        }
+        
+        function convertPOSCARToXYZ(poscarText) {
+            try {
+                const lines = poscarText.trim().split('\n');
+                const scale = parseFloat(lines[1]);
+                const lattice = lines.slice(2, 5).map(line => 
+                    line.trim().split(/\s+/).map(parseFloat)
+                );
+                const elements = lines[5].trim().split(/\s+/);
+                const counts = lines[6].trim().split(/\s+/).map(Number);
+                
+                // Check if coordinates are in direct or cartesian
+                const coordType = lines[7].trim().toLowerCase();
+                const isDirect = coordType.startsWith('d');
+                
+                const totalAtoms = counts.reduce((a, b) => a + b, 0);
+                const positions = lines.slice(8, 8 + totalAtoms).map(l => 
+                    l.trim().split(/\s+/).map(Number).slice(0, 3)
+                );
+                
+                let xyzContent = `${totalAtoms}\nConverted from POSCAR\n`;
+                let idx = 0;
+                
+                elements.forEach((el, i) => {
+                    for (let j = 0; j < counts[i]; j++) {
+                        let [x, y, z] = positions[idx++];
+                        
+                        if (isDirect) {
+                            // Convert direct coordinates to cartesian
+                            const cartX = x * lattice[0][0] + y * lattice[1][0] + z * lattice[2][0];
+                            const cartY = x * lattice[0][1] + y * lattice[1][1] + z * lattice[2][1];
+                            const cartZ = x * lattice[0][2] + y * lattice[1][2] + z * lattice[2][2];
+                            x = cartX * scale;
+                            y = cartY * scale;
+                            z = cartZ * scale;
+                        } else {
+                            x *= scale;
+                            y *= scale;
+                            z *= scale;
+                        }
+                        
+                        xyzContent += `${el} ${x.toFixed(6)} ${y.toFixed(6)} ${z.toFixed(6)}\n`;
+                    }
+                });
+                
+                return xyzContent;
+            } catch (error) {
+                throw new Error('Error parsing POSCAR file: ' + error.message);
+            }
+        }
+        
+        // Load structure
+        loadStructure();
+        
+        // Parse and display POSCAR data for tables
+        fetch("POSCAR")
+            .then(response => response.text())
+            .then(text => {
+                const lines = text.trim().split('\n');
+                const scale = parseFloat(lines[1]);
+                const lattice = lines.slice(2, 5).map(line => 
+                    line.trim().split(/\s+/).map(parseFloat)
+                );
+                const elements = lines[5].trim().split(/\s+/);
+                const counts = lines[6].trim().split(/\s+/).map(Number);
+                
+                const coordType = lines[7].trim().toLowerCase();
+                const isDirect = coordType.startsWith('d');
+                const totalAtoms = counts.reduce((a, b) => a + b, 0);
+                const positions = lines.slice(8, 8 + totalAtoms).map(l => 
+                    l.trim().split(/\s+/).map(Number).slice(0, 3)
+                );
+                
+                // Fill lattice table
+                const latticeTable = document.querySelector("#latticeTable tbody");
+                lattice.forEach((v, i) => {
+                    let row = `<tr><td>v${i+1}</td><td>${(v[0]*scale).toFixed(4)}</td><td>${(v[1]*scale).toFixed(4)}</td><td>${(v[2]*scale).toFixed(4)}</td></tr>`;
+                    latticeTable.innerHTML += row;
+                });
+                
+                // Fill atom table
+                const atomTable = document.querySelector("#atomTable tbody");
+                let idx = 0;
+                elements.forEach((el, i) => {
+                    for (let j = 0; j < counts[i]; j++) {
+                        const [x, y, z] = positions[idx++];
+                        atomTable.innerHTML += `<tr><td>${el}</td><td>${x.toFixed(4)}</td><td>${y.toFixed(4)}</td><td>${z.toFixed(4)}</td></tr>`;
+                    }
+                });
+            })
+            .catch(error => {
+                console.log("Could not load POSCAR for table data");
+            });
+        
+        // Plot phonon band structure
+        fetch("phononband.json")
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('phononband.json not found');
+                }
+                return res.json();
+            })
+            .then(data => {
+                // Handle different possible JSON structures
+                let frequencies, qpoints;
+                
+                if (data.frequencies && data.qpoints) {
+                    frequencies = data.frequencies;
+                    qpoints = data.qpoints;
+                } else if (data.phonon && data.phonon.frequencies) {
+                    frequencies = data.phonon.frequencies;
+                    qpoints = data.phonon.qpoints || Array.from({length: frequencies.length}, (_, i) => i);
+                } else {
+                    throw new Error('Unexpected JSON structure in phononband.json');
+                }
+                
+                const traces = frequencies[0].map((_, i) => ({
+                    x: qpoints,
+                    y: frequencies.map(f => f[i]),
+                    mode: 'lines',
+                    line: { width: 1 },
+                    name: `Mode ${i + 1}`
+                }));
+                
+                const layout = {
+                    title: "Phonon Dispersion",
+                    xaxis: { 
+                        title: "q-point",
+                        showgrid: false 
+                    },
+                    yaxis: { 
+                        title: "Frequency (THz)" 
+                    },
+                    showlegend: false
+                };
+                
+                Plotly.newPlot("phononPlot", traces, layout);
+            })
+            .catch(error => {
+                showError('phononError', 'Could not load phononband.json. Please ensure the file exists and has the correct format.');
+                console.error('Phonon loading error:', error);
+            });
+    </script>
 </body>
 </html>
+
