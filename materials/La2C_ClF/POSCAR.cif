@@ -1,0 +1,30 @@
+data_image0
+_chemical_formula_structural       CClFLa2
+_chemical_formula_sum              "C1 Cl1 F1 La2"
+_cell_length_a       3.9331114644726264
+_cell_length_b       3.933111464470887
+_cell_length_c       22.5328496747544
+_cell_angle_alpha    89.99999999999999
+_cell_angle_beta     89.99999999999999
+_cell_angle_gamma    120.0000000000146
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  C   C1        1.0  0.0  1.7520634147097935e-32  0.51111161100057  1.0000
+  Cl  Cl1       1.0  0.6666669847440473  0.33333298598514455  0.36430334340743825  1.0000
+  F   F1        1.0  0.3333329854322145  0.6666669831836743  0.6262779554612586  1.0000
+  La  La1       1.0  0.3333329854322145  0.6666669831836743  0.4460239100309641  1.0000
+  La  La2       1.0  0.6666669847440473  0.33333298598514455  0.5778325397902133  1.0000
