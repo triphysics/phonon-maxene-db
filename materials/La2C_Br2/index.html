@@ -204,55 +204,48 @@
 let viewer = null;
 let cifData = null; 
 
-// State object to manage the viewer's appearance
 let viewerState = {
     showBonds: true,
-    useVDW: false, // For "Packed cell" (van der Waals radius)
+    useVDW: false, 
     showLabels: false,
     supercell: [3, 3, 1]
 };
 
-// Central function to update the 3Dmol viewer based on the current state
 function updateViewer() {
     if (!viewer || !cifData) return;
 
     viewer.clear();
     viewer.addModel(cifData, "cif");
-    
-    // Always add the unit cell outline
     viewer.addUnitCell();
     viewer.replicateUnitCell(...viewerState.supercell);
 
-    // Define styles based on the current state
-    let baseStyle = {};
-    if (viewerState.useVDW) {
-        // "Packed cell" view uses full van der Waals radius
-        baseStyle = { sphere: { colorscheme: 'Jmol' } };
-    } else {
-        // Default "ball-and-stick" view
-        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
-    }
+    // **FIX FOR BONDS (Issue #1)**: Use a combination of setStyle and addStyle
+    // to ensure bonds are reliably drawn.
+    viewer.setStyle({}, {}); // Clear any previous styles
     
+    // Set the base sphere style first
+    let sphereStyle = viewerState.useVDW ? { sphere: {} } : { sphere: { scale: 0.3 } };
+    viewer.setStyle({}, sphereStyle);
+    
+    // Conditionally add the stick style for bonds
     if (viewerState.showBonds) {
-        baseStyle.stick = { radius: 0.15, colorscheme: 'Jmol' };
+        viewer.addStyle({}, { stick: { radius: 0.15 } });
     }
-    
-    viewer.setStyle({}, baseStyle);
 
-    // Add labels if enabled
+    // **FIX FOR LABELS (Issue #2)**: Corrected the syntax for addLabels.
+    // The selection `{}` is the first argument, and the style options, including `prop`, are in the second.
     if (viewerState.showLabels) {
-        // FIXED: Use the 'prop' option to correctly fetch the element symbol for each atom.
-        viewer.addLabels({ prop: 'elem' }, {
+        viewer.addLabels({}, { 
+            prop: 'elem',
             fontSize: 14,
             fontColor: "black",
             showBackground: false,
-            inFront: true // Ensures labels are not hidden by atoms
+            inFront: true
         });
     }
     
     viewer.render();
 }
-
 
 function load3DStructure() {
   viewer = $3Dmol.createViewer('viewer', {
@@ -263,8 +256,8 @@ function load3DStructure() {
   fetch("POSCAR.cif")
     .then(res => res.text())
     .then(data => {
-      cifData = data; // Store data globally
-      updateViewer(); // Initial render
+      cifData = data;
+      updateViewer();
       viewer.zoomTo();
       document.getElementById("structureStatus").innerHTML =
         `<div class="success">✓ Crystal structure loaded. Use the controls below to modify the view.</div>`;
@@ -274,7 +267,6 @@ function load3DStructure() {
         `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
     });
 }
-
 
 function loadStructuralData() {
   fetch("POSCAR")
@@ -384,32 +376,34 @@ function loadPhononData() {
     });
 }
 
-// Init everything
 document.addEventListener('DOMContentLoaded', () => {
   load3DStructure();
   loadStructuralData();
   loadPhononData();
 
-  // --- Event listeners for original controls ---
   document.getElementById('zoom-in-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(1.2);
   });
-
   document.getElementById('zoom-out-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(0.8);
   });
-
   document.getElementById('home-btn').addEventListener('click', () => {
     if (viewer) viewer.zoomTo();
   });
 
-  // --- Event listeners for new controls ---
-  // FIXED: Camera buttons now call viewer.render() to apply the view change.
-  document.getElementById('cam-x').addEventListener('click', () => { if (viewer) { viewer.setView([1, 0, 0]); viewer.render(); } });
-  document.getElementById('cam-y').addEventListener('click', () => { if (viewer) { viewer.setView([0, 1, 0]); viewer.render(); } });
-  document.getElementById('cam-z').addEventListener('click', () => { if (viewer) { viewer.setView([0, 0, 1]); viewer.render(); } });
+  // **FIX FOR CAMERA (Issue #3)**: Added viewer.center() to ensure rotation occurs
+  // around the model's center before setting the view and rendering.
+  const setCameraView = (direction) => {
+    if (viewer) {
+        viewer.center();
+        viewer.setView(direction);
+        viewer.render();
+    }
+  };
+  document.getElementById('cam-x').addEventListener('click', () => setCameraView([1, 0, 0]));
+  document.getElementById('cam-y').addEventListener('click', () => setCameraView([0, 1, 0]));
+  document.getElementById('cam-z').addEventListener('click', () => setCameraView([0, 0, 1]));
 
-  // Supercell inputs
   ['x', 'y', 'z'].forEach((axis, index) => {
     document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
         const val = parseInt(e.target.value, 10);
@@ -420,13 +414,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Checkboxes
   document.getElementById('cb-bonds').addEventListener('change', (e) => {
     viewerState.showBonds = e.target.checked;
     updateViewer();
   });
   
-  // FIXED: "Packed cell" now toggles the VDW radius view.
   document.getElementById('cb-packed').addEventListener('change', (e) => {
     viewerState.useVDW = e.target.checked;
     updateViewer();
