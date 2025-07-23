@@ -217,30 +217,36 @@ function updateViewer() {
     viewer.clear();
     viewer.addModel(cifData, "cif");
     viewer.addUnitCell();
+
+    // **FIX FOR BONDS**: Define and set the style *before* replicating the cell.
+    // This ensures bonds are calculated and cloned correctly for the supercell.
+    let baseStyle = {};
+    if (viewerState.useVDW) {
+        baseStyle = { sphere: { colorscheme: 'Jmol' } };
+    } else {
+        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
+    }
+    
+    if (viewerState.showBonds) {
+        baseStyle.stick = { radius: 0.15 };
+    }
+    
+    viewer.setStyle({}, baseStyle);
+    
+    // Now, replicate the already-styled unit cell
     viewer.replicateUnitCell(...viewerState.supercell);
 
-    // **FIX FOR BONDS (Issue #1)**: Use a combination of setStyle and addStyle
-    // to ensure bonds are reliably drawn.
-    viewer.setStyle({}, {}); // Clear any previous styles
-    
-    // Set the base sphere style first
-    let sphereStyle = viewerState.useVDW ? { sphere: {} } : { sphere: { scale: 0.3 } };
-    viewer.setStyle({}, sphereStyle);
-    
-    // Conditionally add the stick style for bonds
-    if (viewerState.showBonds) {
-        viewer.addStyle({}, { stick: { radius: 0.15 } });
-    }
-
-    // **FIX FOR LABELS (Issue #2)**: Corrected the syntax for addLabels.
-    // The selection `{}` is the first argument, and the style options, including `prop`, are in the second.
+    // **FIX FOR LABELS**: Use the more stable `addLabel` (singular) function with a callback.
+    // To place the label "on top", a z-offset is used in the position property,
+    // which avoids the rendering crash caused by `inFront:true`.
     if (viewerState.showLabels) {
-        viewer.addLabels({}, { 
-            prop: 'elem',
-            fontSize: 14,
-            fontColor: "black",
+        viewer.addLabel(function (atom) {
+            return atom.elem;
+        }, {
+            fontColor: 'black',
+            fontSize: 18,
             showBackground: false,
-            inFront: true
+            position: { x: 0, y: 0, z: 0.7 }
         });
     }
     
@@ -391,8 +397,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (viewer) viewer.zoomTo();
   });
 
-  // **FIX FOR CAMERA (Issue #3)**: Added viewer.center() to ensure rotation occurs
-  // around the model's center before setting the view and rendering.
   const setCameraView = (direction) => {
     if (viewer) {
         viewer.center();
