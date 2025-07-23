@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phonon Viewer - Ti2C</title>
+  <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>Ti₂C Phonon Database Entry</h1>
+
+  <h2>🔬 Structure Viewer</h2>
+  <div style="width: 100%; height: 400px;" id="viewer"></div>
+
+  <script>
+    let viewer = $3Dmol.createViewer("viewer", {backgroundColor: "white"});
+    $3Dmol.download("materials/Ti2C/structure.cif", viewer, {}, function () {
+        viewer.setStyle({}, {stick: {}, sphere: {scale: 0.3}});
+        viewer.zoomTo();
+        viewer.render();
+    });
+  </script>
+
+  <h2>📈 Phonon Band Structure</h2>
+  <div id="phononPlot" style="width: 100%; height: 400px;"></div>
+
+  <script>
+    fetch("materials/Ti2C/phonon_band.json")
+      .then(res => res.json())
+      .then(data => {
+        const traces = data.frequencies[0].map((_, i) => ({
+          x: data.qpoints,
+          y: data.frequencies.map(f => f[i]),
+          mode: 'lines',
+          line: {width: 1},
+          name: `Mode ${i + 1}`
+        }));
+
+        const layout = {
+          title: "Phonon Dispersion",
+          xaxis: {title: "q-point", showgrid: false},
+          yaxis: {title: "Frequency (THz)"},
+        };
+
+        Plotly.newPlot("phononPlot", traces, layout);
+      });
+  </script>
+</body>
+</html>
