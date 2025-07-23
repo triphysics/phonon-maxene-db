@@ -40,11 +40,12 @@
       margin-top: 2rem;
     }
     #viewer {
-      width: 100%;
-      height: 450px;
-      border: 2px solid #3498db;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 450px;
+    display: block;           /* ✅ Forces viewer to be in-page */
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     #phononPlot {
       width: 100%;
@@ -140,25 +141,33 @@
 <script>
 // FIXED: Embeds viewer correctly inside #viewer
 function load3DStructure() {
-  const viewer = $3Dmol.createViewer(document.getElementById("viewer"), {
-    backgroundColor: "white"
-  });
+  // Make sure the element is fully rendered before attaching viewer
+  setTimeout(() => {
+    const viewerDiv = document.getElementById("viewer");
+    viewerDiv.innerHTML = ""; // Clear any previous content
 
-  fetch("POSCAR.cif")
-    .then(res => res.text())
-    .then(cifData => {
-      viewer.addModel(cifData, "cif");
-      viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
-      viewer.zoomTo();
-      viewer.render();
-      document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded from POSCAR.cif</div>`;
-    })
-    .catch(err => {
-      document.getElementById("structureStatus").innerHTML =
-        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
+    const viewer = $3Dmol.createViewer(viewerDiv, {
+      defaultcolors: $3Dmol.rasmolElementColors,
+      backgroundColor: "white"
     });
+
+    fetch("POSCAR.cif")
+      .then(res => res.text())
+      .then(cifData => {
+        viewer.addModel(cifData, "cif");
+        viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+        viewer.zoomTo();
+        viewer.render();
+        document.getElementById("structureStatus").innerHTML =
+          `<div class="success">✓ Crystal structure loaded from POSCAR.cif</div>`;
+      })
+      .catch(err => {
+        document.getElementById("structureStatus").innerHTML =
+          `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
+      });
+  }, 100); // Delay to ensure #viewer is rendered
 }
+
 
 function loadStructuralData() {
   fetch("POSCAR")
