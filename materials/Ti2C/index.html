@@ -142,8 +142,6 @@
 <script>
 // FIXED: Embeds viewer correctly inside #viewer
 function load3DStructure() {
-  // The 'DOMContentLoaded' event listener already ensures the 'viewer' div exists.
-  // We can pass the element's ID directly to 3Dmol.js.
   const viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
     backgroundColor: "white"
@@ -153,11 +151,18 @@ function load3DStructure() {
     .then(res => res.text())
     .then(cifData => {
       viewer.addModel(cifData, "cif");
-      viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+      viewer.replicateUnitCell(3, 3, 1);
+      viewer.setStyle({}, {
+        stick: { radius: 0.1 },
+        sphere: { scale: 0.25 }
+      });
+      viewer.addUnitCell();
+      // Center the camera and render the scene
       viewer.zoomTo();
       viewer.render();
+      
       document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded from POSCAR.cif</div>`;
+        `<div class="success">✓ Crystal structure loaded and replicated 3x3x1. Bonds and unit cell are shown.</div>`;
     })
     .catch(err => {
       document.getElementById("structureStatus").innerHTML =
