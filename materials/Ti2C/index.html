@@ -141,33 +141,28 @@
 <script>
 // FIXED: Embeds viewer correctly inside #viewer
 function load3DStructure() {
-  // Make sure the element is fully rendered before attaching viewer
-  setTimeout(() => {
-    const viewerDiv = document.getElementById("viewer");
-    viewerDiv.innerHTML = ""; // Clear any previous content
+  // The 'DOMContentLoaded' event listener already ensures the 'viewer' div exists.
+  // We can pass the element's ID directly to 3Dmol.js.
+  const viewer = $3Dmol.createViewer('viewer', {
+    defaultcolors: $3Dmol.rasmolElementColors,
+    backgroundColor: "white"
+  });
 
-    const viewer = $3Dmol.createViewer(viewerDiv, {
-      defaultcolors: $3Dmol.rasmolElementColors,
-      backgroundColor: "white"
+  fetch("POSCAR.cif")
+    .then(res => res.text())
+    .then(cifData => {
+      viewer.addModel(cifData, "cif");
+      viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+      viewer.zoomTo();
+      viewer.render();
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="success">✓ Crystal structure loaded from POSCAR.cif</div>`;
+    })
+    .catch(err => {
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
     });
-
-    fetch("POSCAR.cif")
-      .then(res => res.text())
-      .then(cifData => {
-        viewer.addModel(cifData, "cif");
-        viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
-        viewer.zoomTo();
-        viewer.render();
-        document.getElementById("structureStatus").innerHTML =
-          `<div class="success">✓ Crystal structure loaded from POSCAR.cif</div>`;
-      })
-      .catch(err => {
-        document.getElementById("structureStatus").innerHTML =
-          `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
-      });
-  }, 100); // Delay to ensure #viewer is rendered
 }
-
 
 function loadStructuralData() {
   fetch("POSCAR")
