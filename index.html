@@ -8,41 +8,44 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <style>
     body { font-family: sans-serif; padding: 20px; }
-    .material { margin-bottom: 60px; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
-    .viewer { width: 100%; height: 400px; margin-bottom: 20px; }
-    .phonon { width: 100%; height: 400px; }
+    ul#materialIndex { list-style: none; padding-left: 0; }
+    ul#materialIndex li { margin: 8px 0; }
+    ul#materialIndex li a { text-decoration: none; color: blue; cursor: pointer; }
+    ul#materialIndex li a:hover { text-decoration: underline; }
+    .viewer, .phonon { width: 100%; height: 400px; display: none; margin-top: 20px; }
   </style>
 </head>
 <body>
   <h1>📚 Phonon MAXene Database</h1>
-  <div id="materials"></div>
+  <p>Select a material to view its structure and phonon dispersion:</p>
+  <ul id="materialIndex"></ul>
+
+  <div id="viewer" class="viewer"></div>
+  <div id="phononPlot" class="phonon"></div>
 
   <script>
-    const materialList = ["Ti2C", "V2C"]; // Add more materials here, e.g., ["Ti2C", "V2C", "Nb2C"]
+    // Define available materials here
+    const materialList = ["Ti2C", "V2C", "Nb2C"]; // Add more material names here
 
-    const container = document.getElementById("materials");
+    const indexContainer = document.getElementById("materialIndex");
+    const viewerDiv = document.getElementById("viewer");
+    const phononDiv = document.getElementById("phononPlot");
 
-    materialList.forEach(material => {
-      const section = document.createElement("div");
-      section.className = "material";
-      section.innerHTML = `
-        <h2>🧪 ${material}</h2>
-        <h3>🔬 Structure Viewer</h3>
-        <div id="viewer-${material}" class="viewer"></div>
-        <h3>📈 Phonon Band Structure</h3>
-        <div id="phonon-${material}" class="phonon"></div>
-      `;
-      container.appendChild(section);
+    function loadMaterial(material) {
+      viewerDiv.style.display = "block";
+      phononDiv.style.display = "block";
 
-      // Render 3Dmol.js structure viewer
-      const viewer = $3Dmol.createViewer(`viewer-${material}`, { backgroundColor: "white" });
+      // Clear previous 3Dmol viewer
+      viewerDiv.innerHTML = "";
+      let viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
       $3Dmol.download(`materials/${material}/structure.cif`, viewer, {}, function () {
         viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
         viewer.zoomTo();
         viewer.render();
       });
 
-      // Fetch and render phonon band structure
+      // Clear previous plot
+      phononDiv.innerHTML = "";
       fetch(`materials/${material}/phonon_band.json`)
         .then(res => res.json())
         .then(data => {
@@ -53,15 +56,23 @@
             line: { width: 1 },
             name: `Mode ${i + 1}`
           }));
-
           const layout = {
-            title: "Phonon Dispersion",
+            title: `Phonon Dispersion - ${material}`,
             xaxis: { title: "q-point", showgrid: false },
-            yaxis: { title: "Frequency (THz)" },
+            yaxis: { title: "Frequency (THz)" }
           };
-
-          Plotly.newPlot(`phonon-${material}`, traces, layout);
+          Plotly.newPlot("phononPlot", traces, layout);
         });
+    }
+
+    // Generate clickable list
+    materialList.forEach(mat => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.textContent = mat;
+      a.onclick = () => loadMaterial(mat);
+      li.appendChild(a);
+      indexContainer.appendChild(li);
     });
   </script>
 </body>
