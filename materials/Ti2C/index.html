@@ -139,7 +139,7 @@
 
 <script>
 function load3DStructure() {
-  const viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
+  const viewer = $3Dmol.createViewer(document.getElementById("viewer"), { backgroundColor: "white" });	
   fetch("POSCAR.cif")
     .then(res => res.text())
     .then(cifData => {
