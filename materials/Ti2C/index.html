@@ -5,6 +5,7 @@
   <title>MAXene Material Viewer</title>
   <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
@@ -124,300 +125,137 @@
       <tbody></tbody>
     </table>
     <table class="info-table" id="atomTable" style="display:none;">
-      <thead><tr><th>Element</th><th>x (fractional)</th><th>y (fractional)</th><th>z (fractional)</th></tr></thead>
+      <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
       <tbody></tbody>
     </table>
   </div>
   
   <div class="phonon section">
     <h2>🎵 Phonon Band Structure</h2>
-    <div id="phononStatus" class="loading">Loading phonon dispersion...</div>
+    <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
     <div id="phononPlot"></div>
   </div>
 </div>
 
 <script>
-// Global variables to store loaded data
-let structureData = null;
-let phononData = null;
-
-// Initialize 3D molecular viewer with CIF file
 function load3DStructure() {
-  try {
-    const viewer = $3Dmol.createViewer("viewer", { 
-      backgroundColor: "white",
-      antialias: true 
+  const viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
+  fetch("POSCAR.cif")
+    .then(res => res.text())
+    .then(cifData => {
+      viewer.addModel(cifData, "cif");
+      viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+      viewer.zoomTo(); viewer.render();
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="success">✓ Crystal structure loaded from POSCAR.cif</div>`;
+    })
+    .catch(err => {
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
     });
-    
-    // Load CIF file using fetch and then add to viewer
-    fetch("POSCAR.cif")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(cifData => {
-        // Add the CIF data to the viewer
-        viewer.addModel(cifData, "cif");
-        
-        // Set visualization style
-        viewer.setStyle({}, {
-          stick: { radius: 0.2, color: 'spectrum' },
-          sphere: { scale: 0.7 }
-        });
-        
-        // Try to color by element if possible
-        viewer.setStyle({elem: 'Ti'}, {
-          stick: { radius: 0.2 },
-          sphere: { scale: 0.8, color: '#c0c0c0' }
-        });
-        
-        viewer.setStyle({elem: 'C'}, {
-          stick: { radius: 0.15 },
-          sphere: { scale: 0.6, color: '#404040' }
-        });
-        
-        // Zoom to fit and render
-        viewer.zoomTo();
-        viewer.render();
-        
-        document.getElementById("structureStatus").innerHTML = 
-          '<div class="success">✓ Crystal structure loaded successfully from POSCAR.cif</div>';
-        
-        console.log("3D structure loaded successfully from CIF file");
-      })
-      .catch(error => {
-        console.error("Error loading CIF file:", error);
-        document.getElementById("structureStatus").innerHTML = 
-          `<div class="error">Error loading POSCAR.cif: ${error.message}</div>`;
-      });
-      
-  } catch (error) {
-    console.error("Error initializing 3D viewer:", error);
-    document.getElementById("structureStatus").innerHTML = 
-      `<div class="error">Error initializing 3D viewer: ${error.message}</div>`;
-  }
 }
 
-// Parse and display POSCAR structural data
 function loadStructuralData() {
   fetch("POSCAR")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.text();
-    })
+    .then(res => res.text())
     .then(text => {
-      console.log("POSCAR file loaded, parsing...");
-      
-      const lines = text.trim().split('\n');
+      const lines = text.trim().split("\n");
       const scale = parseFloat(lines[1]);
-      
-      // Parse lattice vectors
-      const lattice = lines.slice(2, 5).map(line => 
-        line.trim().split(/\s+/).map(val => parseFloat(val) * scale)
+      const lattice = lines.slice(2, 5).map(l =>
+        l.trim().split(/\s+/).map(n => parseFloat(n) * scale)
       );
-      
-      // Parse element names and counts
       const elements = lines[5].trim().split(/\s+/);
       const counts = lines[6].trim().split(/\s+/).map(Number);
-      
-      // Determine if coordinates are Direct or Cartesian
-      const coordType = lines[7].trim().toLowerCase();
-      const isDirect = coordType.startsWith('d') || coordType.startsWith('direct');
-      
-      // Parse atomic positions
-      const totalAtoms = counts.reduce((a, b) => a + b, 0);
-      const positions = lines.slice(8, 8 + totalAtoms).map(line => 
-        line.trim().split(/\s+/).slice(0, 3).map(Number)
-      );
-      
-      // Store parsed data
-      structureData = {
-        scale: scale,
-        lattice: lattice,
-        elements: elements,
-        counts: counts,
-        positions: positions,
-        isDirect: isDirect
-      };
-      
-      // Populate lattice table
-      const latticeTable = document.querySelector("#latticeTable tbody");
-      latticeTable.innerHTML = '';
-      lattice.forEach((vector, i) => {
-        const row = `
-          <tr>
-            <td><strong>a${i+1}</strong></td>
-            <td>${vector[0].toFixed(4)}</td>
-            <td>${vector[1].toFixed(4)}</td>
-            <td>${vector[2].toFixed(4)}</td>
-          </tr>
-        `;
-        latticeTable.innerHTML += row;
+      const positions = lines.slice(8, 8 + counts.reduce((a, b) => a + b, 0))
+        .map(l => l.trim().split(/\s+/).slice(0, 3).map(Number));
+
+      // Lattice table
+      const lt = document.querySelector("#latticeTable tbody");
+      lt.innerHTML = '';
+      lattice.forEach((vec, i) => {
+        lt.innerHTML += `<tr><td><strong>a${i + 1}</strong></td>
+          <td>${vec[0].toFixed(4)}</td><td>${vec[1].toFixed(4)}</td><td>${vec[2].toFixed(4)}</td></tr>`;
       });
-      
-      // Populate atoms table
-      const atomTable = document.querySelector("#atomTable tbody");
-      atomTable.innerHTML = '';
-      let atomIndex = 0;
-      
-      elements.forEach((element, elemIndex) => {
-        for (let i = 0; i < counts[elemIndex]; i++) {
-          const pos = positions[atomIndex];
-          const row = `
-            <tr>
-              <td><strong>${element}</strong></td>
-              <td>${pos[0].toFixed(6)}</td>
-              <td>${pos[1].toFixed(6)}</td>
-              <td>${pos[2].toFixed(6)}</td>
-            </tr>
-          `;
-          atomTable.innerHTML += row;
-          atomIndex++;
+
+      // Atom table
+      const at = document.querySelector("#atomTable tbody");
+      at.innerHTML = '';
+      let idx = 0;
+      elements.forEach((el, i) => {
+        for (let j = 0; j < counts[i]; j++) {
+          const pos = positions[idx++];
+          at.innerHTML += `<tr><td><strong>${el}</strong></td>
+            <td>${pos[0].toFixed(6)}</td><td>${pos[1].toFixed(6)}</td><td>${pos[2].toFixed(6)}</td></tr>`;
         }
       });
-      
-      // Show tables and update status
+
       document.getElementById("latticeTable").style.display = "table";
       document.getElementById("atomTable").style.display = "table";
-      document.getElementById("structuralStatus").innerHTML = 
-        `<div class="success">✓ Structural data loaded from POSCAR (${isDirect ? 'Direct' : 'Cartesian'} coordinates)</div>`;
-      
-      console.log("Structural data parsed successfully");
-      
+      document.getElementById("structuralStatus").innerHTML =
+        `<div class="success">✓ Structural data loaded from POSCAR</div>`;
     })
-    .catch(error => {
-      console.error("Error loading POSCAR file:", error);
-      document.getElementById("structuralStatus").innerHTML = 
-        `<div class="error">Error loading POSCAR: ${error.message}</div>`;
+    .catch(err => {
+      document.getElementById("structuralStatus").innerHTML =
+        `<div class="error">Error loading POSCAR: ${err.message}</div>`;
     });
 }
 
-// Load and plot phonon dispersion data
 function loadPhononData() {
-  fetch("phonon_band.json")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log("Phonon data loaded:", data);
-      phononData = data;
-      
-      // Validate data structure
-      if (!data.qpoints || !data.frequencies) {
-        throw new Error("Invalid phonon data format - missing qpoints or frequencies");
-      }
-      
-      // Create traces for each phonon mode
+  fetch("data/band.yaml")
+    .then(r => r.text())
+    .then(yamlText => {
+      const data = jsyaml.load(yamlText);
+      const phonon = data.phonon;
+      const numBands = phonon[0].band.length;
       const traces = [];
-      const numModes = data.frequencies[0] ? data.frequencies[0].length : 0;
-      
-      if (numModes === 0) {
-        throw new Error("No phonon modes found in data");
-      }
-      
-      for (let i = 0; i < numModes; i++) {
-        const frequencies = data.frequencies.map(freqArray => freqArray[i]);
-        
+
+      for (let i = 0; i < numBands; i++) {
         traces.push({
-          x: data.qpoints,
-          y: frequencies,
+          x: phonon.map(p => p.distance),
+          y: phonon.map(p => p.band[i].frequency),
           mode: 'lines',
-          line: { 
-            width: 2,
-            color: i < 3 ? `hsl(${200 + i*20}, 70%, 50%)` : `hsl(${0 + i*30}, 70%, 50%)`
-          },
-          name: `Mode ${i + 1}`,
+          line: { width: 2 },
           showlegend: false,
-          hovertemplate: `Mode ${i + 1}<br>` +
-                        'q-point: %{x:.3f}<br>' +
-                        'Frequency: %{y:.2f} THz<extra></extra>'
+          name: `Mode ${i + 1}`
         });
       }
-      
-      // Set up plot layout
-      const layout = {
-        title: {
-          text: 'Phonon Dispersion Relation',
-          font: { size: 18, color: '#2c3e50' }
-        },
-        xaxis: { 
-          title: 'Wave Vector Path',
-          showgrid: true,
-          gridcolor: '#e0e0e0',
-          zeroline: false
-        },
-        yaxis: { 
-          title: 'Frequency (THz)',
-          showgrid: true,
-          gridcolor: '#e0e0e0',
-          zeroline: true,
-          zerolinecolor: '#999',
-          zerolinewidth: 1
-        },
-        plot_bgcolor: 'white',
-        paper_bgcolor: 'white',
-        margin: { l: 60, r: 40, t: 60, b: 60 },
-        font: { family: 'Arial, sans-serif', size: 12 },
-        hovermode: 'closest'
-      };
-      
-      // Add high-symmetry point labels if available
-      if (data.labels && data.label_positions) {
-        layout.xaxis.tickvals = data.label_positions;
-        layout.xaxis.ticktext = data.labels;
+
+      // Optional tick labels
+      const labels = data.labels ? data.labels.flat() : [];
+      const segmentNq = data.segment_nqpoint || [];
+      const labelPositions = [];
+      let index = 0;
+      for (let i = 0; i < segmentNq.length; i++) {
+        labelPositions.push(phonon[index].distance);
+        index += segmentNq[i];
       }
-      
-      const config = {
-        responsive: true,
-        displayModeBar: true,
-        displaylogo: false,
-        modeBarButtonsToRemove: ['pan2d', 'lasso2d', 'select2d', 'autoScale2d']
+      labelPositions.push(phonon[phonon.length - 1].distance);
+
+      const layout = {
+        title: 'Phonon Band Structure',
+        xaxis: { title: 'Wave Vector', tickvals: labelPositions, ticktext: labels },
+        yaxis: { title: 'Frequency (THz)', zeroline: true },
+        plot_bgcolor: 'white',
+        paper_bgcolor: 'white'
       };
-      
-      // Create the plot
-      Plotly.newPlot("phononPlot", traces, layout, config);
-      
-      document.getElementById("phononStatus").innerHTML = 
-        `<div class="success">✓ Phonon dispersion loaded (${numModes} modes, ${data.qpoints.length} q-points)</div>`;
-      
-      console.log(`Phonon dispersion plotted successfully: ${numModes} modes`);
-      
+
+      Plotly.newPlot('phononPlot', traces, layout);
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="success">✓ Phonon dispersion loaded from band.yaml</div>`;
     })
-    .catch(error => {
-      console.error("Error loading phonon data:", error);
-      document.getElementById("phononStatus").innerHTML = 
-        `<div class="error">Error loading phonon_band.json: ${error.message}</div>`;
+    .catch(err => {
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="error">Error loading band.yaml: ${err.message}</div>`;
     });
 }
 
-// Initialize everything when page loads
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("Page loaded, initializing components...");
-  
-  // Load components with proper error handling
-  setTimeout(() => {
-    load3DStructure();
-    loadStructuralData();
-    loadPhononData();
-  }, 100);
+// Init all on load
+document.addEventListener('DOMContentLoaded', () => {
+  load3DStructure();
+  loadStructuralData();
+  loadPhononData();
 });
-
-// Handle window resize for responsive plots
-window.addEventListener('resize', function() {
-  if (document.getElementById('phononPlot') && phononData) {
-    Plotly.Plots.resize('phononPlot');
-  }
-});
-
-// Add debugging information
-console.log("MAXene viewer script loaded. Waiting for DOM content...");
 </script>
 </body>
 </html>
+
