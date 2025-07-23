@@ -176,7 +176,7 @@
 // This viewer variable is now accessible to all functions in this script
 let viewer = null;
 
-// FIXED: This function is updated to correctly render the structure, bonds, labels, and legend.
+// **FIXED**: This function is updated to correctly render the structure, bonds, and labels.
 function load3DStructure() {
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
@@ -187,35 +187,31 @@ function load3DStructure() {
     .then(res => res.text())
     .then(cifData => {
       viewer.addModel(cifData, "cif");
-
-      // Request 2 Fix: Replicate unit cell and connect bonds between cells
       viewer.replicateUnitCell(3, 3, 1, true);
-
-      // Set a single, clear style for atoms and bonds
       viewer.setStyle({}, {
         stick: { radius: 0.15, colorscheme: 'byElementAndType' },
         sphere: { scale: 0.35, colorscheme: 'byElementAndType' }
       });
 
-      // Request 1 Fix: Correctly add labels to all atoms using 'addLabels'
-      viewer.addLabels(function(atom) {
-        return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
-      }, {
-        fontSize: 14,
-        fontColor: "black",
-        showBackground: true,
-        backgroundColor: "lightgray",
-        backgroundOpacity: 0.7,
-        position: { x: 0.0, y: 0.0, z: 0.5 }
+      // **FIX:** Replaced 'addLabels' with a compatible loop using 'addLabel'.
+      const atoms = viewer.getModel().selectedAtoms({});
+      atoms.forEach(function(atom) {
+          // Add a label for each atom
+          viewer.addLabel(atom.elem, {
+              position: { x: atom.x, y: atom.y, z: atom.z },
+              showBackground: true,
+              backgroundColor: 'lightgray',
+              backgroundOpacity: 0.8,
+              fontSize: 12,
+              fontColor: 'black',
+              inFront: true // Ensures labels are not hidden by atoms
+          });
       });
       
-      // Request 1 Fix: Add a legend for elements
-      const atoms = viewer.getModel().selectedAtoms({});
+      // Add a legend for elements
       const uniqueElements = [...new Set(atoms.map(atom => atom.elem))].sort();
-      
       const legendLabels = uniqueElements.map(elem => {
           const color = $3Dmol.rasmolElementColors[elem] || 'gray';
-          // Using a sphere style for the legend item
           return [elem, { sphere: { color: color } }];
       });
 
@@ -226,7 +222,6 @@ function load3DStructure() {
               right: '20px'
           },
           labels: legendLabels,
-          // Optional: Style the legend box itself
           container: {
             backgroundColor: 'rgba(255, 255, 255, 0.8)',
             borderColor: '#3498db',
@@ -236,7 +231,6 @@ function load3DStructure() {
           }
       });
 
-
       viewer.addUnitCell();
       viewer.zoomTo();
       viewer.render();
@@ -244,8 +238,10 @@ function load3DStructure() {
         `<div class="success">✓ Crystal structure loaded. Bonds, labels, and legend are shown.</div>`;
     })
     .catch(err => {
+      // Update the error message to be more informative
       document.getElementById("structureStatus").innerHTML =
-        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
+        `<div class="error">Error during 3D structure load: ${err.message}</div>`;
+      console.error(err);
     });
 }
 
