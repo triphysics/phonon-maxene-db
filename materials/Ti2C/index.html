@@ -181,7 +181,7 @@ function load3DStructure() {
   // Request 1: Change background to black
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
-    backgroundColor: "black" 
+    backgroundColor: "white" 
   });
 
   fetch("POSCAR.cif")
@@ -199,7 +199,7 @@ function load3DStructure() {
         return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
       }, {
         fontSize: 14,
-        fontColor: "white",
+        fontColor: "black",
         showBackground: false,
         position: { x: 0.0, y: 0.0, z: 0.5 } 
       });
