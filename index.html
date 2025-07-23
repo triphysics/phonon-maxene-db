@@ -39,10 +39,11 @@
       viewerDiv.innerHTML = "";
       let viewer = $3Dmol.createViewer("viewer", { backgroundColor: "white" });
       $3Dmol.download(`materials/${material}/structure.cif`, viewer, {}, function () {
-        viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
-        viewer.zoomTo();
-        viewer.render();
-      });
+      viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+      viewer.showUnitCell(true);  // 👈 This adds the unit cell
+      viewer.zoomTo();
+      viewer.render();
+      });	    
 
       // Clear previous plot
       phononDiv.innerHTML = "";
