@@ -136,7 +136,7 @@
 </head>
 <body>
 <div class="container">
-  <h1>Material: Ti<sub>2</sub>C (MAXene)</h1>
+ <h1 id="material-title">Material: </h1>
 
   <div class="structure section">
     <h2>🧊 Crystal Structure</h2>
@@ -346,5 +346,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+
+<script>
+  // Get the folder name from the URL path
+  const pathParts = window.location.pathname.split('/');
+  const folderName = pathParts[pathParts.length - 2] || "Unknown";
+
+  // Format chemical formula with subscript numbers
+  function formatFormula(formula) {
+    return formula.replace(/(\d+)/g, '<sub>$1</sub>');
+  }
+
+  // Set the material title
+  document.getElementById("material-title").innerHTML =
+    `Material: ${formatFormula(folderName)} (MAXene)`;
+</script>
+
 </body>
 </html>
