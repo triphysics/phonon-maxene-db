@@ -46,13 +46,13 @@
     border: 2px solid #3498db;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; /* ✅ ADD THIS LINE */
+    position: relative; 
     }
     .viewer-controls {
     text-align: center;
     margin-bottom: 12px;
     }
-    .viewer-controls button {
+    .viewer-controls button, #custom-controls button {
       background: linear-gradient(45deg, #3498db, #2980b9);
       border: none;
       color: white;
@@ -65,11 +65,14 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: all 0.2s ease-in-out;
     }
-    .viewer-controls button:hover {
+    #custom-controls button {
+        padding: 6px 12px;
+    }
+    .viewer-controls button:hover, #custom-controls button:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
-    .viewer-controls button:active {
+    .viewer-controls button:active, #custom-controls button:active {
       transform: translateY(0);
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
@@ -149,6 +152,31 @@
     </div>
     
     <div id="viewer"></div>
+
+    <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
+        <span>
+            Supercell:
+            <input type="number" id="sc-x" value="3" min="1" style="width: 40px; text-align: center;">
+            <input type="number" id="sc-y" value="3" min="1" style="width: 40px; text-align: center;">
+            <input type="number" id="sc-z" value="1" min="1" style="width: 40px; text-align: center;">
+        </span>
+        <span>
+            Camera:
+            <button id="cam-x">x</button>
+            <button id="cam-y">y</button>
+            <button id="cam-z">z</button>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-packed" checked> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
+        </span>
+    </div>
+
   </div>
 
 
@@ -173,12 +201,52 @@
 </div>
 
 <script>
-// This viewer variable is now accessible to all functions in this script
 let viewer = null;
+let cifData = null; // To store the loaded structure data
 
-// FIXED: Embeds viewer correctly inside #viewer
+// State object to manage the viewer's appearance
+let viewerState = {
+    showBonds: true,
+    showPackedCell: true,
+    showLabels: false,
+    supercell: [3, 3, 1]
+};
+
+// Central function to update the 3Dmol viewer based on the current state
+function updateViewer() {
+    if (!viewer || !cifData) return;
+
+    viewer.clear();
+    viewer.addModel(cifData, "cif");
+
+    if (viewerState.showPackedCell) {
+        viewer.addUnitCell();
+    }
+
+    viewer.replicateUnitCell(...viewerState.supercell);
+
+    let style = { sphere: { scale: 0.25 } };
+    if (viewerState.showBonds) {
+        style.stick = { radius: 0.1 };
+    }
+    viewer.setStyle({}, style);
+
+    if (viewerState.showLabels) {
+        viewer.addLabel(function(atom) {
+            return atom.elem;
+        }, {
+            fontSize: 14,
+            fontColor: "black",
+            showBackground: false,
+            position: { x: 0.0, y: 0.0, z: 0.5 }
+        });
+    }
+    
+    viewer.render();
+}
+
+
 function load3DStructure() {
-  // Request 1: Change background to black
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
     backgroundColor: "white" 
@@ -186,29 +254,12 @@ function load3DStructure() {
 
   fetch("POSCAR.cif")
     .then(res => res.text())
-    .then(cifData => {
-      viewer.addModel(cifData, "cif");
-      viewer.replicateUnitCell(3, 3, 1);
-      viewer.setStyle({}, {
-        stick: { radius: 0.1 },
-        sphere: { scale: 0.25 }
-      });
-
-      // Request 2: Add labels to the atoms
-      viewer.addLabel(function(atom) {
-        return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
-      }, {
-        fontSize: 14,
-        fontColor: "black",
-        showBackground: false,
-        position: { x: 0.0, y: 0.0, z: 0.5 } 
-      });
-
-      viewer.addUnitCell();
+    .then(data => {
+      cifData = data; // Store data globally
+      updateViewer(); // Initial render
       viewer.zoomTo();
-      viewer.render();
       document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded and replicated 3x3x1. Bonds and unit cell are shown.</div>`;
+        `<div class="success">✓ Crystal structure loaded. Use the controls below to modify the view.</div>`;
     })
     .catch(err => {
       document.getElementById("structureStatus").innerHTML =
@@ -279,8 +330,7 @@ function loadPhononData() {
           name: `Mode ${i + 1}`
         });
       }
-
-      // FIXED: Deduplicate label list to get G–M–K–G instead of G–M–M–K–K–G
+      
       const rawLabels = data.labels ? data.labels.flat() : [];
       const labels = [rawLabels[0]];
       for (let i = 1; i < rawLabels.length; i++) {
@@ -332,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStructuralData();
   loadPhononData();
 
-  // Request 3: Add event listeners for the new control buttons
+  // --- Event listeners for original controls ---
   document.getElementById('zoom-in-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(1.2);
   });
@@ -343,6 +393,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('home-btn').addEventListener('click', () => {
     if (viewer) viewer.zoomTo();
+  });
+
+  // --- Event listeners for new controls ---
+  // Camera buttons
+  document.getElementById('cam-x').addEventListener('click', () => viewer && viewer.setView([1, 0, 0]));
+  document.getElementById('cam-y').addEventListener('click', () => viewer && viewer.setView([0, 1, 0])); // Top-down view
+  document.getElementById('cam-z').addEventListener('click', () => viewer && viewer.setView([0, 0, 1]));
+
+  // Supercell inputs
+  ['x', 'y', 'z'].forEach((axis, index) => {
+    document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        if (!isNaN(val) && val > 0) {
+            viewerState.supercell[index] = val;
+            updateViewer();
+        }
+    });
+  });
+
+  // Checkboxes
+  document.getElementById('cb-bonds').addEventListener('change', (e) => {
+    viewerState.showBonds = e.target.checked;
+    updateViewer();
+  });
+  document.getElementById('cb-packed').addEventListener('change', (e) => {
+    viewerState.showPackedCell = e.target.checked;
+    updateViewer();
+  });
+  document.getElementById('cb-labels').addEventListener('change', (e) => {
+    viewerState.showLabels = e.target.checked;
+    updateViewer();
   });
 });
 </script>
