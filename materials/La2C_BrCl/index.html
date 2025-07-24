@@ -40,38 +40,107 @@
       margin-top: 2rem;
     }
     #viewer {
-    width: 100%;
-    height: 450px;
-    display: block;
-    border: 2px solid #3498db;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; /* ✅ ADD THIS LINE */
+      width: 100%;
+      height: 450px;
+      display: block;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+      background: #f8f9fa;
+      overflow: hidden;
+    }
+    .viewer-container {
+      position: relative;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
     .viewer-controls {
-    text-align: center;
-    margin-bottom: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
     }
     .viewer-controls button {
-      background: linear-gradient(45deg, #3498db, #2980b9);
+      background: linear-gradient(45deg, #4CAF50, #45a049);
       border: none;
       color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
+      padding: 10px 20px;
+      border-radius: 25px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
-      margin: 0 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: all 0.2s ease-in-out;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+      transition: all 0.3s ease;
+      min-width: 120px;
     }
     .viewer-controls button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
     .viewer-controls button:active {
       transform: translateY(0);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .toggle-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    .toggle-btn {
+      background: #fff;
+      border: 2px solid #3498db;
+      color: #3498db;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .toggle-btn.active {
+      background: #3498db;
+      color: white;
+      box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    }
+    .toggle-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+    }
+    .supercell-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    .supercell-control {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #f8f9fa;
+      padding: 8px 12px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+    }
+    .supercell-control label {
+      font-weight: 600;
+      color: #555;
+      font-size: 14px;
+    }
+    .supercell-control input {
+      width: 40px;
+      padding: 4px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 14px;
     }
     #phononPlot {
       width: 100%;
@@ -105,10 +174,11 @@
     }
     .section {
       margin-top: 2rem;
-      padding: 1rem;
+      padding: 1.5rem;
       background: #f8f9fa;
-      border-radius: 8px;
+      border-radius: 12px;
       border-left: 4px solid #3498db;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     .loading {
       text-align: center;
@@ -120,17 +190,25 @@
       background: #ffebee;
       color: #c62828;
       padding: 1rem;
-      border-radius: 4px;
+      border-radius: 8px;
       border-left: 4px solid #f44336;
       margin: 1rem 0;
     }
     .success {
       background: #e8f5e8;
       color: #2e7d32;
-      padding: 0.5rem;
-      border-radius: 4px;
+      padding: 0.8rem;
+      border-radius: 8px;
       font-size: 0.9rem;
       margin-bottom: 1rem;
+      border-left: 4px solid #4caf50;
+    }
+    .viewer-info {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+      font-style: italic;
     }
   </style>
 </head>
@@ -142,15 +220,41 @@
     <h2>🧊 Crystal Structure</h2>
     <div id="structureStatus" class="loading">Loading crystal structure...</div>
   
-    <div class="viewer-controls">
-      <button id="zoom-in-btn">🔍 Zoom In</button>
-      <button id="zoom-out-btn">🔎 Zoom Out</button>
-      <button id="home-btn">🏠 Reset View</button>
-    </div>
-    
-    <div id="viewer"></div>
-  </div>
+    <div class="viewer-container">
+      <div class="supercell-controls">
+        <div class="supercell-control">
+          <label>X:</label>
+          <input type="number" id="supercell-x" value="3" min="1" max="5">
+        </div>
+        <div class="supercell-control">
+          <label>Y:</label>
+          <input type="number" id="supercell-y" value="3" min="1" max="5">
+        </div>
+        <div class="supercell-control">
+          <label>Z:</label>
+          <input type="number" id="supercell-z" value="1" min="1" max="3">
+        </div>
+        <button id="apply-supercell" class="toggle-btn">Apply Supercell</button>
+      </div>
 
+      <div class="toggle-controls">
+        <div class="toggle-btn active" id="toggle-bonds">🔗 Bonds</div>
+        <div class="toggle-btn active" id="toggle-labels">🏷️ Labels</div>
+        <div class="toggle-btn active" id="toggle-unitcell">📦 Unit Cell</div>
+        <div class="toggle-btn" id="toggle-style">🎨 Ball & Stick</div>
+      </div>
+
+      <div class="viewer-controls">
+        <button id="zoom-in-btn">🔍 Zoom In</button>
+        <button id="zoom-out-btn">🔎 Zoom Out</button>
+        <button id="home-btn">🏠 Reset View</button>
+        <button id="rotate-btn">🔄 Auto Rotate</button>
+      </div>
+      
+      <div id="viewer"></div>
+      <div class="viewer-info">Click and drag to rotate • Scroll to zoom</div>
+    </div>
+  </div>
 
   <div class="section">
     <h2>🧮 Structural Details</h2>
@@ -173,42 +277,30 @@
 </div>
 
 <script>
-// This viewer variable is now accessible to all functions in this script
 let viewer = null;
+let currentStyle = 'stick';
+let showBonds = true;
+let showLabels = true;
+let showUnitCell = true;
+let autoRotate = false;
+let rotationInterval = null;
 
-// FIXED: Embeds viewer correctly inside #viewer
 function load3DStructure() {
-  // Request 1: Change background to black
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
-    backgroundColor: "white" 
+    backgroundColor: "#f8f9fa"
   });
 
   fetch("POSCAR.cif")
     .then(res => res.text())
     .then(cifData => {
       viewer.addModel(cifData, "cif");
-      viewer.replicateUnitCell(3, 3, 1);
-      viewer.setStyle({}, {
-        stick: { radius: 0.1 },
-        sphere: { scale: 0.25 }
-      });
-
-      // Request 2: Add labels to the atoms
-      viewer.addLabel(function(atom) {
-        return atom.elem; // Label with element symbol (e.g., 'Ti', 'C')
-      }, {
-        fontSize: 14,
-        fontColor: "black",
-        showBackground: false,
-        position: { x: 0.0, y: 0.0, z: 0.5 } 
-      });
-
-      viewer.addUnitCell();
+      applySupercell();
+      updateVisualization();
       viewer.zoomTo();
       viewer.render();
       document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded and replicated 3x3x1. Bonds and unit cell are shown.</div>`;
+        `<div class="success">✓ Crystal structure loaded successfully. Use controls to customize the view.</div>`;
     })
     .catch(err => {
       document.getElementById("structureStatus").innerHTML =
@@ -216,6 +308,97 @@ function load3DStructure() {
     });
 }
 
+function applySupercell() {
+  if (!viewer) return;
+  
+  const x = parseInt(document.getElementById('supercell-x').value) || 3;
+  const y = parseInt(document.getElementById('supercell-y').value) || 3;
+  const z = parseInt(document.getElementById('supercell-z').value) || 1;
+  
+  viewer.removeAllModels();
+  
+  fetch("POSCAR.cif")
+    .then(res => res.text())
+    .then(cifData => {
+      viewer.addModel(cifData, "cif");
+      viewer.replicateUnitCell(x, y, z);
+      updateVisualization();
+      viewer.zoomTo();
+      viewer.render();
+    });
+}
+
+function updateVisualization() {
+  if (!viewer) return;
+  
+  // Clear existing styles
+  viewer.setStyle({}, {});
+  
+  // Apply base style
+  if (currentStyle === 'stick') {
+    viewer.setStyle({}, {
+      stick: showBonds ? { radius: 0.15, colorscheme: 'Jmol' } : {},
+      sphere: { scale: 0.3, colorscheme: 'Jmol' }
+    });
+  } else {
+    viewer.setStyle({}, {
+      stick: showBonds ? { radius: 0.1, colorscheme: 'Jmol' } : {},
+      sphere: { scale: 0.6, colorscheme: 'Jmol' }
+    });
+  }
+  
+  // Add/remove labels
+  viewer.removeAllLabels();
+  if (showLabels) {
+    viewer.addLabel(function(atom) {
+      return atom.elem;
+    }, {
+      fontSize: 12,
+      fontColor: "#333",
+      showBackground: true,
+      backgroundColor: "rgba(255,255,255,0.8)",
+      backgroundOpacity: 0.8,
+      borderColor: "#ccc",
+      borderWidth: 1,
+      borderRadius: 3,
+      position: { x: 0.0, y: 0.0, z: 0.8 }
+    });
+  }
+  
+  // Add/remove unit cell
+  if (showUnitCell) {
+    viewer.addUnitCell({
+      box: { color: '#333', linewidth: 2 },
+      astyle: { color: '#e74c3c', radius: 0.05 },
+      bstyle: { color: '#2ecc71', radius: 0.05 },
+      cstyle: { color: '#3498db', radius: 0.05 }
+    });
+  }
+  
+  viewer.render();
+}
+
+function toggleAutoRotate() {
+  autoRotate = !autoRotate;
+  const btn = document.getElementById('rotate-btn');
+  
+  if (autoRotate) {
+    btn.style.background = 'linear-gradient(45deg, #e74c3c, #c0392b)';
+    btn.textContent = '⏸️ Stop Rotate';
+    rotationInterval = setInterval(() => {
+      if (viewer) {
+        viewer.rotate(1, 'y');
+      }
+    }, 50);
+  } else {
+    btn.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
+    btn.textContent = '🔄 Auto Rotate';
+    if (rotationInterval) {
+      clearInterval(rotationInterval);
+      rotationInterval = null;
+    }
+  }
+}
 
 function loadStructuralData() {
   fetch("POSCAR")
@@ -280,7 +463,6 @@ function loadPhononData() {
         });
       }
 
-      // FIXED: Deduplicate label list to get G–M–K–G instead of G–M–M–K–K–G
       const rawLabels = data.labels ? data.labels.flat() : [];
       const labels = [rawLabels[0]];
       for (let i = 1; i < rawLabels.length; i++) {
@@ -326,13 +508,13 @@ function loadPhononData() {
     });
 }
 
-// Init everything
+// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
   load3DStructure();
   loadStructuralData();
   loadPhononData();
 
-  // Request 3: Add event listeners for the new control buttons
+  // Basic viewer controls
   document.getElementById('zoom-in-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(1.2);
   });
@@ -343,6 +525,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('home-btn').addEventListener('click', () => {
     if (viewer) viewer.zoomTo();
+  });
+
+  document.getElementById('rotate-btn').addEventListener('click', toggleAutoRotate);
+
+  // Supercell controls
+  document.getElementById('apply-supercell').addEventListener('click', applySupercell);
+
+  // Toggle controls
+  document.getElementById('toggle-bonds').addEventListener('click', function() {
+    showBonds = !showBonds;
+    this.classList.toggle('active');
+    updateVisualization();
+  });
+
+  document.getElementById('toggle-labels').addEventListener('click', function() {
+    showLabels = !showLabels;
+    this.classList.toggle('active');
+    updateVisualization();
+  });
+
+  document.getElementById('toggle-unitcell').addEventListener('click', function() {
+    showUnitCell = !showUnitCell;
+    this.classList.toggle('active');
+    updateVisualization();
+  });
+
+  document.getElementById('toggle-style').addEventListener('click', function() {
+    currentStyle = currentStyle === 'stick' ? 'sphere' : 'stick';
+    this.classList.toggle('active');
+    this.textContent = currentStyle === 'stick' ? '🎨 Ball & Stick' : '⚫ Space Fill';
+    updateVisualization();
   });
 });
 </script>
