@@ -4,367 +4,202 @@
   <meta charset="UTF-8" />
   <title>MAXene Material Viewer</title>
   <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-family: sans-serif;
+      margin: 2rem auto;
       max-width: 960px;
-      margin: auto;
-      padding: 1rem;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-    }
-    .container {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 8px;
-      margin-bottom: 1rem;
+      background: #f0f2f5;
     }
     h1 {
       text-align: center;
-      font-size: 2.5rem;
       background: linear-gradient(45deg, #3498db, #2c3e50);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
-    .structure, .phonon {
-      margin-top: 2rem;
+    .viewer-controls {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-top: 1rem;
     }
     #viewer {
       width: 100%;
-      height: 450px;
-      display: block;
+      height: 500px;
       border: 2px solid #3498db;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
-    .viewer-controls {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-    .viewer-controls button {
-      background: linear-gradient(45deg, #3498db, #2980b9);
-      border: none;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      margin: 0 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: all 0.2s ease-in-out;
-    }
-    .viewer-controls button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .viewer-controls button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    #phononPlot {
-      width: 100%;
-      height: 450px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .info-table {
-      border-collapse: collapse;
-      width: 100%;
+      border-radius: 10px;
       margin-top: 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .info-table th, .info-table td {
-      border: none;
-      padding: 12px 16px;
-      text-align: left;
+    label {
+      margin-right: 10px;
     }
-    .info-table th {
-      background: linear-gradient(45deg, #3498db, #2980b9);
-      color: white;
-      font-weight: 600;
-    }
-    .info-table tr:nth-child(even) {
-      background-color: #f8f9fa;
-    }
-    .info-table tr:hover {
-      background-color: #e3f2fd;
+    select, button, input[type="checkbox"] {
+      margin-right: 5px;
     }
     .section {
-      margin-top: 2rem;
+      background: #fff;
       padding: 1rem;
-      background: #f8f9fa;
       border-radius: 8px;
-      border-left: 4px solid #3498db;
-    }
-    .loading {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
-      font-style: italic;
-    }
-    .error {
-      background: #ffebee;
-      color: #c62828;
-      padding: 1rem;
-      border-radius: 4px;
-      border-left: 4px solid #f44336;
-      margin: 1rem 0;
-    }
-    .success {
-      background: #e8f5e8;
-      color: #2e7d32;
-      padding: 0.5rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-<div class="container">
-  <h1 id="material-title">Material: </h1>
+  <h1 id="material-title">Material Viewer</h1>
 
-  <div class="structure section">
+  <div class="section">
     <h2>🧊 Crystal Structure</h2>
-    <div id="structureStatus" class="loading">Loading crystal structure...</div>
+    <div id="structureStatus" class="loading">Loading structure...</div>
 
     <div class="viewer-controls">
-      <button id="zoom-in-btn">🔍 Zoom In</button>
-      <button id="zoom-out-btn">🔎 Zoom Out</button>
-      <button id="home-btn">🏠 Reset View</button>
-      <button id="toggle-labels-btn">🔤 Toggle Atom Labels</button>
+      <label><input type="checkbox" id="bonds-toggle" checked /> Bonds</label>
+      <label><input type="checkbox" id="packed-toggle" /> Packed cell</label>
+      <label><input type="checkbox" id="vdw-toggle" /> vdw radius</label>
+
+      <div style="margin-top: 10px;">
+        Supercell: 
+        <select id="scell-x"><option>1</option><option>2</option><option selected>3</option><option>4</option></select> ×
+        <select id="scell-y"><option>1</option><option>2</option><option selected>3</option><option>4</option></select> ×
+        <select id="scell-z"><option>1</option><option selected>1</option><option>2</option></select>
+      </div>
+
+      <div style="margin-top: 10px;">
+        Camera: 
+        <button id="view-x">X</button>
+        <button id="view-y">Y</button>
+        <button id="view-z">Z</button>
+        <button id="home-btn">🏠 Reset</button>
+      </div>
+
+      <div style="margin-top: 10px;">
+        <label><input type="checkbox" id="labels-toggle" /> Atom labels</label>
+      </div>
     </div>
 
     <div id="viewer"></div>
   </div>
 
-  <div class="section">
-    <h2>🧮 Structural Details</h2>
-    <div id="structuralStatus" class="loading">Loading structural data...</div>
-    <table class="info-table" id="latticeTable" style="display:none;">
-      <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
-      <tbody></tbody>
-    </table>
-    <table class="info-table" id="atomTable" style="display:none;">
-      <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
-  <div class="phonon section">
-    <h2>🎵 Phonon Band Structure</h2>
-    <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
-    <div id="phononPlot"></div>
-  </div>
-</div>
-
 <script>
 let viewer = null;
-let labelsVisible = false;
+let baseModel = null;
 let atomLabels = [];
+let labelsVisible = false;
+let currentBonds = true;
+let useVDW = false;
+let supercell = [3, 3, 1];
 
+// Load and parse CIF data
 function load3DStructure() {
   viewer = $3Dmol.createViewer('viewer', {
-    defaultcolors: $3Dmol.rasmolElementColors,
     backgroundColor: "white"
   });
 
   fetch("POSCAR.cif")
     .then(res => res.text())
     .then(cifData => {
-      viewer.addModel(cifData, "cif");
-      viewer.replicateUnitCell(3, 3, 1);
-      viewer.setStyle({}, {
-        stick: { radius: 0.15 },
-        sphere: { scale: 0.35 }
-      });
-      viewer.addUnitCell();
-      viewer.zoomTo();
-      viewer.render();
+      baseModel = $3Dmol.GLModel.parseMolData(cifData, "cif");
+      renderStructure();
       document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded with bonds and atoms. Labels toggleable.</div>`;
+        `<div class="success">✓ Structure loaded. Customize with the controls below.</div>`;
     })
     .catch(err => {
       document.getElementById("structureStatus").innerHTML =
-        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
+        `<div class="error">Error loading CIF: ${err.message}</div>`;
     });
 }
 
-function loadStructuralData() {
-  fetch("POSCAR")
-    .then(res => res.text())
-    .then(text => {
-      const lines = text.trim().split("\n");
-      const scale = parseFloat(lines[1]);
-      const lattice = lines.slice(2, 5).map(l =>
-        l.trim().split(/\s+/).map(n => parseFloat(n) * scale)
-      );
-      const elements = lines[5].trim().split(/\s+/);
-      const counts = lines[6].trim().split(/\s+/).map(Number);
-      const positions = lines.slice(8, 8 + counts.reduce((a, b) => a + b, 0))
-        .map(l => l.trim().split(/\s+/).slice(0, 3).map(Number));
+// Render with current settings
+function renderStructure() {
+  if (!viewer || !baseModel) return;
 
-      const lt = document.querySelector("#latticeTable tbody");
-      lt.innerHTML = '';
-      lattice.forEach((vec, i) => {
-        lt.innerHTML += `<tr><td><strong>a${i + 1}</strong></td>
-          <td>${vec[0].toFixed(4)}</td><td>${vec[1].toFixed(4)}</td><td>${vec[2].toFixed(4)}</td></tr>`;
+  viewer.clear();
+  const model = viewer.addModel(baseModel.clone(), "cif");
+  model.replicateUnitCell(supercell[0], supercell[1], supercell[2]);
+
+  model.setStyle({}, {
+    stick: currentBonds ? { radius: 0.15 } : {},
+    sphere: useVDW ? { scale: 1.0 } : { scale: 0.35 }
+  });
+
+  viewer.addUnitCell();
+
+  // Remove old labels
+  atomLabels.forEach(label => viewer.removeLabel(label));
+  atomLabels = [];
+
+  // Add new labels if requested
+  if (labelsVisible) {
+    const atoms = viewer.selectedAtoms();
+    atoms.forEach(atom => {
+      const label = viewer.addLabel(atom.elem, {
+        position: { x: atom.x, y: atom.y, z: atom.z + 0.5 },
+        fontSize: 14,
+        fontColor: "black",
+        showBackground: false
       });
-
-      const at = document.querySelector("#atomTable tbody");
-      at.innerHTML = '';
-      let idx = 0;
-      elements.forEach((el, i) => {
-        for (let j = 0; j < counts[i]; j++) {
-          const pos = positions[idx++];
-          at.innerHTML += `<tr><td><strong>${el}</strong></td>
-            <td>${pos[0].toFixed(6)}</td><td>${pos[1].toFixed(6)}</td><td>${pos[2].toFixed(6)}</td></tr>`;
-        }
-      });
-
-      document.getElementById("latticeTable").style.display = "table";
-      document.getElementById("atomTable").style.display = "table";
-      document.getElementById("structuralStatus").innerHTML =
-        `<div class="success">✓ Structural data loaded from POSCAR</div>`;
-    })
-    .catch(err => {
-      document.getElementById("structuralStatus").innerHTML =
-        `<div class="error">Error loading POSCAR: ${err.message}</div>`;
+      atomLabels.push(label);
     });
-}
+  }
 
-function loadPhononData() {
-  fetch("data/band.yaml")
-    .then(r => r.text())
-    .then(yamlText => {
-      const data = jsyaml.load(yamlText);
-      const phonon = data.phonon;
-      const numBands = phonon[0].band.length;
-      const traces = [];
-
-      for (let i = 0; i < numBands; i++) {
-        traces.push({
-          x: phonon.map(p => p.distance),
-          y: phonon.map(p => p.band[i].frequency),
-          mode: 'lines',
-          line: { width: 2 },
-          showlegend: false
-        });
-      }
-
-      const rawLabels = data.labels ? data.labels.flat() : [];
-      const labels = [rawLabels[0]];
-      for (let i = 1; i < rawLabels.length; i++) {
-        if (rawLabels[i] !== rawLabels[i - 1]) {
-          labels.push(rawLabels[i]);
-        }
-      }
-
-      const segmentNq = data.segment_nqpoint || [];
-      const labelPositions = [];
-      let index = 0;
-      for (let i = 0; i < segmentNq.length; i++) {
-        labelPositions.push(phonon[index].distance);
-        index += segmentNq[i];
-      }
-      labelPositions.push(phonon[phonon.length - 1].distance);
-
-      const layout = {
-        title: 'Phonon Band Structure',
-        xaxis: {
-          title: 'Wave Vector',
-          tickvals: labelPositions,
-          ticktext: labels,
-          showgrid: true
-        },
-        yaxis: {
-          title: 'Frequency (THz)',
-          zeroline: true,
-          showgrid: true
-        },
-        plot_bgcolor: 'white',
-        paper_bgcolor: 'white',
-        margin: { l: 60, r: 30, t: 50, b: 60 }
-      };
-
-      Plotly.newPlot('phononPlot', traces, layout);
-      document.getElementById("phononStatus").innerHTML =
-        `<div class="success">✓ Phonon dispersion loaded from band.yaml</div>`;
-    })
-    .catch(err => {
-      document.getElementById("phononStatus").innerHTML =
-        `<div class="error">Error loading band.yaml: ${err.message}</div>`;
-    });
+  viewer.zoomTo();
+  viewer.render();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   load3DStructure();
-  loadStructuralData();
-  loadPhononData();
 
-  document.getElementById('zoom-in-btn').addEventListener('click', () => {
-    if (viewer) viewer.zoom(1.2);
+  document.getElementById('bonds-toggle').addEventListener('change', e => {
+    currentBonds = e.target.checked;
+    renderStructure();
   });
 
-  document.getElementById('zoom-out-btn').addEventListener('click', () => {
-    if (viewer) viewer.zoom(0.8);
+  document.getElementById('packed-toggle').addEventListener('change', e => {
+    useVDW = e.target.checked;
+    renderStructure();
+  });
+
+  document.getElementById('labels-toggle').addEventListener('change', e => {
+    labelsVisible = e.target.checked;
+    renderStructure();
+  });
+
+  ['scell-x', 'scell-y', 'scell-z'].forEach((id, i) => {
+    document.getElementById(id).addEventListener('change', () => {
+      supercell[i] = parseInt(document.getElementById(id).value);
+      renderStructure();
+    });
   });
 
   document.getElementById('home-btn').addEventListener('click', () => {
-    if (viewer) viewer.zoomTo();
-  });
-
-  document.getElementById('toggle-labels-btn').addEventListener('click', () => {
-    if (!viewer) return;
-
-    if (!labelsVisible) {
-      const atoms = viewer.selectedAtoms();
-      atoms.forEach(atom => {
-        const label = viewer.addLabel(atom.elem, {
-          position: {
-            x: atom.x,
-            y: atom.y,
-            z: atom.z + 0.5
-          },
-          fontSize: 14,
-          fontColor: "black",
-          showBackground: false
-        });
-        atomLabels.push(label);
-      });
-      labelsVisible = true;
-    } else {
-      atomLabels.forEach(label => viewer.removeLabel(label));
-      atomLabels = [];
-      labelsVisible = false;
-    }
+    viewer.zoomTo();
     viewer.render();
   });
-});
-</script>
 
-<script>
+  document.getElementById('view-x').addEventListener('click', () => {
+    viewer.setViewStyle({ projection: "orthographic" });
+    viewer.rotate(0, 90);
+    viewer.render();
+  });
+
+  document.getElementById('view-y').addEventListener('click', () => {
+    viewer.setViewStyle({ projection: "orthographic" });
+    viewer.rotate(90, 0);
+    viewer.render();
+  });
+
+  document.getElementById('view-z').addEventListener('click', () => {
+    viewer.setViewStyle({ projection: "orthographic" });
+    viewer.rotate(0, 0);
+    viewer.render();
+  });
+
+  // Set dynamic material name (optional)
   const pathParts = window.location.pathname.split('/');
   const folderName = pathParts[pathParts.length - 2] || "Unknown";
-  function formatFormula(formula) {
-    return formula.replace(/(\d+)/g, '<sub>$1</sub>');
-  }
   document.getElementById("material-title").innerHTML =
-    `Material: ${formatFormula(folderName)} (MAXene)`;
+    `Material: ${folderName}`;
+});
 </script>
 </body>
 </html>
