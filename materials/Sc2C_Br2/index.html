@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MAXene Material Viewer</title>
+  <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 8px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #3498db, #2c3e50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .structure, .phonon {
+      margin-top: 2rem;
+    }
+    #viewer {
+    width: 100%;
+    height: 450px;
+    display: block;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    }
+    .viewer-controls {
+    text-align: center;
+    margin-bottom: 12px;
+    }
+    .viewer-controls button, #custom-controls button {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.2s ease-in-out;
+    }
+    #custom-controls button {
+        padding: 6px 12px;
+    }
+    .viewer-controls button:hover, #custom-controls button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .viewer-controls button:active, #custom-controls button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    #phononPlot {
+      width: 100%;
+      height: 450px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .info-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .info-table th, .info-table td {
+      border: none;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .info-table th {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      font-weight: 600;
+    }
+    .info-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    .info-table tr:hover {
+      background-color: #e3f2fd;
+    }
+    .section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      font-style: italic;
+    }
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 1rem;
+      border-radius: 4px;
+      border-left: 4px solid #f44336;
+      margin: 1rem 0;
+    }
+    .success {
+      background: #e8f5e8;
+      color: #2e7d32;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+ <h1 id="material-title">Material: </h1>
+
+  <div class="structure section">
+    <h2>🧊 Crystal Structure</h2>
+    <div id="structureStatus" class="loading">Loading crystal structure...</div>
+  
+    <div class="viewer-controls">
+      <button id="zoom-in-btn">🔍 Zoom In</button>
+      <button id="zoom-out-btn">🔎 Zoom Out</button>
+      <button id="home-btn">🏠 Reset View</button>
+    </div>
+    
+    <div id="viewer"></div>
+
+    <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
+        <span>
+            Supercell:
+            <input type="number" id="sc-x" value="3" min="1" style="width: 40px; text-align: center;">
+            <input type="number" id="sc-y" value="3" min="1" style="width: 40px; text-align: center;">
+            <input type="number" id="sc-z" value="1" min="1" style="width: 40px; text-align: center;">
+        </span>
+        <span>
+            Camera:
+            <button id="cam-x">x</button>
+            <button id="cam-y">y</button>
+            <button id="cam-z">z</button>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
+        </span>
+    </div>
+
+  </div>
+
+
+  <div class="section">
+    <h2>🧮 Structural Details</h2>
+    <div id="structuralStatus" class="loading">Loading structural data...</div>
+    <table class="info-table" id="latticeTable" style="display:none;">
+      <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <table class="info-table" id="atomTable" style="display:none;">
+      <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="phonon section">
+    <h2>🎵 Phonon Band Structure</h2>
+    <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
+    <div id="phononPlot"></div>
+  </div>
+</div>
+
+<script>
+let viewer = null;
+let cifData = null; 
+
+let viewerState = {
+    showBonds: true,
+    useVDW: false, 
+    showLabels: false,
+    supercell: [3, 3, 1]
+};
+
+function updateViewer() {
+    if (!viewer || !cifData) return;
+
+    viewer.clear();
+    viewer.addModel(cifData, "cif");
+    viewer.addUnitCell();
+
+    // **FIX FOR BONDS**: Define and set the style *before* replicating the cell.
+    // This ensures bonds are calculated and cloned correctly for the supercell.
+    let baseStyle = {};
+    if (viewerState.useVDW) {
+        baseStyle = { sphere: { colorscheme: 'Jmol' } };
+    } else {
+        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
+    }
+    
+    if (viewerState.showBonds) {
+        baseStyle.stick = { radius: 0.15 };
+    }
+    
+    viewer.setStyle({}, baseStyle);
+    
+    // Now, replicate the already-styled unit cell
+    viewer.replicateUnitCell(...viewerState.supercell);
+
+    // **FIX FOR LABELS**: Use the more stable `addLabel` (singular) function with a callback.
+    // To place the label "on top", a z-offset is used in the position property,
+    // which avoids the rendering crash caused by `inFront:true`.
+    if (viewerState.showLabels) {
+        viewer.addLabel(function (atom) {
+            return atom.elem;
+        }, {
+            fontColor: 'black',
+            fontSize: 18,
+            showBackground: false,
+            position: { x: 0, y: 0, z: 0.7 }
+        });
+    }
+    
+    viewer.render();
+}
+
+function load3DStructure() {
+  viewer = $3Dmol.createViewer('viewer', {
+    defaultcolors: $3Dmol.rasmolElementColors,
+    backgroundColor: "white" 
+  });
+
+  fetch("POSCAR.cif")
+    .then(res => res.text())
+    .then(data => {
+      cifData = data;
+      updateViewer();
+      viewer.zoomTo();
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="success">✓ Crystal structure loaded. Use the controls below to modify the view.</div>`;
+    })
+    .catch(err => {
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
+    });
+}
+
+function loadStructuralData() {
+  fetch("POSCAR")
+    .then(res => res.text())
+    .then(text => {
+      const lines = text.trim().split("\n");
+      const scale = parseFloat(lines[1]);
+      const lattice = lines.slice(2, 5).map(l =>
+        l.trim().split(/\s+/).map(n => parseFloat(n) * scale)
+      );
+      const elements = lines[5].trim().split(/\s+/);
+      const counts = lines[6].trim().split(/\s+/).map(Number);
+      const positions = lines.slice(8, 8 + counts.reduce((a, b) => a + b, 0))
+        .map(l => l.trim().split(/\s+/).slice(0, 3).map(Number));
+
+      const lt = document.querySelector("#latticeTable tbody");
+      lt.innerHTML = '';
+      lattice.forEach((vec, i) => {
+        lt.innerHTML += `<tr><td><strong>a${i + 1}</strong></td>
+          <td>${vec[0].toFixed(4)}</td><td>${vec[1].toFixed(4)}</td><td>${vec[2].toFixed(4)}</td></tr>`;
+      });
+
+      const at = document.querySelector("#atomTable tbody");
+      at.innerHTML = '';
+      let idx = 0;
+      elements.forEach((el, i) => {
+        for (let j = 0; j < counts[i]; j++) {
+          const pos = positions[idx++];
+          at.innerHTML += `<tr><td><strong>${el}</strong></td>
+            <td>${pos[0].toFixed(6)}</td><td>${pos[1].toFixed(6)}</td><td>${pos[2].toFixed(6)}</td></tr>`;
+        }
+      });
+
+      document.getElementById("latticeTable").style.display = "table";
+      document.getElementById("atomTable").style.display = "table";
+      document.getElementById("structuralStatus").innerHTML =
+        `<div class="success">✓ Structural data loaded from POSCAR</div>`;
+    })
+    .catch(err => {
+      document.getElementById("structuralStatus").innerHTML =
+        `<div class="error">Error loading POSCAR: ${err.message}</div>`;
+    });
+}
+
+function loadPhononData() {
+  fetch("data/band.yaml")
+    .then(r => r.text())
+    .then(yamlText => {
+      const data = jsyaml.load(yamlText);
+      const phonon = data.phonon;
+      const numBands = phonon[0].band.length;
+      const traces = [];
+
+      for (let i = 0; i < numBands; i++) {
+        traces.push({
+          x: phonon.map(p => p.distance),
+          y: phonon.map(p => p.band[i].frequency),
+          mode: 'lines',
+          line: { width: 2 },
+          showlegend: false,
+          name: `Mode ${i + 1}`
+        });
+      }
+      
+      const rawLabels = data.labels ? data.labels.flat() : [];
+      const labels = [rawLabels[0]];
+      for (let i = 1; i < rawLabels.length; i++) {
+        if (rawLabels[i] !== rawLabels[i - 1]) {
+          labels.push(rawLabels[i]);
+        }
+      }
+
+      const segmentNq = data.segment_nqpoint || [];
+      const labelPositions = [];
+      let index = 0;
+      for (let i = 0; i < segmentNq.length; i++) {
+        labelPositions.push(phonon[index].distance);
+        index += segmentNq[i];
+      }
+      labelPositions.push(phonon[phonon.length - 1].distance);
+
+      const layout = {
+        title: 'Phonon Band Structure',
+        xaxis: {
+          title: 'Wave Vector',
+          tickvals: labelPositions,
+          ticktext: labels,
+          showgrid: true
+        },
+        yaxis: {
+          title: 'Frequency (THz)',
+          zeroline: true,
+          showgrid: true
+        },
+        plot_bgcolor: 'white',
+        paper_bgcolor: 'white',
+        margin: { l: 60, r: 30, t: 50, b: 60 }
+      };
+
+      Plotly.newPlot('phononPlot', traces, layout);
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="success">✓ Phonon dispersion loaded from band.yaml</div>`;
+    })
+    .catch(err => {
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="error">Error loading band.yaml: ${err.message}</div>`;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  load3DStructure();
+  loadStructuralData();
+  loadPhononData();
+
+  document.getElementById('zoom-in-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoom(1.2);
+  });
+  document.getElementById('zoom-out-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoom(0.8);
+  });
+  document.getElementById('home-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoomTo();
+  });
+
+  const setCameraView = (direction) => {
+    if (viewer) {
+        viewer.center();
+        viewer.setView(direction);
+        viewer.render();
+    }
+  };
+  document.getElementById('cam-x').addEventListener('click', () => setCameraView([1, 0, 0]));
+  document.getElementById('cam-y').addEventListener('click', () => setCameraView([0, 1, 0]));
+  document.getElementById('cam-z').addEventListener('click', () => setCameraView([0, 0, 1]));
+
+  ['x', 'y', 'z'].forEach((axis, index) => {
+    document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        if (!isNaN(val) && val > 0) {
+            viewerState.supercell[index] = val;
+            updateViewer();
+        }
+    });
+  });
+
+  document.getElementById('cb-bonds').addEventListener('change', (e) => {
+    viewerState.showBonds = e.target.checked;
+    updateViewer();
+  });
+  
+  document.getElementById('cb-packed').addEventListener('change', (e) => {
+    viewerState.useVDW = e.target.checked;
+    updateViewer();
+  });
+
+  document.getElementById('cb-labels').addEventListener('change', (e) => {
+    viewerState.showLabels = e.target.checked;
+    updateViewer();
+  });
+});
+</script>
+
+<script>
+  const pathParts = window.location.pathname.split('/');
+  const folderName = pathParts[pathParts.length - 2] || "Unknown";
+
+  function formatFormula(formula) {
+    return formula.replace(/(\d+)/g, '<sub>$1</sub>');
+  }
+
+  document.getElementById("material-title").innerHTML =
+    `Material: ${formatFormula(folderName)} (MAXene)`;
+</script>
+
+</body>
+</html>
