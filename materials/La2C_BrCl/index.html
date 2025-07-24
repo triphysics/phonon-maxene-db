@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MAXene Material Viewer</title>
+  <title>MXene Material Viewer</title>
   <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
@@ -40,19 +40,19 @@
       margin-top: 2rem;
     }
     #viewer {
-      width: 100%;
-      height: 450px;
-      display: block;
-      border: 2px solid #3498db;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
+    width: 100%;
+    height: 450px;
+    display: block;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
     }
     .viewer-controls {
-      text-align: center;
-      margin-bottom: 12px;
+    text-align: center;
+    margin-bottom: 12px;
     }
-    .viewer-controls button {
+    .viewer-controls button, #custom-controls button {
       background: linear-gradient(45deg, #3498db, #2980b9);
       border: none;
       color: white;
@@ -65,11 +65,14 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: all 0.2s ease-in-out;
     }
-    .viewer-controls button:hover {
+    #custom-controls button {
+        padding: 6px 12px;
+    }
+    .viewer-controls button:hover, #custom-controls button:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
-    .viewer-controls button:active {
+    .viewer-controls button:active, #custom-controls button:active {
       transform: translateY(0);
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
@@ -136,21 +139,46 @@
 </head>
 <body>
 <div class="container">
-  <h1 id="material-title">Material: </h1>
+ <h1 id="material-title">Material: </h1>
 
   <div class="structure section">
     <h2>🧊 Crystal Structure</h2>
     <div id="structureStatus" class="loading">Loading crystal structure...</div>
-
+  
     <div class="viewer-controls">
       <button id="zoom-in-btn">🔍 Zoom In</button>
       <button id="zoom-out-btn">🔎 Zoom Out</button>
       <button id="home-btn">🏠 Reset View</button>
-      <button id="toggle-labels-btn">🔤 Toggle Atom Labels</button>
+    </div>
+    
+    <div id="viewer"></div>
+
+    <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
+        <span>
+            Supercell:
+            <input type="number" id="sc-x" value="3" min="1" style="width: 40px; text-align: center;">
+            <input type="number" id="sc-y" value="3" min="1" style="width: 40px; text-align: center;">
+            <input type="number" id="sc-z" value="1" min="1" style="width: 40px; text-align: center;">
+        </span>
+        <span>
+            Camera:
+            <button id="cam-x">x</button>
+            <button id="cam-y">y</button>
+            <button id="cam-z">z</button>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
+        </span>
+        <span style="display: inline-flex; align-items: center;">
+            <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
+        </span>
     </div>
 
-    <div id="viewer"></div>
   </div>
+
 
   <div class="section">
     <h2>🧮 Structural Details</h2>
@@ -174,29 +202,71 @@
 
 <script>
 let viewer = null;
-let labelsVisible = false;
-let atomLabels = [];
+let cifData = null; 
+
+let viewerState = {
+    showBonds: true,
+    useVDW: false, 
+    showLabels: false,
+    supercell: [3, 3, 1]
+};
+
+function updateViewer() {
+    if (!viewer || !cifData) return;
+
+    viewer.clear();
+    viewer.addModel(cifData, "cif");
+    viewer.addUnitCell();
+
+    // **FIX FOR BONDS**: Define and set the style *before* replicating the cell.
+    // This ensures bonds are calculated and cloned correctly for the supercell.
+    let baseStyle = {};
+    if (viewerState.useVDW) {
+        baseStyle = { sphere: { colorscheme: 'Jmol' } };
+    } else {
+        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
+    }
+    
+    if (viewerState.showBonds) {
+        baseStyle.stick = { radius: 0.15 };
+    }
+    
+    viewer.setStyle({}, baseStyle);
+    
+    // Now, replicate the already-styled unit cell
+    viewer.replicateUnitCell(...viewerState.supercell);
+
+    // **FIX FOR LABELS**: Use the more stable `addLabel` (singular) function with a callback.
+    // To place the label "on top", a z-offset is used in the position property,
+    // which avoids the rendering crash caused by `inFront:true`.
+    if (viewerState.showLabels) {
+        viewer.addLabel(function (atom) {
+            return atom.elem;
+        }, {
+            fontColor: 'black',
+            fontSize: 18,
+            showBackground: false,
+            position: { x: 0, y: 0, z: 0.7 }
+        });
+    }
+    
+    viewer.render();
+}
 
 function load3DStructure() {
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
-    backgroundColor: "white"
+    backgroundColor: "white" 
   });
 
   fetch("POSCAR.cif")
     .then(res => res.text())
-    .then(cifData => {
-      viewer.addModel(cifData, "cif");
-      viewer.replicateUnitCell(3, 3, 1);
-      viewer.setStyle({}, {
-        stick: { radius: 0.15 },
-        sphere: { scale: 0.35 }
-      });
-      viewer.addUnitCell();
+    .then(data => {
+      cifData = data;
+      updateViewer();
       viewer.zoomTo();
-      viewer.render();
       document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded with bonds and atoms. Labels toggleable.</div>`;
+        `<div class="success">✓ Crystal structure loaded. Use the controls below to modify the view.</div>`;
     })
     .catch(err => {
       document.getElementById("structureStatus").innerHTML =
@@ -262,10 +332,11 @@ function loadPhononData() {
           y: phonon.map(p => p.band[i].frequency),
           mode: 'lines',
           line: { width: 2 },
-          showlegend: false
+          showlegend: false,
+          name: `Mode ${i + 1}`
         });
       }
-
+      
       const rawLabels = data.labels ? data.labels.flat() : [];
       const labels = [rawLabels[0]];
       for (let i = 1; i < rawLabels.length; i++) {
@@ -319,40 +390,47 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('zoom-in-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(1.2);
   });
-
   document.getElementById('zoom-out-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(0.8);
   });
-
   document.getElementById('home-btn').addEventListener('click', () => {
     if (viewer) viewer.zoomTo();
   });
 
-  document.getElementById('toggle-labels-btn').addEventListener('click', () => {
-    if (!viewer) return;
-
-    if (!labelsVisible) {
-      const atoms = viewer.selectedAtoms();
-      atoms.forEach(atom => {
-        const label = viewer.addLabel(atom.elem, {
-          position: {
-            x: atom.x,
-            y: atom.y,
-            z: atom.z + 0.5
-          },
-          fontSize: 14,
-          fontColor: "black",
-          showBackground: false
-        });
-        atomLabels.push(label);
-      });
-      labelsVisible = true;
-    } else {
-      atomLabels.forEach(label => viewer.removeLabel(label));
-      atomLabels = [];
-      labelsVisible = false;
+  const setCameraView = (direction) => {
+    if (viewer) {
+        viewer.center();
+        viewer.setView(direction);
+        viewer.render();
     }
-    viewer.render();
+  };
+  document.getElementById('cam-x').addEventListener('click', () => setCameraView([1, 0, 0]));
+  document.getElementById('cam-y').addEventListener('click', () => setCameraView([0, 1, 0]));
+  document.getElementById('cam-z').addEventListener('click', () => setCameraView([0, 0, 1]));
+
+  ['x', 'y', 'z'].forEach((axis, index) => {
+    document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        if (!isNaN(val) && val > 0) {
+            viewerState.supercell[index] = val;
+            updateViewer();
+        }
+    });
+  });
+
+  document.getElementById('cb-bonds').addEventListener('change', (e) => {
+    viewerState.showBonds = e.target.checked;
+    updateViewer();
+  });
+  
+  document.getElementById('cb-packed').addEventListener('change', (e) => {
+    viewerState.useVDW = e.target.checked;
+    updateViewer();
+  });
+
+  document.getElementById('cb-labels').addEventListener('change', (e) => {
+    viewerState.showLabels = e.target.checked;
+    updateViewer();
   });
 });
 </script>
@@ -360,11 +438,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
   const pathParts = window.location.pathname.split('/');
   const folderName = pathParts[pathParts.length - 2] || "Unknown";
+
   function formatFormula(formula) {
     return formula.replace(/(\d+)/g, '<sub>$1</sub>');
   }
+
   document.getElementById("material-title").innerHTML =
-    `Material: ${formatFormula(folderName)} (MAXene)`;
+    `Material: ${formatFormula(folderName)}`;
 </script>
+
 </body>
 </html>
