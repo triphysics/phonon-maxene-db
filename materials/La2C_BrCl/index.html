@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>MAXene Material Viewer</title>
   <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <style>
     body {
       font-family: sans-serif;
@@ -17,7 +19,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .viewer-controls {
+    .viewer-controls, .section {
       background: white;
       padding: 1rem;
       border-radius: 8px;
@@ -31,31 +33,28 @@
       border-radius: 10px;
       margin-top: 1rem;
     }
-    label {
-      margin-right: 10px;
-    }
-    select, button, input[type="checkbox"] {
-      margin-right: 5px;
-    }
-    .section {
-      background: #fff;
-      padding: 1rem;
+    #phononPlot {
+      width: 100%;
+      height: 450px;
       border-radius: 8px;
-      margin-top: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    label, select, button {
+      margin-right: 10px;
     }
   </style>
 </head>
 <body>
   <h1 id="material-title">Material Viewer</h1>
 
+  <!-- Structure Viewer -->
   <div class="section">
     <h2>🧊 Crystal Structure</h2>
-    <div id="structureStatus" class="loading">Loading structure...</div>
+    <div id="structureStatus">Loading structure...</div>
 
     <div class="viewer-controls">
       <label><input type="checkbox" id="bonds-toggle" checked /> Bonds</label>
       <label><input type="checkbox" id="packed-toggle" /> Packed cell</label>
-      <label><input type="checkbox" id="vdw-toggle" /> vdw radius</label>
 
       <div style="margin-top: 10px;">
         Supercell: 
@@ -80,41 +79,27 @@
     <div id="viewer"></div>
   </div>
 
+  <!-- Phonon Band Structure -->
+  <div class="section">
+    <h2>🎵 Phonon Band Structure</h2>
+    <div id="phononStatus">Loading phonon dispersion...</div>
+    <div id="phononPlot"></div>
+  </div>
+
 <script>
 let viewer = null;
-let baseModel = null;
+let rawCifData = "";
 let atomLabels = [];
 let labelsVisible = false;
 let currentBonds = true;
 let useVDW = false;
 let supercell = [3, 3, 1];
 
-// Load and parse CIF data
-function load3DStructure() {
-  viewer = $3Dmol.createViewer('viewer', {
-    backgroundColor: "white"
-  });
-
-  fetch("POSCAR.cif")
-    .then(res => res.text())
-    .then(cifData => {
-      baseModel = $3Dmol.GLModel.parseMolData(cifData, "cif");
-      renderStructure();
-      document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Structure loaded. Customize with the controls below.</div>`;
-    })
-    .catch(err => {
-      document.getElementById("structureStatus").innerHTML =
-        `<div class="error">Error loading CIF: ${err.message}</div>`;
-    });
-}
-
-// Render with current settings
 function renderStructure() {
-  if (!viewer || !baseModel) return;
+  if (!viewer || !rawCifData) return;
 
   viewer.clear();
-  const model = viewer.addModel(baseModel.clone(), "cif");
+  const model = viewer.addModel(rawCifData, "cif");
   model.replicateUnitCell(supercell[0], supercell[1], supercell[2]);
 
   model.setStyle({}, {
@@ -124,11 +109,9 @@ function renderStructure() {
 
   viewer.addUnitCell();
 
-  // Remove old labels
   atomLabels.forEach(label => viewer.removeLabel(label));
   atomLabels = [];
 
-  // Add new labels if requested
   if (labelsVisible) {
     const atoms = viewer.selectedAtoms();
     atoms.forEach(atom => {
@@ -146,8 +129,93 @@ function renderStructure() {
   viewer.render();
 }
 
+function load3DStructure() {
+  viewer = $3Dmol.createViewer('viewer', {
+    backgroundColor: "white"
+  });
+
+  fetch("POSCAR.cif")
+    .then(res => res.text())
+    .then(cifData => {
+      rawCifData = cifData;
+      renderStructure();
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="success">✓ Structure loaded</div>`;
+    })
+    .catch(err => {
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="error">Error loading CIF: ${err.message}</div>`;
+    });
+}
+
+function loadPhononData() {
+  fetch("data/band.yaml")
+    .then(r => r.text())
+    .then(yamlText => {
+      const data = jsyaml.load(yamlText);
+      const phonon = data.phonon;
+      const numBands = phonon[0].band.length;
+      const traces = [];
+
+      for (let i = 0; i < numBands; i++) {
+        traces.push({
+          x: phonon.map(p => p.distance),
+          y: phonon.map(p => p.band[i].frequency),
+          mode: 'lines',
+          line: { width: 2 },
+          showlegend: false,
+          name: `Mode ${i + 1}`
+        });
+      }
+
+      const rawLabels = data.labels ? data.labels.flat() : [];
+      const labels = [rawLabels[0]];
+      for (let i = 1; i < rawLabels.length; i++) {
+        if (rawLabels[i] !== rawLabels[i - 1]) {
+          labels.push(rawLabels[i]);
+        }
+      }
+
+      const segmentNq = data.segment_nqpoint || [];
+      const labelPositions = [];
+      let index = 0;
+      for (let i = 0; i < segmentNq.length; i++) {
+        labelPositions.push(phonon[index].distance);
+        index += segmentNq[i];
+      }
+      labelPositions.push(phonon[phonon.length - 1].distance);
+
+      const layout = {
+        title: 'Phonon Dispersion',
+        xaxis: {
+          title: 'Wave Vector',
+          tickvals: labelPositions,
+          ticktext: labels,
+          showgrid: true
+        },
+        yaxis: {
+          title: 'Frequency (THz)',
+          zeroline: true,
+          showgrid: true
+        },
+        plot_bgcolor: 'white',
+        paper_bgcolor: 'white',
+        margin: { l: 60, r: 30, t: 50, b: 60 }
+      };
+
+      Plotly.newPlot('phononPlot', traces, layout);
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="success">✓ Phonon data loaded</div>`;
+    })
+    .catch(err => {
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="error">Error loading band.yaml: ${err.message}</div>`;
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   load3DStructure();
+  loadPhononData();
 
   document.getElementById('bonds-toggle').addEventListener('change', e => {
     currentBonds = e.target.checked;
@@ -177,24 +245,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('view-x').addEventListener('click', () => {
-    viewer.setViewStyle({ projection: "orthographic" });
-    viewer.rotate(0, 90);
+    viewer.rotate(0, 0);
+    viewer.zoomTo();
     viewer.render();
   });
 
   document.getElementById('view-y').addEventListener('click', () => {
-    viewer.setViewStyle({ projection: "orthographic" });
-    viewer.rotate(90, 0);
+    viewer.rotate(0, 90);
+    viewer.zoomTo();
     viewer.render();
   });
 
   document.getElementById('view-z').addEventListener('click', () => {
-    viewer.setViewStyle({ projection: "orthographic" });
-    viewer.rotate(0, 0);
+    viewer.rotate(90, 0);
+    viewer.zoomTo();
     viewer.render();
   });
 
-  // Set dynamic material name (optional)
   const pathParts = window.location.pathname.split('/');
   const folderName = pathParts[pathParts.length - 2] || "Unknown";
   document.getElementById("material-title").innerHTML =
@@ -203,3 +270,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
