@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
   <style>
     body {
       font-family: sans-serif;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem;
     }
@@ -29,6 +28,30 @@
     a:hover {
       text-decoration: underline;
     }
+    .ptable {
+      display: grid;
+      grid-template-columns: repeat(18, 40px);
+      gap: 4px;
+      margin-top: 1rem;
+    }
+    .element {
+      text-align: center;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+    }
+    .element.selected {
+      background-color: orange;
+      color: white;
+    }
+    .hidden {
+      display: none;
+    }
+    .mode-switch {
+      margin: 1rem 0;
+    }
   </style>
 </head>
 <body>
@@ -39,7 +62,17 @@
 
   <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides. They are derived from their bulk MAX phases. MXenes are known for their unique combination of metallic conductivity, tunable surface chemistry, and layered structure. They are of great interest for applications in energy storage, sensors, electronics, and beyond. This database gives the crystal structure and phonon dispersion of selected MXenes.</p>
   <p>Select a material to view its structure and phonon properties:</p>
-  <ul>
+
+  <div class="mode-switch">
+    <strong>Elements filtering mode:</strong><br>
+    <label><input type="radio" name="mode" value="include" checked> Include/exclude</label>
+    <label><input type="radio" name="mode" value="only"> Only selected</label>
+  </div>
+
+  <div class="ptable" id="ptable"></div>
+
+  <ul id="material-list">
+    <!-- Original list -->
     <li><a href="materials/La2C_Br2/index.html">La2C_Br2</a></li>
     <li><a href="materials/La2C_BrF/index.html">La2C_BrF</a></li>
     <li><a href="materials/La2C_Cl2/index.html">La2C_Cl2</a></li>
@@ -82,7 +115,42 @@
     <li><a href="materials/Y2C_FH/index.html">Y2C_FH</a></li>
     <li><a href="materials/Y2C_H2/index.html">Y2C_H2</a></li>
     <li><a href="materials/Y2C_O2/index.html">Y2C_O2</a></li>
-
   </ul>
+
+  <script>
+    const periodicElements = ["H", "Li", "Be", "B", "C", "N", "O", "F", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe"];
+    const ptable = document.getElementById("ptable");
+
+    periodicElements.forEach(el => {
+      const div = document.createElement("div");
+      div.textContent = el;
+      div.className = "element";
+      div.addEventListener("click", () => {
+        div.classList.toggle("selected");
+        filterMaterials();
+      });
+      ptable.appendChild(div);
+    });
+
+    function filterMaterials() {
+      const mode = document.querySelector("input[name='mode']:checked").value;
+      const selected = [...document.querySelectorAll(".element.selected")].map(el => el.textContent);
+      const materials = document.querySelectorAll("#material-list li");
+
+      materials.forEach(li => {
+        const name = li.textContent;
+        const contains = selected.every(el => name.includes(el));
+        const exact = selected.length > 0 && selected.every(el => name.includes(el)) && name.replace(/[^A-Z]/gi, "").split('').every(e => selected.includes(e));
+        if (selected.length === 0) {
+          li.classList.remove("hidden");
+        } else if (mode === "include") {
+          li.classList.toggle("hidden", !contains);
+        } else if (mode === "only") {
+          li.classList.toggle("hidden", !exact);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
+
