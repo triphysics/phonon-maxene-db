@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,43 +7,27 @@
   <style>
     body {
       font-family: sans-serif;
-      max-width: 1100px;
+      max-width: 800px;
       margin: auto;
       padding: 2rem;
     }
     h1 {
       color: #2c3e50;
     }
-    .ptable {
-      display: grid;
-      grid-template-columns: repeat(18, 50px);
-      gap: 4px;
-      margin-top: 1rem;
-      font-size: 0.75rem;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
-    .element {
-      text-align: center;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: #f0f0f0;
+    li {
+      margin: 0.5em 0;
+      font-size: 1.1em;
     }
-    .element.selected {
-      background-color: orange;
-      color: white;
+    a {
+      text-decoration: none;
+      color: #3498db;
     }
-    .hidden {
-      display: none;
-    }
-    #search {
-      margin: 1rem 0;
-      padding: 0.5rem;
-      width: 300px;
-      font-size: 1rem;
-    }
-    .mode-switch {
-      margin: 1rem 0;
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -52,94 +37,52 @@
     <h1 style="margin: 0;">MXene Phonon Database</h1>
   </div>
 
+  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides. They are derived from their bulk MAX phases. MXenes are known for their unique combination of metallic conductivity, tunable surface chemistry, and layered structure. They are of great interest for applications in energy storage, sensors, electronics, and beyond. This database gives the crystal structure and phonon dispersion of selected MXenes.</p>
   <p>Select a material to view its structure and phonon properties:</p>
-
-  <div class="mode-switch">
-    <strong>Filter Mode:</strong><br>
-    <label><input type="radio" name="mode" value="include" checked> Include elements</label>
-    <label><input type="radio" name="mode" value="only"> Only these elements</label>
-  </div>
-
-  <input type="text" id="search" placeholder="Search materials or enter formula...">
-
-  <div class="ptable" id="ptable"></div>
-
-  <ul id="material-list">
-    <!-- MATERIALS HERE -->
+  <ul>
+    <li><a href="materials/La2C_Br2/index.html">La2C_Br2</a></li>
     <li><a href="materials/La2C_BrF/index.html">La2C_BrF</a></li>
+    <li><a href="materials/La2C_Cl2/index.html">La2C_Cl2</a></li>
+    <li><a href="materials/La2C_ClH/index.html">La2C_ClH</a></li>
+    <li><a href="materials/La2C_F2/index.html">La2C_F2</a></li>
+    <li><a href="materials/La2C_FO/index.html">La2C_FO</a></li>
+    <li><a href="materials/La2C_HO/index.html">La2C_HO</a></li>
+    <li><a href="materials/La2C_BrCl/index.html">La2C_BrCl</a></li>
+    <li><a href="materials/La2C_BrH/index.html">La2C_BrH</a></li>
+    <li><a href="materials/La2C_ClF/index.html">La2C_ClF</a></li>
+    <li><a href="materials/La2C_ClO/index.html">La2C_ClO</a></li>
+    <li><a href="materials/La2C_FH/index.html">La2C_FH</a></li>
+    <li><a href="materials/La2C_H2/index.html">La2C_H2</a></li>
+    <li><a href="materials/La2C_O2/index.html">La2C_O2</a></li>
+    <li><a href="materials/Sc2C_Br2/index.html">Sc2C_Br2</a></li>
+    <li><a href="materials/Sc2C_BrF/index.html">Sc2C_BrF</a></li>
+    <li><a href="materials/Sc2C_Cl2/index.html">Sc2C_Cl2</a></li>
+    <li><a href="materials/Sc2C_ClH/index.html">Sc2C_ClH</a></li>
+    <li><a href="materials/Sc2C_F2/index.html">Sc2C_F2</a></li>
+    <li><a href="materials/Sc2C_FO/index.html">Sc2C_FO</a></li>
+    <li><a href="materials/Sc2C_HO/index.html">Sc2C_HO</a></li>
+    <li><a href="materials/Sc2C_BrCl/index.html">Sc2C_BrCl</a></li>
+    <li><a href="materials/Sc2C_BrH/index.html">Sc2C_BrH</a></li>
+    <li><a href="materials/Sc2C_ClF/index.html">Sc2C_ClF</a></li>
     <li><a href="materials/Sc2C_ClO/index.html">Sc2C_ClO</a></li>
+    <li><a href="materials/Sc2C_FH/index.html">Sc2C_FH</a></li>
+    <li><a href="materials/Sc2C_H2/index.html">Sc2C_H2</a></li>
+    <li><a href="materials/Sc2C_O2/index.html">Sc2C_O2</a></li>
+    <li><a href="materials/Y2C_Br2/index.html">Y2C_Br2</a></li>
+    <li><a href="materials/Y2C_BrF/index.html">Y2C_BrF</a></li>
+    <li><a href="materials/Y2C_Cl2/index.html">Y2C_Cl2</a></li>
+    <li><a href="materials/Y2C_ClH/index.html">Y2C_ClH</a></li>
     <li><a href="materials/Y2C_F2/index.html">Y2C_F2</a></li>
-    <!-- Add more -->
+    <li><a href="materials/Y2C_FO/index.html">Y2C_FO</a></li>
+    <li><a href="materials/Y2C_HO/index.html">Y2C_HO</a></li>
+    <li><a href="materials/Y2C_BrCl/index.html">Y2C_BrCl</a></li>
+    <li><a href="materials/Y2C_BrH/index.html">Y2C_BrH</a></li>
+    <li><a href="materials/Y2C_ClF/index.html">Y2C_ClF</a></li>
+    <li><a href="materials/Y2C_ClO/index.html">Y2C_ClO</a></li>
+    <li><a href="materials/Y2C_FH/index.html">Y2C_FH</a></li>
+    <li><a href="materials/Y2C_H2/index.html">Y2C_H2</a></li>
+    <li><a href="materials/Y2C_O2/index.html">Y2C_O2</a></li>
+
   </ul>
-
-  <script>
-    const periodicData = [
-      { num: 1, sym: 'H' }, { num: 2, sym: 'He' }, { num: 3, sym: 'Li' }, { num: 4, sym: 'Be' },
-      { num: 5, sym: 'B' }, { num: 6, sym: 'C' }, { num: 7, sym: 'N' }, { num: 8, sym: 'O' },
-      { num: 9, sym: 'F' }, { num: 10, sym: 'Ne' }, { num: 11, sym: 'Na' }, { num: 12, sym: 'Mg' },
-      { num: 13, sym: 'Al' }, { num: 14, sym: 'Si' }, { num: 15, sym: 'P' }, { num: 16, sym: 'S' },
-      { num: 17, sym: 'Cl' }, { num: 18, sym: 'Ar' }, { num: 19, sym: 'K' }, { num: 20, sym: 'Ca' },
-      { num: 21, sym: 'Sc' }, { num: 22, sym: 'Ti' }, { num: 23, sym: 'V' }, { num: 24, sym: 'Cr' },
-      { num: 25, sym: 'Mn' }, { num: 26, sym: 'Fe' }, { num: 27, sym: 'Co' }, { num: 28, sym: 'Ni' },
-      { num: 29, sym: 'Cu' }, { num: 30, sym: 'Zn' }, { num: 31, sym: 'Ga' }, { num: 32, sym: 'Ge' },
-      { num: 33, sym: 'As' }, { num: 34, sym: 'Se' }, { num: 35, sym: 'Br' }, { num: 36, sym: 'Kr' },
-      { num: 37, sym: 'Rb' }, { num: 38, sym: 'Sr' }, { num: 39, sym: 'Y' }, { num: 40, sym: 'Zr' },
-      { num: 41, sym: 'Nb' }, { num: 42, sym: 'Mo' }, { num: 43, sym: 'Tc' }, { num: 44, sym: 'Ru' },
-      { num: 45, sym: 'Rh' }, { num: 46, sym: 'Pd' }, { num: 47, sym: 'Ag' }, { num: 48, sym: 'Cd' },
-      { num: 49, sym: 'In' }, { num: 50, sym: 'Sn' }, { num: 51, sym: 'Sb' }, { num: 52, sym: 'Te' },
-      { num: 53, sym: 'I' }, { num: 54, sym: 'Xe' },
-    ];
-
-    const ptable = document.getElementById("ptable");
-    periodicData.forEach(e => {
-      const d = document.createElement("div");
-      d.className = "element";
-      d.innerHTML = `<strong>${e.sym}</strong><br><span style='font-size:0.6em;'>${e.num}</span>`;
-      d.dataset.sym = e.sym;
-      d.onclick = () => {
-        d.classList.toggle("selected");
-        filterMaterials();
-      };
-      ptable.appendChild(d);
-    });
-
-    function parseFormula(str) {
-      const matches = str.match(/[A-Z][a-z]?/g);
-      return matches ? Array.from(new Set(matches)) : [];
-    }
-
-    function filterMaterials() {
-      const selected = [...document.querySelectorAll(".element.selected")].map(e => e.dataset.sym);
-      const mode = document.querySelector("input[name='mode']:checked").value;
-      const items = document.querySelectorAll("#material-list li");
-      items.forEach(li => {
-        const name = li.textContent;
-        const els = parseFormula(name);
-        const include = selected.every(s => els.includes(s));
-        const only = selected.length === els.length && include;
-        li.classList.toggle("hidden", mode === 'include' ? !include : !only);
-      });
-    }
-
-    document.getElementById("search").addEventListener("input", e => {
-      const val = e.target.value.trim();
-      const lis = document.querySelectorAll("#material-list li");
-      if (val === '') {
-        lis.forEach(li => li.classList.remove("hidden"));
-        return filterMaterials();
-      }
-      if (/^[A-Za-z0-9]+$/.test(val)) {
-        const els = parseFormula(val);
-        document.querySelectorAll(".element").forEach(d => {
-          d.classList.toggle("selected", els.includes(d.dataset.sym));
-        });
-        filterMaterials();
-      }
-      lis.forEach(li => {
-        li.classList.toggle("hidden", !li.textContent.toLowerCase().includes(val.toLowerCase()));
-      });
-    });
-  </script>
 </body>
 </html>
-
