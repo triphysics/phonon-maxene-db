@@ -46,7 +46,7 @@
     border: 2px solid #3498db;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; 
+    position: relative;
     }
     .viewer-controls {
     text-align: center;
@@ -144,13 +144,13 @@
   <div class="structure section">
     <h2>🧊 Crystal Structure</h2>
     <div id="structureStatus" class="loading">Loading crystal structure...</div>
-  
+
     <div class="viewer-controls">
       <button id="zoom-in-btn">🔍 Zoom In</button>
       <button id="zoom-out-btn">🔎 Zoom Out</button>
       <button id="home-btn">🏠 Reset View</button>
     </div>
-    
+
     <div id="viewer"></div>
 
     <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
@@ -170,7 +170,7 @@
             <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
         </span>
         <span style="display: inline-flex; align-items: center;">
-            <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
+            <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Space Filling</label>
         </span>
         <span style="display: inline-flex; align-items: center;">
             <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
@@ -202,11 +202,11 @@
 
 <script>
 let viewer = null;
-let cifData = null; 
+let cifData = null;
 
 let viewerState = {
     showBonds: true,
-    useVDW: false, 
+    useVDW: false,
     showLabels: false,
     supercell: [3, 3, 1]
 };
@@ -226,13 +226,13 @@ function updateViewer() {
     } else {
         baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
     }
-    
+
     if (viewerState.showBonds) {
         baseStyle.stick = { radius: 0.15 };
     }
-    
+
     viewer.setStyle({}, baseStyle);
-    
+
     // Now, replicate the already-styled unit cell
     viewer.replicateUnitCell(...viewerState.supercell);
 
@@ -249,14 +249,14 @@ function updateViewer() {
             position: { x: 0, y: 0, z: 0.7 }
         });
     }
-    
+
     viewer.render();
 }
 
 function load3DStructure() {
   viewer = $3Dmol.createViewer('viewer', {
     defaultcolors: $3Dmol.rasmolElementColors,
-    backgroundColor: "white" 
+    backgroundColor: "white"
   });
 
   fetch("POSCAR.cif")
@@ -336,7 +336,7 @@ function loadPhononData() {
           name: `Mode ${i + 1}`
         });
       }
-      
+
       const rawLabels = data.labels ? data.labels.flat() : [];
       const labels = [rawLabels[0]];
       for (let i = 1; i < rawLabels.length; i++) {
@@ -397,16 +397,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (viewer) viewer.zoomTo();
   });
 
-  const setCameraView = (direction) => {
+  // --- UPDATED CAMERA CONTROLS ---
+  const setCameraView = (axis) => {
     if (viewer) {
-        viewer.center();
-        viewer.setView(direction);
+        viewer.resetView(); // Reset view to default (looking down Z)
+        if (axis === 'x') {
+            // Rotate 90 degrees around the Y axis to look down X
+            viewer.rotate(90, { y: 1, x: 0, z: 0 });
+        } else if (axis === 'y') {
+            // Rotate -90 degrees around the X axis to look down Y
+            viewer.rotate(-90, { x: 1, y: 0, z: 0 });
+        }
+        // For 'z', no rotation is needed after reset.
         viewer.render();
     }
   };
-  document.getElementById('cam-x').addEventListener('click', () => setCameraView([1, 0, 0]));
-  document.getElementById('cam-y').addEventListener('click', () => setCameraView([0, 1, 0]));
-  document.getElementById('cam-z').addEventListener('click', () => setCameraView([0, 0, 1]));
+  document.getElementById('cam-x').addEventListener('click', () => setCameraView('x'));
+  document.getElementById('cam-y').addEventListener('click', () => setCameraView('y'));
+  document.getElementById('cam-z').addEventListener('click', () => setCameraView('z'));
+  // --- END OF UPDATES ---
 
   ['x', 'y', 'z'].forEach((axis, index) => {
     document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
@@ -422,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
     viewerState.showBonds = e.target.checked;
     updateViewer();
   });
-  
+
   document.getElementById('cb-packed').addEventListener('change', (e) => {
     viewerState.useVDW = e.target.checked;
     updateViewer();
