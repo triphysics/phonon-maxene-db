@@ -203,6 +203,7 @@
 <script>
 let viewer = null;
 let cifData = null;
+let initialView = null; // 1. Variable to store the initial view
 
 let viewerState = {
     showBonds: true,
@@ -230,7 +231,6 @@ function updateViewer() {
     }
 
     viewer.setStyle({}, baseStyle);
-
     viewer.replicateUnitCell(...viewerState.supercell);
 
     if (viewerState.showLabels) {
@@ -259,6 +259,7 @@ function load3DStructure() {
       cifData = data;
       updateViewer();
       viewer.zoomTo();
+      initialView = viewer.getView(); // 2. Save the initial view after the structure is loaded
       document.getElementById("structureStatus").innerHTML =
         `<div class="success">✓ Crystal structure loaded. Use the controls below to modify the view.</div>`;
     })
@@ -387,33 +388,29 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('zoom-out-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(0.8);
   });
+  
+  // 3. Update the "Reset View" button's click event
   document.getElementById('home-btn').addEventListener('click', () => {
-    if (viewer) viewer.zoomTo();
+    if (viewer && initialView) {
+      viewer.setView(initialView);
+      viewer.render();
+    }
   });
 
-  // --- UPDATED CAMERA CONTROLS ---
   const setCameraView = (axis) => {
     if (!viewer) return;
-
-    // Use zoomTo() to reliably reset the view and center the structure
     viewer.zoomTo();
-
     if (axis === 'x') {
-      // Rotate 90 degrees around the Y axis to view along X
       viewer.rotate(90, { y: 1, x: 0, z: 0 });
     } else if (axis === 'y') {
-      // Rotate -90 degrees around the X axis to view along Y
       viewer.rotate(-90, { x: 1, y: 0, z: 0 });
     }
-    // For 'z', zoomTo() is all that's needed, so no further rotation is applied.
-
     viewer.render();
   };
 
   document.getElementById('cam-x').addEventListener('click', () => setCameraView('x'));
   document.getElementById('cam-y').addEventListener('click', () => setCameraView('y'));
   document.getElementById('cam-z').addEventListener('click', () => setCameraView('z'));
-  // --- END OF UPDATES ---
 
   ['x', 'y', 'z'].forEach((axis, index) => {
     document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
