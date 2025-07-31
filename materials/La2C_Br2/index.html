@@ -424,76 +424,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (viewer) viewer.zoomTo();
   });
 
+  // --- START: Fixed Camera Button Logic ---
   document.getElementById('cam-x').addEventListener('click', () => {
     if (viewer) {
-        viewer.clear();
-        viewer.addModel(cifData, "cif");
-        viewer.addUnitCell();
-        viewer.replicateUnitCell(...viewerState.supercell);
-        
-        // Apply current styles
-        let baseStyle = viewerState.useVDW ? 
-            { sphere: { colorscheme: 'Jmol' } } : 
-            { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
-        
-        if (viewerState.showBonds) {
-            viewer.setStyle({}, { stick: { radius: 0.15 }, ...baseStyle });
-        } else {
-            viewer.setStyle({}, baseStyle);
-        }
-        
-        viewer.zoomTo();
-        viewer.rotateY(90);
+        viewer.zoomTo(); // Reset view to default
+        viewer.rotate(90, {y: 1, x: 0, z: 0}); // Rotate to view along the x-axis
         viewer.render();
     }
   });
   
   document.getElementById('cam-y').addEventListener('click', () => {
     if (viewer) {
-        viewer.clear();
-        viewer.addModel(cifData, "cif");
-        viewer.addUnitCell();
-        viewer.replicateUnitCell(...viewerState.supercell);
-        
-        // Apply current styles
-        let baseStyle = viewerState.useVDW ? 
-            { sphere: { colorscheme: 'Jmol' } } : 
-            { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
-        
-        if (viewerState.showBonds) {
-            viewer.setStyle({}, { stick: { radius: 0.15 }, ...baseStyle });
-        } else {
-            viewer.setStyle({}, baseStyle);
-        }
-        
-        viewer.zoomTo();
-        viewer.rotateX(90);
+        viewer.zoomTo(); // Reset view to default
+        viewer.rotate(90, {x: 1, y: 0, z: 0}); // Rotate to view along the y-axis
         viewer.render();
     }
   });
   
   document.getElementById('cam-z').addEventListener('click', () => {
     if (viewer) {
-        viewer.clear();
-        viewer.addModel(cifData, "cif");
-        viewer.addUnitCell();
-        viewer.replicateUnitCell(...viewerState.supercell);
-        
-        // Apply current styles
-        let baseStyle = viewerState.useVDW ? 
-            { sphere: { colorscheme: 'Jmol' } } : 
-            { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
-        
-        if (viewerState.showBonds) {
-            viewer.setStyle({}, { stick: { radius: 0.15 }, ...baseStyle });
-        } else {
-            viewer.setStyle({}, baseStyle);
-        }
-        
-        viewer.zoomTo();
+        viewer.zoomTo(); // The default view is along the z-axis
         viewer.render();
     }
   });
+  // --- END: Fixed Camera Button Logic ---
 
   ['x', 'y', 'z'].forEach((axis, index) => {
     document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
