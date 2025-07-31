@@ -421,36 +421,74 @@ document.addEventListener('DOMContentLoaded', () => {
     if (viewer) viewer.zoomTo();
   });
 
-  const setCameraView = (axis) => {
-    if (viewer) {
-        viewer.center();
-        // Set camera position based on axis
-        if (axis === 'x') {
-            viewer.rotate(90, {x: 0, y: 1, z: 0});
-        } else if (axis === 'y') {
-            viewer.rotate(90, {x: 1, y: 0, z: 0});
-        } else if (axis === 'z') {
-            // Default view is along z-axis, so just reset
-            viewer.zoomTo();
-        }
-        viewer.render();
-    }
-  };
   document.getElementById('cam-x').addEventListener('click', () => {
     if (viewer) {
+        viewer.clear();
+        viewer.addModel(cifData, "cif");
+        viewer.addUnitCell();
+        viewer.replicateUnitCell(...viewerState.supercell);
+        
+        // Apply current styles
+        let baseStyle = viewerState.useVDW ? 
+            { sphere: { colorscheme: 'Jmol' } } : 
+            { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
+        
+        if (viewerState.showBonds) {
+            viewer.setStyle({}, { stick: { radius: 0.15 }, ...baseStyle });
+        } else {
+            viewer.setStyle({}, baseStyle);
+        }
+        
         viewer.zoomTo();
-        viewer.rotate(90, {x: 0, y: 1, z: 0});
+        viewer.rotateY(90);
+        viewer.render();
     }
   });
+  
   document.getElementById('cam-y').addEventListener('click', () => {
     if (viewer) {
+        viewer.clear();
+        viewer.addModel(cifData, "cif");
+        viewer.addUnitCell();
+        viewer.replicateUnitCell(...viewerState.supercell);
+        
+        // Apply current styles
+        let baseStyle = viewerState.useVDW ? 
+            { sphere: { colorscheme: 'Jmol' } } : 
+            { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
+        
+        if (viewerState.showBonds) {
+            viewer.setStyle({}, { stick: { radius: 0.15 }, ...baseStyle });
+        } else {
+            viewer.setStyle({}, baseStyle);
+        }
+        
         viewer.zoomTo();
-        viewer.rotate(-90, {x: 1, y: 0, z: 0});
+        viewer.rotateX(90);
+        viewer.render();
     }
   });
+  
   document.getElementById('cam-z').addEventListener('click', () => {
     if (viewer) {
+        viewer.clear();
+        viewer.addModel(cifData, "cif");
+        viewer.addUnitCell();
+        viewer.replicateUnitCell(...viewerState.supercell);
+        
+        // Apply current styles
+        let baseStyle = viewerState.useVDW ? 
+            { sphere: { colorscheme: 'Jmol' } } : 
+            { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
+        
+        if (viewerState.showBonds) {
+            viewer.setStyle({}, { stick: { radius: 0.15 }, ...baseStyle });
+        } else {
+            viewer.setStyle({}, baseStyle);
+        }
+        
         viewer.zoomTo();
+        viewer.render();
     }
   });
 
