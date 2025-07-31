@@ -213,7 +213,7 @@ let viewerState = {
     showBonds: true,
     useVDW: false, 
     showLabels: false,
-    bondThreshold: 1.9,
+    bondThreshold: 2.9,
     supercell: [3, 3, 1]
 };
 
@@ -244,7 +244,7 @@ function updateViewer() {
     viewer.setStyle({}, baseStyle);
 
     if (viewerState.showBonds) {
-        const maxBondLength = viewerState.bondThreshold || 1.9;
+        const maxBondLength = viewerState.bondThreshold || 2.9;
         const atoms = viewer.selectedAtoms({});
 
         atoms.forEach(atom => {
