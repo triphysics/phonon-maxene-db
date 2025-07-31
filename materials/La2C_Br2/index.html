@@ -79,6 +79,17 @@
       border-radius: 4px;
       background: white;
       margin-bottom: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Fix for 3DMol.js canvas positioning */
+    #viewer canvas {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
     }
 
     .controls-grid {
@@ -537,7 +548,6 @@ function updateViewer() {
     }
     viewer.zoomTo();
     viewer.render();
-    viewer.resize();
 }
 
 function load3DStructure() {
@@ -547,7 +557,7 @@ function load3DStructure() {
     return;
   }
 
-  // Create viewer
+  // Create viewer with proper configuration
   viewer = $3Dmol.createViewer(viewerElement, {
     defaultcolors: $3Dmol.rasmolElementColors,
     backgroundColor: "white",
@@ -555,7 +565,8 @@ function load3DStructure() {
     cartoonQuality: 10
   });
 
-  viewer.resize(); // Ensure viewer is correctly sized initially
+  // Force initial resize to ensure proper container binding
+  viewer.resize();
 
   // Load the CIF structure
   fetch("POSCAR.cif")
@@ -563,9 +574,18 @@ function load3DStructure() {
     .then(data => {
       cifData = data;
       updateViewer();
-      viewer.zoomTo();
-      viewer.render();
-      viewer.resize(); // ← must come AFTER render	    
+      
+      // Multiple resize calls to ensure proper containment
+      setTimeout(() => {
+        viewer.resize();
+        viewer.render();
+      }, 100);
+      
+      setTimeout(() => {
+        viewer.resize();
+        viewer.render();
+      }, 500);
+      
       document.getElementById("structureStatus").style.display = 'none';
     })
     .catch(err => {
@@ -685,15 +705,28 @@ function loadPhononData() {
     });
 }
 
+// Handle window resize to maintain viewer containment
+function handleResize() {
+  if (viewer) {
+    setTimeout(() => {
+      viewer.resize();
+      viewer.render();
+    }, 100);
+  }
+}
+
 // Collapsible sections
 document.addEventListener('DOMContentLoaded', () => {
-  // Wait a bit for the DOM to be fully ready before initializing 3DMol
+  // Initialize viewer after DOM is ready
   setTimeout(() => {
     load3DStructure();
-  }, 100);
+  }, 200);
   
   loadStructuralData();
   loadPhononData();
+
+  // Add window resize handler
+  window.addEventListener('resize', handleResize);
 
   const atomsHeader = document.getElementById('atoms-header');
   const atomsContent = document.getElementById('atomTable');
