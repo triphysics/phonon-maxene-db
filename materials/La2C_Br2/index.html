@@ -381,8 +381,9 @@
           </div>
           
           <div class="control-item">
-            <label>vdW radius</label>
+            <label>Bond Threshold:</label>
             <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9">
+	    <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
           </div>
           
           <div class="control-item">
@@ -811,7 +812,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const val = parseFloat(e.target.value);
     viewerState.bondThreshold = val;
     updateViewer();
-  });	
+  });
+
+ document.getElementById('bond-threshold').addEventListener('input', (e) => {
+    const val = parseFloat(e.target.value);
+    viewerState.bondThreshold = val;
+    document.getElementById('bond-threshold-value').textContent = `${val.toFixed(1)} Å`;
+    updateViewer();
+  });
+
 });
 </script>
 
