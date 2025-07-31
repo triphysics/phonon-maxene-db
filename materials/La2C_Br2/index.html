@@ -43,14 +43,14 @@
     width: 100%;
     height: 450px;
     display: block;
-    border: 2px solid #3498db;
-    border-radius: 8px;
+    border: 1px solid #ffffff;
+    border-radius: 1px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative; 
     }
     .viewer-controls {
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 1px;
     }
     .viewer-controls button, #custom-controls button {
       background: linear-gradient(45deg, #3498db, #2980b9);
@@ -145,8 +145,6 @@
 
     <div class="structure section" style="flex: 1.5;">
       <h2>🧊 Crystal Structure</h2>
-      <div id="structureStatus" class="loading">Loading crystal structure...</div>
-    
       <div class="viewer-controls">
         <button id="zoom-in-btn">🔍 Zoom In</button>
         <button id="zoom-out-btn">🔎 Zoom Out</button>
@@ -188,7 +186,6 @@
 
     <div class="section" style="flex: 1;">
       <h2>🧮 Structural Details</h2>
-      <div id="structuralStatus" class="loading">Loading structural data...</div>
       <table class="info-table" id="latticeTable" style="display:none;">
         <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
         <tbody></tbody>
@@ -203,7 +200,6 @@
 
   <div class="phonon section">
     <h2>🎵 Phonon Band Structure</h2>
-    <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
     <div id="phononPlot"></div>
   </div>
 </div>
