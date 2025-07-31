@@ -220,6 +220,36 @@ let viewerState = {
     supercell: [3, 3, 1]
 };
 
+// --- START: Added Reset Function ---
+const originalState = { ...viewerState, supercell: [...viewerState.supercell] };
+
+function resetToOriginalState() {
+    if (!viewer) return;
+
+    // 1. Reset the state object to its initial values
+    viewerState = { ...originalState, supercell: [...originalState.supercell] };
+
+    // 2. Update UI controls to match the reset state
+    document.getElementById('sc-x').value = viewerState.supercell[0];
+    document.getElementById('sc-y').value = viewerState.supercell[1];
+    document.getElementById('sc-z').value = viewerState.supercell[2];
+
+    document.getElementById('cb-bonds').checked = viewerState.showBonds;
+    document.getElementById('cb-packed').checked = viewerState.useVDW;
+    document.getElementById('cb-labels').checked = viewerState.showLabels;
+
+    const bondSlider = document.getElementById('bond-threshold');
+    bondSlider.value = viewerState.bondThreshold;
+    document.getElementById('bond-threshold-value').textContent = `${viewerState.bondThreshold.toFixed(1)} Å`;
+
+    // 3. Redraw the viewer with the reset state
+    updateViewer();
+
+    // 4. Reset the camera zoom and orientation
+    viewer.zoomTo();
+}
+// --- END: Added Reset Function ---
+
 function updateViewer() {
     if (!viewer || !cifData) return;
 
@@ -420,34 +450,35 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('zoom-out-btn').addEventListener('click', () => {
     if (viewer) viewer.zoom(0.8);
   });
+  
+  // --- START: Updated Reset Button Listener ---
   document.getElementById('home-btn').addEventListener('click', () => {
-    if (viewer) viewer.zoomTo();
+    resetToOriginalState();
   });
+  // --- END: Updated Reset Button Listener ---
 
-  // --- START: Fixed Camera Button Logic ---
   document.getElementById('cam-x').addEventListener('click', () => {
     if (viewer) {
-        viewer.zoomTo(); // Reset view to default
-        viewer.rotate(90, {y: 1, x: 0, z: 0}); // Rotate to view along the x-axis
+        viewer.zoomTo();
+        viewer.rotate(90, {y: 1, x: 0, z: 0});
         viewer.render();
     }
   });
   
   document.getElementById('cam-y').addEventListener('click', () => {
     if (viewer) {
-        viewer.zoomTo(); // Reset view to default
-        viewer.rotate(90, {x: 1, y: 0, z: 0}); // Rotate to view along the y-axis
+        viewer.zoomTo();
+        viewer.rotate(90, {x: 1, y: 0, z: 0});
         viewer.render();
     }
   });
   
   document.getElementById('cam-z').addEventListener('click', () => {
     if (viewer) {
-        viewer.zoomTo(); // The default view is along the z-axis
+        viewer.zoomTo();
         viewer.render();
     }
   });
-  // --- END: Fixed Camera Button Logic ---
 
   ['x', 'y', 'z'].forEach((axis, index) => {
     document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
