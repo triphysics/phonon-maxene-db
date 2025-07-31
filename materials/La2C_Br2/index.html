@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('cam-x').addEventListener('click', () => {
     if (viewer) {
         viewer.zoomTo();
-        viewer.rotate(90, {y: 1, x: 0, z: 0});
+        viewer.rotate(-90, {y: 1, x: 1, z: 0});
         viewer.render();
     }
   });
