@@ -421,16 +421,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (viewer) viewer.zoomTo();
   });
 
-  const setCameraView = (direction) => {
+  const setCameraView = (axis) => {
     if (viewer) {
         viewer.center();
-        viewer.setView(direction);
+        // Set camera position based on axis
+        if (axis === 'x') {
+            viewer.rotate(90, {x: 0, y: 1, z: 0});
+        } else if (axis === 'y') {
+            viewer.rotate(90, {x: 1, y: 0, z: 0});
+        } else if (axis === 'z') {
+            // Default view is along z-axis, so just reset
+            viewer.zoomTo();
+        }
         viewer.render();
     }
   };
-  document.getElementById('cam-x').addEventListener('click', () => setCameraView([1, 0, 0]));
-  document.getElementById('cam-y').addEventListener('click', () => setCameraView([0, 1, 0]));
-  document.getElementById('cam-z').addEventListener('click', () => setCameraView([0, 0, 1]));
+  document.getElementById('cam-x').addEventListener('click', () => {
+    if (viewer) {
+        viewer.zoomTo();
+        viewer.rotate(90, {x: 0, y: 1, z: 0});
+    }
+  });
+  document.getElementById('cam-y').addEventListener('click', () => {
+    if (viewer) {
+        viewer.zoomTo();
+        viewer.rotate(-90, {x: 1, y: 0, z: 0});
+    }
+  });
+  document.getElementById('cam-z').addEventListener('click', () => {
+    if (viewer) {
+        viewer.zoomTo();
+    }
+  });
 
   ['x', 'y', 'z'].forEach((axis, index) => {
     document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
