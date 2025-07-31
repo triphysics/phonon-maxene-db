@@ -237,12 +237,178 @@
       grid-column: 1 / -1;
     }
 
+    .phonon-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr 400px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .phonon-controls {
+      background: #f8f9fa;
+      border-radius: 6px;
+      border: 1px solid #e1e5e9;
+      overflow: hidden;
+    }
+
+    .phonon-controls .card-header {
+      margin: 0;
+      background: #e8eaed;
+    }
+
+    .control-section {
+      padding: 12px 15px;
+      border-bottom: 1px solid #e1e5e9;
+    }
+
+    .control-section:last-child {
+      border-bottom: none;
+    }
+
+    .control-section label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #3c4043;
+      margin-bottom: 8px;
+    }
+
+    .repetition-controls {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .repetition-controls input {
+      width: 40px;
+      padding: 4px;
+      border: 1px solid #e1e5e9;
+      border-radius: 3px;
+      text-align: center;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .camera-phonon-controls {
+      display: flex;
+      gap: 4px;
+    }
+
+    .checkbox-label {
+      display: flex !important;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px !important;
+      margin-bottom: 0 !important;
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      accent-color: #1a73e8;
+    }
+
+    .control-section input[type="range"] {
+      width: 100%;
+      height: 4px;
+      background: #e1e5e9;
+      border-radius: 2px;
+      outline: none;
+      -webkit-appearance: none;
+      margin-bottom: 4px;
+    }
+
+    .control-section input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #1a73e8;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .animation-controls {
+      padding: 15px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      background: #f1f3f4;
+    }
+
+    .phonon-viewer-container {
+      background: white;
+      border-radius: 6px;
+      border: 1px solid #e1e5e9;
+      overflow: hidden;
+    }
+
+    #phononViewer {
+      width: 100%;
+      height: 400px;
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #phononViewer canvas {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .interaction-hint {
+      padding: 8px 15px;
+      font-size: 11px;
+      color: #5f6368;
+      background: #f8f9fa;
+      text-align: center;
+      border-top: 1px solid #e1e5e9;
+    }
+
+    .phonon-plot-container {
+      background: white;
+      border-radius: 6px;
+      border: 1px solid #e1e5e9;
+      overflow: hidden;
+    }
+
     #phononPlot {
       width: 100%;
       height: 450px;
-      border: 1px solid #e1e5e9;
       border-radius: 4px;
       background: white;
+    }
+
+    .selected-mode-info {
+      padding: 10px 15px;
+      background: #e8f0fe;
+      border-top: 1px solid #e1e5e9;
+      font-size: 12px;
+      color: #1a73e8;
+    }
+
+    #amplitude-value {
+      font-size: 11px;
+      color: #5f6368;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    @media (max-width: 1024px) {
+      .phonon-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .phonon-controls {
+        order: 3;
+      }
+      
+      .phonon-plot-container {
+        order: 2;
+      }
     }
 
     .loading {
@@ -381,9 +547,8 @@
           </div>
           
           <div class="control-item">
-            <label>Bond Threshold:</label>
+            <label>vdW radius</label>
             <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9">
-	    <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
           </div>
           
           <div class="control-item">
@@ -405,6 +570,7 @@
           </div>
         </div>
         
+        <div class="status-text">Click to interact</div>
       </div>
     </div>
 
@@ -432,7 +598,7 @@
           </div>
           <table class="info-table" id="atomTable" style="display:none;">
             <thead>
-              <tr><th>Atom label</th><th>x</th><th>y</th><th>z</th></tr>
+              <tr><th>Kind label</th><th>x [Å]</th><th>y [Å]</th><th>z [Å]</th></tr>
             </thead>
             <tbody></tbody>
           </table>
@@ -443,23 +609,105 @@
     <div class="phonon-section card">
       <div class="card-header">
         <span>🎵</span>
-        <span>Vibrational properties</span>
+        <span>Interactive Phonon Visualizer</span>
       </div>
       <div class="card-content">
-        <div class="card-header">
-          <span>🎵</span>
-          <span>Phonon band structure</span>
+        <div class="phonon-grid">
+          <div class="phonon-controls">
+            <div class="card-header">
+              <span>⚙️</span>
+              <span>Settings</span>
+            </div>
+            
+            <div class="control-section">
+              <label>Repetitions</label>
+              <div class="repetition-controls">
+                <input type="number" id="rep-x" value="5" min="1" max="10">
+                <input type="number" id="rep-y" value="5" min="1" max="10">
+                <input type="number" id="rep-z" value="1" min="1" max="5">
+                <button class="btn btn-small" id="update-rep">↻</button>
+              </div>
+            </div>
+
+            <div class="control-section">
+              <label>Camera</label>
+              <div class="camera-phonon-controls">
+                <button class="btn btn-small" id="phonon-cam-x">X</button>
+                <button class="btn btn-small" id="phonon-cam-y">Y</button>
+                <button class="btn btn-small" id="phonon-cam-z">Z</button>
+              </div>
+            </div>
+
+            <div class="control-section">
+              <label>Cell</label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="show-cell" checked>
+                <span>On</span>
+              </label>
+            </div>
+
+            <div class="control-section">
+              <label>Amplitude</label>
+              <input type="range" id="amplitude-slider" min="0.1" max="2.0" step="0.1" value="0.3">
+              <span id="amplitude-value">0.3</span>
+            </div>
+
+            <div class="control-section">
+              <label>Vector length</label>
+              <input type="range" id="vector-length-slider" min="0.1" max="3.0" step="0.1" value="1.0">
+              <label class="checkbox-label">
+                <input type="checkbox" id="show-vectors" checked>
+                <span>On</span>
+              </label>
+            </div>
+
+            <div class="control-section">
+              <label>Speed</label>
+              <input type="range" id="speed-slider" min="0.1" max="2.0" step="0.1" value="1.0">
+            </div>
+
+            <div class="animation-controls">
+              <button class="btn" id="play-btn">▶</button>
+              <button class="btn btn-secondary" id="pause-btn">⏸</button>
+            </div>
+          </div>
+
+          <div class="phonon-viewer-container">
+            <div class="card-header">
+              <span>🔄</span>
+              <span>Drag to rotate, scroll to zoom</span>
+            </div>
+            <div id="phononViewer"></div>
+            <div class="interaction-hint">Click to interact</div>
+          </div>
+
+          <div class="phonon-plot-container">
+            <div class="card-header">
+              <span>📊</span>
+              <span>Phonon band structure (select phonon)</span>
+            </div>
+            <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
+            <div id="phononPlot"></div>
+            <div class="selected-mode-info" id="selectedModeInfo" style="display: none;">
+              <strong>Selected Mode:</strong> <span id="modeDetails"></span>
+            </div>
+          </div>
         </div>
-        <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
-        <div id="phononPlot"></div>
       </div>
-    </div>
+     div>
   </div>
 </div>
 
 <script>
 let viewer = null;
+let phononViewer = null;
 let cifData = null; 
+let phononData = null;
+let animationId = null;
+let isAnimating = false;
+let selectedMode = null;
+let originalPositions = [];
+let eigenvectors = [];
 
 let viewerState = {
     showBonds: true,
@@ -467,6 +715,16 @@ let viewerState = {
     showLabels: false,
     bondThreshold: 2.9,
     supercell: [3, 3, 1]
+};
+
+let phononState = {
+    repetitions: [5, 5, 1],
+    showCell: true,
+    amplitude: 0.3,
+    vectorLength: 1.0,
+    showVectors: true,
+    speed: 1.0,
+    time: 0
 };
 
 const originalState = { ...viewerState, supercell: [...viewerState.supercell] };
@@ -642,6 +900,7 @@ function loadPhononData() {
     .then(r => r.text())
     .then(yamlText => {
       const data = jsyaml.load(yamlText);
+      phononData = data;
       const phonon = data.phonon;
       const numBands = phonon[0].band.length;
       const traces = [];
@@ -653,7 +912,11 @@ function loadPhononData() {
           mode: 'lines',
           line: { width: 1.5, color: '#1a73e8' },
           showlegend: false,
-          name: `Mode ${i + 1}`
+          name: `Mode ${i + 1}`,
+          hovertemplate: `<b>Mode ${i + 1}</b><br>` +
+                        'Frequency: %{y:.2f} THz<br>' +
+                        'q-point: %{x:.3f}<br>' +
+                        '<extra></extra>'
         });
       }
       
@@ -693,16 +956,206 @@ function loadPhononData() {
         paper_bgcolor: 'white',
         margin: { l: 50, r: 20, t: 20, b: 50 },
         font: { family: 'Inter, sans-serif', size: 12, color: '#333' },
-        showlegend: false
+        showlegend: false,
+        hovermode: 'closest'
       };
 
-      Plotly.newPlot('phononPlot', traces, layout, {displayModeBar: false});
+      const config = {
+        displayModeBar: false,
+        responsive: true
+      };
+
+      Plotly.newPlot('phononPlot', traces, layout, config);
+      
+      // Add click event for phonon mode selection
+      document.getElementById('phononPlot').addEventListener('plotly_click', function(data) {
+        const point = data.points[0];
+        const qPointIndex = Math.round(point.pointIndex);
+        const modeIndex = point.curveNumber;
+        
+        selectPhononMode(qPointIndex, modeIndex);
+      });
+
       document.getElementById("phononStatus").style.display = 'none';
+      
+      // Initialize phonon viewer after data is loaded
+      initializePhononViewer();
     })
     .catch(err => {
       document.getElementById("phononStatus").innerHTML =
         `<div class="error">Error loading band.yaml: ${err.message}</div>`;
     });
+}
+
+function selectPhononMode(qPointIndex, modeIndex) {
+  if (!phononData || !phononData.phonon[qPointIndex]) return;
+  
+  const mode = phononData.phonon[qPointIndex].band[modeIndex];
+  selectedMode = { qPointIndex, modeIndex, mode };
+  
+  // Update selected mode info
+  const frequency = mode.frequency.toFixed(3);
+  const qPoint = phononData.phonon[qPointIndex].distance.toFixed(3);
+  document.getElementById('modeDetails').textContent = 
+    `Mode ${modeIndex + 1}, Frequency: ${frequency} THz, q-point: ${qPoint}`;
+  document.getElementById('selectedModeInfo').style.display = 'block';
+  
+  // Extract eigenvectors if available
+  if (mode.eigenvector) {
+    eigenvectors = mode.eigenvector;
+    setupPhononAnimation();
+  }
+  
+  // Highlight selected point on plot
+  highlightSelectedMode(qPointIndex, modeIndex);
+}
+
+function highlightSelectedMode(qPointIndex, modeIndex) {
+  if (!phononData) return;
+  
+  const x = phononData.phonon[qPointIndex].distance;
+  const y = phononData.phonon[qPointIndex].band[modeIndex].frequency;
+  
+  const highlightTrace = {
+    x: [x],
+    y: [y],
+    mode: 'markers',
+    marker: {
+      size: 12,
+      color: '#ea4335',
+      symbol: 'circle',
+      line: { width: 2, color: 'white' }
+    },
+    showlegend: false,
+    name: 'Selected',
+    hoverinfo: 'skip'
+  };
+  
+  // Remove previous highlight and add new one
+  const plotDiv = document.getElementById('phononPlot');
+  const currentData = plotDiv.data;
+  const filteredData = currentData.filter(trace => trace.name !== 'Selected');
+  
+  Plotly.react('phononPlot', [...filteredData, highlightTrace], plotDiv.layout);
+}
+
+function initializePhononViewer() {
+  const viewerElement = document.getElementById('phononViewer');
+  if (!viewerElement) return;
+  
+  phononViewer = $3Dmol.createViewer(viewerElement, {
+    defaultcolors: $3Dmol.rasmolElementColors,
+    backgroundColor: "white",
+    antialias: true
+  });
+  
+  // Load structure for phonon visualization
+  if (cifData) {
+    setupPhononStructure();
+  }
+}
+
+function setupPhononStructure() {
+  if (!phononViewer || !cifData) return;
+  
+  phononViewer.clear();
+  phononViewer.addModel(cifData, "cif");
+  
+  if (phononState.showCell) {
+    phononViewer.addUnitCell();
+  }
+  
+  // Replicate unit cell based on repetitions
+  phononViewer.replicateUnitCell(...phononState.repetitions);
+  
+  // Store original positions
+  const atoms = phononViewer.selectedAtoms({});
+  originalPositions = atoms.map(atom => ({ x: atom.x, y: atom.y, z: atom.z }));
+  
+  phononViewer.setStyle({}, {
+    sphere: { scale: 0.4, colorscheme: 'Jmol' },
+    stick: { radius: 0.1 }
+  });
+  
+  phononViewer.zoomTo();
+  phononViewer.render();
+  
+  setTimeout(() => {
+    phononViewer.resize();
+    phononViewer.render();
+  }, 100);
+}
+
+function setupPhononAnimation() {
+  if (!phononViewer || !selectedMode || !eigenvectors.length) return;
+  
+  // Reset to original positions
+  const atoms = phononViewer.selectedAtoms({});
+  atoms.forEach((atom, i) => {
+    if (originalPositions[i]) {
+      atom.x = originalPositions[i].x;
+      atom.y = originalPositions[i].y;
+      atom.z = originalPositions[i].z;
+    }
+  });
+  
+  phononViewer.render();
+}
+
+function animatePhonon() {
+  if (!phononViewer || !selectedMode || !eigenvectors.length || !isAnimating) return;
+  
+  phononState.time += 0.05 * phononState.speed;
+  const phase = Math.sin(phononState.time);
+  
+  const atoms = phononViewer.selectedAtoms({});
+  const unitCellSize = Math.min(atoms.length, eigenvectors.length);
+  
+  // Apply displacements
+  atoms.forEach((atom, i) => {
+    if (originalPositions[i] && i < unitCellSize) {
+      const eigenvector = eigenvectors[i % eigenvectors.length];
+      if (eigenvector && eigenvector.length >= 3) {
+        const displacement = phononState.amplitude * phase;
+        atom.x = originalPositions[i].x + eigenvector[0] * displacement;
+        atom.y = originalPositions[i].y + eigenvector[1] * displacement;
+        atom.z = originalPositions[i].z + eigenvector[2] * displacement;
+      }
+    }
+  });
+  
+  phononViewer.render();
+  
+  if (isAnimating) {
+    animationId = requestAnimationFrame(animatePhonon);
+  }
+}
+
+function startAnimation() {
+  if (!selectedMode) {
+    alert('Please select a phonon mode from the band structure plot first.');
+    return;
+  }
+  
+  isAnimating = true;
+  animatePhonon();
+}
+
+function stopAnimation() {
+  isAnimating = false;
+  if (animationId) {
+    cancelAnimationFrame(animationId);
+    animationId = null;
+  }
+}
+
+function updatePhononViewer() {
+  if (phononViewer && cifData) {
+    setupPhononStructure();
+    if (selectedMode) {
+      setupPhononAnimation();
+    }
+  }
 }
 
 // Handle window resize to maintain viewer containment
@@ -711,6 +1164,12 @@ function handleResize() {
     setTimeout(() => {
       viewer.resize();
       viewer.render();
+    }, 100);
+  }
+  if (phononViewer) {
+    setTimeout(() => {
+      phononViewer.resize();
+      phononViewer.render();
     }, 100);
   }
 }
@@ -813,13 +1272,67 @@ document.addEventListener('DOMContentLoaded', () => {
     updateViewer();
   });
 
- document.getElementById('bond-threshold').addEventListener('input', (e) => {
-    const val = parseFloat(e.target.value);
-    viewerState.bondThreshold = val;
-    document.getElementById('bond-threshold-value').textContent = `${val.toFixed(1)} Å`;
-    updateViewer();
+  // Phonon viewer controls
+  ['x', 'y', 'z'].forEach((axis, index) => {
+    document.getElementById(`rep-${axis}`).addEventListener('input', (e) => {
+      const val = parseInt(e.target.value, 10);
+      if (!isNaN(val) && val > 0) {
+        phononState.repetitions[index] = val;
+      }
+    });
   });
 
+  document.getElementById('update-rep').addEventListener('click', () => {
+    updatePhononViewer();
+  });
+
+  document.getElementById('phonon-cam-x').addEventListener('click', () => {
+    if (phononViewer) {
+      phononViewer.zoomTo();
+      phononViewer.rotate(-90, {y: 1, x: 1, z: 0});
+      phononViewer.render();
+    }
+  });
+
+  document.getElementById('phonon-cam-y').addEventListener('click', () => {
+    if (phononViewer) {
+      phononViewer.zoomTo();
+      phononViewer.rotate(90, {x: 1, y: 0, z: 0});
+      phononViewer.render();
+    }
+  });
+
+  document.getElementById('phonon-cam-z').addEventListener('click', () => {
+    if (phononViewer) {
+      phononViewer.zoomTo();
+      phononViewer.render();
+    }
+  });
+
+  document.getElementById('show-cell').addEventListener('change', (e) => {
+    phononState.showCell = e.target.checked;
+    updatePhononViewer();
+  });
+
+  document.getElementById('amplitude-slider').addEventListener('input', (e) => {
+    phononState.amplitude = parseFloat(e.target.value);
+    document.getElementById('amplitude-value').textContent = phononState.amplitude.toFixed(1);
+  });
+
+  document.getElementById('vector-length-slider').addEventListener('input', (e) => {
+    phononState.vectorLength = parseFloat(e.target.value);
+  });
+
+  document.getElementById('show-vectors').addEventListener('change', (e) => {
+    phononState.showVectors = e.target.checked;
+  });
+
+  document.getElementById('speed-slider').addEventListener('input', (e) => {
+    phononState.speed = parseFloat(e.target.value);
+  });
+
+  document.getElementById('play-btn').addEventListener('click', startAnimation);
+  document.getElementById('pause-btn').addEventListener('click', stopAnimation);
 });
 </script>
 
