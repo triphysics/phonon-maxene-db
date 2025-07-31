@@ -40,7 +40,7 @@
       margin-top: 2rem;
     }
     #viewer {
-    width: 50%;
+    width: 100%;
     height: 450px;
     display: block;
     border: 2px solid #3498db;
@@ -141,61 +141,64 @@
 <div class="container">
  <h1 id="material-title">Material: </h1>
 
-  <div class="structure section">
-    <h2>🧊 Crystal Structure</h2>
-    <div id="structureStatus" class="loading">Loading crystal structure...</div>
-  
-    <div class="viewer-controls">
-      <button id="zoom-in-btn">🔍 Zoom In</button>
-      <button id="zoom-out-btn">🔎 Zoom Out</button>
-      <button id="home-btn">🏠 Reset View</button>
-    </div>
+  <div style="display: flex; align-items: flex-start; gap: 2rem;">
+
+    <div class="structure section" style="flex: 1.5;">
+      <h2>🧊 Crystal Structure</h2>
+      <div id="structureStatus" class="loading">Loading crystal structure...</div>
     
-    <div id="viewer"></div>
+      <div class="viewer-controls">
+        <button id="zoom-in-btn">🔍 Zoom In</button>
+        <button id="zoom-out-btn">🔎 Zoom Out</button>
+        <button id="home-btn">🏠 Reset View</button>
+      </div>
+      
+      <div id="viewer"></div>
 
-    <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
-	<span style="display: inline-flex; align-items: center;">
-            Bond Threshold:
-            <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9" style="margin-left: 6px;">
-            <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
-        </span>
-        <span>
-            Supercell:
-            <input type="number" id="sc-x" value="3" min="1" style="width: 40px; text-align: center;">
-            <input type="number" id="sc-y" value="3" min="1" style="width: 40px; text-align: center;">
-            <input type="number" id="sc-z" value="1" min="1" style="width: 40px; text-align: center;">
-        </span>
-        <span>
-            Camera:
-            <button id="cam-x">x</button>
-            <button id="cam-y">y</button>
-            <button id="cam-z">z</button>
-        </span>
+      <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
         <span style="display: inline-flex; align-items: center;">
-            <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
-        </span>
-        <span style="display: inline-flex; align-items: center;">
-            <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
-        </span>
-        <span style="display: inline-flex; align-items: center;">
-            <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
-        </span>
+              Bond Threshold:
+              <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9" style="margin-left: 6px;">
+              <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
+          </span>
+          <span>
+              Supercell:
+              <input type="number" id="sc-x" value="3" min="1" style="width: 40px; text-align: center;">
+              <input type="number" id="sc-y" value="3" min="1" style="width: 40px; text-align: center;">
+              <input type="number" id="sc-z" value="1" min="1" style="width: 40px; text-align: center;">
+          </span>
+          <span>
+              Camera:
+              <button id="cam-x">x</button>
+              <button id="cam-y">y</button>
+              <button id="cam-z">z</button>
+          </span>
+          <span style="display: inline-flex; align-items: center;">
+              <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
+          </span>
+          <span style="display: inline-flex; align-items: center;">
+              <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
+          </span>
+          <span style="display: inline-flex; align-items: center;">
+              <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
+          </span>
+      </div>
     </div>
 
-  </div>
 
+    <div class="section" style="flex: 1;">
+      <h2>🧮 Structural Details</h2>
+      <div id="structuralStatus" class="loading">Loading structural data...</div>
+      <table class="info-table" id="latticeTable" style="display:none;">
+        <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <table class="info-table" id="atomTable" style="display:none;">
+        <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
-  <div class="section">
-    <h2>🧮 Structural Details</h2>
-    <div id="structuralStatus" class="loading">Loading structural data...</div>
-    <table class="info-table" id="latticeTable" style="display:none;">
-      <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
-      <tbody></tbody>
-    </table>
-    <table class="info-table" id="atomTable" style="display:none;">
-      <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
-      <tbody></tbody>
-    </table>
   </div>
 
   <div class="phonon section">
