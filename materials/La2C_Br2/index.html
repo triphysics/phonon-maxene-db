@@ -322,8 +322,6 @@ function load3DStructure() {
       cifData = data;
       updateViewer();
       viewer.zoomTo();
-      document.getElementById("structureStatus").innerHTML =
-        `<div class="success">✓ Crystal structure loaded. Use the controls below to modify the view.</div>`;
     })
     .catch(err => {
       document.getElementById("structureStatus").innerHTML =
@@ -365,8 +363,6 @@ function loadStructuralData() {
 
       document.getElementById("latticeTable").style.display = "table";
       document.getElementById("atomTable").style.display = "table";
-      document.getElementById("structuralStatus").innerHTML =
-        `<div class="success">✓ Structural data loaded from POSCAR</div>`;
     })
     .catch(err => {
       document.getElementById("structuralStatus").innerHTML =
@@ -430,8 +426,6 @@ function loadPhononData() {
       };
 
       Plotly.newPlot('phononPlot', traces, layout);
-      document.getElementById("phononStatus").innerHTML =
-        `<div class="success">✓ Phonon dispersion loaded from band.yaml</div>`;
     })
     .catch(err => {
       document.getElementById("phononStatus").innerHTML =
