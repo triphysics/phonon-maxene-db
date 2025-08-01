@@ -748,26 +748,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('cam-x').addEventListener('click', () => {
     if (viewer) {
+      // Reset to default view first, then rotate for X-view
       viewer.zoomTo();
-      // X-view: looking down the x-axis (90° rotation around y-axis)
-      viewer.rotate(90, "y");
+      viewer.setView([1, 0, 0]); // Look along x-axis to see yz plane
       viewer.render();
     }
   });
   
   document.getElementById('cam-y').addEventListener('click', () => {
     if (viewer) {
+      // Reset to default view first, then rotate for Y-view  
       viewer.zoomTo();
-      // Y-view: looking down the y-axis (-90° rotation around x-axis)
-      viewer.rotate(-90, "x");
+      viewer.setView([0, 1, 0]); // Look along y-axis to see zx plane
       viewer.render();
     }
   });
   
   document.getElementById('cam-z').addEventListener('click', () => {
     if (viewer) {
+      // Z-view: default view looking along z-axis to see xy plane
       viewer.zoomTo();
-      // Z-view: default top-down view (no rotation needed)
+      viewer.setView([0, 0, 1]); // Look along z-axis to see xy plane
       viewer.render();
     }
   });
