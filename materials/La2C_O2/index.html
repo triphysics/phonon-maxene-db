@@ -544,15 +544,12 @@ function updateViewer() {
         atoms.forEach((atom, index) => {
             viewer.addLabel(atom.elem, {
                 position: atom,
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                backgroundOpacity: 0.8,
                 fontColor: 'black',
-                fontSize: 14,
+                fontSize: 16,
                 fontOpacity: 1,
-                borderThickness: 1,
-                borderColor: 'black',
+                fontWeight: '900',
                 inFront: true,
-                showBackground: true
+                showBackground: false
             });
         });
     }
