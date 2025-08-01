@@ -379,12 +379,13 @@
             <label>Atom labels</label>
             <input type="checkbox" id="cb-labels">
           </div>
-          
+
           <div class="control-item">
-            <label>vdW radius</label>
+            <label>Bond Threshold:</label>
             <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9">
+            <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
           </div>
-          
+
           <div class="control-item">
             <label>Supercell</label>
             <div class="supercell-inputs">
@@ -404,7 +405,6 @@
           </div>
         </div>
         
-        <div class="status-text">Click to interact</div>
       </div>
     </div>
 
@@ -432,7 +432,7 @@
           </div>
           <table class="info-table" id="atomTable" style="display:none;">
             <thead>
-              <tr><th>Kind label</th><th>x [Å]</th><th>y [Å]</th><th>z [Å]</th></tr>
+              <tr><th>Atom label</th><th>x</th><th>y</th><th>z</th></tr>
             </thead>
             <tbody></tbody>
           </table>
@@ -818,9 +818,9 @@ document.addEventListener('DOMContentLoaded', () => {
  document.getElementById('bond-threshold').addEventListener('input', (e) => {
     const val = parseFloat(e.target.value);
     viewerState.bondThreshold = val;
+    document.getElementById('bond-threshold-value').textContent = `${val.toFixed(1)} Å`;
     updateViewer();
-  });	
-});
+  });
 </script>
 
 <script>
