@@ -502,9 +502,9 @@ function updateViewer() {
 
     let baseStyle = {};
     if (viewerState.useVDW) {
-        baseStyle = { sphere: { colorscheme: 'Jmol' } };
+        baseStyle = { sphere: { scale: 0.75, colorscheme: 'Jmol' } };
     } else {
-        baseStyle = { sphere: { scale: 0.2, colorscheme: 'Jmol' } };
+        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
     }
 
     viewer.setStyle({}, baseStyle);
