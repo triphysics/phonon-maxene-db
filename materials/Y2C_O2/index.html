@@ -356,7 +356,11 @@
       <div class="card-content">
         <div id="structureStatus" class="loading">Loading crystal structure...</div>
         
-
+        <div class="button-group">
+          <button class="btn" id="zoom-in-btn">Zoom In</button>
+          <button class="btn" id="zoom-out-btn">Zoom Out</button>
+          <button class="btn btn-secondary" id="home-btn">Reset</button>
+        </div>
         
         <div id="viewer"></div>
 
@@ -375,12 +379,13 @@
             <label>Atom labels</label>
             <input type="checkbox" id="cb-labels">
           </div>
-          
+
           <div class="control-item">
-            <label>vdW radius</label>
+            <label>Bond Threshold:</label>
             <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9">
+            <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
           </div>
-          
+     
           <div class="control-item">
             <label>Supercell</label>
             <div class="supercell-inputs">
@@ -497,7 +502,7 @@ function updateViewer() {
 
     let baseStyle = {};
     if (viewerState.useVDW) {
-        baseStyle = { sphere: { colorscheme: 'Jmol' } };
+        baseStyle = { sphere: { scale: 0.75, colorscheme: 'Jmol' } };
     } else {
         baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
     }
@@ -543,7 +548,7 @@ function updateViewer() {
                 fontColor: 'black',
                 fontSize: 16,
                 fontOpacity: 1,
-                fontWeight: '900',
+                fontWeight: 'bold',
                 inFront: true,
                 showBackground: false
             });
@@ -746,32 +751,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  document.getElementById('zoom-in-btn').addEventListener('click', () => {
+    if (viewer) {
+      viewer.zoom(1.2);
+      viewer.render();
+    }
+  });
+  document.getElementById('zoom-out-btn').addEventListener('click', () => {
+    if (viewer) {
+      viewer.zoom(0.8);
+      viewer.render();
+    }
+  });
+  
+  document.getElementById('home-btn').addEventListener('click', () => {
+    resetToOriginalState();
+  });
+
   document.getElementById('cam-x').addEventListener('click', () => {
     if (viewer) {
-      // Reset to default view first
-      viewer.zoomTo();
-      // X-view: rotate to see yz plane (rotate 90° around z-axis, then 90° around y-axis)
-      viewer.rotate(90, "z");
-      viewer.rotate(90, "y");
-      viewer.render();
+        viewer.zoomTo();
+        viewer.rotate(-90, {y: 1, x: 1, z: 0});
+        viewer.render();
     }
   });
   
   document.getElementById('cam-y').addEventListener('click', () => {
     if (viewer) {
-      // Reset to default view first
-      viewer.zoomTo();
-      // Y-view: rotate to see zx plane (rotate 90° around x-axis)
-      viewer.rotate(90, "x");
-      viewer.render();
+        viewer.zoomTo();
+        viewer.rotate(90, {x: 1, y: 0, z: 0});
+        viewer.render();
     }
   });
   
   document.getElementById('cam-z').addEventListener('click', () => {
     if (viewer) {
-      // Z-view: default view (xy plane) - just reset to default
-      viewer.zoomTo();
-      viewer.render();
+        viewer.zoomTo();
+        viewer.render();
     }
   });
 
@@ -804,7 +820,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const val = parseFloat(e.target.value);
     viewerState.bondThreshold = val;
     updateViewer();
-  });	
+  });
+
+  document.getElementById('bond-threshold').addEventListener('input', (e) => {
+    const val = parseFloat(e.target.value);
+    viewerState.bondThreshold = val;
+    document.getElementById('bond-threshold-value').textContent = `${val.toFixed(1)} Å`;
+    updateViewer();
+  }); 
+ 	
 });
 </script>
 
