@@ -646,6 +646,7 @@ function loadStructuralData() {
     });
 }
 
+
 function loadPhononData() {
   fetch("data/band.yaml")
     .then(r => r.text())
@@ -660,7 +661,7 @@ function loadPhononData() {
           x: phonon.map(p => p.distance),
           y: phonon.map(p => p.band[i].frequency),
           mode: 'lines',
-          line: { width: 1.5, color: '#1a73e8' },
+          line: { width: 2 },
           showlegend: false,
           name: `Mode ${i + 1}`
         });
@@ -684,29 +685,26 @@ function loadPhononData() {
       labelPositions.push(phonon[phonon.length - 1].distance);
 
       const layout = {
+        title: 'Phonon Band Structure',
         xaxis: {
+          title: 'Wave Vector',
           tickvals: labelPositions,
           ticktext: labels,
-          showgrid: true,
-          gridcolor: '#f1f3f4',
-          tickfont: { size: 12, family: 'Inter, sans-serif' }
+          showgrid: true
         },
         yaxis: {
-          title: { text: 'Frequency (THz)', font: { size: 12, family: 'Inter, sans-serif' } },
+          title: 'Frequency (THz)',
           zeroline: true,
-          showgrid: true,
-          gridcolor: '#f1f3f4',
-          tickfont: { size: 12, family: 'Inter, sans-serif' }
+          showgrid: true
         },
         plot_bgcolor: 'white',
         paper_bgcolor: 'white',
-        margin: { l: 50, r: 20, t: 20, b: 50 },
-        font: { family: 'Inter, sans-serif', size: 12, color: '#333' },
-        showlegend: false
+        margin: { l: 60, r: 30, t: 50, b: 60 }
       };
 
-      Plotly.newPlot('phononPlot', traces, layout, {displayModeBar: false});
-      document.getElementById("phononStatus").style.display = 'none';
+      Plotly.newPlot('phononPlot', traces, layout);
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="success">✓ Phonon dispersion loaded from band.yaml</div>`;
     })
     .catch(err => {
       document.getElementById("phononStatus").innerHTML =
