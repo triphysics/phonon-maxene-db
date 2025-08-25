@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MXene Material Viewer</title>
+  <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js" defer></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="viewer.css"> <!-- (you can move styles here) -->
+</head>
+<body>
+<div class="container">
+  <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <img src="mxphon-logo.png" alt="MXene Viewer Logo" style="height: 140px;">
+    <button class="btn btn-secondary" id="theme-toggle">Toggle Theme</button>
+  </header>
+  <h1 id="material-title">Material Viewer</h1>
+
+  <div class="main-grid">
+    <!-- structure, details, phonon sections as in your current HTML -->
+    <div id="app"></div>
+  </div>
+</div>
+
+<script src="viewer.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const material = params.get("material");
+  if (material) {
+    initViewer(material);  // <-- defined in viewer.js
+  } else {
+    document.getElementById("material-title").textContent = "No material selected";
+  }
+</script>
+</body>
+</html>

@@ -1,101 +1,89 @@
 {
   "Y2C_ClF": {
-    "path": "materials/Y2C_ClF/",
     "elements": [
-      "F",
       "Y",
       "C",
-      "Cl"
+      "Cl",
+      "F"
     ]
   },
   "La2C_O2": {
-    "path": "materials/La2C_O2/",
     "elements": [
-      "O",
       "La",
-      "C"
+      "C",
+      "O"
     ]
   },
   "Y2C_O2": {
-    "path": "materials/Y2C_O2/",
     "elements": [
-      "O",
       "Y",
-      "C"
+      "C",
+      "O"
     ]
   },
   "La2C_ClO": {
-    "path": "materials/La2C_ClO/",
     "elements": [
-      "O",
       "La",
       "C",
-      "Cl"
+      "Cl",
+      "O"
     ]
   },
   "Y2C_BrCl": {
-    "path": "materials/Y2C_BrCl/",
     "elements": [
       "Y",
-      "Br",
       "C",
+      "Br",
       "Cl"
     ]
   },
   "Sc2C_BrH": {
-    "path": "materials/Sc2C_BrH/",
     "elements": [
-      "H",
       "Sc",
       "C",
-      "Br"
+      "Br",
+      "H"
     ]
   },
   "Y2C_Br2": {
-    "path": "materials/Y2C_Br2/",
     "elements": [
       "Y",
-      "Br",
-      "C"
-    ]
-  },
-  "Sc2C_BrF": {
-    "path": "materials/Sc2C_BrF/",
-    "elements": [
-      "F",
-      "Sc",
       "C",
       "Br"
     ]
   },
-  "Y2C_ClH": {
-    "path": "materials/Y2C_ClH/",
+  "Sc2C_BrF": {
     "elements": [
-      "H",
+      "Sc",
+      "C",
+      "Br",
+      "F"
+    ]
+  },
+  "Y2C_ClH": {
+    "elements": [
       "Y",
       "C",
-      "Cl"
+      "Cl",
+      "H"
     ]
   },
   "La2C_Br2": {
-    "path": "materials/La2C_Br2/",
     "elements": [
       "La",
-      "Br",
-      "C"
+      "C",
+      "Br"
     ]
   },
   "La2C_ClF": {
-    "path": "materials/La2C_ClF/",
     "elements": [
-      "F",
       "La",
       "C",
-      "Cl"
+      "Cl",
+      "F"
     ]
   },
   "La2C_Cl2": {
-    "path": "materials/La2C_Cl2/",
     "elements": [
       "La",
       "C",
@@ -103,138 +91,122 @@
     ]
   },
   "Sc2C_ClH": {
-    "path": "materials/Sc2C_ClH/",
     "elements": [
-      "H",
       "Sc",
       "C",
-      "Cl"
+      "Cl",
+      "H"
     ]
   },
   "La2C_BrH": {
-    "path": "materials/La2C_BrH/",
     "elements": [
-      "H",
       "La",
+      "C",
       "Br",
-      "C"
+      "H"
     ]
   },
   "Sc2C_ClO": {
-    "path": "materials/Sc2C_ClO/",
     "elements": [
-      "O",
       "Sc",
       "C",
-      "Cl"
+      "Cl",
+      "O"
     ]
   },
   "La2C_FH": {
-    "path": "materials/La2C_FH/",
     "elements": [
-      "F",
       "La",
-      "H",
-      "C"
+      "C",
+      "F",
+      "H"
     ]
   },
   "Y2C_BrH": {
-    "path": "materials/Y2C_BrH/",
     "elements": [
-      "H",
       "Y",
+      "C",
       "Br",
-      "C"
+      "H"
     ]
   },
   "La2C_ClH": {
-    "path": "materials/La2C_ClH/",
     "elements": [
-      "H",
       "La",
       "C",
-      "Cl"
+      "Cl",
+      "H"
     ]
   },
   "La2C_FO": {
-    "path": "materials/La2C_FO/",
     "elements": [
-      "F",
       "La",
-      "O",
-      "C"
+      "C",
+      "F",
+      "O"
     ]
   },
   "La2C_BrF": {
-    "path": "materials/La2C_BrF/",
     "elements": [
-      "F",
       "La",
+      "C",
       "Br",
-      "C"
+      "F"
     ]
   },
   "Sc2C_O2": {
-    "path": "materials/Sc2C_O2/",
     "elements": [
-      "O",
       "Sc",
-      "C"
-    ]
-  },
-  "La2C_F2": {
-    "path": "materials/La2C_F2/",
-    "elements": [
-      "F",
-      "La",
-      "C"
-    ]
-  },
-  "Y2C_H2": {
-    "path": "materials/Y2C_H2/",
-    "elements": [
-      "H",
-      "Y",
-      "C"
-    ]
-  },
-  "Sc2C_FH": {
-    "path": "materials/Sc2C_FH/",
-    "elements": [
-      "F",
-      "H",
-      "Sc",
-      "C"
-    ]
-  },
-  "La2C_BrCl": {
-    "path": "materials/La2C_BrCl/",
-    "elements": [
-      "La",
-      "Br",
-      "C",
-      "Cl"
-    ]
-  },
-  "Sc2C_H2": {
-    "path": "materials/Sc2C_H2/",
-    "elements": [
-      "H",
-      "Sc",
-      "C"
-    ]
-  },
-  "Y2C_HO": {
-    "path": "materials/Y2C_HO/",
-    "elements": [
-      "H",
-      "Y",
       "C",
       "O"
     ]
   },
+  "La2C_F2": {
+    "elements": [
+      "La",
+      "C",
+      "F"
+    ]
+  },
+  "Y2C_H2": {
+    "elements": [
+      "Y",
+      "C",
+      "H"
+    ]
+  },
+  "Sc2C_FH": {
+    "elements": [
+      "Sc",
+      "C",
+      "F",
+      "H"
+    ]
+  },
+  "La2C_BrCl": {
+    "elements": [
+      "La",
+      "C",
+      "Br",
+      "Cl"
+    ]
+  },
+  "Sc2C_H2": {
+    "elements": [
+      "Sc",
+      "C",
+      "H"
+    ]
+  },
+  "Y2C_HO": {
+    "elements": [
+      "Y",
+      "C",
+      "H",
+      "O"
+    ]
+  },
   "Sc2C_Br2": {
-    "path": "materials/Sc2C_Br2/",
     "elements": [
       "Sc",
       "C",
@@ -242,24 +214,21 @@
     ]
   },
   "Y2C_F2": {
-    "path": "materials/Y2C_F2/",
     "elements": [
-      "F",
       "Y",
-      "C"
+      "C",
+      "F"
     ]
   },
   "Y2C_FO": {
-    "path": "materials/Y2C_FO/",
     "elements": [
-      "F",
       "Y",
       "C",
+      "F",
       "O"
     ]
   },
   "Y2C_Cl2": {
-    "path": "materials/Y2C_Cl2/",
     "elements": [
       "Y",
       "C",
@@ -267,91 +236,81 @@
     ]
   },
   "Sc2C_FO": {
-    "path": "materials/Sc2C_FO/",
     "elements": [
-      "F",
-      "O",
       "Sc",
-      "C"
+      "C",
+      "F",
+      "O"
     ]
   },
   "Sc2C_F2": {
-    "path": "materials/Sc2C_F2/",
     "elements": [
-      "F",
       "Sc",
-      "C"
+      "C",
+      "F"
     ]
   },
   "Sc2C_HO": {
-    "path": "materials/Sc2C_HO/",
     "elements": [
-      "H",
-      "O",
       "Sc",
-      "C"
+      "C",
+      "H",
+      "O"
     ]
   },
   "Sc2C_BrCl": {
-    "path": "materials/Sc2C_BrCl/",
     "elements": [
       "Sc",
       "C",
-      "Cl",
-      "Br"
-    ]
-  },
-  "Sc2C_BrO": {
-    "path": "materials/Sc2C_BrO/",
-    "elements": [
-      "O",
-      "Sc",
-      "C",
-      "Br"
-    ]
-  },
-  "Y2C_BrF": {
-    "path": "materials/Y2C_BrF/",
-    "elements": [
-      "F",
-      "Y",
       "Br",
-      "C"
-    ]
-  },
-  "La2C_HO": {
-    "path": "materials/La2C_HO/",
-    "elements": [
-      "H",
-      "La",
-      "O",
-      "C"
-    ]
-  },
-  "Y2C_ClO": {
-    "path": "materials/Y2C_ClO/",
-    "elements": [
-      "O",
-      "Y",
-      "C",
       "Cl"
     ]
   },
-  "Y2C_FH": {
-    "path": "materials/Y2C_FH/",
+  "Sc2C_BrO": {
     "elements": [
-      "F",
-      "H",
+      "Sc",
+      "C",
+      "Br",
+      "O"
+    ]
+  },
+  "Y2C_BrF": {
+    "elements": [
       "Y",
-      "C"
+      "C",
+      "Br",
+      "F"
+    ]
+  },
+  "La2C_HO": {
+    "elements": [
+      "La",
+      "C",
+      "H",
+      "O"
+    ]
+  },
+  "Y2C_ClO": {
+    "elements": [
+      "Y",
+      "C",
+      "Cl",
+      "O"
+    ]
+  },
+  "Y2C_FH": {
+    "elements": [
+      "Y",
+      "C",
+      "F",
+      "H"
     ]
   },
   "La2C_H2": {
-    "path": "materials/La2C_H2/",
     "elements": [
-      "H",
       "La",
-      "C"
+      "C",
+      "H"
     ]
   }
 }
