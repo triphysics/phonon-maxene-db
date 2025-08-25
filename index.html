@@ -1,88 +1,126 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MX-PHon - MAXene Phonon Database</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MXene Phonon Database</title>
   <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    li {
-      margin: 0.5em 0;
-      font-size: 1.1em;
-    }
-    a {
-      text-decoration: none;
-      color: #3498db;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 1rem; }
+    .search-bar { margin-bottom: 1rem; padding: 0.5rem; width: 100%; max-width: 400px; }
+    .periodic-table { display: grid; grid-template-columns: repeat(18, 2.5rem); gap: 0.3rem; }
+    .element { border: 1px solid #ccc; padding: 0.3rem; text-align: center; cursor: pointer; border-radius: 6px; background: #f8f8f8; }
+    .element:hover { background: #e0f0ff; }
+    /* Modal */
+    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; justify-content: center; align-items: center; }
+    .modal-content { background: #fff; padding: 1rem; border-radius: 8px; max-width: 500px; width: 100%; }
+    .modal-header { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; }
+    .close-btn { float: right; cursor: pointer; color: #888; font-size: 1.2rem; }
   </style>
 </head>
 <body>
-  <div style="display: flex; align-items: center; gap: 1rem;">
-    <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 160px;">
-    <h1 style="margin: 0;">MXene Phonon Database</h1>
+  <h1>MXene Phonon Database</h1>
+
+  <input id="searchInput" class="search-bar" type="text" placeholder="Search element by name, symbol, or number" />
+
+  <div id="periodicTable" class="periodic-table"></div>
+
+  <!-- Modal -->
+  <div id="elementModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <div class="modal-header" id="modalTitle"></div>
+      <div id="elementDetails"></div>
+      <hr />
+      <div id="compoundProperties"></div>
+    </div>
   </div>
 
-  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides. They are derived from their bulk MAX phases. MXenes are known for their unique combination of metallic conductivity, tunable surface chemistry, and layered structure. They are of great interest for applications in energy storage, sensors, electronics, and beyond. This database gives the crystal structure and phonon dispersion of selected MXenes.</p>
-  <p>Select a material to view its structure and phonon properties:</p>
-  <ul>
-    <li><a href="materials/La2C_Br2/index.html">La2C_Br2</a></li>
-    <li><a href="materials/La2C_BrF/index.html">La2C_BrF</a></li>
-    <li><a href="materials/La2C_Cl2/index.html">La2C_Cl2</a></li>
-    <li><a href="materials/La2C_ClH/index.html">La2C_ClH</a></li>
-    <li><a href="materials/La2C_F2/index.html">La2C_F2</a></li>
-    <li><a href="materials/La2C_FO/index.html">La2C_FO</a></li>
-    <li><a href="materials/La2C_HO/index.html">La2C_HO</a></li>
-    <li><a href="materials/La2C_BrCl/index.html">La2C_BrCl</a></li>
-    <li><a href="materials/La2C_BrH/index.html">La2C_BrH</a></li>
-    <li><a href="materials/La2C_ClF/index.html">La2C_ClF</a></li>
-    <li><a href="materials/La2C_ClO/index.html">La2C_ClO</a></li>
-    <li><a href="materials/La2C_FH/index.html">La2C_FH</a></li>
-    <li><a href="materials/La2C_H2/index.html">La2C_H2</a></li>
-    <li><a href="materials/La2C_O2/index.html">La2C_O2</a></li>
-    <li><a href="materials/Sc2C_Br2/index.html">Sc2C_Br2</a></li>
-    <li><a href="materials/Sc2C_BrF/index.html">Sc2C_BrF</a></li>
-    <li><a href="materials/Sc2C_Cl2/index.html">Sc2C_Cl2</a></li>
-    <li><a href="materials/Sc2C_ClH/index.html">Sc2C_ClH</a></li>
-    <li><a href="materials/Sc2C_F2/index.html">Sc2C_F2</a></li>
-    <li><a href="materials/Sc2C_FO/index.html">Sc2C_FO</a></li>
-    <li><a href="materials/Sc2C_HO/index.html">Sc2C_HO</a></li>
-    <li><a href="materials/Sc2C_BrCl/index.html">Sc2C_BrCl</a></li>
-    <li><a href="materials/Sc2C_BrH/index.html">Sc2C_BrH</a></li>
-    <li><a href="materials/Sc2C_ClF/index.html">Sc2C_ClF</a></li>
-    <li><a href="materials/Sc2C_ClO/index.html">Sc2C_ClO</a></li>
-    <li><a href="materials/Sc2C_FH/index.html">Sc2C_FH</a></li>
-    <li><a href="materials/Sc2C_H2/index.html">Sc2C_H2</a></li>
-    <li><a href="materials/Sc2C_O2/index.html">Sc2C_O2</a></li>
-    <li><a href="materials/Y2C_Br2/index.html">Y2C_Br2</a></li>
-    <li><a href="materials/Y2C_BrF/index.html">Y2C_BrF</a></li>
-    <li><a href="materials/Y2C_Cl2/index.html">Y2C_Cl2</a></li>
-    <li><a href="materials/Y2C_ClH/index.html">Y2C_ClH</a></li>
-    <li><a href="materials/Y2C_F2/index.html">Y2C_F2</a></li>
-    <li><a href="materials/Y2C_FO/index.html">Y2C_FO</a></li>
-    <li><a href="materials/Y2C_HO/index.html">Y2C_HO</a></li>
-    <li><a href="materials/Y2C_BrCl/index.html">Y2C_BrCl</a></li>
-    <li><a href="materials/Y2C_BrH/index.html">Y2C_BrH</a></li>
-    <li><a href="materials/Y2C_ClF/index.html">Y2C_ClF</a></li>
-    <li><a href="materials/Y2C_ClO/index.html">Y2C_ClO</a></li>
-    <li><a href="materials/Y2C_FH/index.html">Y2C_FH</a></li>
-    <li><a href="materials/Y2C_H2/index.html">Y2C_H2</a></li>
-    <li><a href="materials/Y2C_O2/index.html">Y2C_O2</a></li>
+  <script>
+    let elements = [];
+    let compoundsDB = {};
 
-  </ul>
+    // Load periodic table data (full 118 elements)
+    fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json")
+      .then(res => res.json())
+      .then(data => {
+        elements = data.elements.map(el => ({
+          number: el.number,
+          symbol: el.symbol,
+          name: el.name,
+          group: el.category
+        }));
+        renderTable();
+      });
+
+    // Load compounds manifest generated by build_manifest.py
+    fetch("compounds.json")
+      .then(res => res.json())
+      .then(data => {
+        compoundsDB = data;
+      });
+
+    const table = document.getElementById("periodicTable");
+    const modal = document.getElementById("elementModal");
+    const closeModal = document.getElementById("closeModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const elementDetails = document.getElementById("elementDetails");
+    const compoundProperties = document.getElementById("compoundProperties");
+
+    // Render periodic table
+    function renderTable(filter = "") {
+      table.innerHTML = "";
+      elements.forEach(el => {
+        if (
+          el.symbol.toLowerCase().includes(filter) ||
+          el.name.toLowerCase().includes(filter) ||
+          String(el.number) === filter ||
+          filter === ""
+        ) {
+          const cell = document.createElement("div");
+          cell.className = "element";
+          cell.innerHTML = `<strong>${el.symbol}</strong><br/><small>${el.number}</small>`;
+          cell.onclick = () => showModal(el);
+          table.appendChild(cell);
+        }
+      });
+    }
+
+    function showModal(el) {
+      modal.style.display = "flex";
+      modalTitle.innerText = `${el.name} (${el.symbol})`;
+      elementDetails.innerHTML = `
+        <p><b>Atomic Number:</b> ${el.number}</p>
+        <p><b>Group:</b> ${el.group}</p>
+      `;
+
+      // Match compounds containing this element
+      const results = Object.entries(compoundsDB).filter(([compound, props]) =>
+        props.elements.includes(el.symbol)
+      );
+
+      if (results.length > 0) {
+        compoundProperties.innerHTML = "<h3>MXene Compounds</h3>";
+        results.forEach(([compound, props]) => {
+          compoundProperties.innerHTML += `
+            <div style="margin-bottom:0.8rem">
+              <b>${compound}</b><br/>
+              <a href="${props.path}index.html" target="_blank">View details</a>
+            </div>
+          `;
+        });
+      } else {
+        compoundProperties.innerHTML = "<p>No MXene data available for this element.</p>";
+      }
+    }
+
+    closeModal.onclick = () => (modal.style.display = "none");
+    window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+
+    // Search functionality
+    document.getElementById("searchInput").addEventListener("input", e => {
+      renderTable(e.target.value.toLowerCase());
+    });
+  </script>
 </body>
 </html>
+

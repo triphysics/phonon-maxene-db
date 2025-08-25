@@ -1,0 +1,357 @@
+{
+  "Y2C_ClF": {
+    "path": "materials/Y2C_ClF/",
+    "elements": [
+      "F",
+      "Y",
+      "C",
+      "Cl"
+    ]
+  },
+  "La2C_O2": {
+    "path": "materials/La2C_O2/",
+    "elements": [
+      "O",
+      "La",
+      "C"
+    ]
+  },
+  "Y2C_O2": {
+    "path": "materials/Y2C_O2/",
+    "elements": [
+      "O",
+      "Y",
+      "C"
+    ]
+  },
+  "La2C_ClO": {
+    "path": "materials/La2C_ClO/",
+    "elements": [
+      "O",
+      "La",
+      "C",
+      "Cl"
+    ]
+  },
+  "Y2C_BrCl": {
+    "path": "materials/Y2C_BrCl/",
+    "elements": [
+      "Y",
+      "Br",
+      "C",
+      "Cl"
+    ]
+  },
+  "Sc2C_BrH": {
+    "path": "materials/Sc2C_BrH/",
+    "elements": [
+      "H",
+      "Sc",
+      "C",
+      "Br"
+    ]
+  },
+  "Y2C_Br2": {
+    "path": "materials/Y2C_Br2/",
+    "elements": [
+      "Y",
+      "Br",
+      "C"
+    ]
+  },
+  "Sc2C_BrF": {
+    "path": "materials/Sc2C_BrF/",
+    "elements": [
+      "F",
+      "Sc",
+      "C",
+      "Br"
+    ]
+  },
+  "Y2C_ClH": {
+    "path": "materials/Y2C_ClH/",
+    "elements": [
+      "H",
+      "Y",
+      "C",
+      "Cl"
+    ]
+  },
+  "La2C_Br2": {
+    "path": "materials/La2C_Br2/",
+    "elements": [
+      "La",
+      "Br",
+      "C"
+    ]
+  },
+  "La2C_ClF": {
+    "path": "materials/La2C_ClF/",
+    "elements": [
+      "F",
+      "La",
+      "C",
+      "Cl"
+    ]
+  },
+  "La2C_Cl2": {
+    "path": "materials/La2C_Cl2/",
+    "elements": [
+      "La",
+      "C",
+      "Cl"
+    ]
+  },
+  "Sc2C_ClH": {
+    "path": "materials/Sc2C_ClH/",
+    "elements": [
+      "H",
+      "Sc",
+      "C",
+      "Cl"
+    ]
+  },
+  "La2C_BrH": {
+    "path": "materials/La2C_BrH/",
+    "elements": [
+      "H",
+      "La",
+      "Br",
+      "C"
+    ]
+  },
+  "Sc2C_ClO": {
+    "path": "materials/Sc2C_ClO/",
+    "elements": [
+      "O",
+      "Sc",
+      "C",
+      "Cl"
+    ]
+  },
+  "La2C_FH": {
+    "path": "materials/La2C_FH/",
+    "elements": [
+      "F",
+      "La",
+      "H",
+      "C"
+    ]
+  },
+  "Y2C_BrH": {
+    "path": "materials/Y2C_BrH/",
+    "elements": [
+      "H",
+      "Y",
+      "Br",
+      "C"
+    ]
+  },
+  "La2C_ClH": {
+    "path": "materials/La2C_ClH/",
+    "elements": [
+      "H",
+      "La",
+      "C",
+      "Cl"
+    ]
+  },
+  "La2C_FO": {
+    "path": "materials/La2C_FO/",
+    "elements": [
+      "F",
+      "La",
+      "O",
+      "C"
+    ]
+  },
+  "La2C_BrF": {
+    "path": "materials/La2C_BrF/",
+    "elements": [
+      "F",
+      "La",
+      "Br",
+      "C"
+    ]
+  },
+  "Sc2C_O2": {
+    "path": "materials/Sc2C_O2/",
+    "elements": [
+      "O",
+      "Sc",
+      "C"
+    ]
+  },
+  "La2C_F2": {
+    "path": "materials/La2C_F2/",
+    "elements": [
+      "F",
+      "La",
+      "C"
+    ]
+  },
+  "Y2C_H2": {
+    "path": "materials/Y2C_H2/",
+    "elements": [
+      "H",
+      "Y",
+      "C"
+    ]
+  },
+  "Sc2C_FH": {
+    "path": "materials/Sc2C_FH/",
+    "elements": [
+      "F",
+      "H",
+      "Sc",
+      "C"
+    ]
+  },
+  "La2C_BrCl": {
+    "path": "materials/La2C_BrCl/",
+    "elements": [
+      "La",
+      "Br",
+      "C",
+      "Cl"
+    ]
+  },
+  "Sc2C_H2": {
+    "path": "materials/Sc2C_H2/",
+    "elements": [
+      "H",
+      "Sc",
+      "C"
+    ]
+  },
+  "Y2C_HO": {
+    "path": "materials/Y2C_HO/",
+    "elements": [
+      "H",
+      "Y",
+      "C",
+      "O"
+    ]
+  },
+  "Sc2C_Br2": {
+    "path": "materials/Sc2C_Br2/",
+    "elements": [
+      "Sc",
+      "C",
+      "Br"
+    ]
+  },
+  "Y2C_F2": {
+    "path": "materials/Y2C_F2/",
+    "elements": [
+      "F",
+      "Y",
+      "C"
+    ]
+  },
+  "Y2C_FO": {
+    "path": "materials/Y2C_FO/",
+    "elements": [
+      "F",
+      "Y",
+      "C",
+      "O"
+    ]
+  },
+  "Y2C_Cl2": {
+    "path": "materials/Y2C_Cl2/",
+    "elements": [
+      "Y",
+      "C",
+      "Cl"
+    ]
+  },
+  "Sc2C_FO": {
+    "path": "materials/Sc2C_FO/",
+    "elements": [
+      "F",
+      "O",
+      "Sc",
+      "C"
+    ]
+  },
+  "Sc2C_F2": {
+    "path": "materials/Sc2C_F2/",
+    "elements": [
+      "F",
+      "Sc",
+      "C"
+    ]
+  },
+  "Sc2C_HO": {
+    "path": "materials/Sc2C_HO/",
+    "elements": [
+      "H",
+      "O",
+      "Sc",
+      "C"
+    ]
+  },
+  "Sc2C_BrCl": {
+    "path": "materials/Sc2C_BrCl/",
+    "elements": [
+      "Sc",
+      "C",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Sc2C_BrO": {
+    "path": "materials/Sc2C_BrO/",
+    "elements": [
+      "O",
+      "Sc",
+      "C",
+      "Br"
+    ]
+  },
+  "Y2C_BrF": {
+    "path": "materials/Y2C_BrF/",
+    "elements": [
+      "F",
+      "Y",
+      "Br",
+      "C"
+    ]
+  },
+  "La2C_HO": {
+    "path": "materials/La2C_HO/",
+    "elements": [
+      "H",
+      "La",
+      "O",
+      "C"
+    ]
+  },
+  "Y2C_ClO": {
+    "path": "materials/Y2C_ClO/",
+    "elements": [
+      "O",
+      "Y",
+      "C",
+      "Cl"
+    ]
+  },
+  "Y2C_FH": {
+    "path": "materials/Y2C_FH/",
+    "elements": [
+      "F",
+      "H",
+      "Y",
+      "C"
+    ]
+  },
+  "La2C_H2": {
+    "path": "materials/La2C_H2/",
+    "elements": [
+      "H",
+      "La",
+      "C"
+    ]
+  }
+}
