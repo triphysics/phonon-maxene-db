@@ -1,79 +1,97 @@
 // viewer.js
 
-// Entry point called from viewer.html
-function initViewer(material) {
-  const basePath = `materials/${material}/`;
+// Get material from query parameter
+const params = new URLSearchParams(window.location.search);
+const material = params.get("material");
+const basePath = material ? `materials/${material}/` : "./";
 
-  // Update title
-  document.getElementById("material-title").innerHTML = formatFormula(material);
-  document.title = `MXene Viewer - ${material}`;
-
-  // Initialize viewers and plots
-  loadCIF(basePath + "POSCAR.cif");
-  loadPOSCAR(basePath + "POSCAR");
-  loadPhonon(basePath + "data/band.yaml");
-
-  // Dark/light theme toggle
-  const toggleBtn = document.getElementById("theme-toggle");
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-  });
+// Utility: format formula with subscripts
+function formatFormula(formula) {
+  return formula.replace(/(\d+)/g, "<sub>$1</sub>");
 }
 
-// ========== 3D Structure Viewer ==========
+// Initialize UI
+if (material) {
+  document.getElementById("material-title").innerHTML = formatFormula(material);
+  document.title = `MXene Viewer - ${material}`;
+}
+
+// 3Dmol.js viewer
+let viewer;
+
 function loadCIF(cifPath) {
-  const viewerDiv = document.createElement("div");
-  viewerDiv.id = "structure";
-  viewerDiv.style.width = "100%";
-  viewerDiv.style.height = "400px";
-  document.getElementById("app").appendChild(viewerDiv);
+  const container = document.getElementById("viewer");
+  viewer = $3Dmol.createViewer(container, { backgroundColor: "white" });
 
   fetch(cifPath)
     .then(res => res.text())
     .then(cifData => {
-      const viewer = $3Dmol.createViewer("structure", { backgroundColor: "white" });
       viewer.addModel(cifData, "cif");
       viewer.setStyle({}, { stick: { radius: 0.2 }, sphere: { scale: 0.3 } });
       viewer.zoomTo();
       viewer.render();
+
+      document.getElementById("structureStatus").style.display = "none";
     })
     .catch(err => {
       console.error("Error loading CIF:", err);
-      viewerDiv.innerHTML = "<p>No CIF file found.</p>";
+      document.getElementById("structureStatus").innerText = "No CIF file found.";
     });
 }
 
-// ========== POSCAR Viewer ==========
-function loadPOSCAR(poscarPath) {
-  const poscarDiv = document.createElement("div");
-  poscarDiv.id = "poscar-block";
-  poscarDiv.innerHTML = "<h2>POSCAR</h2><pre id='poscar-text'>Loading...</pre>";
-  document.getElementById("app").appendChild(poscarDiv);
+// Bond, labels, etc. controls
+document.getElementById("cb-bonds").addEventListener("change", e => {
+  if (!viewer) return;
+  if (e.target.checked) {
+    viewer.setStyle({}, { stick: { radius: 0.2 }, sphere: { scale: 0.3 } });
+  } else {
+    viewer.setStyle({}, { sphere: { scale: 0.3 } });
+  }
+  viewer.render();
+});
 
-  fetch(poscarPath)
+document.getElementById("cb-labels").addEventListener("change", e => {
+  if (!viewer) return;
+  if (e.target.checked) {
+    viewer.addLabel("Atoms", { fontSize: 12 });
+  } else {
+    viewer.removeAllLabels();
+  }
+  viewer.render();
+});
+
+// Zoom controls
+document.getElementById("zoom-in-btn").addEventListener("click", () => { if(viewer){ viewer.zoom(1.2); viewer.render(); } });
+document.getElementById("zoom-out-btn").addEventListener("click", () => { if(viewer){ viewer.zoom(0.8); viewer.render(); } });
+document.getElementById("home-btn").addEventListener("click", () => { if(viewer){ viewer.zoomTo(); viewer.render(); } });
+
+// Theme toggle
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+});
+
+// Load POSCAR text
+function loadPOSCAR(path) {
+  fetch(path)
     .then(res => res.text())
     .then(text => {
-      document.getElementById("poscar-text").textContent = text;
+      const poscarBlock = document.createElement("pre");
+      poscarBlock.textContent = text;
+      document.getElementById("atoms-section").appendChild(poscarBlock);
     })
     .catch(() => {
-      document.getElementById("poscar-text").textContent = "No POSCAR found.";
+      document.getElementById("structuralStatus").innerText = "No POSCAR found.";
     });
 }
 
-// ========== Phonon Band Structure ==========
-function loadPhonon(bandPath) {
-  const phononDiv = document.createElement("div");
-  phononDiv.id = "phonon-block";
-  phononDiv.innerHTML = "<h2>Phonon Band Structure</h2><div id='phonon-plot'></div>";
-  document.getElementById("app").appendChild(phononDiv);
-
-  fetch(bandPath)
+// Load phonon band.yaml
+function loadPhonon(path) {
+  fetch(path)
     .then(res => res.text())
     .then(yamlText => {
       const bandData = jsyaml.load(yamlText);
-
-      // Convert to plotly traces
       const traces = [];
+
       bandData.bands.forEach((band, i) => {
         traces.push({
           x: bandData.kpoints,
@@ -93,16 +111,18 @@ function loadPhonon(bandPath) {
         showlegend: false
       };
 
-      Plotly.newPlot("phonon-plot", traces, layout, { responsive: true });
+      Plotly.newPlot("phononPlot", traces, layout, { responsive: true });
+      document.getElementById("phononStatus").style.display = "none";
     })
     .catch(() => {
-      document.getElementById("phonon-plot").innerHTML = "<p>No band.yaml found.</p>";
+      document.getElementById("phononStatus").innerText = "No band.yaml found.";
     });
 }
 
-// ========== Utility ==========
-function formatFormula(formula) {
-  // Add subscripts for digits in formula
-  return formula.replace(/([A-Za-z])(\d+)/g, (match, p1, p2) => p1 + "<sub>" + p2 + "</sub>");
+// === Initialization ===
+if (material) {
+  loadCIF(basePath + "POSCAR.cif");
+  loadPOSCAR(basePath + "POSCAR");
+  loadPhonon(basePath + "data/band.yaml");
 }
 

@@ -1,5 +1,3 @@
-/* viewer.css */
-
 body {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   margin: 0;
@@ -21,14 +19,8 @@ pre {
   font-family: "JetBrains Mono", monospace;
 }
 
-#phonon-plot {
-  width: 100%;
-  height: 500px;
-}
-
-/* Layout */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -36,18 +28,110 @@ header img {
   max-height: 120px;
 }
 
-button {
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-content {
+  font-size: 0.95rem;
+}
+
+button, .btn {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
   background: #327ab7;
   color: white;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
 }
 
-button:hover {
+button:hover, .btn:hover {
   background: #245a86;
+}
+
+button.btn-secondary {
+  background: #666;
+}
+
+button.btn-secondary:hover {
+  background: #444;
+}
+
+.btn-small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+/* loading status text */
+.loading {
+  font-style: italic;
+  color: #777;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.supercell-inputs input {
+  width: 50px;
+  margin-right: 4px;
+}
+
+.camera-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.info-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.info-table th, .info-table td {
+  border: 1px solid #ccc;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+#viewer {
+  width: 100%;
+  height: 400px;
+  margin-top: 12px;
+}
+
+#phononPlot {
+  width: 100%;
+  height: 500px;
+  margin-top: 16px;
 }
 
 /* Dark Theme */
@@ -66,11 +150,13 @@ body.dark-theme h2 {
   color: #e0e0e0;
 }
 
-body.dark-theme button {
-  background: #555;
+body.dark-theme .card {
+  background: #2a2a2a;
+  color: #eee;
 }
 
-body.dark-theme button:hover {
-  background: #777;
+body.dark-theme .info-table th, 
+body.dark-theme .info-table td {
+  border: 1px solid #555;
 }
 

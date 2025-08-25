@@ -6,11 +6,15 @@
   <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js" defer></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="viewer.css"> <!-- (you can move styles here) -->
+  <link rel="icon" href="mxphon-logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="viewer.css">
 </head>
 <body>
-<div class="container">
+<div class="container" id="app">
   <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
     <img src="mxphon-logo.png" alt="MXene Viewer Logo" style="height: 140px;">
     <button class="btn btn-secondary" id="theme-toggle">Toggle Theme</button>
@@ -18,20 +22,110 @@
   <h1 id="material-title">Material Viewer</h1>
 
   <div class="main-grid">
-    <!-- structure, details, phonon sections as in your current HTML -->
-    <div id="app"></div>
+    <div class="structure-card card">
+      <div class="card-header">
+        <span aria-hidden="true">🧊</span>
+        <span>Structure</span>
+      </div>
+      <div class="card-content">
+        <div id="structureStatus" class="loading">Loading crystal structure...</div>
+        
+        <div class="button-group">
+          <button class="btn" id="zoom-in-btn" aria-label="Zoom in on 3D structure">Zoom In</button>
+          <button class="btn" id="zoom-out-btn" aria-label="Zoom out on 3D structure">Zoom Out</button>
+          <button class="btn btn-secondary" id="home-btn" aria-label="Reset 3D structure view">Reset</button>
+        </div>
+        
+        <div id="viewer"></div>
+
+        <div class="controls-grid">
+          <div class="control-item">
+            <label>Bonds</label>
+            <input type="checkbox" id="cb-bonds" checked>
+          </div>
+          
+          <div class="control-item">
+            <label>Packed cell</label>
+            <input type="checkbox" id="cb-packed">
+          </div>
+          
+          <div class="control-item">
+            <label>Atom labels</label>
+            <input type="checkbox" id="cb-labels">
+          </div>
+
+          <div class="control-item">
+            <label>Bond Threshold:</label>
+            <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9">
+            <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
+          </div>
+     
+          <div class="control-item">
+            <label>Supercell</label>
+            <div class="supercell-inputs">
+              <input type="number" id="sc-x" value="3" min="1">
+              <input type="number" id="sc-y" value="3" min="1">
+              <input type="number" id="sc-z" value="1" min="1">
+            </div>
+          </div>
+          
+          <div class="control-item">
+            <label>Camera</label>
+            <div class="camera-controls">
+              <button class="btn btn-small" id="cam-x">x</button>
+              <button class="btn btn-small" id="cam-y">y</button>
+              <button class="btn btn-small" id="cam-z">z</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-card card">
+      <div class="card-header">
+        <span aria-hidden="true">📊</span>
+        <span>Structural details</span>
+      </div>
+      <div class="card-content">
+        <div id="structuralStatus" class="loading">Loading structural data...</div>
+        
+        <div class="collapsible-content" id="lattice-section">
+          <table class="info-table" id="latticeTable" style="display:none;">
+            <thead>
+              <tr><th colspan="4">Cell</th></tr>
+              <tr><th></th><th>x</th><th>y</th><th>z</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        
+        <div class="collapsible-content" id="atoms-section">
+          <div class="card-header collapsible-header" id="atoms-header" role="button" aria-expanded="true" aria-controls="atomTable">
+            <span>Atomic positions</span>
+          </div>
+          <table class="info-table" id="atomTable" style="display:none;">
+            <thead>
+              <tr><th>Atom label</th><th>x</th><th>y</th><th>z</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="phonon-section card">
+      <div class="card-header">
+        <span aria-hidden="true">🎵</span>
+        <span>Vibrational properties</span>
+      </div>
+      <div class="card-content">
+        <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
+        <div id="phononPlot"></div>
+      </div>
+    </div>
   </div>
 </div>
 
 <script src="viewer.js"></script>
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const material = params.get("material");
-  if (material) {
-    initViewer(material);  // <-- defined in viewer.js
-  } else {
-    document.getElementById("material-title").textContent = "No material selected";
-  }
-</script>
 </body>
 </html>
