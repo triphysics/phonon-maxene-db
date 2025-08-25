@@ -28,27 +28,46 @@
     a { color: #0066cc; text-decoration: none; transition: 0.2s; }
     a:hover { text-decoration: underline; color: #004499; }
 
-    /* Group containers */
+    /* Search bar */
+    .search-box {
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .search-box button {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      background: #327ab7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .search-box button:hover { background: #245a86; }
+
+    /* Group layout */
     .groups-row {
       display: flex;
       gap: 2rem;
       margin-top: 1.5rem;
     }
-    .group-container {
-      flex: 1;
-    }
+    .group-container { flex: 1; }
     .group {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-top: 0.5rem;
-      padding: 0.8rem;
-      border-radius: 8px;
+      padding: 0.2rem;
     }
-    .metals { background: #ddeff8; }
-    .carbides { background: #ffe9d4; }
-    .terminations { background: #e1f0d8; margin-top: 1.5rem; }
 
+    /* Buttons */
     .element {
       border: none;
       padding: 0.6rem 1rem;
@@ -114,7 +133,13 @@
 
   <!-- Intro -->
   <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of selected MXenes.</p>
-  <p>Select a chemical building block below to explore MXene compounds that include it:</p>
+  <p>Select a chemical building block below or search directly for a compound:</p>
+
+  <!-- Search -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search compound (e.g. La2C_Br2)">
+    <button onclick="searchCompound()">Search</button>
+  </div>
 
   <!-- Metals + Carbides side by side -->
   <div class="groups-row">
@@ -188,6 +213,27 @@
       }
     }
 
+    function searchCompound() {
+      const query = document.getElementById("searchInput").value.trim();
+      if (!query) return;
+      const match = Object.entries(compoundsDB).filter(([compound]) =>
+        compound.toLowerCase() === query.toLowerCase()
+      );
+      modal.style.display = "flex";
+      modalTitle.textContent = `Search results for "${query}"`;
+      compoundProperties.innerHTML = "";
+      if (match.length) {
+        match.forEach(([compound, props]) => {
+          const div = document.createElement("div");
+          div.className = "compound-item";
+          div.innerHTML = `<b>${compound}</b>: <a href="${props.path}index.html" target="_blank">View details</a>`;
+          compoundProperties.appendChild(div);
+        });
+      } else {
+        compoundProperties.textContent = "No compounds found.";
+      }
+    }
+
     closeModal.onclick = () => modal.style.display = "none";
     window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
@@ -197,3 +243,4 @@
   </script>
 </body>
 </html>
+
