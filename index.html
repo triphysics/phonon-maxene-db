@@ -198,6 +198,7 @@
         list.forEach(([compound]) => {
           const div = document.createElement("div");
           div.className = "compound-item";
+	  const formatted = compound.replace(/(\d+)/g, "<sub>$1</sub>");
           div.innerHTML = `<b>${compound}</b>: 
             <a href="viewer.html?material=${compound}" target="_blank">View details</a>`;
           compoundProperties.appendChild(div);
