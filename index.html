@@ -2,69 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MX-PHon – MAXene Phonon Database</title>
+  <title>MX-PHon - MAXene Phonon Database</title>
   <style>
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      max-width: 960px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem;
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
+      background: #fafafa;
+      color: #2c3e50;
     }
-    img { display: block; }
     h1 {
-      font-size: 2rem;
-      color: #2a3d4c;
+      color: #2c3e50;
+      font-size: 2.2rem;
       margin: 0;
     }
     h2 {
-      font-size: 1.2rem;
-      color: #2a3d4c;
-      margin: 0 0 0.5rem 0;
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      color: #34495e;
     }
-    p { font-size: 1rem; margin: 0.8rem 0; }
-    a { color: #0066cc; text-decoration: none; transition: 0.2s; }
-    a:hover { text-decoration: underline; color: #004499; }
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+    }
 
-    /* Group containers */
+    /* Groups layout */
     .groups-row {
       display: flex;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-    .group-container {
-      flex: 1;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-top: 1rem;
+      align-items: flex-start;
     }
     .group {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-top: 0.5rem;
-      padding: 0.8rem;
-      border-radius: 8px;
     }
-    .metals { background: #ddeff8; }
-    .carbides { background: #ffe9d4; }
-    .terminations { background: #e1f0d8; margin-top: 1.5rem; }
 
+    /* Element buttons */
     .element {
       border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
       cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      color: white;
+      font-size: 1rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      color: #fff;
     }
-    .metals .element { background: #327ab7; }
-    .carbides .element { background: #d97c1a; }
-    .terminations .element { background: #2f8f43; }
     .element:hover {
-      transform: scale(1.05);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .metal { background: #3498db; }
+    .carbide { background: #e67e22; }
+    .termination { background: #27ae60; }
+
+    /* Tooltip */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    .tooltiptext {
+      visibility: hidden;
+      width: max-content;
+      max-width: 200px;
+      background-color: #2a3d4c;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #2a3d4c transparent transparent transparent;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
     }
 
     /* Modal */
@@ -72,65 +104,66 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
       display: none;
       justify-content: center;
       align-items: center;
-      z-index: 10;
     }
     .modal-content {
-      background: white;
+      background: #fff;
       padding: 1.5rem;
-      border-radius: 8px;
-      width: 90%;
+      border-radius: 10px;
       max-width: 600px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      animation: fadeInScale 0.2s ease-out;
-      position: relative;
+      width: 90%;
+      max-height: 80%;
+      overflow-y: auto;
     }
-    @keyframes fadeInScale {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+    .modal-header {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
     }
-    .modal-header { font-size: 1.3rem; margin-bottom: 0.8rem; color: #2a3d4c; }
     .close-btn {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      font-size: 1.3rem;
+      float: right;
       cursor: pointer;
-      color: #777;
+      color: #888;
+      font-size: 1.4rem;
     }
-    .close-btn:hover { color: #333; }
-    .compound-item { margin-bottom: 0.6rem; }
+    .compound-item {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+    .compound-item a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    .compound-item a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
-    <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 140px;">
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 120px;">
     <h1>MXene Phonon Database</h1>
   </div>
 
-  <!-- Intro -->
-  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of selected MXenes.</p>
-  <p>Select a chemical building block below to explore MXene compounds that include it:</p>
+  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides. They are derived from their bulk MAX phases. MXenes are known for their unique combination of metallic conductivity, tunable surface chemistry, and layered structure. They are of great interest for applications in energy storage, sensors, electronics, and beyond. This database gives the crystal structure and phonon dispersion of selected MXenes.</p>
+  <p>Select building blocks below to explore compounds:</p>
 
-  <!-- Metals + Carbides side by side -->
   <div class="groups-row">
-    <div class="group-container">
+    <div>
       <h2>Metals</h2>
-      <div class="group metals" id="metals"></div>
+      <div class="group" id="metals"></div>
     </div>
-    <div class="group-container">
+    <div>
       <h2>Carbide / Nitride</h2>
-      <div class="group carbides" id="carbides"></div>
+      <div class="group" id="carbides"></div>
     </div>
   </div>
 
-  <!-- Terminations below -->
-  <h2 style="margin-top:2rem;">Surface Termination</h2>
-  <div class="group terminations" id="terminations"></div>
+  <h2>Surface Termination</h2>
+  <div class="group" id="terminations"></div>
 
   <!-- Modal -->
   <div id="elementModal" class="modal">
@@ -141,13 +174,20 @@
     </div>
   </div>
 
-  <!-- Script -->
   <script>
     const metals = ["Ti","Sc","Hf","Zr","Y","La"];
     const carbides = ["C","N"];
     const terminations = ["H","O","Cl","Br","F","CN","NCS","NCO","NO","OCl","OCN","OH","PO","SCN"];
-    let compoundsDB = {};
 
+    const elementNames = {
+      Ti: "Titanium", Sc: "Scandium", Hf: "Hafnium", Zr: "Zirconium", Y: "Yttrium", La: "Lanthanum",
+      C: "Carbon", N: "Nitrogen",
+      H: "Hydrogen", O: "Oxygen", Cl: "Chlorine", Br: "Bromine", F: "Fluorine",
+      CN: "Cyano", NCS: "Thiocyanato", NCO: "Fulminato", NO: "Nitrosyl",
+      OCl: "Hypochlorite", OCN: "Cyanato", OH: "Hydroxyl", PO: "Phosphoryl", SCN: "Thiocyanate"
+    };
+
+    let compoundsDB = {};
     fetch("compounds.json")
       .then(res => res.json())
       .then(data => { compoundsDB = data; });
@@ -157,14 +197,24 @@
     const modalTitle = document.getElementById("modalTitle");
     const compoundProperties = document.getElementById("compoundProperties");
 
-    function renderGroup(id, items) {
+    function renderGroup(id, items, type) {
       const container = document.getElementById(id);
       items.forEach(sym => {
+        const wrapper = document.createElement("span");
+        wrapper.className = "tooltip";
+
         const btn = document.createElement("button");
-        btn.className = "element";
+        btn.className = `element ${type}`;
         btn.textContent = sym;
         btn.onclick = () => showModal(sym);
-        container.appendChild(btn);
+
+        const tooltip = document.createElement("span");
+        tooltip.className = "tooltiptext";
+        tooltip.textContent = elementNames[sym] || sym;
+
+        wrapper.appendChild(btn);
+        wrapper.appendChild(tooltip);
+        container.appendChild(wrapper);
       });
     }
 
@@ -173,7 +223,7 @@
         .filter(([_, props]) => props.elements.includes(symbol));
 
       modal.style.display = "flex";
-      modalTitle.textContent = `MXene Compounds with "${symbol}"`;
+      modalTitle.textContent = `MXene Compounds with "${symbol}" (${elementNames[symbol] || ""})`;
 
       compoundProperties.innerHTML = "";
       if (list.length) {
@@ -191,10 +241,9 @@
     closeModal.onclick = () => modal.style.display = "none";
     window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
-    renderGroup("metals", metals);
-    renderGroup("carbides", carbides);
-    renderGroup("terminations", terminations);
+    renderGroup("metals", metals, "metal");
+    renderGroup("carbides", carbides, "carbide");
+    renderGroup("terminations", terminations, "termination");
   </script>
 </body>
 </html>
-
