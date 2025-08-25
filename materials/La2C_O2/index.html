@@ -89,10 +89,6 @@
       background: #374151;
     }
 
-    body.dark-mode .status-text {
-      color: #9ca3af;
-    }
-
     body.dark-mode .loading {
       color: #9ca3af;
     }
@@ -170,7 +166,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* Fix for 3DMol.js canvas positioning */
     #viewer canvas {
       position: absolute !important;
       top: 0 !important;
@@ -393,12 +388,6 @@
       padding: 8px 0;
     }
 
-    .status-text {
-      font-size: 12px;
-      color: #5f6368;
-      margin-bottom: 15px;
-    }
-
     .collapsible-header {
       cursor: pointer;
       user-select: none;
@@ -475,7 +464,7 @@
 <body>
 <div class="container">
   <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-    <img src="/path-to-mxene-logo.png" alt="MXene Viewer Logo" style="height: 100px;">
+    <img src="/path-to-mxene-logo.png" alt="MXene Viewer Logo" style="height: 40px;">
     <button class="btn btn-secondary" id="theme-toggle">Toggle Theme</button>
   </header>
   <h1 id="material-title">Material Viewer</h1>
@@ -537,7 +526,6 @@
             </div>
           </div>
         </div>
-        
       </div>
     </div>
 
@@ -616,6 +604,7 @@ function resetToOriginalState() {
 
     const bondSlider = document.getElementById('bond-threshold');
     bondSlider.value = viewerState.bondThreshold;
+    document.getElementById('bond-threshold-value').textContent = `${viewerState.bondThreshold.toFixed(1)} Å`;
 
     updateViewer();
     if (initialView) {
@@ -671,7 +660,6 @@ function updateViewer() {
         });
     }
 
-    // Add labels AFTER styling is applied
     if (viewerState.showLabels) {
         const atoms = viewer.selectedAtoms({});
         atoms.forEach((atom, index) => {
@@ -698,7 +686,6 @@ function load3DStructure() {
     return;
   }
 
-  // Create viewer with proper configuration
   viewer = $3Dmol.createViewer(viewerElement, {
     defaultcolors: $3Dmol.rasmolElementColors,
     backgroundColor: "0x000000",
@@ -707,17 +694,14 @@ function load3DStructure() {
     cartoonQuality: 10
   });
 
-  // Force initial resize to ensure proper container binding
   viewer.resize();
 
-  // Load the CIF structure
   fetch("POSCAR.cif")
     .then(res => res.text())
     .then(data => {
       cifData = data;
       updateViewer();
       
-      // Multiple resize calls to ensure proper containment
       setTimeout(() => {
         viewer.resize();
         viewer.render();
@@ -860,7 +844,6 @@ function loadPhononData() {
     });
 }
 
-// Handle window resize to maintain viewer containment
 function handleResize() {
   if (viewer) {
     setTimeout(() => {
@@ -870,9 +853,7 @@ function handleResize() {
   }
 }
 
-// Collapsible sections
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize viewer after DOM is ready
   setTimeout(() => {
     load3DStructure();
   }, 200);
@@ -880,7 +861,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loadStructuralData();
   loadPhononData();
 
-  // Add window resize handler
   window.addEventListener('resize', handleResize);
 
   const atomsHeader = document.getElementById('atoms-header');
@@ -891,9 +871,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isCollapsed) {
       atomsHeader.classList.remove('collapsed');
       atomsContent.style.display = 'table';
+      atomsHeader.setAttribute('aria-expanded', 'true');
     } else {
       atomsHeader.classList.add('collapsed');
       atomsContent.style.display = 'none';
+      atomsHeader.setAttribute('aria-expanded', 'false');
     }
   });
 
@@ -903,6 +885,7 @@ document.addEventListener('DOMContentLoaded', () => {
       viewer.render();
     }
   });
+
   document.getElementById('zoom-out-btn').addEventListener('click', () => {
     if (viewer) {
       viewer.zoom(0.8);
@@ -916,34 +899,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('cam-x').addEventListener('click', () => {
     if (viewer) {
-        viewer.zoomTo();
-        viewer.rotate(-90, {x: 0, y: 1, z: 0});
-        viewer.render();
+      viewer.zoomTo();
+      viewer.rotate(-90, {x: 0, y: 1, z: 0});
+      viewer.render();
     }
   });
   
   document.getElementById('cam-y').addEventListener('click', () => {
     if (viewer) {
-        viewer.zoomTo();
-        viewer.rotate(90, {x: 1, y: 0, z: 0});
-        viewer.render();
+      viewer.zoomTo();
+      viewer.rotate(90, {x: 1, y: 0, z: 0});
+      viewer.render();
     }
   });
   
   document.getElementById('cam-z').addEventListener('click', () => {
-    if (viewer) {
-        viewer.zoomTo();
-        viewer.render();
+    if (viewer && initialView) {
+      viewer.setView(initialView);
+      viewer.render();
     }
   });
 
   ['x', 'y', 'z'].forEach((axis, index) => {
     document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
-        const val = parseInt(e.target.value, 10);
-        if (!isNaN(val) && val > 0) {
-            viewerState.supercell[index] = val;
-            updateViewer();
-        }
+      const val = parseInt(e.target.value, 10);
+      if (!isNaN(val) && val > 0) {
+        viewerState.supercell[index] = val;
+        updateViewer();
+      }
     });
   });
 
@@ -962,12 +945,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateViewer();
   });
 
- document.getElementById('bond-threshold').addEventListener('input', (e) => {
-    const val = parseFloat(e.target.value);
-    viewerState.bondThreshold = val;
-    updateViewer();
-  });
-
   document.getElementById('bond-threshold').addEventListener('input', (e) => {
     const val = parseFloat(e.target.value);
     viewerState.bondThreshold = val;
@@ -982,25 +959,20 @@ document.addEventListener('DOMContentLoaded', () => {
     Plotly.relayout('phononPlot', getPlotLayout(isDark));
   });
 
-  // Load saved theme
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
   }
- 	
 });
+
+const pathParts = window.location.pathname.split('/');
+const folderName = pathParts[pathParts.length - 2] || "Unknown";
+
+function formatFormula(formula) {
+  return formula.replace(/(\d+)/g, '<sub>$1</sub>');
+}
+
+document.getElementById("material-title").innerHTML = formatFormula(folderName);
+document.title = `MXene Material Viewer - ${folderName}`;
 </script>
-
-<script>
-  const pathParts = window.location.pathname.split('/');
-  const folderName = pathParts[pathParts.length - 2] || "Unknown";
-
-  function formatFormula(formula) {
-    return formula.replace(/(\d+)/g, '<sub>$1</sub>');
-  }
-
-  document.getElementById("material-title").innerHTML = formatFormula(folderName);
-  document.title = `MXene Material Viewer - ${folderName}`;
-</script>
-
 </body>
 </html>
