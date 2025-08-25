@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>MX-PHon – MAXene Phonon Database</title>
   <style>
-    /* Base and layout styling */
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
       max-width: 960px;
@@ -14,7 +13,6 @@
       color: #333;
       line-height: 1.6;
     }
-
     img { display: block; }
     h1 {
       font-size: 2rem;
@@ -22,38 +20,34 @@
       margin: 0;
     }
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #2a3d4c;
-      margin-top: 1.8rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 2px solid #d0d6dc;
+      margin: 0 0 0.5rem 0;
     }
-    p {
-      font-size: 1rem;
-      margin: 0.8rem 0;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: #004499;
-    }
+    p { font-size: 1rem; margin: 0.8rem 0; }
+    a { color: #0066cc; text-decoration: none; transition: 0.2s; }
+    a:hover { text-decoration: underline; color: #004499; }
 
-    /* Selector groups styling */
+    /* Group containers */
+    .groups-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .group-container {
+      flex: 1;
+    }
     .group {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin: 1rem 0;
+      margin-top: 0.5rem;
       padding: 0.8rem;
       border-radius: 8px;
     }
     .metals { background: #ddeff8; }
     .carbides { background: #ffe9d4; }
-    .terminations { background: #e1f0d8; }
+    .terminations { background: #e1f0d8; margin-top: 1.5rem; }
 
     .element {
       border: none;
@@ -73,7 +67,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
-    /* Modal Overlay */
+    /* Modal */
     .modal {
       position: fixed;
       top: 0; left: 0;
@@ -98,51 +92,47 @@
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
-    .modal-header {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-      color: #2a3d4c;
-    }
+    .modal-header { font-size: 1.3rem; margin-bottom: 0.8rem; color: #2a3d4c; }
     .close-btn {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 1rem; right: 1rem;
       font-size: 1.3rem;
       cursor: pointer;
       color: #777;
-      transition: color 0.2s;
     }
-    .close-btn:hover {
-      color: #333;
-    }
-    .compound-item {
-      margin-bottom: 0.6rem;
-    }
+    .close-btn:hover { color: #333; }
+    .compound-item { margin-bottom: 0.6rem; }
   </style>
 </head>
 <body>
 
-  <!-- Header section with logo and title -->
+  <!-- Header -->
   <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
     <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 140px;">
     <h1>MXene Phonon Database</h1>
   </div>
 
-  <!-- Intro description -->
+  <!-- Intro -->
   <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of selected MXenes.</p>
   <p>Select a chemical building block below to explore MXene compounds that include it:</p>
 
-  <!-- Interactive groups -->
-  <h2>Metals</h2>
-  <div class="group metals" id="metals"></div>
+  <!-- Metals + Carbides side by side -->
+  <div class="groups-row">
+    <div class="group-container">
+      <h2>Metals</h2>
+      <div class="group metals" id="metals"></div>
+    </div>
+    <div class="group-container">
+      <h2>Carbide / Nitride</h2>
+      <div class="group carbides" id="carbides"></div>
+    </div>
+  </div>
 
-  <h2>Carbide / Nitride</h2>
-  <div class="group carbides" id="carbides"></div>
-
-  <h2>Surface Termination</h2>
+  <!-- Terminations below -->
+  <h2 style="margin-top:2rem;">Surface Termination</h2>
   <div class="group terminations" id="terminations"></div>
 
-  <!-- Modal for compound results -->
+  <!-- Modal -->
   <div id="elementModal" class="modal">
     <div class="modal-content">
       <span id="closeModal" class="close-btn">&times;</span>
@@ -151,7 +141,7 @@
     </div>
   </div>
 
-  <!-- Script logic -->
+  <!-- Script -->
   <script>
     const metals = ["Ti","Sc","Hf","Zr","Y","La"];
     const carbides = ["C","N"];
