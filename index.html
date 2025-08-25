@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MX-PHon – MAXene PHonon Database</title>
+  <title>MX-PHon – MAXene Phonon Database</title>
   <style>
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
@@ -13,7 +13,6 @@
       color: #333;
       line-height: 1.6;
     }
-    img { display: block; }
     h1 {
       font-size: 2rem;
       color: #2a3d4c;
@@ -52,7 +51,7 @@
     }
     .search-box button:hover { background: #245a86; }
 
-    /* Group layout */
+    /* Groups layout */
     .groups-row {
       display: flex;
       gap: 2rem;
@@ -64,7 +63,6 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-top: 0.5rem;
-      padding: 0.2rem;
     }
 
     /* Buttons */
@@ -104,12 +102,7 @@
       width: 90%;
       max-width: 600px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      animation: fadeInScale 0.2s ease-out;
       position: relative;
-    }
-    @keyframes fadeInScale {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
     }
     .modal-header { font-size: 1.3rem; margin-bottom: 0.8rem; color: #2a3d4c; }
     .close-btn {
@@ -202,10 +195,11 @@
 
       compoundProperties.innerHTML = "";
       if (list.length) {
-        list.forEach(([compound, props]) => {
+        list.forEach(([compound]) => {
           const div = document.createElement("div");
           div.className = "compound-item";
-          div.innerHTML = `<b>${compound}</b>: <a href="${props.path}index.html" target="_blank">View details</a>`;
+          div.innerHTML = `<b>${compound}</b>: 
+            <a href="viewer.html?material=${compound}" target="_blank">View details</a>`;
           compoundProperties.appendChild(div);
         });
       } else {
@@ -223,10 +217,11 @@
       modalTitle.textContent = `Search results for "${query}"`;
       compoundProperties.innerHTML = "";
       if (match.length) {
-        match.forEach(([compound, props]) => {
+        match.forEach(([compound]) => {
           const div = document.createElement("div");
           div.className = "compound-item";
-          div.innerHTML = `<b>${compound}</b>: <a href="${props.path}index.html" target="_blank">View details</a>`;
+          div.innerHTML = `<b>${compound}</b>: 
+            <a href="viewer.html?material=${compound}" target="_blank">View details</a>`;
           compoundProperties.appendChild(div);
         });
       } else {
