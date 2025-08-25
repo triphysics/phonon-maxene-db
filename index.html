@@ -98,7 +98,9 @@
     .modal-content {
       background: white;
       padding: 1.5rem;
-      border-radius: 8px;
+      border-radius: 10px;
+      max-height: 80vh;
+      overflow-y: auto;
       width: 90%;
       max-width: 600px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
@@ -113,7 +115,14 @@
       color: #777;
     }
     .close-btn:hover { color: #333; }
-    .compound-item { margin-bottom: 0.6rem; }
+    .compound-item {
+     padding: 6px 0;
+     margin-bottom: 0.6rem;
+     border-bottom: 1px solid #eee;
+    }
+    .compound-item:last-child {
+     border-bottom: none;
+    }
   </style>
 </head>
 <body>
