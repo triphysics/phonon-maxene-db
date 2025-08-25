@@ -200,7 +200,7 @@
         .filter(([_, props]) => props.elements.includes(symbol));
 
       modal.style.display = "flex";
-      modalTitle.textContent = `MXene Compounds with "${symbol}"`;
+      modalTitle.textContent = `MXene Compounds with "${symbol}" : ${list.length} MXenes found`;
 
       compoundProperties.innerHTML = "";
       if (list.length) {
