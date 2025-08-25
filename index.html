@@ -2,90 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MX-PHon - MAXene Phonon Database</title>
+  <title>MX-PHon – MAXene Phonon Database</title>
   <style>
+    /* Base and layout styling */
     body {
-      font-family: sans-serif;
-      max-width: 900px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      max-width: 960px;
       margin: auto;
       padding: 2rem;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
     }
+
+    img { display: block; }
     h1 {
-      color: #2c3e50;
+      font-size: 2rem;
+      color: #2a3d4c;
+      margin: 0;
     }
     h2 {
-      margin-top: 1.5rem;
-      color: #34495e;
+      font-size: 1.4rem;
+      color: #2a3d4c;
+      margin-top: 1.8rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #d0d6dc;
     }
     p {
-      font-size: 1.05em;
-      line-height: 1.5em;
+      font-size: 1rem;
+      margin: 0.8rem 0;
     }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #004499;
+    }
+
+    /* Selector groups styling */
     .group {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
+      padding: 0.8rem;
+      border-radius: 8px;
     }
+    .metals { background: #ddeff8; }
+    .carbides { background: #ffe9d4; }
+    .terminations { background: #e1f0d8; }
+
     .element {
-      border: 1px solid #ccc;
-      padding: 0.5rem 0.7rem;
-      cursor: pointer;
-      border-radius: 6px;
-      background: #f8f8f8;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
       font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      color: white;
     }
+    .metals .element { background: #327ab7; }
+    .carbides .element { background: #d97c1a; }
+    .terminations .element { background: #2f8f43; }
     .element:hover {
-      background: #e0f0ff;
+      transform: scale(1.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
-    /* Modal */
+
+    /* Modal Overlay */
     .modal {
-      position: fixed; top: 0; left: 0;
+      position: fixed;
+      top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: none; justify-content: center; align-items: center;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
     }
     .modal-content {
-      background: #fff; padding: 1rem; border-radius: 8px;
-      max-width: 500px; width: 100%;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      animation: fadeInScale 0.2s ease-out;
+      position: relative;
+    }
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
     .modal-header {
-      font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #2a3d4c;
     }
     .close-btn {
-      float: right; cursor: pointer; color: #888; font-size: 1.2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #777;
+      transition: color 0.2s;
     }
-    a {
-      text-decoration: none;
-      color: #3498db;
+    .close-btn:hover {
+      color: #333;
     }
-    a:hover {
-      text-decoration: underline;
+    .compound-item {
+      margin-bottom: 0.6rem;
     }
   </style>
 </head>
 <body>
-  <!-- Logo + title -->
-  <div style="display: flex; align-items: center; gap: 1rem;">
-    <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 160px;">
-    <h1 style="margin: 0;">MXene Phonon Database</h1>
+
+  <!-- Header section with logo and title -->
+  <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+    <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 140px;">
+    <h1>MXene Phonon Database</h1>
   </div>
 
-  <!-- Description -->
-  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides. They are derived from their bulk MAX phases. MXenes are known for their unique combination of metallic conductivity, tunable surface chemistry, and layered structure. They are of great interest for applications in energy storage, sensors, electronics, and beyond. This database gives the crystal structure and phonon dispersion of selected MXenes.</p>
-  <p>Select a chemical building block below to view MXene compounds containing that element or termination:</p>
+  <!-- Intro description -->
+  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of selected MXenes.</p>
+  <p>Select a chemical building block below to explore MXene compounds that include it:</p>
 
-  <!-- Grouped selectors -->
+  <!-- Interactive groups -->
   <h2>Metals</h2>
-  <div class="group" id="metals"></div>
+  <div class="group metals" id="metals"></div>
 
   <h2>Carbide / Nitride</h2>
-  <div class="group" id="carbides"></div>
+  <div class="group carbides" id="carbides"></div>
 
   <h2>Surface Termination</h2>
-  <div class="group" id="terminations"></div>
+  <div class="group terminations" id="terminations"></div>
 
-  <!-- Modal -->
+  <!-- Modal for compound results -->
   <div id="elementModal" class="modal">
     <div class="modal-content">
       <span id="closeModal" class="close-btn">&times;</span>
@@ -94,14 +151,13 @@
     </div>
   </div>
 
+  <!-- Script logic -->
   <script>
-    const metals = ["Ti","Sc","Hf","Zr","Y"];
+    const metals = ["Ti","Sc","Hf","Zr","Y","La"];
     const carbides = ["C","N"];
     const terminations = ["H","O","Cl","Br","F","CN","NCS","NCO","NO","OCl","OCN","OH","PO","SCN"];
-
     let compoundsDB = {};
 
-    // Load compounds manifest
     fetch("compounds.json")
       .then(res => res.json())
       .then(data => { compoundsDB = data; });
@@ -111,48 +167,44 @@
     const modalTitle = document.getElementById("modalTitle");
     const compoundProperties = document.getElementById("compoundProperties");
 
-    function renderGroup(containerId, symbols) {
-      const container = document.getElementById(containerId);
-      symbols.forEach(sym => {
-        const cell = document.createElement("div");
-        cell.className = "element";
-        cell.innerText = sym;
-        cell.onclick = () => showModal(sym);
-        container.appendChild(cell);
+    function renderGroup(id, items) {
+      const container = document.getElementById(id);
+      items.forEach(sym => {
+        const btn = document.createElement("button");
+        btn.className = "element";
+        btn.textContent = sym;
+        btn.onclick = () => showModal(sym);
+        container.appendChild(btn);
       });
     }
 
     function showModal(symbol) {
+      const list = Object.entries(compoundsDB)
+        .filter(([_, props]) => props.elements.includes(symbol));
+
       modal.style.display = "flex";
-      modalTitle.innerText = `Compounds with ${symbol}`;
+      modalTitle.textContent = `MXene Compounds with "${symbol}"`;
 
-      // Find compounds that contain this symbol
-      const results = Object.entries(compoundsDB).filter(([compound, props]) =>
-        props.elements.includes(symbol)
-      );
-
-      if (results.length > 0) {
-        compoundProperties.innerHTML = "<h3>MXene Compounds</h3>";
-        results.forEach(([compound, props]) => {
-          compoundProperties.innerHTML += `
-            <div style="margin-bottom:0.8rem">
-              <b>${compound}</b><br/>
-              <a href="${props.path}index.html" target="_blank">View details</a>
-            </div>
-          `;
+      compoundProperties.innerHTML = "";
+      if (list.length) {
+        list.forEach(([compound, props]) => {
+          const div = document.createElement("div");
+          div.className = "compound-item";
+          div.innerHTML = `<b>${compound}</b>: <a href="${props.path}index.html" target="_blank">View details</a>`;
+          compoundProperties.appendChild(div);
         });
       } else {
-        compoundProperties.innerHTML = "<p>No MXene data available for this symbol.</p>";
+        compoundProperties.textContent = "No MXene data available.";
       }
     }
 
-    closeModal.onclick = () => (modal.style.display = "none");
+    closeModal.onclick = () => modal.style.display = "none";
     window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
 
-    // Render groups
     renderGroup("metals", metals);
     renderGroup("carbides", carbides);
     renderGroup("terminations", terminations);
   </script>
 </body>
 </html>
+
