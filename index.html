@@ -1,625 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MXene Phonon Database</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            margin-bottom: 30px;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .header h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #2c3e50;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .crystal-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #3498db, #2ecc71);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-        }
-
-        .doi-badges {
-            margin: 15px 0;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .doi-badge {
-            background: #34495e;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            text-decoration: none;
-        }
-
-        .doi-badge:hover {
-            background: #2c3e50;
-        }
-
-        .description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .publications {
-            margin: 20px 0;
-        }
-
-        .publication {
-            margin: 8px 0;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .publication-icon {
-            width: 16px;
-            height: 16px;
-            background: #333;
-            border-radius: 2px;
-        }
-
-        .paper-doi {
-            background: #5cb85c;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 11px;
-            text-decoration: none;
-            margin-left: 8px;
-        }
-
-        .tabs {
-            margin: 20px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #666;
-            border-bottom: 2px solid transparent;
-            margin-right: 5px;
-        }
-
-        .tab-btn.active {
-            color: #333;
-            border-bottom-color: #3498db;
-            font-weight: 500;
-        }
-
-        .main-content {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .filter-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border: 1px solid #e9ecef;
-        }
-
-        .filter-title {
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #495057;
-        }
-
-        .filter-options {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .filter-options input[type="radio"] {
-            margin-right: 5px;
-        }
-
-        .filter-options label {
-            font-size: 14px;
-            color: #495057;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .help-icon {
-            margin-left: 8px;
-            width: 16px;
-            height: 16px;
-            background: #6c757d;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            cursor: help;
-        }
-
-        .periodic-table {
-            display: grid;
-            grid-template-columns: repeat(18, 1fr);
-            gap: 2px;
-            margin: 20px 0;
-        }
-
-        .element {
-            aspect-ratio: 1;
-            border: 1px solid #ddd;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            background: white;
-            position: relative;
-        }
-
-        .element:hover {
-            border-color: #007bff;
-            box-shadow: 0 2px 4px rgba(0,123,255,0.3);
-            transform: scale(1.05);
-            z-index: 10;
-        }
-
-        .element.selected {
-            background: #007bff;
-            color: white;
-            border-color: #0056b3;
-        }
-
-        /* Element categories - matching MC2D colors */
-        .element.alkali { background-color: #ffb3ba; }
-        .element.alkaline-earth { background-color: #ffdfba; }
-        .element.transition-metal { background-color: #baffc9; }
-        .element.post-transition { background-color: #bae1ff; }
-        .element.metalloid { background-color: #ffffba; }
-        .element.nonmetal { background-color: #e0e0e0; }
-        .element.halogen { background-color: #ffb3ff; }
-        .element.noble-gas { background-color: #d4d4ff; }
-        .element.lanthanide { background-color: #ffd1dc; }
-        .element.actinide { background-color: #dda0dd; }
-
-        .element .symbol {
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .element .number {
-            font-size: 8px;
-            position: absolute;
-            top: 1px;
-            left: 2px;
-            color: #666;
-        }
-
-        .element.selected .number {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .empty-cell {
-            background: transparent;
-            border: none;
-            cursor: default;
-        }
-
-        .empty-cell:hover {
-            transform: none;
-            box-shadow: none;
-            border-color: transparent;
-        }
-
-        .results-section {
-            margin-top: 30px;
-        }
-
-        .results-header {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .material-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .material-card {
-            border: 1px solid #e9ecef;
-            border-radius: 6px;
-            padding: 20px;
-            background: #fafafa;
-            transition: all 0.2s ease;
-        }
-
-        .material-card:hover {
-            border-color: #007bff;
-            box-shadow: 0 4px 8px rgba(0,123,255,0.15);
-            transform: translateY(-2px);
-        }
-
-        .material-formula {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
-
-        .material-type {
-            display: inline-block;
-            background: #28a745;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            margin-bottom: 15px;
-        }
-
-        .property-row {
-            margin: 8px 0;
-            font-size: 13px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .property-label {
-            color: #666;
-        }
-
-        .property-value {
-            font-weight: 500;
-            color: #333;
-        }
-
-        .search-section {
-            margin: 20px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border: 1px solid #e9ecef;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
-        }
-
-        @media (max-width: 768px) {
-            .periodic-table {
-                grid-template-columns: repeat(10, 1fr);
-                gap: 1px;
-            }
-            
-            .element {
-                font-size: 9px;
-            }
-            
-            .element .symbol {
-                font-size: 11px;
-            }
-            
-            .header h1 {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>MXene Material Viewer</title>
+  <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 8px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #3498db, #2c3e50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .structure, .phonon {
+      margin-top: 2rem;
+    }
+    #viewer {
+    width: 100%;
+    height: 450px;
+    display: block;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    }
+    .viewer-controls {
+    text-align: center;
+    margin-bottom: 12px;
+    }
+    .viewer-controls button, #custom-controls button {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.2s ease-in-out;
+    }
+    #custom-controls button {
+        padding: 6px 12px;
+    }
+    .viewer-controls button:hover, #custom-controls button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .viewer-controls button:active, #custom-controls button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    #phononPlot {
+      width: 100%;
+      height: 450px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .info-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .info-table th, .info-table td {
+      border: none;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .info-table th {
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      font-weight: 600;
+    }
+    .info-table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    .info-table tr:hover {
+      background-color: #e3f2fd;
+    }
+    .section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+    }
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      font-style: italic;
+    }
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 1rem;
+      border-radius: 4px;
+      border-left: 4px solid #f44336;
+      margin: 1rem 0;
+    }
+    .success {
+      background: #e8f5e8;
+      color: #2e7d32;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>
-                MXenes Phonon Database (MPD)
-                <div class="crystal-icon">🔬</div>
-            </h1>
-            
-            <div class="doi-badges">
-                <a href="#" class="doi-badge">Data DOI: 10.24435/materialscloud:xy-ab</a>
-                <a href="#" class="doi-badge">Data DOI: 10.24435/materialscloud:mxene-pd</a>
-            </div>
-            
-            <div class="description">
-                MXenes Phonon Database is a curated set of 2D MXene materials obtained by computational screening of known MAX phases through exfoliation procedures. This database contains the relaxed 2D MXene structures and their phonon dispersion properties. For more details, please see the related publications:
-            </div>
-            
-            <div class="publications">
-                <div class="publication">
-                    <div class="publication-icon"></div>
-                    Mounet et al., Nat. Nanotech. 13, 246-252, (2018)
-                    <a href="#" class="paper-doi">Paper DOI: 10.1038/s41565-017-0035-5</a>
-                </div>
-                <div class="publication">
-                    <div class="publication-icon"></div>
-                    Campi et al., ACS Nano 17, 12, 11268-11278, (2023)
-                    <a href="#" class="paper-doi">Paper DOI: 10.1021/acsnano.2c11510</a>
-                </div>
-            </div>
-        </div>
+<div class="container">
+ <h1 id="material-title">Material: </h1>
 
-        <div class="main-content">
-            <div class="tabs">
-                <button class="tab-btn active">Use</button>
-                <button class="tab-btn">About</button>
-                <button class="tab-btn">REST API</button>
-            </div>
+  <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
-            <div class="search-section">
-                <input type="text" class="search-input" placeholder="Search for MXene materials (e.g., Ti3C2, V2C, Nb4C3)..." id="searchInput">
-            </div>
+    <div class="structure section" style="flex: 1.5;">
+      <h2>🧊 Crystal Structure</h2>
+      <div id="structureStatus" class="loading">Loading crystal structure...</div>
+    
+      <div class="viewer-controls">
+        <button id="zoom-in-btn">🔍 Zoom In</button>
+        <button id="zoom-out-btn">🔎 Zoom Out</button>
+        <button id="home-btn">🏠 Reset View</button>
+      </div>
+      
+      <div id="viewer"></div>
 
-            <div class="filter-section">
-                <div class="filter-title">Elements filtering mode:</div>
-                <div class="filter-options">
-                    <label>
-                        <input type="radio" name="filter" value="include" checked>
-                        Include/exclude
-                    </label>
-                    <label>
-                        <input type="radio" name="filter" value="selected">
-                        Only selected
-                    </label>
-                    <div class="help-icon" title="Filter materials based on selected elements">?</div>
-                </div>
-            </div>
-
-            <div class="periodic-table" id="periodicTable"></div>
-
-            <div class="results-section">
-                <div class="results-header">Available MXene Materials</div>
-                <div class="material-grid" id="materialsGrid"></div>
-            </div>
-        </div>
+      <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
+        <span style="display: inline-flex; align-items: center;">
+              Bond Threshold:
+              <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9" style="margin-left: 6px;">
+              <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
+          </span>
+          <span>
+              Supercell:
+              <input type="number" id="sc-x" value="3" min="1" style="width: 40px; text-align: center;">
+              <input type="number" id="sc-y" value="3" min="1" style="width: 40px; text-align: center;">
+              <input type="number" id="sc-z" value="1" min="1" style="width: 40px; text-align: center;">
+          </span>
+          <span>
+              Camera:
+              <button id="cam-x">x</button>
+              <button id="cam-y">y</button>
+              <button id="cam-z">z</button>
+          </span>
+          <span style="display: inline-flex; align-items: center;">
+              <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
+          </span>
+          <span style="display: inline-flex; align-items: center;">
+              <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
+          </span>
+          <span style="display: inline-flex; align-items: center;">
+              <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
+          </span>
+      </div>
     </div>
 
-    <script>
-        // Periodic table data with proper positioning
-        const elements = [
-            // Period 1
-            {number: 1, symbol: 'H', name: 'Hydrogen', category: 'nonmetal', period: 1, group: 1},
-            {number: 2, symbol: 'He', name: 'Helium', category: 'noble-gas', period: 1, group: 18},
-            
-            // Period 2
-            {number: 3, symbol: 'Li', name: 'Lithium', category: 'alkali', period: 2, group: 1},
-            {number: 4, symbol: 'Be', name: 'Beryllium', category: 'alkaline-earth', period: 2, group: 2},
-            {number: 5, symbol: 'B', name: 'Boron', category: 'metalloid', period: 2, group: 13},
-            {number: 6, symbol: 'C', name: 'Carbon', category: 'nonmetal', period: 2, group: 14},
-            {number: 7, symbol: 'N', name: 'Nitrogen', category: 'nonmetal', period: 2, group: 15},
-            {number: 8, symbol: 'O', name: 'Oxygen', category: 'nonmetal', period: 2, group: 16},
-            {number: 9, symbol: 'F', name: 'Fluorine', category: 'halogen', period: 2, group: 17},
-            {number: 10, symbol: 'Ne', name: 'Neon', category: 'noble-gas', period: 2, group: 18},
-            
-            // Period 3
-            {number: 11, symbol: 'Na', name: 'Sodium', category: 'alkali', period: 3, group: 1},
-            {number: 12, symbol: 'Mg', name: 'Magnesium', category: 'alkaline-earth', period: 3, group: 2},
-            {number: 13, symbol: 'Al', name: 'Aluminum', category: 'post-transition', period: 3, group: 13},
-            {number: 14, symbol: 'Si', name: 'Silicon', category: 'metalloid', period: 3, group: 14},
-            {number: 15, symbol: 'P', name: 'Phosphorus', category: 'nonmetal', period: 3, group: 15},
-            {number: 16, symbol: 'S', name: 'Sulfur', category: 'nonmetal', period: 3, group: 16},
-            {number: 17, symbol: 'Cl', name: 'Chlorine', category: 'halogen', period: 3, group: 17},
-            {number: 18, symbol: 'Ar', name: 'Argon', category: 'noble-gas', period: 3, group: 18},
-            
-            // Period 4
-            {number: 19, symbol: 'K', name: 'Potassium', category: 'alkali', period: 4, group: 1},
-            {number: 20, symbol: 'Ca', name: 'Calcium', category: 'alkaline-earth', period: 4, group: 2},
-            {number: 21, symbol: 'Sc', name: 'Scandium', category: 'transition-metal', period: 4, group: 3},
-            {number: 22, symbol: 'Ti', name: 'Titanium', category: 'transition-metal', period: 4, group: 4},
-            {number: 23, symbol: 'V', name: 'Vanadium', category: 'transition-metal', period: 4, group: 5},
-            {number: 24, symbol: 'Cr', name: 'Chromium', category: 'transition-metal', period: 4, group: 6},
-            {number: 25, symbol: 'Mn', name: 'Manganese', category: 'transition-metal', period: 4, group: 7},
-            {number: 26, symbol: 'Fe', name: 'Iron', category: 'transition-metal', period: 4, group: 8},
-            {number: 27, symbol: 'Co', name: 'Cobalt', category: 'transition-metal', period: 4, group: 9},
-            {number: 28, symbol: 'Ni', name: 'Nickel', category: 'transition-metal', period: 4, group: 10},
-            {number: 29, symbol: 'Cu', name: 'Copper', category: 'transition-metal', period: 4, group: 11},
-            {number: 30, symbol: 'Zn', name: 'Zinc', category: 'transition-metal', period: 4, group: 12},
-            {number: 31, symbol: 'Ga', name: 'Gallium', category: 'post-transition', period: 4, group: 13},
-            {number: 32, symbol: 'Ge', name: 'Germanium', category: 'metalloid', period: 4, group: 14},
-            {number: 33, symbol: 'As', name: 'Arsenic', category: 'metalloid', period: 4, group: 15},
-            {number: 34, symbol: 'Se', name: 'Selenium', category: 'nonmetal', period: 4, group: 16},
-            {number: 35, symbol: 'Br', name: 'Bromine', category: 'halogen', period: 4, group: 17},
-            {number: 36, symbol: 'Kr', name: 'Krypton', category: 'noble-gas', period: 4, group: 18},
-            
-            // Period 5
-            {number: 37, symbol: 'Rb', name: 'Rubidium', category: 'alkali', period: 5, group: 1},
-            {number: 38, symbol: 'Sr', name: 'Strontium', category: 'alkaline-earth', period: 5, group: 2},
-            {number: 39, symbol: 'Y', name: 'Yttrium', category: 'transition-metal', period: 5, group: 3},
-            {number: 40, symbol: 'Zr', name: 'Zirconium', category: 'transition-metal', period: 5, group: 4},
-            {number: 41, symbol: 'Nb', name: 'Niobium', category: 'transition-metal', period: 5, group: 5},
-            {number: 42, symbol: 'Mo', name: 'Molybdenum', category: 'transition-metal', period: 5, group: 6},
-            {number: 43, symbol: 'Tc', name: 'Technetium', category: 'transition-metal', period: 5, group: 7},
-            {number: 44, symbol: 'Ru', name: 'Ruthenium', category: 'transition-metal', period: 5, group: 8},
-            {number: 45, symbol: 'Rh', name: 'Rhodium', category: 'transition-metal', period: 5, group: 9},
-            {number: 46, symbol: 'Pd', name: 'Palladium', category: 'transition-metal', period: 5, group: 10},
-            {number: 47, symbol: 'Ag', name: 'Silver', category: 'transition-metal', period: 5, group: 11},
-            {number: 48, symbol: 'Cd', name: 'Cadmium', category: 'transition-metal', period: 5, group: 12},
-            {number: 49, symbol: 'In', name: 'Indium', category: 'post-transition', period: 5, group: 13},
-            {number: 50, symbol: 'Sn', name: 'Tin', category: 'post-transition', period: 5, group: 14},
-            {number: 51, symbol: 'Sb', name: 'Antimony', category: 'metalloid', period: 5, group: 15},
-            {number: 52, symbol: 'Te', name: 'Tellurium', category: 'metalloid', period: 5, group: 16},
-            {number: 53, symbol: 'I', name: 'Iodine', category: 'halogen', period: 5, group: 17},
-            {number: 54, symbol: 'Xe', name: 'Xenon', category: 'noble-gas', period: 5, group: 18},
-            
-            // Period 6
-            {number: 55, symbol: 'Cs', name: 'Cesium', category: 'alkali', period: 6, group: 1},
-            {number: 56, symbol: 'Ba', name: 'Barium', category: 'alkaline-earth', period: 6, group: 2},
-            {number: 72, symbol: 'Hf', name: 'Hafnium', category: 'transition-metal', period: 6, group: 4},
-            {number: 73, symbol: 'Ta', name: 'Tantalum', category: 'transition-metal', period: 6, group: 5},
-            {number: 74, symbol: 'W', name: 'Tungsten', category: 'transition-metal', period: 6, group: 6},
-            {number: 75, symbol: 'Re', name: 'Rhenium', category: 'transition-metal', period: 6, group: 7},
-            {number: 76, symbol: 'Os', name: 'Osmium', category: 'transition-metal', period: 6, group: 8},
-            {number: 77, symbol: 'Ir', name: 'Iridium', category: 'transition-metal', period: 6, group: 9},
-            {number: 78, symbol: 'Pt', name: 'Platinum', category: 'transition-metal', period: 6, group: 10},
-            {number: 79, symbol: 'Au', name: 'Gold', category: 'transition-metal', period: 6, group: 11},
-            {number: 80, symbol: 'Hg', name: 'Mercury', category: 'transition-metal', period: 6, group: 12},
-            {number: 81, symbol: 'Tl', name: 'Thallium', category: 'post-transition', period: 6, group: 13},
-            {number: 82, symbol: 'Pb', name: 'Lead', category: 'post-transition', period: 6, group: 14},
-            {number: 83, symbol: 'Bi', name: 'Bismuth', category: 'post-transition', period: 6, group: 15},
-            
-            // Lanthanides
-            {number: 57, symbol: 'La', name: 'Lanthanum', category: 'lanthanide', period: 6, group: 3},
-            {number: 58, symbol: 'Ce', name: 'Cerium', category: 'lanthanide', period: 6, group: 3},
-            {number: 59, symbol: 'Pr', name: 'Praseodymium', category: 'lanthanide', period: 6, group: 3},
-            {number: 60, symbol: 'Nd', name: 'Neodymium', category: 'lanthanide', period: 6, group: 3},
-            {number: 61, symbol: 'Pm', name: 'Promethium', category: 'lanthanide', period: 6, group: 3},
-            {number: 62, symbol: 'Sm', name: 'Samarium', category: 'lanthanide', period: 6, group: 3},
-            {number: 63, symbol: 'Eu', name: 'Europium', category: 'lanthanide', period: 6, group: 3},
-            {number: 64, symbol: 'Gd', name: 'Gadolinium', category: 'lanthanide', period: 6, group: 3},
-            {number: 65, symbol: 'Tb', name: 'Terbium', category: 'lanthanide', period: 6, group: 3},
-            {number: 66, symbol: 'Dy', name: 'Dysprosium', category: 'lanthanide', period: 6, group: 3},
-            {number: 67, symbol: 'Ho', name: 'Holmium', category: 'lanthanide', period: 6, group: 3},
-            {number: 68, symbol: 'Er', name: 'Erbium', category: 'lanthanide', period: 6, group: 3},
-            {number: 69, symbol: 'Tm', name: 'Thulium', category: 'lanthanide', period: 6, group: 3},
-            {number: 70, symbol: 'Yb', name: 'Ytterbium', category: 'lanthanide', period: 6, group: 3},
-            {number: 71, symbol: 'Lu', name: 'Lutetium', category: 'lanthanide', period: 6, group: 3}
-        ];
 
-        // MXene database
-        const mxeneDatabase = {
-            'Ti3C2Tx': {
-                formula: 'Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub>',
-                type: 'Carbide',
-                spaceGroup: 'P6₃/mmc (194)',
-                latticeParams: 'a = 3.07 Å, c = 18.99 Å',
-                bandGap: 'Metallic',
-                stability: 'Stable',
-                elements: [22, 6] // Ti, C
-            },
-            'V2C': {
-                formula: 'V<sub>2</sub>C',
-                type: 'Carbide',
-                spaceGroup: 'P6₃/mmc (194)',
-                latticeParams: 'a = 2.97 Å, c = 12.89 Å',
-                bandGap: 'Metallic',
-                stability: 'Stable',
-                elements: [23, 6] // V, C
-            },
-            'Nb4C3Tx': {
-                formula: 'Nb<sub>4</sub>C<sub>3</sub>T<sub>x</sub>',
-                type: 'Carbide',
-                spaceGroup: 'P6₃/mmc (194)',
-                latticeParams: 'a = 3.13 Å, c = 25.67 Å',
-                bandGap: 'Metallic',
-                stability: 'Stable',
-                elements: [41, 6] // Nb, C
-            },
-            'Ti2N': {
-                formula: 'Ti<sub>2</sub>N',
-                type: 'Nitride',
-                spaceGroup: 'P6₃/mmc (194)',
-                latticeParams: 'a = 2.99 Å, c = 13.45 Å',
-                bandGap: 'Metallic',
-                stability: 'Stable',
-                elements: [22, 7] // Ti, N
-            },
-            'Mo2C': {
-                formula: 'Mo<sub>2</sub>C',
-                type: 'Carbide',
-                spaceGroup: 'P6₃/mmc (194)',
-                latticeParams: 'a = 3.02 Å, c = 13.12 Å',
-                bandGap: 'Metallic',
-                stability: 'Stable',
-                elements: [42, 6] // Mo, C
-            },
-            'Ta4C3Tx': {
-                formula: 'Ta<sub>4</sub>C<sub>3</sub>T<sub>x</sub>',
-                type: 'Carbide',
-                spaceGroup: 'P6₃/mmc (194)',
-                latticeParams: 'a = 3.15 Å, c = 25.89 Å',
-                bandGap: 'Metallic',
-                stability: 'Stable',
-                elements: [73, 6] // Ta, C
+    <div class="section" style="flex: 1;">
+      <h2>🧮 Structural Details</h2>
+      <div id="structuralStatus" class="loading">Loading structural data...</div>
+      <table class="info-table" id="latticeTable" style="display:none;">
+        <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <table class="info-table" id="atomTable" style="display:none;">
+        <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="phonon section">
+    <h2>🎵 Phonon Band Structure</h2>
+    <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
+    <div id="phononPlot"></div>
+  </div>
+</div>
+
+<script>
+let viewer = null;
+let cifData = null; 
+
+let viewerState = {
+    showBonds: true,
+    useVDW: false, 
+    showLabels: false,
+    bondThreshold: 2.9,
+    supercell: [3, 3, 1]
+};
+
+// --- START: Added Reset Function ---
+const originalState = { ...viewerState, supercell: [...viewerState.supercell] };
+
+function resetToOriginalState() {
+    if (!viewer) return;
+
+    // 1. Reset the state object to its initial values
+    viewerState = { ...originalState, supercell: [...originalState.supercell] };
+
+    // 2. Update UI controls to match the reset state
+    document.getElementById('sc-x').value = viewerState.supercell[0];
+    document.getElementById('sc-y').value = viewerState.supercell[1];
+    document.getElementById('sc-z').value = viewerState.supercell[2];
+
+    document.getElementById('cb-bonds').checked = viewerState.showBonds;
+    document.getElementById('cb-packed').checked = viewerState.useVDW;
+    document.getElementById('cb-labels').checked = viewerState.showLabels;
+
+    const bondSlider = document.getElementById('bond-threshold');
+    bondSlider.value = viewerState.bondThreshold;
+    document.getElementById('bond-threshold-value').textContent = `${viewerState.bondThreshold.toFixed(1)} Å`;
+
+    // 3. Redraw the viewer with the reset state
+    updateViewer();
+
+    // 4. Reset the camera zoom and orientation
+    viewer.zoomTo();
+}
+// --- END: Added Reset Function ---
+
+function updateViewer() {
+    if (!viewer || !cifData) return;
+
+    viewer.clear();
+    viewer.addModel(cifData, "cif");
+    viewer.addUnitCell();
+    viewer.replicateUnitCell(...viewerState.supercell);
+
+    let baseStyle = {};
+    if (viewerState.useVDW) {
+        baseStyle = { sphere: { colorscheme: 'Jmol' } };
+    } else {
+        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
+    }
+
+    if (viewerState.showLabels) {
+        viewer.addLabel(atom => atom.elem, {
+            fontColor: 'black',
+            fontSize: 18,
+            showBackground: false,
+            position: { x: 0, y: 0, z: 0.7 }
+        });
+    }
+
+    viewer.setStyle({}, baseStyle);
+
+    if (viewerState.showBonds) {
+        const maxBondLength = viewerState.bondThreshold || 2.9;
+        const atoms = viewer.selectedAtoms({});
+
+        atoms.forEach(atom => {
+            atom.bonds = [];
+            atom.bondOrder = [];
+        });
+
+        for (let i = 0; i < atoms.length; i++) {
+            for (let j = i + 1; j < atoms.length; j++) {
+                const dx = atoms[i].x - atoms[j].x;
+                const dy = atoms[i].y - atoms[j].y;
+                const dz = atoms[i].z - atoms[j].z;
+                const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+                if (dist <= maxBondLength) {
+                    atoms[i].bonds.push(j);
+                    atoms[i].bondOrder.push(1);
+                    atoms[j].bonds.push(i);
+                    atoms[j].bondOrder.push(1);
+                }
             }
-        };
+        }
 
-        let selectedElements = new Set();
-        let filteredMaterials = Object.keys(mxeneDatabase);
+        viewer.setStyle({}, {
+            stick: { radius: 0.15 },
+            ...baseStyle
+        });
+    }
 
-        function createPeriodicTable() {
-            const table = document.getElementById('periodicTable');
-            
-            // Create grid with 18 columns, 9 rows (including lanthanide/actinide)
-            for (let period = 1; period <= 9; period++) {
-                for (let group = 1; group <= 18; group++) {
-                    const cell = document.createElement('div');
-                    
-                    // Find element for this position
-                    const element = elements.find(el => {
-                        if (period <= 6) {
-                            return el.period === period && el.group === group;
-                        } else if (period === 8) {
-                            // Lanthanides row
-                            return el.category === 'lanthanide' && (el.number - 56) === group;
-                        }
-                        return false;
-                    });
-                    
-                    if (element) {
-                        cell.className = `element ${element.category}`;
-                        cell.innerHTML = `
-                            <div class="number">${element.number}</div>
-                            <div class="symbol">${element.symbol}</div>
-                        `;
-                        cell.title = `
+    viewer.render();
+}
+
+
+function load3DStructure() {
+  viewer = $3Dmol.createViewer('viewer', {
+    defaultcolors: $3Dmol.rasmolElementColors,
+    backgroundColor: "white" 
+  });
+
+  fetch("POSCAR.cif")
+    .then(res => res.text())
+    .then(data => {
+      cifData = data;
+      updateViewer();
+      viewer.zoomTo();
+    })
+    .catch(err => {
+      document.getElementById("structureStatus").innerHTML =
+        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
+    });
+}
+
+function loadStructuralData() {
+  fetch("POSCAR")
+    .then(res => res.text())
+    .then(text => {
+      const lines = text.trim().split("\n");
+      const scale = parseFloat(lines[1]);
+      const lattice = lines.slice(2, 5).map(l =>
+        l.trim().split(/\s+/).map(n => parseFloat(n) * scale)
+      );
+      const elements = lines[5].trim().split(/\s+/);
+      const counts = lines[6].trim().split(/\s+/).map(Number);
+      const positions = lines.slice(8, 8 + counts.reduce((a, b) => a + b, 0))
+        .map(l => l.trim().split(/\s+/).slice(0, 3).map(Number));
+
+      const lt = document.querySelector("#latticeTable tbody");
+      lt.innerHTML = '';
+      lattice.forEach((vec, i) => {
+        lt.innerHTML += `<tr><td><strong>a${i + 1}</strong></td>
+          <td>${vec[0].toFixed(4)}</td><td>${vec[1].toFixed(4)}</td><td>${vec[2].toFixed(4)}</td></tr>`;
+      });
+
+      const at = document.querySelector("#atomTable tbody");
+      at.innerHTML = '';
+      let idx = 0;
+      elements.forEach((el, i) => {
+        for (let j = 0; j < counts[i]; j++) {
+          const pos = positions[idx++];
+          at.innerHTML += `<tr><td><strong>${el}</strong></td>
+            <td>${pos[0].toFixed(6)}</td><td>${pos[1].toFixed(6)}</td><td>${pos[2].toFixed(6)}</td></tr>`;
+        }
+      });
+
+      document.getElementById("latticeTable").style.display = "table";
+      document.getElementById("atomTable").style.display = "table";
+    })
+    .catch(err => {
+      document.getElementById("structuralStatus").innerHTML =
+        `<div class="error">Error loading POSCAR: ${err.message}</div>`;
+    });
+}
+
+function loadPhononData() {
+  fetch("data/band.yaml")
+    .then(r => r.text())
+    .then(yamlText => {
+      const data = jsyaml.load(yamlText);
+      const phonon = data.phonon;
+      const numBands = phonon[0].band.length;
+      const traces = [];
+
+      for (let i = 0; i < numBands; i++) {
+        traces.push({
+          x: phonon.map(p => p.distance),
+          y: phonon.map(p => p.band[i].frequency),
+          mode: 'lines',
+          line: { width: 2 },
+          showlegend: false,
+          name: `Mode ${i + 1}`
+        });
+      }
+      
+      const rawLabels = data.labels ? data.labels.flat() : [];
+      const labels = [rawLabels[0]];
+      for (let i = 1; i < rawLabels.length; i++) {
+        if (rawLabels[i] !== rawLabels[i - 1]) {
+          labels.push(rawLabels[i]);
+        }
+      }
+
+      const segmentNq = data.segment_nqpoint || [];
+      const labelPositions = [];
+      let index = 0;
+      for (let i = 0; i < segmentNq.length; i++) {
+        labelPositions.push(phonon[index].distance);
+        index += segmentNq[i];
+      }
+      labelPositions.push(phonon[phonon.length - 1].distance);
+
+      const layout = {
+        title: 'Phonon Band Structure',
+        xaxis: {
+          title: 'Wave Vector',
+          tickvals: labelPositions,
+          ticktext: labels,
+          showgrid: true
+        },
+        yaxis: {
+          title: 'Frequency (THz)',
+          zeroline: true,
+          showgrid: true
+        },
+        plot_bgcolor: 'white',
+        paper_bgcolor: 'white',
+        margin: { l: 60, r: 30, t: 50, b: 60 }
+      };
+
+      Plotly.newPlot('phononPlot', traces, layout);
+    })
+    .catch(err => {
+      document.getElementById("phononStatus").innerHTML =
+        `<div class="error">Error loading band.yaml: ${err.message}</div>`;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  load3DStructure();
+  loadStructuralData();
+  loadPhononData();
+
+  document.getElementById('zoom-in-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoom(1.2);
+  });
+  document.getElementById('zoom-out-btn').addEventListener('click', () => {
+    if (viewer) viewer.zoom(0.8);
+  });
+  
+  // --- START: Updated Reset Button Listener ---
+  document.getElementById('home-btn').addEventListener('click', () => {
+    resetToOriginalState();
+  });
+  // --- END: Updated Reset Button Listener ---
+
+  document.getElementById('cam-x').addEventListener('click', () => {
+    if (viewer) {
+        viewer.zoomTo();
+        viewer.rotate(-90, {y: 1, x: 1, z: 0});
+        viewer.render();
+    }
+  });
+  
+  document.getElementById('cam-y').addEventListener('click', () => {
+    if (viewer) {
+        viewer.zoomTo();
+        viewer.rotate(90, {x: 1, y: 0, z: 0});
+        viewer.render();
+    }
+  });
+  
+  document.getElementById('cam-z').addEventListener('click', () => {
+    if (viewer) {
+        viewer.zoomTo();
+        viewer.render();
+    }
+  });
+
+  ['x', 'y', 'z'].forEach((axis, index) => {
+    document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        if (!isNaN(val) && val > 0) {
+            viewerState.supercell[index] = val;
+            updateViewer();
+        }
+    });
+  });
+
+  document.getElementById('cb-bonds').addEventListener('change', (e) => {
+    viewerState.showBonds = e.target.checked;
+    updateViewer();
+  });
+  
+  document.getElementById('cb-packed').addEventListener('change', (e) => {
+    viewerState.useVDW = e.target.checked;
+    updateViewer();
+  });
+
+  document.getElementById('cb-labels').addEventListener('change', (e) => {
+    viewerState.showLabels = e.target.checked;
+    updateViewer();
+  });
+
+ document.getElementById('bond-threshold').addEventListener('input', (e) => {
+    const val = parseFloat(e.target.value);
+    viewerState.bondThreshold = val;
+    document.getElementById('bond-threshold-value').textContent = `${val.toFixed(1)} Å`;
+    updateViewer();
+  });	
+});
+</script>
+
+<script>
+  const pathParts = window.location.pathname.split('/');
+  const folderName = pathParts[pathParts.length - 2] || "Unknown";
+
+  function formatFormula(formula) {
+    return formula.replace(/(\d+)/g, '<sub>$1</sub>');
+  }
+
+  document.getElementById("material-title").innerHTML =
+    `Material: ${formatFormula(folderName)}`;
+</script>
+
+</body>
+</html>
