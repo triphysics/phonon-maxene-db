@@ -1,524 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MXene Material Viewer</title>
-  <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <meta charset="UTF-8">
+  <title>MX-PHon - MAXene Phonon Database</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      max-width: 960px;
+      font-family: sans-serif;
+      max-width: 800px;
       margin: auto;
-      padding: 1rem;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-    }
-    .container {
-      background: white;
-      border-radius: 12px;
       padding: 2rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 8px;
-      margin-bottom: 1rem;
     }
     h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      background: linear-gradient(45deg, #3498db, #2c3e50);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #2c3e50;
     }
-    .structure, .phonon {
-      margin-top: 2rem;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
-    #viewer {
-    width: 100%;
-    height: 450px;
-    display: block;
-    border: 2px solid #3498db;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; 
+    li {
+      margin: 0.5em 0;
+      font-size: 1.1em;
     }
-    .viewer-controls {
-    text-align: center;
-    margin-bottom: 12px;
+    a {
+      text-decoration: none;
+      color: #3498db;
     }
-    .viewer-controls button, #custom-controls button {
-      background: linear-gradient(45deg, #3498db, #2980b9);
-      border: none;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      margin: 0 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: all 0.2s ease-in-out;
-    }
-    #custom-controls button {
-        padding: 6px 12px;
-    }
-    .viewer-controls button:hover, #custom-controls button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .viewer-controls button:active, #custom-controls button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    #phononPlot {
-      width: 100%;
-      height: 450px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .info-table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .info-table th, .info-table td {
-      border: none;
-      padding: 12px 16px;
-      text-align: left;
-    }
-    .info-table th {
-      background: linear-gradient(45deg, #3498db, #2980b9);
-      color: white;
-      font-weight: 600;
-    }
-    .info-table tr:nth-child(even) {
-      background-color: #f8f9fa;
-    }
-    .info-table tr:hover {
-      background-color: #e3f2fd;
-    }
-    .section {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 8px;
-      border-left: 4px solid #3498db;
-    }
-    .loading {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
-      font-style: italic;
-    }
-    .error {
-      background: #ffebee;
-      color: #c62828;
-      padding: 1rem;
-      border-radius: 4px;
-      border-left: 4px solid #f44336;
-      margin: 1rem 0;
-    }
-    .success {
-      background: #e8f5e8;
-      color: #2e7d32;
-      padding: 0.5rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-<div class="container">
- <h1 id="material-title">Material: </h1>
-
-  <div style="display: flex; align-items: flex-start; gap: 2rem;">
-
-    <div class="structure section" style="flex: 1.5;">
-      <h2>🧊 Crystal Structure</h2>
-      <div id="structureStatus" class="loading">Loading crystal structure...</div>
-    
-      <div class="viewer-controls">
-        <button id="zoom-in-btn">🔍 Zoom In</button>
-        <button id="zoom-out-btn">🔎 Zoom Out</button>
-        <button id="home-btn">🏠 Reset View</button>
-      </div>
-      
-      <div id="viewer"></div>
-
-      <div id="custom-controls" style="display: flex; justify-content: space-around; align-items: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; flex-wrap: wrap; background: #fdfdfd;">
-        <span style="display: inline-flex; align-items: center;">
-              Bond Threshold:
-              <input type="range" id="bond-threshold" min="1.5" max="3.5" step="0.1" value="2.9" style="margin-left: 6px;">
-              <span id="bond-threshold-value" style="margin-left: 6px;">2.9 Å</span>
-          </span>
-          <span>
-              Supercell:
-              <input type="number" id="sc-x" value="3" min="1" style="width: 40px; text-align: center;">
-              <input type="number" id="sc-y" value="3" min="1" style="width: 40px; text-align: center;">
-              <input type="number" id="sc-z" value="1" min="1" style="width: 40px; text-align: center;">
-          </span>
-          <span>
-              Camera:
-              <button id="cam-x">x</button>
-              <button id="cam-y">y</button>
-              <button id="cam-z">z</button>
-          </span>
-          <span style="display: inline-flex; align-items: center;">
-              <input type="checkbox" id="cb-bonds" checked> <label for="cb-bonds" style="margin-left: 4px;">Bonds</label>
-          </span>
-          <span style="display: inline-flex; align-items: center;">
-              <input type="checkbox" id="cb-packed"> <label for="cb-packed" style="margin-left: 4px;">Packed cell</label>
-          </span>
-          <span style="display: inline-flex; align-items: center;">
-              <input type="checkbox" id="cb-labels"> <label for="cb-labels" style="margin-left: 4px;">Atom labels</label>
-          </span>
-      </div>
-    </div>
-
-
-    <div class="section" style="flex: 1;">
-      <h2>🧮 Structural Details</h2>
-      <div id="structuralStatus" class="loading">Loading structural data...</div>
-      <table class="info-table" id="latticeTable" style="display:none;">
-        <thead><tr><th colspan="4">Lattice Vectors (Å)</th></tr></thead>
-        <tbody></tbody>
-      </table>
-      <table class="info-table" id="atomTable" style="display:none;">
-        <thead><tr><th>Element</th><th>x</th><th>y</th><th>z</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 160px;">
+    <h1 style="margin: 0;">MXene Phonon Database</h1>
   </div>
 
-  <div class="phonon section">
-    <h2>🎵 Phonon Band Structure</h2>
-    <div id="phononStatus" class="loading">Loading phonon dispersion from band.yaml...</div>
-    <div id="phononPlot"></div>
-  </div>
-</div>
+  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides. They are derived from their bulk MAX phases. MXenes are known for their unique combination of metallic conductivity, tunable surface chemistry, and layered structure. They are of great interest for applications in energy storage, sensors, electronics, and beyond. This database gives the crystal structure and phonon dispersion of selected MXenes.</p>
+  <p>Select a material to view its structure and phonon properties:</p>
+  <ul>
+    <li><a href="materials/La2C_Br2/index.html">La2C_Br2</a></li>
+    <li><a href="materials/La2C_BrF/index.html">La2C_BrF</a></li>
+    <li><a href="materials/La2C_Cl2/index.html">La2C_Cl2</a></li>
+    <li><a href="materials/La2C_ClH/index.html">La2C_ClH</a></li>
+    <li><a href="materials/La2C_F2/index.html">La2C_F2</a></li>
+    <li><a href="materials/La2C_FO/index.html">La2C_FO</a></li>
+    <li><a href="materials/La2C_HO/index.html">La2C_HO</a></li>
+    <li><a href="materials/La2C_BrCl/index.html">La2C_BrCl</a></li>
+    <li><a href="materials/La2C_BrH/index.html">La2C_BrH</a></li>
+    <li><a href="materials/La2C_ClF/index.html">La2C_ClF</a></li>
+    <li><a href="materials/La2C_ClO/index.html">La2C_ClO</a></li>
+    <li><a href="materials/La2C_FH/index.html">La2C_FH</a></li>
+    <li><a href="materials/La2C_H2/index.html">La2C_H2</a></li>
+    <li><a href="materials/La2C_O2/index.html">La2C_O2</a></li>
+    <li><a href="materials/Sc2C_Br2/index.html">Sc2C_Br2</a></li>
+    <li><a href="materials/Sc2C_BrF/index.html">Sc2C_BrF</a></li>
+    <li><a href="materials/Sc2C_Cl2/index.html">Sc2C_Cl2</a></li>
+    <li><a href="materials/Sc2C_ClH/index.html">Sc2C_ClH</a></li>
+    <li><a href="materials/Sc2C_F2/index.html">Sc2C_F2</a></li>
+    <li><a href="materials/Sc2C_FO/index.html">Sc2C_FO</a></li>
+    <li><a href="materials/Sc2C_HO/index.html">Sc2C_HO</a></li>
+    <li><a href="materials/Sc2C_BrCl/index.html">Sc2C_BrCl</a></li>
+    <li><a href="materials/Sc2C_BrH/index.html">Sc2C_BrH</a></li>
+    <li><a href="materials/Sc2C_ClF/index.html">Sc2C_ClF</a></li>
+    <li><a href="materials/Sc2C_ClO/index.html">Sc2C_ClO</a></li>
+    <li><a href="materials/Sc2C_FH/index.html">Sc2C_FH</a></li>
+    <li><a href="materials/Sc2C_H2/index.html">Sc2C_H2</a></li>
+    <li><a href="materials/Sc2C_O2/index.html">Sc2C_O2</a></li>
+    <li><a href="materials/Y2C_Br2/index.html">Y2C_Br2</a></li>
+    <li><a href="materials/Y2C_BrF/index.html">Y2C_BrF</a></li>
+    <li><a href="materials/Y2C_Cl2/index.html">Y2C_Cl2</a></li>
+    <li><a href="materials/Y2C_ClH/index.html">Y2C_ClH</a></li>
+    <li><a href="materials/Y2C_F2/index.html">Y2C_F2</a></li>
+    <li><a href="materials/Y2C_FO/index.html">Y2C_FO</a></li>
+    <li><a href="materials/Y2C_HO/index.html">Y2C_HO</a></li>
+    <li><a href="materials/Y2C_BrCl/index.html">Y2C_BrCl</a></li>
+    <li><a href="materials/Y2C_BrH/index.html">Y2C_BrH</a></li>
+    <li><a href="materials/Y2C_ClF/index.html">Y2C_ClF</a></li>
+    <li><a href="materials/Y2C_ClO/index.html">Y2C_ClO</a></li>
+    <li><a href="materials/Y2C_FH/index.html">Y2C_FH</a></li>
+    <li><a href="materials/Y2C_H2/index.html">Y2C_H2</a></li>
+    <li><a href="materials/Y2C_O2/index.html">Y2C_O2</a></li>
 
-<script>
-let viewer = null;
-let cifData = null; 
-
-let viewerState = {
-    showBonds: true,
-    useVDW: false, 
-    showLabels: false,
-    bondThreshold: 2.9,
-    supercell: [3, 3, 1]
-};
-
-// --- START: Added Reset Function ---
-const originalState = { ...viewerState, supercell: [...viewerState.supercell] };
-
-function resetToOriginalState() {
-    if (!viewer) return;
-
-    // 1. Reset the state object to its initial values
-    viewerState = { ...originalState, supercell: [...originalState.supercell] };
-
-    // 2. Update UI controls to match the reset state
-    document.getElementById('sc-x').value = viewerState.supercell[0];
-    document.getElementById('sc-y').value = viewerState.supercell[1];
-    document.getElementById('sc-z').value = viewerState.supercell[2];
-
-    document.getElementById('cb-bonds').checked = viewerState.showBonds;
-    document.getElementById('cb-packed').checked = viewerState.useVDW;
-    document.getElementById('cb-labels').checked = viewerState.showLabels;
-
-    const bondSlider = document.getElementById('bond-threshold');
-    bondSlider.value = viewerState.bondThreshold;
-    document.getElementById('bond-threshold-value').textContent = `${viewerState.bondThreshold.toFixed(1)} Å`;
-
-    // 3. Redraw the viewer with the reset state
-    updateViewer();
-
-    // 4. Reset the camera zoom and orientation
-    viewer.zoomTo();
-}
-// --- END: Added Reset Function ---
-
-function updateViewer() {
-    if (!viewer || !cifData) return;
-
-    viewer.clear();
-    viewer.addModel(cifData, "cif");
-    viewer.addUnitCell();
-    viewer.replicateUnitCell(...viewerState.supercell);
-
-    let baseStyle = {};
-    if (viewerState.useVDW) {
-        baseStyle = { sphere: { colorscheme: 'Jmol' } };
-    } else {
-        baseStyle = { sphere: { scale: 0.3, colorscheme: 'Jmol' } };
-    }
-
-    if (viewerState.showLabels) {
-        viewer.addLabel(atom => atom.elem, {
-            fontColor: 'black',
-            fontSize: 18,
-            showBackground: false,
-            position: { x: 0, y: 0, z: 0.7 }
-        });
-    }
-
-    viewer.setStyle({}, baseStyle);
-
-    if (viewerState.showBonds) {
-        const maxBondLength = viewerState.bondThreshold || 2.9;
-        const atoms = viewer.selectedAtoms({});
-
-        atoms.forEach(atom => {
-            atom.bonds = [];
-            atom.bondOrder = [];
-        });
-
-        for (let i = 0; i < atoms.length; i++) {
-            for (let j = i + 1; j < atoms.length; j++) {
-                const dx = atoms[i].x - atoms[j].x;
-                const dy = atoms[i].y - atoms[j].y;
-                const dz = atoms[i].z - atoms[j].z;
-                const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-                if (dist <= maxBondLength) {
-                    atoms[i].bonds.push(j);
-                    atoms[i].bondOrder.push(1);
-                    atoms[j].bonds.push(i);
-                    atoms[j].bondOrder.push(1);
-                }
-            }
-        }
-
-        viewer.setStyle({}, {
-            stick: { radius: 0.15 },
-            ...baseStyle
-        });
-    }
-
-    viewer.render();
-}
-
-
-function load3DStructure() {
-  viewer = $3Dmol.createViewer('viewer', {
-    defaultcolors: $3Dmol.rasmolElementColors,
-    backgroundColor: "white" 
-  });
-
-  fetch("POSCAR.cif")
-    .then(res => res.text())
-    .then(data => {
-      cifData = data;
-      updateViewer();
-      viewer.zoomTo();
-    })
-    .catch(err => {
-      document.getElementById("structureStatus").innerHTML =
-        `<div class="error">Error loading POSCAR.cif: ${err.message}</div>`;
-    });
-}
-
-function loadStructuralData() {
-  fetch("POSCAR")
-    .then(res => res.text())
-    .then(text => {
-      const lines = text.trim().split("\n");
-      const scale = parseFloat(lines[1]);
-      const lattice = lines.slice(2, 5).map(l =>
-        l.trim().split(/\s+/).map(n => parseFloat(n) * scale)
-      );
-      const elements = lines[5].trim().split(/\s+/);
-      const counts = lines[6].trim().split(/\s+/).map(Number);
-      const positions = lines.slice(8, 8 + counts.reduce((a, b) => a + b, 0))
-        .map(l => l.trim().split(/\s+/).slice(0, 3).map(Number));
-
-      const lt = document.querySelector("#latticeTable tbody");
-      lt.innerHTML = '';
-      lattice.forEach((vec, i) => {
-        lt.innerHTML += `<tr><td><strong>a${i + 1}</strong></td>
-          <td>${vec[0].toFixed(4)}</td><td>${vec[1].toFixed(4)}</td><td>${vec[2].toFixed(4)}</td></tr>`;
-      });
-
-      const at = document.querySelector("#atomTable tbody");
-      at.innerHTML = '';
-      let idx = 0;
-      elements.forEach((el, i) => {
-        for (let j = 0; j < counts[i]; j++) {
-          const pos = positions[idx++];
-          at.innerHTML += `<tr><td><strong>${el}</strong></td>
-            <td>${pos[0].toFixed(6)}</td><td>${pos[1].toFixed(6)}</td><td>${pos[2].toFixed(6)}</td></tr>`;
-        }
-      });
-
-      document.getElementById("latticeTable").style.display = "table";
-      document.getElementById("atomTable").style.display = "table";
-    })
-    .catch(err => {
-      document.getElementById("structuralStatus").innerHTML =
-        `<div class="error">Error loading POSCAR: ${err.message}</div>`;
-    });
-}
-
-function loadPhononData() {
-  fetch("data/band.yaml")
-    .then(r => r.text())
-    .then(yamlText => {
-      const data = jsyaml.load(yamlText);
-      const phonon = data.phonon;
-      const numBands = phonon[0].band.length;
-      const traces = [];
-
-      for (let i = 0; i < numBands; i++) {
-        traces.push({
-          x: phonon.map(p => p.distance),
-          y: phonon.map(p => p.band[i].frequency),
-          mode: 'lines',
-          line: { width: 2 },
-          showlegend: false,
-          name: `Mode ${i + 1}`
-        });
-      }
-      
-      const rawLabels = data.labels ? data.labels.flat() : [];
-      const labels = [rawLabels[0]];
-      for (let i = 1; i < rawLabels.length; i++) {
-        if (rawLabels[i] !== rawLabels[i - 1]) {
-          labels.push(rawLabels[i]);
-        }
-      }
-
-      const segmentNq = data.segment_nqpoint || [];
-      const labelPositions = [];
-      let index = 0;
-      for (let i = 0; i < segmentNq.length; i++) {
-        labelPositions.push(phonon[index].distance);
-        index += segmentNq[i];
-      }
-      labelPositions.push(phonon[phonon.length - 1].distance);
-
-      const layout = {
-        title: 'Phonon Band Structure',
-        xaxis: {
-          title: 'Wave Vector',
-          tickvals: labelPositions,
-          ticktext: labels,
-          showgrid: true
-        },
-        yaxis: {
-          title: 'Frequency (THz)',
-          zeroline: true,
-          showgrid: true
-        },
-        plot_bgcolor: 'white',
-        paper_bgcolor: 'white',
-        margin: { l: 60, r: 30, t: 50, b: 60 }
-      };
-
-      Plotly.newPlot('phononPlot', traces, layout);
-    })
-    .catch(err => {
-      document.getElementById("phononStatus").innerHTML =
-        `<div class="error">Error loading band.yaml: ${err.message}</div>`;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  load3DStructure();
-  loadStructuralData();
-  loadPhononData();
-
-  document.getElementById('zoom-in-btn').addEventListener('click', () => {
-    if (viewer) viewer.zoom(1.2);
-  });
-  document.getElementById('zoom-out-btn').addEventListener('click', () => {
-    if (viewer) viewer.zoom(0.8);
-  });
-  
-  // --- START: Updated Reset Button Listener ---
-  document.getElementById('home-btn').addEventListener('click', () => {
-    resetToOriginalState();
-  });
-  // --- END: Updated Reset Button Listener ---
-
-  document.getElementById('cam-x').addEventListener('click', () => {
-    if (viewer) {
-        viewer.zoomTo();
-        viewer.rotate(-90, {y: 1, x: 1, z: 0});
-        viewer.render();
-    }
-  });
-  
-  document.getElementById('cam-y').addEventListener('click', () => {
-    if (viewer) {
-        viewer.zoomTo();
-        viewer.rotate(90, {x: 1, y: 0, z: 0});
-        viewer.render();
-    }
-  });
-  
-  document.getElementById('cam-z').addEventListener('click', () => {
-    if (viewer) {
-        viewer.zoomTo();
-        viewer.render();
-    }
-  });
-
-  ['x', 'y', 'z'].forEach((axis, index) => {
-    document.getElementById(`sc-${axis}`).addEventListener('input', (e) => {
-        const val = parseInt(e.target.value, 10);
-        if (!isNaN(val) && val > 0) {
-            viewerState.supercell[index] = val;
-            updateViewer();
-        }
-    });
-  });
-
-  document.getElementById('cb-bonds').addEventListener('change', (e) => {
-    viewerState.showBonds = e.target.checked;
-    updateViewer();
-  });
-  
-  document.getElementById('cb-packed').addEventListener('change', (e) => {
-    viewerState.useVDW = e.target.checked;
-    updateViewer();
-  });
-
-  document.getElementById('cb-labels').addEventListener('change', (e) => {
-    viewerState.showLabels = e.target.checked;
-    updateViewer();
-  });
-
- document.getElementById('bond-threshold').addEventListener('input', (e) => {
-    const val = parseFloat(e.target.value);
-    viewerState.bondThreshold = val;
-    document.getElementById('bond-threshold-value').textContent = `${val.toFixed(1)} Å`;
-    updateViewer();
-  });	
-});
-</script>
-
-<script>
-  const pathParts = window.location.pathname.split('/');
-  const folderName = pathParts[pathParts.length - 2] || "Unknown";
-
-  function formatFormula(formula) {
-    return formula.replace(/(\d+)/g, '<sub>$1</sub>');
-  }
-
-  document.getElementById("material-title").innerHTML =
-    `Material: ${formatFormula(folderName)}`;
-</script>
-
+  </ul>
 </body>
 </html>
