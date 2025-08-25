@@ -575,6 +575,31 @@
 </div>
 
 <script>
+const params = new URLSearchParams(location.search);
+let material = params.get('material');
+
+// If this file is still inside /materials/<name>/, detect from path:
+const match = location.pathname.match(/\/materials\/([^/]+)\//);
+if (match && match[1]) material = match[1];
+
+function BASE(p) {
+  return match ? p : `materials/${material}/${p}`;
+}
+
+// Pretty subscript formatting
+function formatFormula(f) {
+  return f ? f.replace(/(\d+)/g, '<sub>$1</sub>') : f;
+}
+
+if (material) {
+  document.getElementById("material-title").innerHTML = formatFormula(material);
+  document.title = `MXene Material Viewer - ${material}`;
+} else {
+  document.getElementById("material-title").textContent = "No material selected";
+}
+</script>
+
+<script>
 let viewer = null;
 let cifData = null; 
 let initialView = null;
@@ -696,7 +721,7 @@ function load3DStructure() {
 
   viewer.resize();
 
-  fetch("POSCAR.cif")
+  fetch(BASE("POSCAR.cif"))
     .then(res => res.text())
     .then(data => {
       cifData = data;
@@ -722,7 +747,7 @@ function load3DStructure() {
 }
 
 function loadStructuralData() {
-  fetch("POSCAR")
+  fetch(BASE("POSCAR"))
     .then(res => res.text())
     .then(text => {
       const lines = text.trim().split("\n");
@@ -793,7 +818,7 @@ function getPlotLayout(isDark) {
 }
 
 function loadPhononData() {
-  fetch("data/band.yaml")
+  fetch(BASE("data/band.yaml"))
     .then(r => r.text())
     .then(yamlText => {
       const data = jsyaml.load(yamlText);
@@ -964,15 +989,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-const pathParts = window.location.pathname.split('/');
-const folderName = pathParts[pathParts.length - 2] || "Unknown";
-
-function formatFormula(formula) {
-  return formula.replace(/(\d+)/g, '<sub>$1</sub>');
-}
-
-document.getElementById("material-title").innerHTML = formatFormula(folderName);
-document.title = `MXene Material Viewer - ${folderName}`;
 </script>
 </body>
 </html>
