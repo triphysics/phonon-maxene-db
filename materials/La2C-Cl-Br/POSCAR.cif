@@ -1,0 +1,30 @@
+data_image0
+_chemical_formula_structural       CBrClLa2
+_chemical_formula_sum              "C1 Br1 Cl1 La2"
+_cell_length_a       4.035972186010416
+_cell_length_b       4.035972185995796
+_cell_length_c       21.39894187645247
+_cell_angle_alpha    89.99999999999999
+_cell_angle_beta     89.99999999999999
+_cell_angle_gamma    120.00000000011984
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  C   C1        1.0  0.0  0.0  0.503983715443514  1.0000
+  Br  Br1       1.0  0.6666669847440475  0.33333298598514466  0.34213528121285  1.0000
+  Cl  Cl1       1.0  0.33333298543221457  0.6666669831836743  0.6551938961045409  1.0000
+  La  La1       1.0  0.33333298543221457  0.6666669831836743  0.4357159031002076  1.0000
+  La  La2       1.0  0.6666669847440475  0.33333298598514466  0.5725110062087406  1.0000

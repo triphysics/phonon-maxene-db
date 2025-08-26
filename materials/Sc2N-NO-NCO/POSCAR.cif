@@ -1,0 +1,33 @@
+data_image0
+_chemical_formula_structural       CN3O2Sc2
+_chemical_formula_sum              "C1 N3 O2 Sc2"
+_cell_length_a       3.3087030770123125
+_cell_length_b       3.3087030770044628
+_cell_length_c       26.709564068287104
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000007849
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  C   C1        1.0  0.6666669847440474  0.3333329859851446  0.382021510545103  1.0000
+  N   N1        1.0  0.0  0.0  0.5199846411280905  1.0000
+  N   N2        1.0  0.33333298543221446  0.6666669831836742  0.6136304581136951  1.0000
+  N   N3        1.0  0.6666669847440474  0.3333329859851446  0.42863034754763407  1.0000
+  O   O1        1.0  0.33333298543221446  0.6666669831836742  0.6630420482719179  1.0000
+  O   O2        1.0  0.6666669847440474  0.3333329859851446  0.3369579517280821  1.0000
+  Sc  Sc1       1.0  0.33333298543221446  0.6666669831836742  0.47976210324767  1.0000
+  Sc  Sc2       1.0  0.6666669847440474  0.3333329859851446  0.575923252643558  1.0000

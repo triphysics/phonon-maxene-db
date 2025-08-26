@@ -1,0 +1,30 @@
+data_image0
+_chemical_formula_structural       BrCHTi2
+_chemical_formula_sum              "Br1 C1 H1 Ti2"
+_cell_length_a       3.2009091500376337
+_cell_length_b       3.2009091500326567
+_cell_length_c       23.00926471448539
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000005144
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Br  Br1       1.0  0.3333329854322145  0.6666669831836742  0.6088532114486003  1.0000
+  C   C1        1.0  0.0  0.0  0.48051026707138905  1.0000
+  H   H1        1.0  0.6666669847440474  0.3333329859851446  0.3911467885513997  1.0000
+  Ti  Ti1       1.0  0.3333329854322145  0.6666669831836742  0.4319603667748604  1.0000
+  Ti  Ti2       1.0  0.6666669847440474  0.3333329859851446  0.528170107315886  1.0000

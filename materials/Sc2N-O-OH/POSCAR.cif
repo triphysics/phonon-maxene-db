@@ -1,0 +1,31 @@
+data_image0
+_chemical_formula_structural       HNO2Sc2
+_chemical_formula_sum              "H1 N1 O2 Sc2"
+_cell_length_a       3.2635154461688907
+_cell_length_b       3.263515446162161
+_cell_length_c       23.619445029601117
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000006821
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  H   H1        1.0  0.6666669847440475  0.3333329859851447  0.3810419757416287  1.0000
+  N   N1        1.0  0.0  0.0  0.5207509842480589  1.0000
+  O   O1        1.0  0.3333329854322145  0.6666669831836742  0.6189580242583713  1.0000
+  O   O2        1.0  0.6666669847440475  0.3333329859851447  0.4225867201394492  1.0000
+  Sc  Sc1       1.0  0.3333329854322145  0.6666669831836742  0.4766326856336506  1.0000
+  Sc  Sc2       1.0  0.6666669847440475  0.3333329859851447  0.5882545025447061  1.0000

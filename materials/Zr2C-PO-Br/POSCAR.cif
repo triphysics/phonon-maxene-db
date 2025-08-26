@@ -1,0 +1,31 @@
+data_image0
+_chemical_formula_structural       BrCOPZr2
+_chemical_formula_sum              "Br1 C1 O1 P1 Zr2"
+_cell_length_a       3.422671182805347
+_cell_length_b       3.4226711828007104
+_cell_length_c       25.923400981594863
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000004482
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Br  Br1       1.0  0.6666669847440472  0.33333298598514444  0.3471766689251088  1.0000
+  C   C1        1.0  0.0  0.0  0.470169460088649  1.0000
+  O   O1        1.0  0.3333329854322145  0.6666669831836742  0.6528233310748912  1.0000
+  P   P1        1.0  0.3333329854322145  0.6666669831836742  0.5951846630856633  1.0000
+  Zr  Zr1       1.0  0.3333329854322145  0.6666669831836742  0.4231806155262849  1.0000
+  Zr  Zr2       1.0  0.6666669847440472  0.33333298598514444  0.5188547642214462  1.0000

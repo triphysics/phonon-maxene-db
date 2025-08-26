@@ -1,0 +1,31 @@
+data_image0
+_chemical_formula_structural       BrCClOTi2
+_chemical_formula_sum              "Br1 C1 Cl1 O1 Ti2"
+_cell_length_a       3.1563085711735694
+_cell_length_b       3.15630857117133
+_cell_length_c       27.033576831888418
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000002348
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Br  Br1       1.0  0.6666669847440474  0.3333329859851446  0.332919319406662  1.0000
+  C   C1        1.0  0.0  0.0  0.44241496854878315  1.0000
+  Cl  Cl1       1.0  0.33333298543221446  0.6666669831836742  0.667080680593338  1.0000
+  O   O1        1.0  0.33333298543221446  0.6666669831836742  0.5238229697163242  1.0000
+  Ti  Ti1       1.0  0.33333298543221446  0.6666669831836742  0.4022838318395618  1.0000
+  Ti  Ti2       1.0  0.6666669847440474  0.3333329859851446  0.492666212778564  1.0000

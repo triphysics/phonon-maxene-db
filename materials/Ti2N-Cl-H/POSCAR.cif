@@ -1,0 +1,30 @@
+data_image0
+_chemical_formula_structural       ClHNTi2
+_chemical_formula_sum              "Cl1 H1 N1 Ti2"
+_cell_length_a       3.1552266030513065
+_cell_length_b       3.1552266030471836
+_cell_length_c       22.77334934181735
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000004322
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Cl  Cl1       1.0  0.3333329854322145  0.6666669831836742  0.6048012145726043  1.0000
+  H   H1        1.0  0.6666669847440474  0.3333329859851446  0.3951987854273957  1.0000
+  N   N1        1.0  0.0  0.0  0.4839265985077802  1.0000
+  Ti  Ti1       1.0  0.3333329854322145  0.6666669831836742  0.4378669955253816  1.0000
+  Ti  Ti2       1.0  0.6666669847440474  0.3333329859851446  0.529880955001684  1.0000

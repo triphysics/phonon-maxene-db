@@ -1,0 +1,32 @@
+data_image0
+_chemical_formula_structural       CN2OSTi2
+_chemical_formula_sum              "C1 N2 O1 S1 Ti2"
+_cell_length_a       3.1158054717828056
+_cell_length_b       3.115805471788711
+_cell_length_c       25.350829035300485
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    119.99999999993732
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  C   C1        1.0  0.3333329854322145  0.6666669831836742  0.5839606271350039  1.0000
+  N   N1        1.0  0.0  0.0  0.4391243837555849  1.0000
+  N   N2        1.0  0.3333329854322145  0.6666669831836742  0.5341277594862046  1.0000
+  O   O1        1.0  0.6666669847440474  0.3333329859851445  0.35501797544639246  1.0000
+  S   S1        1.0  0.3333329854322145  0.6666669831836742  0.6449820245536075  1.0000
+  Ti  Ti1       1.0  0.3333329854322145  0.6666669831836742  0.39019342312749916  1.0000
+  Ti  Ti2       1.0  0.6666669847440474  0.3333329859851445  0.4851623791251539  1.0000

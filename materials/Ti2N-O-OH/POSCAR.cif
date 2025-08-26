@@ -1,0 +1,31 @@
+data_image0
+_chemical_formula_structural       HNO2Ti2
+_chemical_formula_sum              "H1 N1 O2 Ti2"
+_cell_length_a       3.0687436403730914
+_cell_length_b       3.06874364037945
+_cell_length_c       23.554481597360464
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    119.99999999993148
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  H   H1        1.0  0.6666669847440473  0.3333329859851446  0.38209289229309756  1.0000
+  N   N1        1.0  0.0  0.0  0.5249236554776942  1.0000
+  O   O1        1.0  0.33333298543221446  0.6666669831836742  0.6179071077069025  1.0000
+  O   O2        1.0  0.6666669847440473  0.3333329859851446  0.4240920853299902  1.0000
+  Ti  Ti1       1.0  0.33333298543221446  0.6666669831836742  0.4772749434311521  1.0000
+  Ti  Ti2       1.0  0.6666669847440473  0.3333329859851446  0.578641407813375  1.0000

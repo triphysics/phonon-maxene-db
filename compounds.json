@@ -1,4 +1,44 @@
 {
+  "Ti2N-CN-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-NCS-NCS": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2N-PO-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "Br"
+    ]
+  },
+  "Sc2N-OCl-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "H"
+    ]
+  },
   "Sc2C-CN-F": {
     "elements": [
       "Sc",
@@ -6,6 +46,35 @@
       "C",
       "N",
       "F"
+    ]
+  },
+  "Ti2C-SCN-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Ti2N-NCO-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-CN-O": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "O"
     ]
   },
   "Sc2C-NO-OCN": {
@@ -19,6 +88,25 @@
       "N"
     ]
   },
+  "Ti2C-CN-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Ti2N-NCO-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "O"
+    ]
+  },
   "Sc2C-NCS-Br": {
     "elements": [
       "Sc",
@@ -27,6 +115,64 @@
       "C",
       "S",
       "Br"
+    ]
+  },
+  "Ti2C-OCl-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "H"
+    ]
+  },
+  "La2C-F-Br": {
+    "elements": [
+      "La",
+      "C",
+      "F",
+      "Br"
+    ]
+  },
+  "Zr2C-NCO-PO": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "La2C-Br-H": {
+    "elements": [
+      "La",
+      "C",
+      "Br",
+      "H"
+    ]
+  },
+  "Sc2N-OCl-SCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-NO-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "O",
+      "C",
+      "N"
     ]
   },
   "Sc2C-OCl-NCO": {
@@ -40,6 +186,16 @@
       "O"
     ]
   },
+  "Zr2C-OCl-OCl": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "Cl"
+    ]
+  },
   "Sc2C-OCl-SCN": {
     "elements": [
       "Sc",
@@ -49,6 +205,72 @@
       "S",
       "C",
       "N"
+    ]
+  },
+  "Ti2C-NCS-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O"
+    ]
+  },
+  "Sc2N-H-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-CN-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "H"
+    ]
+  },
+  "Ti2N-H-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-CN-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "H"
+    ]
+  },
+  "Zr2C-O-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-NCO-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "H"
     ]
   },
   "Sc2C-NO-NO": {
@@ -71,6 +293,45 @@
       "H"
     ]
   },
+  "Ti2N-CN-NCS": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2N-CN-CN": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-CN-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Zr2C-PO-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-NCO-NCS": {
     "elements": [
       "Sc",
@@ -83,6 +344,15 @@
       "S"
     ]
   },
+  "Zr2C-F-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "F",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-PO-Br": {
     "elements": [
       "Sc",
@@ -90,6 +360,44 @@
       "P",
       "O",
       "Br"
+    ]
+  },
+  "Ti2N-PO-PO": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Sc2N-H-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "H",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-NCO-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-Cl-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "Cl",
+      "H"
     ]
   },
   "Sc2C-SCN-SCN": {
@@ -104,6 +412,204 @@
       "N"
     ]
   },
+  "Sc2N-PO-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-NCO-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
+  "Sc2N-O-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2N-O-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Br"
+    ]
+  },
+  "La2C-Cl-H": {
+    "elements": [
+      "La",
+      "C",
+      "Cl",
+      "H"
+    ]
+  },
+  "Sc2N-NCS-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "F"
+    ]
+  },
+  "Sc2N-NCO-PO": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2N-SCN-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Sc2N-SCN-SCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-PO-PO": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2N-CN-SCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-NO-NCO": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Sc2N-OCl-NCS": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2N-CN-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Ti2N-CN-NO": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "N",
+      "O"
+    ]
+  },
+  "Ti2C-CN-NO": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "N",
+      "O"
+    ]
+  },
+  "Zr2C-NO-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-OCl-NCO": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2N-OCl-SCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-Cl-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "Cl",
+      "H"
+    ]
+  },
   "Sc2C-NCS-F": {
     "elements": [
       "Sc",
@@ -114,11 +620,140 @@
       "F"
     ]
   },
+  "Sc2N-NO-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-F-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "F",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-NCO-PO": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2N-Cl-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-CN-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-SCN-O": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Sc2N-NCS-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-Cl-H": {
     "elements": [
       "Sc",
       "C",
       "Cl",
+      "H"
+    ]
+  },
+  "Ti2C-CN-PO": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "La2C-Cl-Br": {
+    "elements": [
+      "La",
+      "C",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Ti2C-CN-CN": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-NCS-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "Br"
+    ]
+  },
+  "Zr2C-NCS-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-H-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "H",
+      "O",
       "H"
     ]
   },
@@ -154,11 +789,76 @@
       "F"
     ]
   },
+  "Ti2N-O-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "F"
+    ]
+  },
+  "Zr2C-OCl-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "F"
+    ]
+  },
+  "Ti2C-NO-OCl": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2N-Br-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "Br",
+      "H"
+    ]
+  },
+  "Ti2C-H-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-F-H": {
     "elements": [
       "Sc",
       "C",
       "F",
+      "H"
+    ]
+  },
+  "Zr2C-H-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-OCl-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "O",
       "H"
     ]
   },
@@ -182,6 +882,118 @@
       "H"
     ]
   },
+  "Sc2N-SCN-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-OCl-NCO": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Zr2C-OCN-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-NO-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-CN-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Ti2C-CN-NCS": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2C-F-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "F",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-CN-NO": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "N",
+      "O"
+    ]
+  },
+  "Sc2N-O-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
+  "Zr2C-NCS-PO": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-CN-OCl": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
   "Sc2C-NCS-PO": {
     "elements": [
       "Sc",
@@ -193,12 +1005,173 @@
       "O"
     ]
   },
+  "Zr2C-Br-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "Br",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-OCl-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-NO-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-NCS-SCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-NCS-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "F"
+    ]
+  },
+  "Sc2N-SCN-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Ti2N-CN-OCl": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
   "Sc2C-F-F": {
     "elements": [
       "Sc",
       "C",
       "F",
       "F"
+    ]
+  },
+  "La2C-O-O": {
+    "elements": [
+      "La",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2N-NCO-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-NO-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "Br"
+    ]
+  },
+  "Zr2C-Br-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "Br",
+      "Br"
+    ]
+  },
+  "Ti2N-NCS-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "O"
+    ]
+  },
+  "Zr2C-NO-PO": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-NCS-NCS": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2N-CN-CN": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-NCO-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "Cl"
     ]
   },
   "Sc2C-NCS-Cl": {
@@ -221,6 +1194,72 @@
       "Cl"
     ]
   },
+  "Ti2N-SCN-SCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-OCl-NCS": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2C-OCl-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-NCO-SCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-SCN-PO": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-OCl-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "Br"
+    ]
+  },
   "Sc2C-OCl-NCS": {
     "elements": [
       "Sc",
@@ -232,10 +1271,180 @@
       "S"
     ]
   },
+  "Ti2C-Br-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "Br",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-Cl-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Zr2C-NCS-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "Cl"
+    ]
+  },
+  "Sc2N-NCS-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "Br"
+    ]
+  },
+  "Sc2N-CN-NCO": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Sc2N-NCS-PO": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-CN-NCO": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2C-O-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-CN-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Sc2N-CN-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Ti2N-O-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2N-SCN-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Ti2C-NCO-NCO": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
   "Sc2C-NO-NCO": {
     "elements": [
       "Sc",
       "C",
+      "N",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2N-NO-SCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-OCl-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Ti2C-OCN-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-NO-NCO": {
+    "elements": [
+      "Ti",
+      "N",
       "N",
       "O",
       "N",
@@ -251,6 +1460,24 @@
       "Br"
     ]
   },
+  "Zr2C-PO-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2N-OCl-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "F"
+    ]
+  },
   "Sc2C-F-OCN": {
     "elements": [
       "Sc",
@@ -259,6 +1486,92 @@
       "O",
       "C",
       "N"
+    ]
+  },
+  "Sc2N-OCl-O": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "O"
+    ]
+  },
+  "Ti2N-F-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "F",
+      "F"
+    ]
+  },
+  "Ti2N-OCl-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-PO-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-F-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "F",
+      "Cl"
+    ]
+  },
+  "Sc2N-OCN-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-PO-PO": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2N-OCl-OCl": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2N-CN-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "Br"
     ]
   },
   "Sc2C-NCS-OH": {
@@ -270,6 +1583,136 @@
       "S",
       "O",
       "H"
+    ]
+  },
+  "Zr2C-NO-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "Br"
+    ]
+  },
+  "Ti2N-SCN-PO": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-NCS-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "H"
+    ]
+  },
+  "Ti2C-NO-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "Br"
+    ]
+  },
+  "Ti2C-PO-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-OCl-SCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-NO-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-F-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "F",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-NO-O": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "O"
+    ]
+  },
+  "Sc2N-NCS-O": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "O"
+    ]
+  },
+  "Sc2N-NCO-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
+  "Zr2C-NCO-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-NCO-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "Cl"
     ]
   },
   "Sc2C-SCN-H": {
@@ -292,12 +1735,42 @@
       "N"
     ]
   },
+  "Ti2C-OCl-PO": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "P",
+      "O"
+    ]
+  },
   "Sc2C-O-F": {
     "elements": [
       "Sc",
       "C",
       "O",
       "F"
+    ]
+  },
+  "Ti2N-NCO-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
+  "Sc2N-NCO-O": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "O"
     ]
   },
   "Sc2C-O-OH": {
@@ -317,6 +1790,17 @@
       "Br"
     ]
   },
+  "Sc2N-NO-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-SCN-PO": {
     "elements": [
       "Sc",
@@ -326,6 +1810,25 @@
       "N",
       "P",
       "O"
+    ]
+  },
+  "Zr2C-Cl-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Zr2C-PO-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "O",
+      "C",
+      "N"
     ]
   },
   "Sc2C-CN-NCS": {
@@ -339,6 +1842,26 @@
       "S"
     ]
   },
+  "Sc2N-NO-NO": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "N",
+      "O"
+    ]
+  },
+  "Ti2N-SCN-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "O"
+    ]
+  },
   "Sc2C-SCN-F": {
     "elements": [
       "Sc",
@@ -349,6 +1872,241 @@
       "F"
     ]
   },
+  "Sc2N-NO-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-CN-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-NCO-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-Cl-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-F-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "F",
+      "Br"
+    ]
+  },
+  "Sc2N-Cl-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "Cl",
+      "H"
+    ]
+  },
+  "Ti2C-PO-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "Br"
+    ]
+  },
+  "Zr2C-OCl-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "H"
+    ]
+  },
+  "Ti2C-NCO-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-OCl-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-Cl-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "La2C-O-Cl": {
+    "elements": [
+      "La",
+      "C",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2C-NCO-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-OH-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-NO-PO": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Sc2N-NCO-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "F"
+    ]
+  },
+  "Zr2C-NO-SCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-SCN-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Ti2N-SCN-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "H"
+    ]
+  },
+  "Sc2N-NCO-NCO": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2N-Br-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "Br",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-PO-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "Br"
+    ]
+  },
+  "Zr2C-PO-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-CN-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-NCO-Br": {
     "elements": [
       "Sc",
@@ -357,6 +2115,105 @@
       "C",
       "O",
       "Br"
+    ]
+  },
+  "Zr2C-SCN-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Sc2N-Cl-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-NO-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-F-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "F",
+      "Br"
+    ]
+  },
+  "Ti2N-CN-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Sc2N-CN-SCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-F-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "F",
+      "H"
+    ]
+  },
+  "Ti2N-NCO-SCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-SCN-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-NO-PO": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "P",
+      "O"
     ]
   },
   "Sc2C-OCl-F": {
@@ -378,6 +2235,36 @@
       "O"
     ]
   },
+  "Zr2C-SCN-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Sc2N-OCl-OCl": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2N-O-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-NCS-NCS": {
     "elements": [
       "Sc",
@@ -388,6 +2275,34 @@
       "N",
       "C",
       "S"
+    ]
+  },
+  "Sc2N-CN-NCS": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Zr2C-NO-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2N-Br-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "Br",
+      "Br"
     ]
   },
   "Sc2C-NCO-OCN": {
@@ -422,6 +2337,85 @@
       "O"
     ]
   },
+  "Ti2N-NCS-NCS": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2C-SCN-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "H"
+    ]
+  },
+  "Ti2N-NO-OCl": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2N-CN-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Ti2C-NO-NCS": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2N-O-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-F-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "F",
+      "F"
+    ]
+  },
+  "Zr2C-NCS-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O"
+    ]
+  },
   "Sc2C-CN-OCl": {
     "elements": [
       "Sc",
@@ -430,6 +2424,130 @@
       "N",
       "O",
       "Cl"
+    ]
+  },
+  "La2C-F-Cl": {
+    "elements": [
+      "La",
+      "C",
+      "F",
+      "Cl"
+    ]
+  },
+  "Ti2N-NO-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-O-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
+  "Zr2C-OCl-NCO": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2N-OCl-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-NO-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2C-Br-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "Br",
+      "H"
+    ]
+  },
+  "Ti2C-SCN-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Zr2C-PO-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2C-PO-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2C-NCS-PO": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-NCO-NCS": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "La2C-F-H": {
+    "elements": [
+      "La",
+      "C",
+      "F",
+      "H"
     ]
   },
   "Sc2C-NO-SCN": {
@@ -443,6 +2561,23 @@
       "N"
     ]
   },
+  "La2C-Br-Br": {
+    "elements": [
+      "La",
+      "C",
+      "Br",
+      "Br"
+    ]
+  },
+  "Ti2C-OCl-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "O"
+    ]
+  },
   "Sc2C-SCN-Br": {
     "elements": [
       "Sc",
@@ -451,6 +2586,76 @@
       "C",
       "N",
       "Br"
+    ]
+  },
+  "Ti2C-H-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "H",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-O-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-F-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "F",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-CN-SCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-SCN-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Sc2N-SCN-PO": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "Zr2C-SCN-PO": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "P",
+      "O"
     ]
   },
   "Sc2C-CN-NCO": {
@@ -462,6 +2667,135 @@
       "N",
       "C",
       "O"
+    ]
+  },
+  "La2C-F-F": {
+    "elements": [
+      "La",
+      "C",
+      "F",
+      "F"
+    ]
+  },
+  "Sc2N-CN-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-CN-OCl": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2N-OH-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-O-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2N-CN-PO": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-F-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "F",
+      "H"
+    ]
+  },
+  "Zr2C-NCS-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-NCO-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-CN-NO": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "N",
+      "O"
+    ]
+  },
+  "Ti2N-CN-NCO": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2N-PO-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2N-NCS-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "Br"
     ]
   },
   "Sc2C-SCN-O": {
@@ -484,6 +2818,73 @@
       "Cl"
     ]
   },
+  "Ti2C-O-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-CN-NCO": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2C-NCO-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-O-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Br"
+    ]
+  },
+  "Zr2C-NO-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-PO-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "F"
+    ]
+  },
+  "Zr2C-NO-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
   "Sc2C-PO-O": {
     "elements": [
       "Sc",
@@ -493,12 +2894,162 @@
       "O"
     ]
   },
+  "Sc2N-NCS-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "H"
+    ]
+  },
+  "Ti2N-SCN-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Ti2N-NCO-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "Cl"
+    ]
+  },
+  "Zr2C-OCl-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Ti2C-CN-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Zr2C-OCl-PO": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "P",
+      "O"
+    ]
+  },
+  "Zr2C-OH-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-CN-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Zr2C-Cl-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Ti2C-OCl-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "F"
+    ]
+  },
   "Sc2C-H-OCN": {
     "elements": [
       "Sc",
       "C",
       "H",
       "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-CN-PO": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2C-NCO-SCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-PO-PO": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Zr2C-SCN-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-NO-SCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "S",
       "C",
       "N"
     ]
@@ -521,6 +3072,39 @@
       "Cl"
     ]
   },
+  "Zr2C-NCO-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2N-NCS-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-OCN-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-NO-Br": {
     "elements": [
       "Sc",
@@ -538,6 +3122,27 @@
       "C",
       "O",
       "P",
+      "O"
+    ]
+  },
+  "Zr2C-NCS-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "Br"
+    ]
+  },
+  "Zr2C-NO-NCO": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "N",
+      "C",
       "O"
     ]
   },
@@ -561,6 +3166,16 @@
       "H"
     ]
   },
+  "Ti2N-PO-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-CN-Cl": {
     "elements": [
       "Sc",
@@ -570,12 +3185,131 @@
       "Cl"
     ]
   },
+  "Ti2N-NO-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2C-SCN-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-Cl-Br": {
     "elements": [
       "Sc",
       "C",
       "Cl",
       "Br"
+    ]
+  },
+  "Zr2C-NCO-NCS": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "La2C-O-H": {
+    "elements": [
+      "La",
+      "C",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-NO-PO": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Zr2C-H-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "H",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-NO-NCO": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2C-SCN-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-OCl-OCl": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2N-Br-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "Br",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-PO-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "F"
+    ]
+  },
+  "Zr2C-CN-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "H"
     ]
   },
   "Sc2C-CN-OH": {
@@ -588,12 +3322,45 @@
       "H"
     ]
   },
+  "Ti2C-NO-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-NCO-SCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-PO-OH": {
     "elements": [
       "Sc",
       "C",
       "P",
       "O",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-OH-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "H",
       "O",
       "H"
     ]
@@ -608,12 +3375,120 @@
       "O"
     ]
   },
+  "Zr2C-PO-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "P",
+      "O",
+      "Br"
+    ]
+  },
+  "Ti2N-SCN-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-NO-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-OH-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "H",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-NCS-SCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-CN-CN": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-PO-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-PO-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "F"
+    ]
+  },
+  "Zr2C-O-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-H-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "H",
+      "H"
+    ]
+  },
   "Sc2C-O-Br": {
     "elements": [
       "Sc",
       "C",
       "O",
       "Br"
+    ]
+  },
+  "Zr2C-OH-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "H",
+      "O",
+      "H"
     ]
   },
   "Sc2C-OCl-Cl": {
@@ -625,12 +3500,41 @@
       "Cl"
     ]
   },
+  "Sc2N-Cl-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Zr2C-CN-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-O-H": {
     "elements": [
       "Sc",
       "C",
       "O",
       "H"
+    ]
+  },
+  "Zr2C-NO-NCS": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "N",
+      "C",
+      "S"
     ]
   },
   "Sc2C-NCO-OH": {
@@ -644,6 +3548,22 @@
       "H"
     ]
   },
+  "Ti2C-Cl-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Sc2N-O-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-Cl-Cl": {
     "elements": [
       "Sc",
@@ -652,12 +3572,86 @@
       "Cl"
     ]
   },
+  "Zr2C-F-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "F",
+      "Br"
+    ]
+  },
+  "Sc2N-OCl-PO": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2N-NCO-NCO": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Sc2N-F-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "F",
+      "Br"
+    ]
+  },
+  "Ti2N-Cl-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "Cl",
+      "Br"
+    ]
+  },
   "Sc2C-Br-H": {
     "elements": [
       "Sc",
       "C",
       "Br",
       "H"
+    ]
+  },
+  "La2C-H-H": {
+    "elements": [
+      "La",
+      "C",
+      "H",
+      "H"
+    ]
+  },
+  "Ti2N-OCl-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Sc2N-PO-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "O",
+      "C",
+      "N"
     ]
   },
   "Sc2C-OCl-PO": {
@@ -670,6 +3664,47 @@
       "O"
     ]
   },
+  "Ti2N-H-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "H",
+      "H"
+    ]
+  },
+  "Zr2C-NCO-NCO": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Ti2N-NCO-NCS": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2N-OCl-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "H"
+    ]
+  },
   "Sc2C-OCl-O": {
     "elements": [
       "Sc",
@@ -677,6 +3712,44 @@
       "O",
       "Cl",
       "O"
+    ]
+  },
+  "La2C-Cl-Cl": {
+    "elements": [
+      "La",
+      "C",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Ti2N-NO-NO": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "N",
+      "O"
+    ]
+  },
+  "La2C-O-F": {
+    "elements": [
+      "La",
+      "C",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-NCS-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O",
+      "C",
+      "N"
     ]
   },
   "Sc2C-Cl-OCN": {
@@ -689,6 +3762,48 @@
       "N"
     ]
   },
+  "Ti2N-PO-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "O"
+    ]
+  },
+  "Zr2C-F-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "F",
+      "Cl"
+    ]
+  },
+  "Ti2N-OCl-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "F"
+    ]
+  },
+  "Ti2N-O-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-Cl-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "Cl",
+      "Br"
+    ]
+  },
   "Sc2C-NO-F": {
     "elements": [
       "Sc",
@@ -696,6 +3811,37 @@
       "N",
       "O",
       "F"
+    ]
+  },
+  "Sc2N-OCl-NCO": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Sc2N-NO-NCS": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2N-NO-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "Cl"
     ]
   },
   "Sc2C-H-H": {
@@ -706,12 +3852,72 @@
       "H"
     ]
   },
+  "Ti2N-NCS-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-PO-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2C-O-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
   "Sc2C-NCO-O": {
     "elements": [
       "Sc",
       "C",
       "N",
       "C",
+      "O",
+      "O"
+    ]
+  },
+  "Zr2C-CN-NCS": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2N-SCN-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-O-O": {
+    "elements": [
+      "Sc",
+      "N",
       "O",
       "O"
     ]
@@ -726,12 +3932,78 @@
       "H"
     ]
   },
+  "Ti2N-Cl-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-Br-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "Br",
+      "Br"
+    ]
+  },
+  "Ti2C-Cl-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-OCl-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "Cl"
+    ]
+  },
   "Sc2C-F-Cl": {
     "elements": [
       "Sc",
       "C",
       "F",
       "Cl"
+    ]
+  },
+  "Ti2C-SCN-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Sc2N-NCO-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-O-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "F"
     ]
   },
   "Sc2C-NO-O": {
@@ -743,6 +4015,75 @@
       "O"
     ]
   },
+  "Ti2C-NO-NO": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "N",
+      "O"
+    ]
+  },
+  "Zr2C-F-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "F",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-NO-OCl": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2N-CN-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Ti2C-OCl-SCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-PO-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-PO-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-F-OH": {
     "elements": [
       "Sc",
@@ -752,6 +4093,158 @@
       "H"
     ]
   },
+  "Ti2C-SCN-SCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "S",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-CN-OCl": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2C-O-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2C-OCl-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Ti2C-NCO-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
+  "Zr2C-F-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "F",
+      "H"
+    ]
+  },
+  "Ti2C-PO-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-H-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "H",
+      "H"
+    ]
+  },
+  "Zr2C-NCO-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-NCO-PO": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2N-OCl-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "O"
+    ]
+  },
+  "Ti2N-OCl-NCS": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Zr2C-O-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-Cl-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "Cl",
+      "H"
+    ]
+  },
+  "Ti2C-Br-Br": {
+    "elements": [
+      "Ti",
+      "C",
+      "Br",
+      "Br"
+    ]
+  },
+  "Zr2C-CN-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-OCl-H": {
     "elements": [
       "Sc",
@@ -759,6 +4252,96 @@
       "O",
       "Cl",
       "H"
+    ]
+  },
+  "Ti2C-NO-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "F"
+    ]
+  },
+  "Ti2C-NO-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-NCS-SCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2N-NCO-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-Cl-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-F-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "F",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-NCO-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "Cl"
+    ]
+  },
+  "Zr2C-OCl-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "O"
+    ]
+  },
+  "Ti2N-O-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "O",
+      "C",
+      "N"
     ]
   },
   "Sc2C-NCO-NCO": {
@@ -773,6 +4356,28 @@
       "O"
     ]
   },
+  "Sc2N-NO-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-NCS-SCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "S",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-NO-H": {
     "elements": [
       "Sc",
@@ -780,6 +4385,34 @@
       "N",
       "O",
       "H"
+    ]
+  },
+  "Zr2C-NO-NO": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "N",
+      "O"
+    ]
+  },
+  "Zr2C-Br-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "Br",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-NO-O": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "O"
     ]
   },
   "Sc2C-O-OCN": {
@@ -790,6 +4423,54 @@
       "O",
       "C",
       "N"
+    ]
+  },
+  "Ti2N-SCN-OH": {
+    "elements": [
+      "Ti",
+      "N",
+      "S",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-Br-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "Br",
+      "H"
+    ]
+  },
+  "Zr2C-F-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "F",
+      "F"
+    ]
+  },
+  "Sc2N-NCS-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "Cl"
+    ]
+  },
+  "Zr2C-OCl-NCS": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "S"
     ]
   },
   "Sc2C-NCO-SCN": {
@@ -814,6 +4495,17 @@
       "Cl"
     ]
   },
+  "Zr2C-CN-SCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-OCl-OH": {
     "elements": [
       "Sc",
@@ -824,12 +4516,122 @@
       "H"
     ]
   },
+  "Ti2C-F-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "F",
+      "F"
+    ]
+  },
+  "Ti2C-NCS-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "Cl"
+    ]
+  },
+  "Zr2C-SCN-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "H"
+    ]
+  },
   "Sc2C-O-Cl": {
     "elements": [
       "Sc",
       "C",
       "O",
       "Cl"
+    ]
+  },
+  "Ti2N-CN-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Ti2C-CN-H": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "H"
+    ]
+  },
+  "Ti2C-NCS-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-NO-SCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-Br-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "Br",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2N-NCS-NCS": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Ti2C-OH-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "H",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-NO-NCS": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "N",
+      "C",
+      "S"
     ]
   },
   "Sc2C-NCS-OCN": {
@@ -844,6 +4646,59 @@
       "N"
     ]
   },
+  "Sc2N-H-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "H",
+      "H"
+    ]
+  },
+  "Sc2N-OCl-Br": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Ti2N-F-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "F",
+      "Cl"
+    ]
+  },
+  "Ti2N-F-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "F",
+      "H"
+    ]
+  },
+  "Sc2N-NCS-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "S",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-O-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
   "Sc2C-NCS-SCN": {
     "elements": [
       "Sc",
@@ -851,6 +4706,18 @@
       "N",
       "C",
       "S",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-SCN-SCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
       "S",
       "C",
       "N"
@@ -865,6 +4732,27 @@
       "S",
       "C",
       "N"
+    ]
+  },
+  "Sc2N-OH-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "O",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2N-NCO-F": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "O",
+      "F"
     ]
   },
   "Sc2C-PO-H": {
@@ -886,6 +4774,25 @@
       "H"
     ]
   },
+  "Ti2N-OCl-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Sc2N-F-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "F",
+      "O",
+      "C",
+      "N"
+    ]
+  },
   "Sc2C-OH-OCN": {
     "elements": [
       "Sc",
@@ -897,6 +4804,26 @@
       "N"
     ]
   },
+  "Zr2C-OCl-OCN": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Ti2C-Cl-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
   "Sc2C-CN-O": {
     "elements": [
       "Sc",
@@ -904,6 +4831,85 @@
       "C",
       "N",
       "O"
+    ]
+  },
+  "Sc2N-PO-O": {
+    "elements": [
+      "Sc",
+      "N",
+      "P",
+      "O",
+      "O"
+    ]
+  },
+  "Sc2N-Br-OCN": {
+    "elements": [
+      "Sc",
+      "N",
+      "Br",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Zr2C-O-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl"
+    ]
+  },
+  "Ti2N-Cl-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Sc2N-F-Cl": {
+    "elements": [
+      "Sc",
+      "N",
+      "F",
+      "Cl"
+    ]
+  },
+  "Zr2C-CN-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Ti2N-Br-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "Br",
+      "H"
+    ]
+  },
+  "Zr2C-O-O": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Ti2C-CN-OCN": {
+    "elements": [
+      "Ti",
+      "C",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
     ]
   },
   "Sc2C-OCl-Br": {
@@ -925,6 +4931,18 @@
       "O"
     ]
   },
+  "Sc2N-NCO-NCS": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
   "Sc2C-PO-Cl": {
     "elements": [
       "Sc",
@@ -932,6 +4950,26 @@
       "P",
       "O",
       "Cl"
+    ]
+  },
+  "Ti2N-NCS-PO": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "P",
+      "O"
+    ]
+  },
+  "Ti2N-NO-Br": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "O",
+      "Br"
     ]
   },
   "Sc2C-CN-OCN": {
@@ -953,6 +4991,25 @@
       "O"
     ]
   },
+  "Ti2C-NO-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2N-SCN-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "H"
+    ]
+  },
   "Sc2C-Br-OCN": {
     "elements": [
       "Sc",
@@ -961,6 +5018,65 @@
       "O",
       "C",
       "N"
+    ]
+  },
+  "Zr2C-SCN-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Ti2N-NCS-Cl": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "Cl"
+    ]
+  },
+  "Sc2N-SCN-F": {
+    "elements": [
+      "Sc",
+      "N",
+      "S",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Ti2C-O-OH": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-NCO-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Zr2C-NO-OCl": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "O",
+      "O",
+      "Cl"
     ]
   },
   "Sc2C-OCl-OCN": {
@@ -974,6 +5090,15 @@
       "N"
     ]
   },
+  "Ti2C-PO-O": {
+    "elements": [
+      "Ti",
+      "C",
+      "P",
+      "O",
+      "O"
+    ]
+  },
   "Sc2C-CN-PO": {
     "elements": [
       "Sc",
@@ -982,6 +5107,25 @@
       "N",
       "P",
       "O"
+    ]
+  },
+  "Sc2N-Br-OH": {
+    "elements": [
+      "Sc",
+      "N",
+      "Br",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2C-NCS-F": {
+    "elements": [
+      "Ti",
+      "C",
+      "N",
+      "C",
+      "S",
+      "F"
     ]
   },
   "Sc2C-SCN-OCN": {
@@ -1007,6 +5151,26 @@
       "S"
     ]
   },
+  "Zr2C-NCS-H": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "H"
+    ]
+  },
+  "Zr2C-NCS-F": {
+    "elements": [
+      "Zr",
+      "C",
+      "N",
+      "C",
+      "S",
+      "F"
+    ]
+  },
   "Sc2C-H-OH": {
     "elements": [
       "Sc",
@@ -1014,6 +5178,27 @@
       "H",
       "O",
       "H"
+    ]
+  },
+  "Zr2C-SCN-Br": {
+    "elements": [
+      "Zr",
+      "C",
+      "S",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Ti2N-PO-OCN": {
+    "elements": [
+      "Ti",
+      "N",
+      "P",
+      "O",
+      "O",
+      "C",
+      "N"
     ]
   },
   "Sc2C-CN-Br": {
@@ -1025,11 +5210,78 @@
       "Br"
     ]
   },
+  "Sc2N-CN-PO": {
+    "elements": [
+      "Sc",
+      "N",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "Zr2C-CN-Cl": {
+    "elements": [
+      "Zr",
+      "C",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Ti2N-NCS-H": {
+    "elements": [
+      "Ti",
+      "N",
+      "N",
+      "C",
+      "S",
+      "H"
+    ]
+  },
   "Sc2C-O-O1": {
     "elements": [
       "Sc",
       "C",
       "O",
+      "O"
+    ]
+  },
+  "Ti2C-O-Cl": {
+    "elements": [
+      "Ti",
+      "C",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2N-NCO-H": {
+    "elements": [
+      "Sc",
+      "N",
+      "N",
+      "C",
+      "O",
+      "H"
+    ]
+  },
+  "Zr2C-OCl-OH": {
+    "elements": [
+      "Zr",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "Ti2N-OCl-PO": {
+    "elements": [
+      "Ti",
+      "N",
+      "O",
+      "Cl",
+      "P",
       "O"
     ]
   },
