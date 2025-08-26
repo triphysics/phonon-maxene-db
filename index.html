@@ -123,6 +123,7 @@
         <th>Atoms/Cell</th>
         <th>Space Group</th>
         <th>Unstable</th>
+	<th>Min freq (THz)</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -145,7 +146,9 @@
           elements: props.elements ? props.elements.join(", ") : "",
           atoms: props.atoms_per_cell || "",
           group: props.space_group || "",
-          stable: props.unstable || ""
+          stable: props.unstable || "",
+	  mfreq: props.min_freq || ""
+		
         }));
 
         table = $('#compounds-table').DataTable({
@@ -155,7 +158,8 @@
             { data: "elements" },
             { data: "atoms" },
             { data: "group" },
-            { data: "stable" }
+            { data: "stable" },
+	    { data: "mfreq" }
           ]
         });
       });
