@@ -1,0 +1,32 @@
+data_image0
+_chemical_formula_structural       CClHO2Sc2
+_chemical_formula_sum              "C1 Cl1 H1 O2 Sc2"
+_cell_length_a       3.3628228899286556
+_cell_length_b       3.3628228899093338
+_cell_length_c       25.58960091054718
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000019006
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  C   C1        1.0  0.0  0.0  0.4866709727528846  1.0000
+  Cl  Cl1       1.0  0.3333329854322145  0.6666669831836743  0.648294632203877  1.0000
+  H   H1        1.0  0.6666669847440475  0.33333298598514477  0.3517053677961228  1.0000
+  O   O1        1.0  0.3333329854322145  0.6666669831836743  0.5803316782587673  1.0000
+  O   O2        1.0  0.6666669847440475  0.33333298598514477  0.39015346703716  1.0000
+  Sc  Sc1       1.0  0.3333329854322145  0.6666669831836743  0.43781561810224895  1.0000
+  Sc  Sc2       1.0  0.6666669847440475  0.33333298598514477  0.5362625935955109  1.0000

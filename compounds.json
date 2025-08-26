@@ -1,181 +1,160 @@
 {
-  "Y2C_ClF": {
-    "elements": [
-      "Y",
-      "C",
-      "Cl",
-      "F"
-    ]
-  },
-  "La2C_O2": {
-    "elements": [
-      "La",
-      "C",
-      "O"
-    ]
-  },
-  "Y2C_O2": {
-    "elements": [
-      "Y",
-      "C",
-      "O"
-    ]
-  },
-  "La2C_ClO": {
-    "elements": [
-      "La",
-      "C",
-      "Cl",
-      "O"
-    ]
-  },
-  "Y2C_BrCl": {
-    "elements": [
-      "Y",
-      "C",
-      "Br",
-      "Cl"
-    ]
-  },
-  "Sc2C_BrH": {
+  "Sc2C-CN-F": {
     "elements": [
       "Sc",
       "C",
-      "Br",
-      "H"
+      "C",
+      "N",
+      "F"
     ]
   },
-  "Y2C_Br2": {
+  "Sc2C-NO-OCN": {
     "elements": [
-      "Y",
+      "Sc",
       "C",
+      "N",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-NCS-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
       "Br"
     ]
   },
-  "Sc2C_BrF": {
+  "Sc2C-OCl-NCO": {
     "elements": [
       "Sc",
       "C",
-      "Br",
-      "F"
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "O"
     ]
   },
-  "Y2C_ClH": {
+  "Sc2C-OCl-SCN": {
     "elements": [
-      "Y",
+      "Sc",
       "C",
+      "O",
       "Cl",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-NO-NO": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "N",
+      "O"
+    ]
+  },
+  "Sc2C-NO-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "O",
       "H"
     ]
   },
-  "La2C_Br2": {
+  "Sc2C-NCO-NCS": {
     "elements": [
-      "La",
+      "Sc",
       "C",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2C-PO-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "P",
+      "O",
       "Br"
     ]
   },
-  "La2C_ClF": {
+  "Sc2C-SCN-SCN": {
     "elements": [
-      "La",
+      "Sc",
       "C",
-      "Cl",
+      "S",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-NCS-F": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
       "F"
     ]
   },
-  "La2C_Cl2": {
+  "Sc2C-Cl-H": {
     "elements": [
-      "La",
+      "Sc",
       "C",
+      "Cl",
+      "H"
+    ]
+  },
+  "Sc2C-OCl-OCl": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl",
+      "O",
       "Cl"
     ]
   },
-  "Sc2C_ClH": {
+  "Sc2C-OCN-OCN": {
     "elements": [
       "Sc",
       "C",
-      "Cl",
-      "H"
-    ]
-  },
-  "La2C_BrH": {
-    "elements": [
-      "La",
+      "O",
       "C",
-      "Br",
-      "H"
+      "N",
+      "O",
+      "C",
+      "N"
     ]
   },
-  "Sc2C_ClO": {
+  "Sc2C-NCO-F": {
     "elements": [
       "Sc",
       "C",
-      "Cl",
-      "O"
-    ]
-  },
-  "La2C_FH": {
-    "elements": [
-      "La",
+      "N",
       "C",
-      "F",
-      "H"
-    ]
-  },
-  "Y2C_BrH": {
-    "elements": [
-      "Y",
-      "C",
-      "Br",
-      "H"
-    ]
-  },
-  "La2C_ClH": {
-    "elements": [
-      "La",
-      "C",
-      "Cl",
-      "H"
-    ]
-  },
-  "La2C_FO": {
-    "elements": [
-      "La",
-      "C",
-      "F",
-      "O"
-    ]
-  },
-  "La2C_BrF": {
-    "elements": [
-      "La",
-      "C",
-      "Br",
+      "O",
       "F"
     ]
   },
-  "Sc2C_O2": {
-    "elements": [
-      "Sc",
-      "C",
-      "O"
-    ]
-  },
-  "La2C_F2": {
-    "elements": [
-      "La",
-      "C",
-      "F"
-    ]
-  },
-  "Y2C_H2": {
-    "elements": [
-      "Y",
-      "C",
-      "H"
-    ]
-  },
-  "Sc2C_FH": {
+  "Sc2C-F-H": {
     "elements": [
       "Sc",
       "C",
@@ -183,134 +162,884 @@
       "H"
     ]
   },
-  "La2C_BrCl": {
+  "Sc2C-PO-OCN": {
     "elements": [
-      "La",
+      "Sc",
       "C",
-      "Br",
+      "P",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-Cl-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-NCS-PO": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
+      "P",
+      "O"
+    ]
+  },
+  "Sc2C-F-F": {
+    "elements": [
+      "Sc",
+      "C",
+      "F",
+      "F"
+    ]
+  },
+  "Sc2C-NCS-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
       "Cl"
     ]
   },
-  "Sc2C_H2": {
+  "Sc2C-NO-OCl": {
     "elements": [
       "Sc",
       "C",
-      "H"
+      "N",
+      "O",
+      "O",
+      "Cl"
     ]
   },
-  "Y2C_HO": {
+  "Sc2C-OCl-NCS": {
     "elements": [
-      "Y",
+      "Sc",
       "C",
-      "H",
+      "O",
+      "Cl",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2C-NO-NCO": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "N",
+      "C",
       "O"
     ]
   },
-  "Sc2C_Br2": {
+  "Sc2C-Br-Br": {
     "elements": [
       "Sc",
       "C",
+      "Br",
       "Br"
     ]
   },
-  "Y2C_F2": {
-    "elements": [
-      "Y",
-      "C",
-      "F"
-    ]
-  },
-  "Y2C_FO": {
-    "elements": [
-      "Y",
-      "C",
-      "F",
-      "O"
-    ]
-  },
-  "Y2C_Cl2": {
-    "elements": [
-      "Y",
-      "C",
-      "Cl"
-    ]
-  },
-  "Sc2C_FO": {
+  "Sc2C-F-OCN": {
     "elements": [
       "Sc",
       "C",
       "F",
-      "O"
+      "O",
+      "C",
+      "N"
     ]
   },
-  "Sc2C_F2": {
+  "Sc2C-NCS-OH": {
     "elements": [
       "Sc",
       "C",
+      "N",
+      "C",
+      "S",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-SCN-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "H"
+    ]
+  },
+  "Sc2C-CN-CN": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-O-F": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
       "F"
     ]
   },
-  "Sc2C_HO": {
+  "Sc2C-O-OH": {
     "elements": [
       "Sc",
       "C",
-      "H",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-F-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "F",
+      "Br"
+    ]
+  },
+  "Sc2C-SCN-PO": {
+    "elements": [
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "P",
       "O"
     ]
   },
-  "Sc2C_BrCl": {
+  "Sc2C-CN-NCS": {
     "elements": [
       "Sc",
       "C",
-      "Br",
+      "C",
+      "N",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2C-SCN-F": {
+    "elements": [
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "F"
+    ]
+  },
+  "Sc2C-NCO-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
+  "Sc2C-OCl-F": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl",
+      "F"
+    ]
+  },
+  "Sc2C-PO-PO": {
+    "elements": [
+      "Sc",
+      "C",
+      "P",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Sc2C-NCS-NCS": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2C-NCO-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-OH-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "H",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-CN-NO": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "N",
+      "O"
+    ]
+  },
+  "Sc2C-CN-OCl": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "O",
       "Cl"
     ]
   },
-  "Sc2C_BrO": {
+  "Sc2C-NO-SCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-SCN-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Sc2C-CN-NCO": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Sc2C-SCN-O": {
+    "elements": [
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Sc2C-NCO-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2C-PO-O": {
+    "elements": [
+      "Sc",
+      "C",
+      "P",
+      "O",
+      "O"
+    ]
+  },
+  "Sc2C-H-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-Br-OH": {
     "elements": [
       "Sc",
       "C",
       "Br",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-NO-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2C-NO-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "Br"
+    ]
+  },
+  "Sc2C-NCO-PO": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
+      "P",
       "O"
     ]
   },
-  "Y2C_BrF": {
+  "Sc2C-SCN-OH": {
     "elements": [
-      "Y",
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-CN-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "H"
+    ]
+  },
+  "Sc2C-CN-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Sc2C-Cl-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Sc2C-CN-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-PO-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "P",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-NCS-O": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O"
+    ]
+  },
+  "Sc2C-O-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Br"
+    ]
+  },
+  "Sc2C-OCl-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Sc2C-O-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-NCO-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-Cl-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "Cl",
+      "Cl"
+    ]
+  },
+  "Sc2C-Br-H": {
+    "elements": [
+      "Sc",
       "C",
       "Br",
-      "F"
+      "H"
     ]
   },
-  "La2C_HO": {
+  "Sc2C-OCl-PO": {
     "elements": [
-      "La",
+      "Sc",
       "C",
-      "H",
+      "O",
+      "Cl",
+      "P",
       "O"
     ]
   },
-  "Y2C_ClO": {
+  "Sc2C-OCl-O": {
     "elements": [
-      "Y",
+      "Sc",
       "C",
+      "O",
       "Cl",
       "O"
     ]
   },
-  "Y2C_FH": {
+  "Sc2C-Cl-OCN": {
     "elements": [
-      "Y",
+      "Sc",
       "C",
-      "F",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-NO-F": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "F"
+    ]
+  },
+  "Sc2C-H-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "H",
       "H"
     ]
   },
-  "La2C_H2": {
+  "Sc2C-NCO-O": {
     "elements": [
-      "La",
+      "Sc",
       "C",
+      "N",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Sc2C-NCO-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
       "H"
+    ]
+  },
+  "Sc2C-F-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "F",
+      "Cl"
+    ]
+  },
+  "Sc2C-NO-O": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "O"
+    ]
+  },
+  "Sc2C-F-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "F",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-OCl-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl",
+      "H"
+    ]
+  },
+  "Sc2C-NCO-NCO": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
+      "N",
+      "C",
+      "O"
+    ]
+  },
+  "Sc2C-NO-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-O-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-NCO-SCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "O",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-SCN-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "Cl"
+    ]
+  },
+  "Sc2C-OCl-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-O-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2C-NCS-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-NCS-SCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-CN-SCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "S",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-PO-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "P",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-NCS-H": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "C",
+      "S",
+      "H"
+    ]
+  },
+  "Sc2C-OH-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "H",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-CN-O": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "O"
+    ]
+  },
+  "Sc2C-OCl-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl",
+      "Br"
+    ]
+  },
+  "Sc2C-NO-PO": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "P",
+      "O"
+    ]
+  },
+  "Sc2C-PO-Cl": {
+    "elements": [
+      "Sc",
+      "C",
+      "P",
+      "O",
+      "Cl"
+    ]
+  },
+  "Sc2C-CN-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-O-O": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Sc2C-Br-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "Br",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-OCl-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "Cl",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-CN-PO": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "P",
+      "O"
+    ]
+  },
+  "Sc2C-SCN-OCN": {
+    "elements": [
+      "Sc",
+      "C",
+      "S",
+      "C",
+      "N",
+      "O",
+      "C",
+      "N"
+    ]
+  },
+  "Sc2C-NO-NCS": {
+    "elements": [
+      "Sc",
+      "C",
+      "N",
+      "O",
+      "N",
+      "C",
+      "S"
+    ]
+  },
+  "Sc2C-H-OH": {
+    "elements": [
+      "Sc",
+      "C",
+      "H",
+      "O",
+      "H"
+    ]
+  },
+  "Sc2C-CN-Br": {
+    "elements": [
+      "Sc",
+      "C",
+      "C",
+      "N",
+      "Br"
+    ]
+  },
+  "Sc2C-O-O1": {
+    "elements": [
+      "Sc",
+      "C",
+      "O",
+      "O"
+    ]
+  },
+  "Sc2C-PO-F": {
+    "elements": [
+      "Sc",
+      "C",
+      "P",
+      "O",
+      "F"
     ]
   }
 }
