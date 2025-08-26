@@ -145,7 +145,7 @@
           elements: props.elements ? props.elements.join(", ") : "",
           atoms: props.atoms_per_cell || "",
           group: props.space_group || "",
-          gap: props.band_gap || ""
+          stable: props.unstable || ""
         }));
 
         table = $('#compounds-table').DataTable({
@@ -155,7 +155,7 @@
             { data: "elements" },
             { data: "atoms" },
             { data: "group" },
-            { data: "gap" }
+            { data: "stable" }
           ]
         });
       });
