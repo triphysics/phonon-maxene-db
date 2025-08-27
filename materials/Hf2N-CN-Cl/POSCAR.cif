@@ -1,0 +1,31 @@
+data_image0
+_chemical_formula_structural       CClHf2N2
+_chemical_formula_sum              "C1 Cl1 Hf2 N2"
+_cell_length_a       3.3567552213379237
+_cell_length_b       3.3567552213332084
+_cell_length_c       24.716130387626674
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000004648
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  C   C1        1.0  0.33333298543221446  0.6666669831836742  0.5869656361774582  1.0000
+  Cl  Cl1       1.0  0.6666669847440474  0.33333298598514477  0.36413467071308053  1.0000
+  Hf  Hf1       1.0  0.33333298543221446  0.6666669831836742  0.436359683330381  1.0000
+  Hf  Hf2       1.0  0.6666669847440474  0.33333298598514477  0.5283369531390923  1.0000
+  N   N1        1.0  0.0  0.0  0.4816745631643587  1.0000
+  N   N2        1.0  0.33333298543221446  0.6666669831836742  0.6358653292869196  1.0000

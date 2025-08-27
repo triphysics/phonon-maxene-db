@@ -1,0 +1,32 @@
+data_image0
+_chemical_formula_structural       C2HHf2NO
+_chemical_formula_sum              "C2 H1 Hf2 N1 O1"
+_cell_length_a       3.2934478712839
+_cell_length_b       3.293447871277656
+_cell_length_c       25.326231862518835
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000006274
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  C   C1        1.0  0.0  0.0  0.443952565427698  1.0000
+  C   C2        1.0  0.33333298543221457  0.6666669831836742  0.5970626862357415  1.0000
+  H   H1        1.0  0.6666669847440475  0.3333329859851446  0.35536277361968766  1.0000
+  Hf  Hf1       1.0  0.33333298543221457  0.6666669831836742  0.3946871591712103  1.0000
+  Hf  Hf2       1.0  0.6666669847440475  0.3333329859851446  0.49101583456414916  1.0000
+  N   N1        1.0  0.33333298543221457  0.6666669831836742  0.5477642813405814  1.0000
+  O   O1        1.0  0.33333298543221457  0.6666669831836742  0.6446372263803124  1.0000

@@ -1,0 +1,32 @@
+data_image0
+_chemical_formula_structural       BrCHf2N2O
+_chemical_formula_sum              "Br1 C1 Hf2 N2 O1"
+_cell_length_a       3.3896244886613216
+_cell_length_b       3.3896244886598312
+_cell_length_c       26.02854943079124
+_cell_angle_alpha    90.0
+_cell_angle_beta     90.0
+_cell_angle_gamma    120.00000000001455
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Br  Br1       1.0  0.6666669847440474  0.3333329859851446  0.345774167090279  1.0000
+  C   C1        1.0  0.3333329854322145  0.6666669831836742  0.6079069255858184  1.0000
+  Hf  Hf1       1.0  0.3333329854322145  0.6666669831836742  0.4207186078263758  1.0000
+  Hf  Hf2       1.0  0.6666669847440474  0.3333329859851446  0.506418191223675  1.0000
+  N   N1        1.0  0.0  0.0  0.4642271901812735  1.0000
+  N   N2        1.0  0.3333329854322145  0.6666669831836742  0.5598377944446673  1.0000
+  O   O1        1.0  0.3333329854322145  0.6666669831836742  0.6542258329097207  1.0000
