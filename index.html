@@ -95,6 +95,8 @@
         <th>Space Group</th>
         <th>Unstable</th>
         <th>Min freq (THz)</th>
+        <!-- hidden helper columns -->
+        <th style="display:none;">elements</th>
         <th style="display:none;">mxene_type</th>
       </tr>
     </thead>
@@ -114,11 +116,13 @@
       .then(res => res.json())
       .then(data => {
         const rows = Object.entries(data).map(([formula, props]) => {
+          const elements = props.elements ? props.elements.join(", ") : "";
           const fgroups = props.functional_groups ? props.functional_groups.join(", ") : "";
           const root = (formula.split("-")[0] || "").trim();
           const mxene_type = root.endsWith("C") ? "carbide" : (root.endsWith("N") ? "nitride" : "other");
           return {
             formula,
+            elements,
             functional_groups: fgroups,
             atoms: props.atoms_per_cell || "",
             group: props.space_group || "",
@@ -137,6 +141,7 @@
             { data: "group" },
             { data: "stable" },
             { data: "mfreq" },
+            { data: "elements", visible: false, name: "elements" },
             { data: "mxene_type", visible: false, name: "mxene_type" }
           ]
         });
@@ -158,7 +163,6 @@
     function resetFilters() {
       if (!table) return;
       table.search("").columns().search("");
-      table.column('mxene_type:name').search("");
       table.draw();
     }
 
@@ -167,11 +171,10 @@
       resetFilters();
 
       if (type === "metal") {
-        // since no Elements col, just search in formula
-        table.column(0).search(value).draw();
+        table.column('elements:name').search(value).draw();
         updateFilteredCount(`MXene Compounds with "${value}" :`);
       } else if (type === "functional") {
-        table.column(1).search(value).draw();
+        table.column(1).search(value).draw(); // functional_groups col
         updateFilteredCount(`MXenes with functional group "${value}" :`);
       } else if (type === "carbide_nitride") {
         const col = table.column('mxene_type:name');
@@ -195,7 +198,6 @@
       const query = document.getElementById("searchInput").value.trim();
       if (!table) return;
       table.columns().search("");
-      table.column('mxene_type:name').search("");
       table.search(query).draw();
       const count = table.rows({ search: 'applied' }).count();
       document.getElementById("compound-count").textContent =
