@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MX-PHon – MXene Phonon Database</title>
+  <title>MX-PHon – MXene PHonon Database</title>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   <style>
     body {
@@ -55,7 +55,7 @@
   <!-- Header -->
   <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
     <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 140px;">
-    <h1>MXene Phonon Database</h1>
+    <h1>MXene PHonon Database</h1>
   </div>
 
   <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of selected MXenes.</p>
@@ -206,7 +206,7 @@
     }
 
     function updateCount(total) {
-      document.getElementById("compound-count").textContent = `Showing ${total} MXenes`;
+      document.getElementById("compound-count").textContent = `Total ${total} MXenes`;
     }
 
     renderGroup("metals", metals, "metal");
