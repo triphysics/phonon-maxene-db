@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MX-PHon – MXene Phonon Database</title>
+  <title>MX-PHon – MXene PHonon Database</title>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   <style>
     body {
@@ -209,7 +209,7 @@
 
       if (type === "metal") {
         table.column(1).search(value).draw();
-        updateFilteredCount(`MXene Compounds with "${value}" :`);
+        updateFilteredCount(`MXenes with "${value}" :`);
       } else if (type === "functional") {
         table.column(2).search(value).draw();
         updateFilteredCount(`MXenes with functional group "${value}" :`);
