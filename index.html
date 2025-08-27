@@ -20,61 +20,33 @@
     a { color: #0066cc; text-decoration: none; }
     a:hover { text-decoration: underline; color: #004499; }
 
-    /* Search bar */
-    .search-box {
-      margin: 1.5rem 0;
-      display: flex;
-      gap: 0.5rem;
-    }
+    .search-box { margin: 1.5rem 0; display: flex; gap: 0.5rem; }
     .search-box input {
-      flex: 1;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      flex: 1; padding: 0.6rem 1rem; font-size: 1rem;
+      border: 1px solid #ccc; border-radius: 4px;
     }
     .search-box button {
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      background: #327ab7;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      padding: 0.6rem 1rem; font-size: 1rem;
+      background: #327ab7; color: white; border: none;
+      border-radius: 4px; cursor: pointer;
     }
 
-    /* Groups layout */
     .groups-row { display: flex; gap: 2rem; margin-top: 1.5rem; }
     .group-container { flex: 1; }
-    .group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
+    .group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
 
-    /* Buttons */
     .element {
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      color: white;
+      border: none; padding: 0.6rem 1rem; border-radius: 4px;
+      font-weight: bold; font-size: 1rem; cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s; color: white;
     }
     .metals .element { background: #327ab7; }
     .carbides .element { background: #d97c1a; }
     .terminations .element { background: #2f8f43; }
 
-    /* Table header sticky */
     #table-title {
-      position: sticky;
-      top: 0;
-      background: #f5f7fa;
-      padding: 10px;
-      z-index: 2;
+      position: sticky; top: 0; background: #f5f7fa;
+      padding: 10px; z-index: 2;
     }
   </style>
 </head>
@@ -86,7 +58,6 @@
     <h1>MXene Phonon Database</h1>
   </div>
 
-  <!-- Intro -->
   <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of selected MXenes.</p>
   <p>Select a chemical building block below or search directly for a compound:</p>
 
@@ -96,7 +67,7 @@
     <button onclick="searchCompound()">Search</button>
   </div>
 
-  <!-- Metals + Carbides side by side -->
+  <!-- Metals + Carbides -->
   <div class="groups-row">
     <div class="group-container">
       <h2>Metals</h2>
@@ -108,7 +79,7 @@
     </div>
   </div>
 
-  <!-- Functional Groups below -->
+  <!-- Functional Groups -->
   <h2 style="margin-top:2rem;">Functional Groups</h2>
   <div class="group terminations" id="terminations"></div>
 
@@ -119,13 +90,11 @@
     <thead>
       <tr>
         <th>Formula</th>
-        <th>Elements</th>
         <th>Functional Groups</th>
         <th>Atoms/Cell</th>
         <th>Space Group</th>
         <th>Unstable</th>
         <th>Min freq (THz)</th>
-        <!-- Hidden helper column for classification -->
         <th style="display:none;">mxene_type</th>
       </tr>
     </thead>
@@ -137,22 +106,19 @@
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script>
     const metals = ["Ti","Sc","Hf","Zr","Y","La"];
-    const carbides = ["C","N"]; // classification buttons
+    const carbides = ["C","N"];
     const terminations = ["H","O","Cl","Br","F","CN","NCS","NCO","NO","OCl","OCN","OH","PO","SCN"];
-
     let table;
 
     fetch("compounds.json")
       .then(res => res.json())
       .then(data => {
         const rows = Object.entries(data).map(([formula, props]) => {
-          const elements = props.elements ? props.elements.join(", ") : "";
           const fgroups = props.functional_groups ? props.functional_groups.join(", ") : "";
-          const root = (formula.split("-")[0] || "").trim(); // e.g. Sc2C
+          const root = (formula.split("-")[0] || "").trim();
           const mxene_type = root.endsWith("C") ? "carbide" : (root.endsWith("N") ? "nitride" : "other");
           return {
             formula,
-            elements,
             functional_groups: fgroups,
             atoms: props.atoms_per_cell || "",
             group: props.space_group || "",
@@ -166,18 +132,15 @@
           data: rows,
           columns: [
             { data: "formula", render: d => `<a href="viewer.html?material=${d}" target="_blank">${d.replace(/(\\d+)/g,"<sub>$1</sub>")}</a>` },
-            { data: "elements" },
             { data: "functional_groups" },
             { data: "atoms" },
             { data: "group" },
             { data: "stable" },
             { data: "mfreq" },
-            // hidden helper column
             { data: "mxene_type", visible: false, name: "mxene_type" }
           ]
         });
 
-        // Show initial total count
         updateCount(rows.length);
       });
 
@@ -194,24 +157,21 @@
 
     function resetFilters() {
       if (!table) return;
-      table.search("");
-      table.columns().search("");
-      // clear carbide/nitride hidden-col search
-      const mxCol = table.column('mxene_type:name');
-      if (mxCol) mxCol.search("");
+      table.search("").columns().search("");
+      table.column('mxene_type:name').search("");
       table.draw();
     }
 
     function filterByCategory(value, type) {
       if (!table) return;
-
       resetFilters();
 
       if (type === "metal") {
-        table.column(1).search(value).draw();
+        // since no Elements col, just search in formula
+        table.column(0).search(value).draw();
         updateFilteredCount(`MXene Compounds with "${value}" :`);
       } else if (type === "functional") {
-        table.column(2).search(value).draw();
+        table.column(1).search(value).draw();
         updateFilteredCount(`MXenes with functional group "${value}" :`);
       } else if (type === "carbide_nitride") {
         const col = table.column('mxene_type:name');
@@ -234,7 +194,6 @@
     function searchCompound() {
       const query = document.getElementById("searchInput").value.trim();
       if (!table) return;
-      // clear column filters including hidden col
       table.columns().search("");
       table.column('mxene_type:name').search("");
       table.search(query).draw();
@@ -248,10 +207,10 @@
       document.getElementById("compound-count").textContent = `Showing ${total} MXenes`;
     }
 
-    // Render button groups
     renderGroup("metals", metals, "metal");
     renderGroup("carbides", carbides, "carbide_nitride");
     renderGroup("terminations", terminations, "functional");
   </script>
 </body>
 </html>
+
