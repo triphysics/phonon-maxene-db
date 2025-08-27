@@ -119,7 +119,6 @@
     <thead>
       <tr>
         <th>Formula</th>
-        <th>Elements</th>
         <th>Functional Groups</th>
         <th>Atoms/Cell</th>
         <th>Space Group</th>
@@ -152,7 +151,6 @@
           const mxene_type = root.endsWith("C") ? "carbide" : (root.endsWith("N") ? "nitride" : "other");
           return {
             formula,
-            elements,
             functional_groups: fgroups,
             atoms: props.atoms_per_cell || "",
             group: props.space_group || "",
@@ -166,7 +164,6 @@
           data: rows,
           columns: [
             { data: "formula", render: d => `<a href="viewer.html?material=${d}" target="_blank">${d.replace(/(\\d+)/g,"<sub>$1</sub>")}</a>` },
-            { data: "elements" },
             { data: "functional_groups" },
             { data: "atoms" },
             { data: "group" },
@@ -245,7 +242,7 @@
     }
 
     function updateCount(total) {
-      document.getElementById("compound-count").textContent = `Showing ${total} MXenes`;
+      document.getElementById("compound-count").textContent = `Total ${total} MXenes`;
     }
 
     // Render button groups
