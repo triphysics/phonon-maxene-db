@@ -860,8 +860,6 @@ function loadPhononData() {
       layout.xaxis.ticktext = labels;
 
       Plotly.newPlot('phononPlot', traces, layout);
-      document.getElementById("phononStatus").innerHTML =
-        `<div class="success">✓ Phonon dispersion loaded from band.yaml</div>`;
     })
     .catch(err => {
       document.getElementById("phononStatus").innerHTML =
