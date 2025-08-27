@@ -125,6 +125,8 @@
         <th>Space Group</th>
         <th>Unstable</th>
         <th>Min freq (THz)</th>
+        <!-- Hidden helper column for classification -->
+        <th style="display:none;">mxene_type</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -137,23 +139,31 @@
     const metals = ["Ti","Sc","Hf","Zr","Y","La"];
     const carbides = ["C","N"]; // classification buttons
     const terminations = ["H","O","Cl","Br","F","CN","NCS","NCO","NO","OCl","OCN","OH","PO","SCN"];
+
     let table;
 
     fetch("compounds.json")
       .then(res => res.json())
       .then(data => {
-        const compounds = Object.entries(data).map(([formula, props]) => ({
-          formula,
-          elements: props.elements ? props.elements.join(", ") : "",
-          functional_groups: props.functional_groups ? props.functional_groups.join(", ") : "",
-          atoms: props.atoms_per_cell || "",
-          group: props.space_group || "",
-          stable: props.unstable || "",
-          mfreq: props.min_freq || ""
-        }));
+        const rows = Object.entries(data).map(([formula, props]) => {
+          const elements = props.elements ? props.elements.join(", ") : "";
+          const fgroups = props.functional_groups ? props.functional_groups.join(", ") : "";
+          const root = (formula.split("-")[0] || "").trim(); // e.g. Sc2C
+          const mxene_type = root.endsWith("C") ? "carbide" : (root.endsWith("N") ? "nitride" : "other");
+          return {
+            formula,
+            elements,
+            functional_groups: fgroups,
+            atoms: props.atoms_per_cell || "",
+            group: props.space_group || "",
+            stable: props.unstable || "",
+            mfreq: props.min_freq || "",
+            mxene_type
+          };
+        });
 
         table = $('#compounds-table').DataTable({
-          data: compounds,
+          data: rows,
           columns: [
             { data: "formula", render: d => `<a href="viewer.html?material=${d}" target="_blank">${d.replace(/(\\d+)/g,"<sub>$1</sub>")}</a>` },
             { data: "elements" },
@@ -161,12 +171,14 @@
             { data: "atoms" },
             { data: "group" },
             { data: "stable" },
-            { data: "mfreq" }
+            { data: "mfreq" },
+            // hidden helper column
+            { data: "mxene_type", visible: false, name: "mxene_type" }
           ]
         });
 
         // Show initial total count
-        updateCount(Object.keys(data).length);
+        updateCount(rows.length);
       });
 
     function renderGroup(id, items, type) {
@@ -180,52 +192,51 @@
       });
     }
 
+    function resetFilters() {
+      if (!table) return;
+      table.search("");
+      table.columns().search("");
+      // clear carbide/nitride hidden-col search
+      const mxCol = table.column('mxene_type:name');
+      if (mxCol) mxCol.search("");
+      table.draw();
+    }
+
     function filterByCategory(value, type) {
       if (!table) return;
 
-      // reset search
-      table.search("").columns().search("").draw();
-      $("#compounds-table tbody tr").show(); // reset visibility
+      resetFilters();
 
       if (type === "metal") {
         table.column(1).search(value).draw();
         updateFilteredCount(`MXene Compounds with "${value}" :`);
-      } 
-      else if (type === "functional") {
+      } else if (type === "functional") {
         table.column(2).search(value).draw();
         updateFilteredCount(`MXenes with functional group "${value}" :`);
-      } 
-      else if (type === "carbide_nitride") {
-        // manual filtering by formula
-        table.rows().every(function() {
-          const formula = this.data().formula;
-          const isCarbide = formula.includes("C-");
-          const isNitride = formula.includes("N-");
-          if ((value === "C" && isCarbide) || (value === "N" && isNitride)) {
-            $(this.node()).show();
-          } else {
-            $(this.node()).hide();
-          }
-        });
-
+      } else if (type === "carbide_nitride") {
+        const col = table.column('mxene_type:name');
         if (value === "C") {
+          col.search("carbide").draw();
           updateFilteredCount("Carbide MXenes :");
         } else {
+          col.search("nitride").draw();
           updateFilteredCount("Nitride MXenes :");
         }
       }
     }
 
     function updateFilteredCount(prefix) {
-      const visibleRows = document.querySelectorAll('#compounds-table tbody tr:visible').length;
-      document.getElementById("compound-count").textContent =
-        `${prefix} ${visibleRows} MXenes found`;
+      const count = table.rows({ search: 'applied' }).count();
+      document.getElementById("compound-count").textContent = `${prefix} ${count} MXenes found`;
       document.getElementById("table-title").scrollIntoView({ behavior: 'smooth' });
     }
 
     function searchCompound() {
       const query = document.getElementById("searchInput").value.trim();
       if (!table) return;
+      // clear column filters including hidden col
+      table.columns().search("");
+      table.column('mxene_type:name').search("");
       table.search(query).draw();
       const count = table.rows({ search: 'applied' }).count();
       document.getElementById("compound-count").textContent =
