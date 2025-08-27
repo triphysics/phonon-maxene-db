@@ -1,4 +1,18 @@
 {
+  "Hf2C-Br-H": {
+    "formula": "Hf2C-Br-H",
+    "elements": [
+      "Br",
+      "C",
+      "H",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Ti2N-CN-OH": {
     "formula": "Ti2N-CN-OH",
     "elements": [
@@ -12,7 +26,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.371
+    "min_freq": -0.693
   },
   "Zr2C-NCS-NCS": {
     "formula": "Zr2C-NCS-NCS",
@@ -26,7 +40,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.149
+    "min_freq": -0.0
   },
   "Ti2N-PO-Br": {
     "formula": "Ti2N-PO-Br",
@@ -41,7 +55,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.737
+    "min_freq": -5.079
   },
   "Sc2N-OCl-H": {
     "formula": "Sc2N-OCl-H",
@@ -58,6 +72,21 @@
     "unstable": "Yes",
     "min_freq": -5.289
   },
+  "Hf2N-PO-F": {
+    "formula": "Hf2N-PO-F",
+    "elements": [
+      "F",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.356
+  },
   "Sc2C-CN-F": {
     "formula": "Sc2C-CN-F",
     "elements": [
@@ -72,6 +101,22 @@
     "unstable": "Yes",
     "min_freq": -2.438
   },
+  "Hf2C-SCN-PO": {
+    "formula": "Hf2C-SCN-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.562
+  },
   "Ti2C-SCN-O": {
     "formula": "Ti2C-SCN-O",
     "elements": [
@@ -85,7 +130,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -10.403
+    "min_freq": -10.195
+  },
+  "Zr2N-NCO-Br": {
+    "formula": "Zr2N-NCO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.754
   },
   "Ti2N-NCO-H": {
     "formula": "Ti2N-NCO-H",
@@ -100,7 +160,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.029
+    "min_freq": -1.009
+  },
+  "Zr2N-NO-OCl": {
+    "formula": "Zr2N-NO-OCl",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.204
   },
   "Sc2N-CN-O": {
     "formula": "Sc2N-CN-O",
@@ -115,6 +189,21 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -2.192
+  },
+  "Hf2C-OCl-Br": {
+    "formula": "Hf2C-OCl-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Cl",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.429
   },
   "Sc2C-NO-OCN": {
     "formula": "Sc2C-NO-OCN",
@@ -142,7 +231,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.047
+    "min_freq": -7.889
   },
   "Ti2N-NCO-O": {
     "formula": "Ti2N-NCO-O",
@@ -156,7 +245,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.69
+    "min_freq": -7.877
+  },
+  "Hf2C-CN-NO": {
+    "formula": "Hf2C-CN-NO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.73
   },
   "Sc2C-NCS-Br": {
     "formula": "Sc2C-NCS-Br",
@@ -186,7 +289,52 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -12.719
+    "min_freq": -12.547
+  },
+  "Hf2C-NCO-PO": {
+    "formula": "Hf2C-NCO-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.252
+  },
+  "Hf2N-NCS-OCN": {
+    "formula": "Hf2N-NCS-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.833
+  },
+  "Hf2N-NCO-PO": {
+    "formula": "Hf2N-NCO-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.879
   },
   "La2C-F-Br": {
     "formula": "La2C-F-Br",
@@ -202,6 +350,20 @@
     "unstable": "Yes",
     "min_freq": -0.612
   },
+  "Zr2N-O-H": {
+    "formula": "Zr2N-O-H",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Zr2C-NCO-PO": {
     "formula": "Zr2C-NCO-PO",
     "elements": [
@@ -215,7 +377,23 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.047
+    "min_freq": -5.376
+  },
+  "Hf2C-NCS-PO": {
+    "formula": "Hf2C-NCS-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.841
   },
   "La2C-Br-H": {
     "formula": "La2C-Br-H",
@@ -247,6 +425,20 @@
     "unstable": "Yes",
     "min_freq": -4.51
   },
+  "Hf2C-OCl-O": {
+    "formula": "Hf2C-OCl-O",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.962
+  },
   "Zr2C-NO-OCN": {
     "formula": "Zr2C-NO-OCN",
     "elements": [
@@ -259,7 +451,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.959
+    "min_freq": -6.902
   },
   "Sc2C-OCl-NCO": {
     "formula": "Sc2C-OCl-NCO",
@@ -288,7 +480,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -4.874
+    "min_freq": -4.98
   },
   "Sc2C-OCl-SCN": {
     "formula": "Sc2C-OCl-SCN",
@@ -319,7 +511,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.971
+    "min_freq": -7.97
   },
   "Sc2N-H-OCN": {
     "formula": "Sc2N-H-OCN",
@@ -363,7 +555,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.206
+    "min_freq": -0.0
+  },
+  "Hf2C-PO-O": {
+    "formula": "Hf2C-PO-O",
+    "elements": [
+      "C",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.78
   },
   "Ti2N-CN-H": {
     "formula": "Ti2N-CN-H",
@@ -377,7 +583,48 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.097
+    "min_freq": -0.0
+  },
+  "Hf2C-Cl-H": {
+    "formula": "Hf2C-Cl-H",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-H-H": {
+    "formula": "Zr2N-H-H",
+    "elements": [
+      "H",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-CN-F": {
+    "formula": "Hf2C-CN-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.611
   },
   "Zr2C-O-H": {
     "formula": "Zr2C-O-H",
@@ -391,7 +638,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.126
+    "min_freq": -7.734
   },
   "Zr2C-NCO-H": {
     "formula": "Zr2C-NCO-H",
@@ -405,8 +652,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -1.002
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-NO-NO": {
     "formula": "Sc2C-NO-NO",
@@ -437,6 +684,21 @@
     "unstable": "Yes",
     "min_freq": -10.224
   },
+  "Hf2C-PO-OCN": {
+    "formula": "Hf2C-PO-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.765
+  },
   "Ti2N-CN-NCS": {
     "formula": "Ti2N-CN-NCS",
     "elements": [
@@ -449,7 +711,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.34
+    "min_freq": -1.352
   },
   "Ti2N-CN-CN": {
     "formula": "Ti2N-CN-CN",
@@ -462,7 +724,37 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -1.225
+    "min_freq": -1.332
+  },
+  "Zr2N-NCO-OH": {
+    "formula": "Zr2N-NCO-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.21
+  },
+  "Hf2C-NCO-Br": {
+    "formula": "Hf2C-NCO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-CN-Br": {
     "formula": "Ti2C-CN-Br",
@@ -476,7 +768,23 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.553
+    "min_freq": -2.604
+  },
+  "Hf2C-OCl-NCS": {
+    "formula": "Hf2C-OCl-NCS",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.614
   },
   "Zr2C-PO-H": {
     "formula": "Zr2C-PO-H",
@@ -491,7 +799,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.513
+    "min_freq": -6.352
+  },
+  "Zr2N-F-OH": {
+    "formula": "Zr2N-F-OH",
+    "elements": [
+      "F",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.235
   },
   "Sc2C-NCO-NCS": {
     "formula": "Sc2C-NCO-NCS",
@@ -521,7 +844,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.034
+    "min_freq": -0.0
+  },
+  "Hf2N-NO-OCN": {
+    "formula": "Hf2N-NO-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.978
   },
   "Sc2C-PO-Br": {
     "formula": "Sc2C-PO-Br",
@@ -538,6 +875,21 @@
     "unstable": "Yes",
     "min_freq": -7.318
   },
+  "Zr2N-NCS-Br": {
+    "formula": "Zr2N-NCS-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Ti2N-PO-PO": {
     "formula": "Ti2N-PO-PO",
     "elements": [
@@ -550,7 +902,22 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -3.803
+    "min_freq": -2.696
+  },
+  "Hf2C-NCS-O": {
+    "formula": "Hf2C-NCS-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.612
   },
   "Sc2N-H-OH": {
     "formula": "Sc2N-H-OH",
@@ -566,6 +933,21 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Zr2N-NCS-OCN": {
+    "formula": "Zr2N-NCS-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.766
+  },
   "Zr2C-NCO-OH": {
     "formula": "Zr2C-NCO-OH",
     "elements": [
@@ -578,8 +960,22 @@
     "atoms_per_cell": 8,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-O-OH": {
+    "formula": "Zr2N-O-OH",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.96
+    "min_freq": -3.326
   },
   "Ti2N-Cl-H": {
     "formula": "Ti2N-Cl-H",
@@ -593,7 +989,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.153
+    "min_freq": -0.0
+  },
+  "Zr2N-NCS-SCN": {
+    "formula": "Zr2N-NCS-SCN",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.289
   },
   "Sc2C-SCN-SCN": {
     "formula": "Sc2C-SCN-SCN",
@@ -608,6 +1018,35 @@
     "space_group_number": 164,
     "unstable": "Yes",
     "min_freq": -3.086
+  },
+  "Zr2N-O-F": {
+    "formula": "Zr2N-O-F",
+    "elements": [
+      "F",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.554
+  },
+  "Hf2N-NCO-Cl": {
+    "formula": "Hf2N-NCO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.574
   },
   "Sc2N-PO-OH": {
     "formula": "Sc2N-PO-OH",
@@ -624,6 +1063,35 @@
     "unstable": "Yes",
     "min_freq": -6.714
   },
+  "Hf2C-SCN-O": {
+    "formula": "Hf2C-SCN-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.451
+  },
+  "Hf2C-O-H": {
+    "formula": "Hf2C-O-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.331
+  },
   "Zr2C-NCO-Br": {
     "formula": "Zr2C-NCO-Br",
     "elements": [
@@ -636,8 +1104,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.843
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-O-F": {
     "formula": "Sc2N-O-F",
@@ -665,7 +1133,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.629
+    "min_freq": -6.688
   },
   "La2C-Cl-H": {
     "formula": "La2C-Cl-H",
@@ -696,6 +1164,20 @@
     "unstable": "Yes",
     "min_freq": -0.605
   },
+  "Hf2N-NCO-NCO": {
+    "formula": "Hf2N-NCO-NCO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -3.876
+  },
   "Sc2N-NCO-PO": {
     "formula": "Sc2N-NCO-PO",
     "elements": [
@@ -724,7 +1206,34 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.078
+    "min_freq": -0.0
+  },
+  "Zr2N-CN-CN": {
+    "formula": "Zr2N-CN-CN",
+    "elements": [
+      "C",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -4.781
+  },
+  "Zr2N-O-Cl": {
+    "formula": "Zr2N-O-Cl",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.261
   },
   "Sc2N-SCN-SCN": {
     "formula": "Sc2N-SCN-SCN",
@@ -766,7 +1275,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.549
+    "min_freq": -2.737
+  },
+  "Hf2N-CN-PO": {
+    "formula": "Hf2N-CN-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.069
   },
   "Sc2N-NO-NCO": {
     "formula": "Sc2N-NO-NCO",
@@ -810,7 +1334,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.511
+    "min_freq": -1.863
   },
   "Ti2N-CN-NO": {
     "formula": "Ti2N-CN-NO",
@@ -824,7 +1348,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -11.311
+    "min_freq": -11.26
   },
   "Ti2C-CN-NO": {
     "formula": "Ti2C-CN-NO",
@@ -838,7 +1362,23 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.042
+    "min_freq": -4.119
+  },
+  "Zr2N-SCN-PO": {
+    "formula": "Zr2N-SCN-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.099
   },
   "Zr2C-NO-F": {
     "formula": "Zr2C-NO-F",
@@ -853,7 +1393,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.09
+    "min_freq": -7.058
   },
   "Ti2C-OCl-NCO": {
     "formula": "Ti2C-OCl-NCO",
@@ -868,7 +1408,38 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.981
+    "min_freq": -7.964
+  },
+  "Hf2C-NCS-OCN": {
+    "formula": "Hf2C-NCS-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-NCS-PO": {
+    "formula": "Zr2N-NCS-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.78
   },
   "Ti2N-OCl-SCN": {
     "formula": "Ti2N-OCl-SCN",
@@ -884,7 +1455,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.767
+    "min_freq": -7.099
+  },
+  "Zr2N-PO-PO": {
+    "formula": "Zr2N-PO-PO",
+    "elements": [
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -3.858
   },
   "Ti2C-Cl-H": {
     "formula": "Ti2C-Cl-H",
@@ -897,8 +1482,23 @@
     "atoms_per_cell": 5,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-NO-PO": {
+    "formula": "Hf2C-NO-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.44
+    "min_freq": -7.528
   },
   "Sc2C-NCS-F": {
     "formula": "Sc2C-NCS-F",
@@ -942,7 +1542,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.133
+    "min_freq": -0.0
   },
   "Ti2N-NCO-PO": {
     "formula": "Ti2N-NCO-PO",
@@ -957,7 +1557,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.638
+    "min_freq": -3.343
   },
   "Ti2N-Cl-OH": {
     "formula": "Ti2N-Cl-OH",
@@ -972,7 +1572,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.051
+    "min_freq": -0.0
+  },
+  "Hf2N-OCN-OCN": {
+    "formula": "Hf2N-OCN-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -1.253
   },
   "Sc2N-CN-OH": {
     "formula": "Sc2N-CN-OH",
@@ -988,6 +1602,20 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -2.293
+  },
+  "Zr2N-NCO-NCO": {
+    "formula": "Zr2N-NCO-NCO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -2.009
   },
   "Sc2N-SCN-O": {
     "formula": "Sc2N-SCN-O",
@@ -1034,6 +1662,20 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Zr2N-H-OH": {
+    "formula": "Zr2N-H-OH",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Ti2C-CN-PO": {
     "formula": "Ti2C-CN-PO",
     "elements": [
@@ -1047,7 +1689,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.606
+    "min_freq": -5.465
   },
   "La2C-Cl-Br": {
     "formula": "La2C-Cl-Br",
@@ -1074,7 +1716,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -4.387
+    "min_freq": -2.95
   },
   "Ti2C-NCS-Br": {
     "formula": "Ti2C-NCS-Br",
@@ -1089,7 +1731,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.139
+    "min_freq": -0.0
   },
   "Zr2C-NCS-OCN": {
     "formula": "Zr2C-NCS-OCN",
@@ -1103,8 +1745,8 @@
     "atoms_per_cell": 9,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.832
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2N-H-OH": {
     "formula": "Ti2N-H-OH",
@@ -1117,8 +1759,23 @@
     "atoms_per_cell": 6,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.327
+  },
+  "Zr2N-PO-Cl": {
+    "formula": "Zr2N-PO-Cl",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.549
+    "min_freq": -4.217
   },
   "Sc2C-OCl-OCl": {
     "formula": "Sc2C-OCl-OCl",
@@ -1163,6 +1820,20 @@
     "unstable": "No",
     "min_freq": -0.305
   },
+  "Zr2N-F-H": {
+    "formula": "Zr2N-F-H",
+    "elements": [
+      "F",
+      "H",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.958
+  },
   "Ti2N-O-F": {
     "formula": "Ti2N-O-F",
     "elements": [
@@ -1175,7 +1846,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.234
+    "min_freq": -9.372
+  },
+  "Hf2C-NCO-NCO": {
+    "formula": "Hf2C-NCO-NCO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Zr2C-OCl-F": {
     "formula": "Zr2C-OCl-F",
@@ -1190,7 +1875,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.16
+    "min_freq": -5.16
   },
   "Ti2C-NO-OCl": {
     "formula": "Ti2C-NO-OCl",
@@ -1205,7 +1890,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -15.087
+    "min_freq": -14.802
   },
   "Sc2N-Br-H": {
     "formula": "Sc2N-Br-H",
@@ -1221,6 +1906,21 @@
     "unstable": "Yes",
     "min_freq": -3.404
   },
+  "Zr2N-CN-PO": {
+    "formula": "Zr2N-CN-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.826
+  },
   "Ti2C-H-OCN": {
     "formula": "Ti2C-H-OCN",
     "elements": [
@@ -1234,7 +1934,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.22
+    "min_freq": -0.0
   },
   "Sc2C-F-H": {
     "formula": "Sc2C-F-H",
@@ -1250,6 +1950,21 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2N-CN-OCl": {
+    "formula": "Hf2N-CN-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.087
+  },
   "Zr2C-H-OCN": {
     "formula": "Zr2C-H-OCN",
     "elements": [
@@ -1262,8 +1977,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.834
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-OCl-OH": {
     "formula": "Sc2N-OCl-OH",
@@ -1326,6 +2041,20 @@
     "unstable": "Yes",
     "min_freq": -6.56
   },
+  "Zr2N-CN-SCN": {
+    "formula": "Zr2N-CN-SCN",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.16
+  },
   "Ti2N-OCl-NCO": {
     "formula": "Ti2N-OCl-NCO",
     "elements": [
@@ -1339,7 +2068,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.242
+    "min_freq": -8.375
   },
   "Zr2C-OCN-OCN": {
     "formula": "Zr2C-OCN-OCN",
@@ -1352,8 +2081,8 @@
     "atoms_per_cell": 9,
     "space_group": "P-3m1",
     "space_group_number": 164,
-    "unstable": "Yes",
-    "min_freq": -0.906
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-NO-OH": {
     "formula": "Ti2C-NO-OH",
@@ -1368,7 +2097,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.85
+    "min_freq": -5.834
+  },
+  "Hf2N-NO-SCN": {
+    "formula": "Hf2N-NO-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.746
   },
   "Zr2C-CN-Br": {
     "formula": "Zr2C-CN-Br",
@@ -1382,7 +2126,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.942
+    "min_freq": -2.776
+  },
+  "Hf2C-PO-F": {
+    "formula": "Hf2C-PO-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.162
   },
   "Ti2C-CN-NCS": {
     "formula": "Ti2C-CN-NCS",
@@ -1396,7 +2155,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.686
+    "min_freq": -1.385
   },
   "Ti2C-F-OH": {
     "formula": "Ti2C-F-OH",
@@ -1411,7 +2170,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.076
+    "min_freq": -0.0
+  },
+  "Zr2N-CN-NCO": {
+    "formula": "Zr2N-CN-NCO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.899
   },
   "Sc2N-CN-NO": {
     "formula": "Sc2N-CN-NO",
@@ -1426,6 +2199,51 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -3.668
+  },
+  "Hf2N-OCl-PO": {
+    "formula": "Hf2N-OCl-PO",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.752
+  },
+  "Hf2C-NCS-H": {
+    "formula": "Hf2C-NCS-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-SCN-Br": {
+    "formula": "Hf2C-SCN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-O-Cl": {
     "formula": "Sc2N-O-Cl",
@@ -1455,7 +2273,36 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.713
+    "min_freq": -5.475
+  },
+  "Hf2C-NCO-SCN": {
+    "formula": "Hf2C-NCO-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.577
+  },
+  "Zr2N-O-OCN": {
+    "formula": "Zr2N-O-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.738
   },
   "Ti2C-CN-OCl": {
     "formula": "Ti2C-CN-OCl",
@@ -1470,7 +2317,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.343
+    "min_freq": -7.139
+  },
+  "Zr2N-NCS-H": {
+    "formula": "Zr2N-NCS-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.605
   },
   "Sc2C-NCS-PO": {
     "formula": "Sc2C-NCS-PO",
@@ -1501,7 +2363,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.755
+    "min_freq": -0.706
   },
   "Sc2N-OCl-OCN": {
     "formula": "Sc2N-OCl-OCN",
@@ -1518,6 +2380,21 @@
     "unstable": "Yes",
     "min_freq": -5.01
   },
+  "Hf2N-Br-OCN": {
+    "formula": "Hf2N-Br-OCN",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Ti2N-NO-F": {
     "formula": "Ti2N-NO-F",
     "elements": [
@@ -1530,7 +2407,48 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -10.773
+    "min_freq": -10.538
+  },
+  "Zr2N-Br-H": {
+    "formula": "Zr2N-Br-H",
+    "elements": [
+      "Br",
+      "H",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.435
+  },
+  "Zr2N-NO-NO": {
+    "formula": "Zr2N-NO-NO",
+    "elements": [
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -7.949
+  },
+  "Hf2N-O-OCN": {
+    "formula": "Hf2N-O-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.775
   },
   "Ti2C-NCS-SCN": {
     "formula": "Ti2C-NCS-SCN",
@@ -1544,7 +2462,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.116
+    "min_freq": -0.0
+  },
+  "Zr2N-CN-Cl": {
+    "formula": "Zr2N-CN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.933
   },
   "Ti2N-NCS-F": {
     "formula": "Ti2N-NCS-F",
@@ -1559,7 +2491,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.125
+    "min_freq": -0.0
   },
   "Sc2N-SCN-Br": {
     "formula": "Sc2N-SCN-Br",
@@ -1589,7 +2521,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.551
+    "min_freq": -5.63
   },
   "Sc2C-F-F": {
     "formula": "Sc2C-F-F",
@@ -1629,7 +2561,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.107
+    "min_freq": -1.115
   },
   "Sc2N-NO-Br": {
     "formula": "Sc2N-NO-Br",
@@ -1656,7 +2588,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.122
+    "min_freq": -0.0
   },
   "Ti2N-NCS-O": {
     "formula": "Ti2N-NCS-O",
@@ -1671,7 +2603,78 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.824
+    "min_freq": -2.965
+  },
+  "Zr2N-CN-H": {
+    "formula": "Zr2N-CN-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.04
+  },
+  "Hf2N-SCN-OCN": {
+    "formula": "Hf2N-SCN-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.089
+  },
+  "Hf2C-H-OH": {
+    "formula": "Hf2C-H-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-CN-NCO": {
+    "formula": "Hf2C-CN-NCO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.263
+  },
+  "Zr2N-F-Br": {
+    "formula": "Zr2N-F-Br",
+    "elements": [
+      "Br",
+      "F",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Zr2C-NO-PO": {
     "formula": "Zr2C-NO-PO",
@@ -1686,7 +2689,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.366
+    "min_freq": -5.312
   },
   "Ti2C-NCS-NCS": {
     "formula": "Ti2C-NCS-NCS",
@@ -1700,7 +2703,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.139
+    "min_freq": -0.0
   },
   "Sc2N-CN-CN": {
     "formula": "Sc2N-CN-CN",
@@ -1715,6 +2718,36 @@
     "unstable": "Yes",
     "min_freq": -2.562
   },
+  "Hf2C-OH-OCN": {
+    "formula": "Hf2C-OH-OCN",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-NCO-Br": {
+    "formula": "Hf2N-NCO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.081
+  },
   "Zr2C-NCO-Cl": {
     "formula": "Zr2C-NCO-Cl",
     "elements": [
@@ -1727,8 +2760,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.89
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-NCS-Cl": {
     "formula": "Sc2C-NCS-Cl",
@@ -1740,6 +2773,49 @@
       "Sc"
     ],
     "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-SCN-H": {
+    "formula": "Zr2N-SCN-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.666
+  },
+  "Zr2N-O-Br": {
+    "formula": "Zr2N-O-Br",
+    "elements": [
+      "Br",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.322
+  },
+  "Hf2C-NCO-OCN": {
+    "formula": "Hf2C-NCO-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 9,
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
@@ -1788,7 +2864,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.804
+    "min_freq": -7.943
   },
   "Ti2C-OCl-OCN": {
     "formula": "Ti2C-OCl-OCN",
@@ -1803,7 +2879,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.303
+    "min_freq": -6.664
   },
   "Zr2C-NCO-SCN": {
     "formula": "Zr2C-NCO-SCN",
@@ -1818,7 +2894,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.811
+    "min_freq": -1.151
   },
   "Ti2C-SCN-PO": {
     "formula": "Ti2C-SCN-PO",
@@ -1834,7 +2910,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.225
+    "min_freq": -4.36
   },
   "Ti2C-OCl-Br": {
     "formula": "Ti2C-OCl-Br",
@@ -1849,7 +2925,36 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -10.49
+    "min_freq": -10.176
+  },
+  "Zr2N-CN-NCS": {
+    "formula": "Zr2N-CN-NCS",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.657
+  },
+  "Hf2C-NCO-F": {
+    "formula": "Hf2C-NCO-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-OCl-NCS": {
     "formula": "Sc2C-OCl-NCS",
@@ -1880,7 +2985,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.102
+    "min_freq": -0.0
   },
   "Ti2C-Cl-Br": {
     "formula": "Ti2C-Cl-Br",
@@ -1894,7 +2999,35 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.114
+    "min_freq": -0.0
+  },
+  "Hf2N-CN-Br": {
+    "formula": "Hf2N-CN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.235
+  },
+  "Zr2N-NO-PO": {
+    "formula": "Zr2N-NO-PO",
+    "elements": [
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -10.028
   },
   "Zr2C-NCS-Cl": {
     "formula": "Zr2C-NCS-Cl",
@@ -1909,7 +3042,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.183
+    "min_freq": -0.0
   },
   "Sc2N-NCS-Br": {
     "formula": "Sc2N-NCS-Br",
@@ -1925,6 +3058,20 @@
     "space_group_number": 156,
     "unstable": "No",
     "min_freq": -0.0
+  },
+  "Hf2N-O-OH": {
+    "formula": "Hf2N-O-OH",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.622
   },
   "Sc2N-CN-NCO": {
     "formula": "Sc2N-CN-NCO",
@@ -1968,7 +3115,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.197
+    "min_freq": -0.813
   },
   "Ti2C-O-H": {
     "formula": "Ti2C-O-H",
@@ -1982,7 +3129,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -12.243
+    "min_freq": -11.941
   },
   "Ti2C-CN-F": {
     "formula": "Ti2C-CN-F",
@@ -1996,7 +3143,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.291
+    "min_freq": -1.269
   },
   "Sc2N-CN-Cl": {
     "formula": "Sc2N-CN-Cl",
@@ -2023,7 +3170,21 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -8.53
+    "min_freq": -7.55
+  },
+  "Hf2C-F-Cl": {
+    "formula": "Hf2C-F-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "F",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2N-SCN-Br": {
     "formula": "Ti2N-SCN-Br",
@@ -2038,7 +3199,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.052
+    "min_freq": -0.0
   },
   "Ti2C-NCO-NCO": {
     "formula": "Ti2C-NCO-NCO",
@@ -2052,7 +3213,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -1.265
+    "min_freq": -0.486
   },
   "Sc2C-NO-NCO": {
     "formula": "Sc2C-NO-NCO",
@@ -2068,6 +3229,21 @@
     "unstable": "Yes",
     "min_freq": -10.499
   },
+  "Hf2C-NO-Br": {
+    "formula": "Hf2C-NO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.875
+  },
   "Ti2N-NO-SCN": {
     "formula": "Ti2N-NO-SCN",
     "elements": [
@@ -2081,7 +3257,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -16.909
+    "min_freq": -16.828
   },
   "Zr2C-OCl-Cl": {
     "formula": "Zr2C-OCl-Cl",
@@ -2095,7 +3271,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.604
+    "min_freq": -4.856
   },
   "Ti2C-OCN-OCN": {
     "formula": "Ti2C-OCN-OCN",
@@ -2109,7 +3285,21 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.093
+    "min_freq": -0.0
+  },
+  "Hf2C-OCl-Cl": {
+    "formula": "Hf2C-OCl-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.589
   },
   "Ti2N-NO-NCO": {
     "formula": "Ti2N-NO-NCO",
@@ -2123,7 +3313,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -16.901
+    "min_freq": -16.84
   },
   "Sc2C-Br-Br": {
     "formula": "Sc2C-Br-Br",
@@ -2151,7 +3341,20 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.137
+    "min_freq": -5.489
+  },
+  "Hf2C-F-F": {
+    "formula": "Hf2C-F-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-OCl-F": {
     "formula": "Sc2N-OCl-F",
@@ -2167,6 +3370,21 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -5.103
+  },
+  "Hf2N-NCO-NCS": {
+    "formula": "Hf2N-NCO-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.313
   },
   "Sc2C-F-OCN": {
     "formula": "Sc2C-F-OCN",
@@ -2197,6 +3415,21 @@
     "unstable": "Yes",
     "min_freq": -1.912
   },
+  "Hf2N-NCS-Br": {
+    "formula": "Hf2N-NCS-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.447
+  },
   "Ti2N-F-F": {
     "formula": "Ti2N-F-F",
     "elements": [
@@ -2223,7 +3456,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.08
+    "min_freq": -8.462
   },
   "Ti2C-PO-F": {
     "formula": "Ti2C-PO-F",
@@ -2238,7 +3471,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.429
+    "min_freq": -3.562
   },
   "Ti2C-F-Cl": {
     "formula": "Ti2C-F-Cl",
@@ -2252,7 +3485,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.053
+    "min_freq": -0.0
   },
   "Sc2N-OCN-OCN": {
     "formula": "Sc2N-OCN-OCN",
@@ -2280,7 +3513,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -4.692
+    "min_freq": -4.639
   },
   "Ti2N-OCl-OCl": {
     "formula": "Ti2N-OCl-OCl",
@@ -2294,7 +3527,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -9.079
+    "min_freq": -8.273
   },
   "Sc2N-CN-Br": {
     "formula": "Sc2N-CN-Br",
@@ -2309,6 +3542,21 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -4.534
+  },
+  "Zr2N-CN-OCl": {
+    "formula": "Zr2N-CN-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.573
   },
   "Sc2C-NCS-OH": {
     "formula": "Sc2C-NCS-OH",
@@ -2339,7 +3587,33 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.529
+    "min_freq": -6.47
+  },
+  "Hf2N-O-O": {
+    "formula": "Hf2N-O-O",
+    "elements": [
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -5.767
+  },
+  "Zr2N-Br-Br": {
+    "formula": "Zr2N-Br-Br",
+    "elements": [
+      "Br",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2N-SCN-PO": {
     "formula": "Ti2N-SCN-PO",
@@ -2355,7 +3629,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.398
+    "min_freq": -3.301
   },
   "Ti2C-NCS-H": {
     "formula": "Ti2C-NCS-H",
@@ -2369,8 +3643,37 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-Br-H": {
+    "formula": "Hf2N-Br-H",
+    "elements": [
+      "Br",
+      "H",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.386
+    "min_freq": -2.697
+  },
+  "Zr2N-NCS-Cl": {
+    "formula": "Zr2N-NCS-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-NO-Br": {
     "formula": "Ti2C-NO-Br",
@@ -2385,7 +3688,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.027
+    "min_freq": -4.994
   },
   "Ti2C-PO-OCN": {
     "formula": "Ti2C-PO-OCN",
@@ -2400,7 +3703,50 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.182
+    "min_freq": -3.466
+  },
+  "Hf2N-NO-OCl": {
+    "formula": "Hf2N-NO-OCl",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -24.855
+  },
+  "Zr2N-CN-OH": {
+    "formula": "Zr2N-CN-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.619
+  },
+  "Hf2C-F-Br": {
+    "formula": "Hf2C-F-Br",
+    "elements": [
+      "Br",
+      "C",
+      "F",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Zr2C-OCl-SCN": {
     "formula": "Zr2C-OCl-SCN",
@@ -2416,7 +3762,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.375
+    "min_freq": -3.322
+  },
+  "Hf2C-OCl-OCN": {
+    "formula": "Hf2C-OCl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.804
   },
   "Ti2N-NO-H": {
     "formula": "Ti2N-NO-H",
@@ -2430,7 +3791,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -10.481
+    "min_freq": -10.376
   },
   "Ti2N-F-OH": {
     "formula": "Ti2N-F-OH",
@@ -2446,6 +3807,20 @@
     "space_group_number": 156,
     "unstable": "No",
     "min_freq": -0.0
+  },
+  "Hf2C-O-Cl": {
+    "formula": "Hf2C-O-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.965
   },
   "Sc2N-NO-O": {
     "formula": "Sc2N-NO-O",
@@ -2501,8 +3876,8 @@
     "atoms_per_cell": 9,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.937
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-NCO-Cl": {
     "formula": "Sc2N-NCO-Cl",
@@ -2518,6 +3893,37 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -1.947
+  },
+  "Hf2N-OCl-SCN": {
+    "formula": "Hf2N-OCl-SCN",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.427
+  },
+  "Hf2N-SCN-H": {
+    "formula": "Hf2N-SCN-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.866
   },
   "Sc2C-SCN-H": {
     "formula": "Sc2C-SCN-H",
@@ -2560,7 +3966,51 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -14.492
+    "min_freq": -13.229
+  },
+  "Hf2C-SCN-F": {
+    "formula": "Hf2C-SCN-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.081
+  },
+  "Zr2N-O-O": {
+    "formula": "Zr2N-O-O",
+    "elements": [
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -6.498
+  },
+  "Hf2C-NCS-OH": {
+    "formula": "Hf2C-NCS-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-O-F": {
     "formula": "Sc2C-O-F",
@@ -2589,7 +4039,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.003
+    "min_freq": -0.97
   },
   "Sc2N-NCO-O": {
     "formula": "Sc2N-NCO-O",
@@ -2619,6 +4069,21 @@
     "unstable": "Yes",
     "min_freq": -1.323
   },
+  "Zr2N-OCl-NCO": {
+    "formula": "Zr2N-OCl-NCO",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.401
+  },
   "Sc2C-F-Br": {
     "formula": "Sc2C-F-Br",
     "elements": [
@@ -2633,6 +4098,93 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2N-CN-Cl": {
+    "formula": "Hf2N-CN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.077
+  },
+  "Zr2N-NCS-OH": {
+    "formula": "Zr2N-NCS-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.972
+  },
+  "Zr2N-CN-Br": {
+    "formula": "Zr2N-CN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.128
+  },
+  "Hf2C-NO-NCS": {
+    "formula": "Hf2C-NO-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -20.06
+  },
+  "Hf2C-NCS-NCS": {
+    "formula": "Hf2C-NCS-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-SCN-SCN": {
+    "formula": "Hf2N-SCN-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -5.064
+  },
   "Sc2N-NO-OCN": {
     "formula": "Sc2N-NO-OCN",
     "elements": [
@@ -2646,6 +4198,21 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -4.004
+  },
+  "Hf2N-OCl-NCO": {
+    "formula": "Hf2N-OCl-NCO",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -11.364
   },
   "Sc2C-SCN-PO": {
     "formula": "Sc2C-SCN-PO",
@@ -2663,6 +4230,21 @@
     "unstable": "Yes",
     "min_freq": -6.616
   },
+  "Hf2N-Cl-OCN": {
+    "formula": "Hf2N-Cl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.686
+  },
   "Zr2C-Cl-Br": {
     "formula": "Zr2C-Cl-Br",
     "elements": [
@@ -2675,7 +4257,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.184
+    "min_freq": -0.0
   },
   "Zr2C-PO-OCN": {
     "formula": "Zr2C-PO-OCN",
@@ -2690,7 +4272,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.724
+    "min_freq": -4.986
   },
   "Sc2C-CN-NCS": {
     "formula": "Sc2C-CN-NCS",
@@ -2705,6 +4287,20 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -2.604
+  },
+  "Zr2N-NO-H": {
+    "formula": "Zr2N-NO-H",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.039
   },
   "Sc2N-NO-NO": {
     "formula": "Sc2N-NO-NO",
@@ -2732,7 +4328,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.928
+    "min_freq": -5.565
   },
   "Sc2C-SCN-F": {
     "formula": "Sc2C-SCN-F",
@@ -2776,7 +4372,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.048
+    "min_freq": -0.0
   },
   "Ti2N-NCO-OH": {
     "formula": "Ti2N-NCO-OH",
@@ -2791,7 +4387,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.183
+    "min_freq": -1.304
+  },
+  "Hf2C-CN-H": {
+    "formula": "Hf2C-CN-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.228
   },
   "Zr2C-Cl-OCN": {
     "formula": "Zr2C-Cl-OCN",
@@ -2805,8 +4415,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.814
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-F-Br": {
     "formula": "Ti2C-F-Br",
@@ -2820,7 +4430,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.013
+    "min_freq": -0.0
   },
   "Sc2N-Cl-H": {
     "formula": "Sc2N-Cl-H",
@@ -2836,6 +4446,20 @@
     "unstable": "Yes",
     "min_freq": -1.065
   },
+  "Hf2N-CN-O": {
+    "formula": "Hf2N-CN-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.36
+  },
   "Ti2C-PO-Br": {
     "formula": "Ti2C-PO-Br",
     "elements": [
@@ -2849,7 +4473,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.143
+    "min_freq": -6.058
   },
   "Zr2C-OCl-H": {
     "formula": "Zr2C-OCl-H",
@@ -2864,7 +4488,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.56
+    "min_freq": -8.31
   },
   "Ti2C-NCO-F": {
     "formula": "Ti2C-NCO-F",
@@ -2878,8 +4502,22 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-NCO-O": {
+    "formula": "Hf2N-NCO-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.009
+    "min_freq": -2.48
   },
   "Ti2C-OCl-OH": {
     "formula": "Ti2C-OCl-OH",
@@ -2894,7 +4532,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.354
+    "min_freq": -5.629
   },
   "Sc2N-Cl-OH": {
     "formula": "Sc2N-Cl-OH",
@@ -2937,8 +4575,37 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-Cl-OH": {
+    "formula": "Zr2N-Cl-OH",
+    "elements": [
+      "Cl",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.324
+    "min_freq": -2.787
+  },
+  "Hf2C-O-Br": {
+    "formula": "Hf2C-O-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.698
   },
   "Ti2C-OH-OCN": {
     "formula": "Ti2C-OH-OCN",
@@ -2953,7 +4620,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.152
+    "min_freq": -0.0
   },
   "Ti2C-NO-PO": {
     "formula": "Ti2C-NO-PO",
@@ -2968,7 +4635,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.425
+    "min_freq": -4.305
   },
   "Sc2N-NCO-F": {
     "formula": "Sc2N-NCO-F",
@@ -2998,7 +4665,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.149
+    "min_freq": -7.053
   },
   "Ti2C-SCN-Cl": {
     "formula": "Ti2C-SCN-Cl",
@@ -3013,7 +4680,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.093
+    "min_freq": -0.0
   },
   "Ti2N-SCN-H": {
     "formula": "Ti2N-SCN-H",
@@ -3028,7 +4695,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.353
+    "min_freq": -3.923
   },
   "Sc2N-NCO-NCO": {
     "formula": "Sc2N-NCO-NCO",
@@ -3057,7 +4724,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.192
+    "min_freq": -0.0
   },
   "Sc2N-PO-Br": {
     "formula": "Sc2N-PO-Br",
@@ -3074,6 +4741,21 @@
     "unstable": "Yes",
     "min_freq": -7.599
   },
+  "Hf2C-NO-F": {
+    "formula": "Hf2C-NO-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.097
+  },
   "Zr2C-PO-OH": {
     "formula": "Zr2C-PO-OH",
     "elements": [
@@ -3087,7 +4769,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.327
+    "min_freq": -4.554
+  },
+  "Hf2N-CN-NO": {
+    "formula": "Hf2N-CN-NO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.983
   },
   "Ti2N-CN-OCN": {
     "formula": "Ti2N-CN-OCN",
@@ -3101,7 +4797,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.305
+    "min_freq": -1.805
   },
   "Sc2C-NCO-Br": {
     "formula": "Sc2C-NCO-Br",
@@ -3131,7 +4827,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.486
+    "min_freq": -7.343
+  },
+  "Zr2N-OH-OH": {
+    "formula": "Zr2N-OH-OH",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-Cl-OCN": {
     "formula": "Sc2N-Cl-OCN",
@@ -3161,7 +4871,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.144
+    "min_freq": -7.14
   },
   "Ti2N-F-Br": {
     "formula": "Ti2N-F-Br",
@@ -3175,7 +4885,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.007
+    "min_freq": -0.0
   },
   "Ti2N-CN-Br": {
     "formula": "Ti2N-CN-Br",
@@ -3189,7 +4899,51 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.176
+    "min_freq": -2.134
+  },
+  "Zr2N-PO-F": {
+    "formula": "Zr2N-PO-F",
+    "elements": [
+      "F",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.189
+  },
+  "Zr2N-NCO-Cl": {
+    "formula": "Zr2N-NCO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.904
+  },
+  "Hf2C-CN-NCS": {
+    "formula": "Hf2C-CN-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.084
   },
   "Sc2N-CN-SCN": {
     "formula": "Sc2N-CN-SCN",
@@ -3219,6 +4973,35 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2C-Cl-Br": {
+    "formula": "Hf2C-Cl-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Cl",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-NCO-H": {
+    "formula": "Hf2N-NCO-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.169
+  },
   "Ti2N-NCO-SCN": {
     "formula": "Ti2N-NCO-SCN",
     "elements": [
@@ -3232,7 +5015,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.993
+    "min_freq": -1.377
   },
   "Zr2C-SCN-OH": {
     "formula": "Zr2C-SCN-OH",
@@ -3247,8 +5030,92 @@
     "atoms_per_cell": 8,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.483
+  },
+  "Zr2N-CN-F": {
+    "formula": "Zr2N-CN-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.051
+  },
+  "Hf2N-F-F": {
+    "formula": "Hf2N-F-F",
+    "elements": [
+      "F",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -0.555
+  },
+  "Hf2C-PO-Cl": {
+    "formula": "Hf2C-PO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.704
+  },
+  "Zr2N-F-F": {
+    "formula": "Zr2N-F-F",
+    "elements": [
+      "F",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.189
+    "min_freq": -0.0
+  },
+  "Zr2N-PO-OH": {
+    "formula": "Zr2N-PO-OH",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.156
+  },
+  "Zr2N-NCO-O": {
+    "formula": "Zr2N-NCO-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.491
   },
   "Ti2N-NO-PO": {
     "formula": "Ti2N-NO-PO",
@@ -3262,7 +5129,36 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -13.873
+    "min_freq": -13.837
+  },
+  "Hf2N-SCN-OH": {
+    "formula": "Hf2N-SCN-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.802
+  },
+  "Hf2N-Br-Br": {
+    "formula": "Hf2N-Br-Br",
+    "elements": [
+      "Br",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-OCl-F": {
     "formula": "Sc2C-OCl-F",
@@ -3278,6 +5174,36 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -5.17
+  },
+  "Hf2N-OCl-H": {
+    "formula": "Hf2N-OCl-H",
+    "elements": [
+      "Cl",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.785
+  },
+  "Hf2N-SCN-F": {
+    "formula": "Hf2N-SCN-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.13
   },
   "Sc2C-PO-PO": {
     "formula": "Sc2C-PO-PO",
@@ -3305,8 +5231,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "No",
-    "min_freq": -0.254
+    "unstable": "Yes",
+    "min_freq": -1.39
   },
   "Sc2N-OCl-OCl": {
     "formula": "Sc2N-OCl-OCl",
@@ -3335,6 +5261,21 @@
     "space_group_number": 156,
     "unstable": "No",
     "min_freq": -0.0
+  },
+  "Zr2N-PO-H": {
+    "formula": "Zr2N-PO-H",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.563
   },
   "Sc2C-NCS-NCS": {
     "formula": "Sc2C-NCS-NCS",
@@ -3376,7 +5317,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.762
+    "min_freq": -10.01
+  },
+  "Zr2N-NCS-O": {
+    "formula": "Zr2N-NCS-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.119
   },
   "Ti2N-Br-Br": {
     "formula": "Ti2N-Br-Br",
@@ -3419,6 +5375,20 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Zr2N-CN-OCN": {
+    "formula": "Zr2N-CN-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.148
+  },
   "Sc2C-CN-NO": {
     "formula": "Sc2C-CN-NO",
     "elements": [
@@ -3432,6 +5402,20 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -10.574
+  },
+  "Hf2C-OH-OH": {
+    "formula": "Hf2C-OH-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2N-NCS-NCS": {
     "formula": "Ti2N-NCS-NCS",
@@ -3459,8 +5443,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "No",
-    "min_freq": -0.085
+    "unstable": "Yes",
+    "min_freq": -0.449
   },
   "Ti2N-NO-OCl": {
     "formula": "Ti2N-NO-OCl",
@@ -3474,7 +5458,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.02
+    "min_freq": -7.987
   },
   "Sc2N-CN-F": {
     "formula": "Sc2N-CN-F",
@@ -3490,6 +5474,21 @@
     "unstable": "Yes",
     "min_freq": -3.212
   },
+  "Hf2C-F-OH": {
+    "formula": "Hf2C-F-OH",
+    "elements": [
+      "C",
+      "F",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Ti2C-NO-NCS": {
     "formula": "Ti2C-NO-NCS",
     "elements": [
@@ -3503,7 +5502,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.256
+    "min_freq": -4.185
   },
   "Sc2N-O-OH": {
     "formula": "Sc2N-O-OH",
@@ -3545,7 +5544,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.148
+    "min_freq": -6.536
   },
   "Sc2C-CN-OCl": {
     "formula": "Sc2C-CN-OCl",
@@ -3588,7 +5587,38 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -16.48
+    "min_freq": -16.501
+  },
+  "Hf2C-OCl-F": {
+    "formula": "Hf2C-OCl-F",
+    "elements": [
+      "C",
+      "Cl",
+      "F",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.577
+  },
+  "Zr2N-SCN-OH": {
+    "formula": "Zr2N-SCN-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.294
   },
   "Ti2N-O-Cl": {
     "formula": "Ti2N-O-Cl",
@@ -3602,7 +5632,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.797
+    "min_freq": -6.957
   },
   "Zr2C-OCl-NCO": {
     "formula": "Zr2C-OCl-NCO",
@@ -3617,7 +5647,35 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.9
+    "min_freq": -6.619
+  },
+  "Hf2C-CN-OCN": {
+    "formula": "Hf2C-CN-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.642
+  },
+  "Zr2N-NO-OCN": {
+    "formula": "Zr2N-NO-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.485
   },
   "Ti2N-OCl-OH": {
     "formula": "Ti2N-OCl-OH",
@@ -3632,7 +5690,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.286
+    "min_freq": -9.514
   },
   "Ti2C-NO-O": {
     "formula": "Ti2C-NO-O",
@@ -3646,7 +5704,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -15.481
+    "min_freq": -15.268
   },
   "Ti2C-Br-H": {
     "formula": "Ti2C-Br-H",
@@ -3660,7 +5718,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.332
+    "min_freq": -0.0
   },
   "Ti2C-SCN-Br": {
     "formula": "Ti2C-SCN-Br",
@@ -3675,7 +5733,35 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.083
+    "min_freq": -0.0
+  },
+  "Hf2N-O-H": {
+    "formula": "Hf2N-O-H",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-Cl-H": {
+    "formula": "Zr2N-Cl-H",
+    "elements": [
+      "Cl",
+      "H",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.534
   },
   "Zr2C-PO-O": {
     "formula": "Zr2C-PO-O",
@@ -3689,7 +5775,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.135
+    "min_freq": -7.743
   },
   "Ti2C-PO-Cl": {
     "formula": "Ti2C-PO-Cl",
@@ -3704,7 +5790,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.335
+    "min_freq": -3.512
   },
   "Ti2C-NCS-PO": {
     "formula": "Ti2C-NCS-PO",
@@ -3720,7 +5806,20 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.805
+    "min_freq": -4.432
+  },
+  "Hf2C-Cl-Cl": {
+    "formula": "Hf2C-Cl-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-NCO-NCS": {
     "formula": "Ti2C-NCO-NCS",
@@ -3735,7 +5834,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.174
+    "min_freq": -1.05
   },
   "La2C-F-H": {
     "formula": "La2C-F-H",
@@ -3791,7 +5890,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.741
+    "min_freq": -5.615
   },
   "Sc2C-SCN-Br": {
     "formula": "Sc2C-SCN-Br",
@@ -3822,6 +5921,21 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2N-NCS-Cl": {
+    "formula": "Hf2N-NCS-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.477
+  },
   "Ti2N-O-OH": {
     "formula": "Ti2N-O-OH",
     "elements": [
@@ -3834,7 +5948,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.032
+    "min_freq": -9.713
   },
   "Sc2N-F-OH": {
     "formula": "Sc2N-F-OH",
@@ -3863,7 +5977,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.654
+    "min_freq": -2.652
+  },
+  "Zr2N-NO-F": {
+    "formula": "Zr2N-NO-F",
+    "elements": [
+      "F",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.425
   },
   "Sc2N-SCN-Cl": {
     "formula": "Sc2N-SCN-Cl",
@@ -3910,7 +6038,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.449
+    "min_freq": -5.577
   },
   "Sc2C-CN-NCO": {
     "formula": "Sc2C-CN-NCO",
@@ -3966,7 +6094,36 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.655
+    "min_freq": -4.732
+  },
+  "Hf2C-CN-PO": {
+    "formula": "Hf2C-CN-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.972
+  },
+  "Hf2N-NO-H": {
+    "formula": "Hf2N-NO-H",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.287
   },
   "Ti2N-OH-OCN": {
     "formula": "Ti2N-OH-OCN",
@@ -3980,8 +6137,8 @@
     "atoms_per_cell": 8,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "No",
-    "min_freq": -0.029
+    "unstable": "Yes",
+    "min_freq": -0.702
   },
   "Ti2C-O-F": {
     "formula": "Ti2C-O-F",
@@ -3995,7 +6152,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.179
+    "min_freq": -8.617
   },
   "Ti2N-CN-PO": {
     "formula": "Ti2N-CN-PO",
@@ -4010,7 +6167,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.054
+    "min_freq": -2.249
   },
   "Ti2C-F-H": {
     "formula": "Ti2C-F-H",
@@ -4024,7 +6181,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.107
+    "min_freq": -0.0
   },
   "Zr2C-NCS-OH": {
     "formula": "Zr2C-NCS-OH",
@@ -4040,7 +6197,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.205
+    "min_freq": -0.0
   },
   "Ti2C-NCO-OCN": {
     "formula": "Ti2C-NCO-OCN",
@@ -4054,7 +6211,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.158
+    "min_freq": -0.632
   },
   "Zr2C-CN-NO": {
     "formula": "Zr2C-CN-NO",
@@ -4068,7 +6225,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.291
+    "min_freq": -5.283
   },
   "Ti2N-CN-NCO": {
     "formula": "Ti2N-CN-NCO",
@@ -4082,7 +6239,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.068
+    "min_freq": -1.181
+  },
+  "Hf2C-PO-OH": {
+    "formula": "Hf2C-PO-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.816
   },
   "Ti2N-PO-Cl": {
     "formula": "Ti2N-PO-Cl",
@@ -4097,7 +6269,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.885
+    "min_freq": -4.24
   },
   "Ti2N-NCS-Br": {
     "formula": "Ti2N-NCS-Br",
@@ -4112,7 +6284,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.086
+    "min_freq": -0.0
   },
   "Sc2C-SCN-O": {
     "formula": "Sc2C-SCN-O",
@@ -4128,6 +6300,20 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -1.319
+  },
+  "Hf2C-PO-PO": {
+    "formula": "Hf2C-PO-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -5.645
   },
   "Sc2C-NCO-Cl": {
     "formula": "Sc2C-NCO-Cl",
@@ -4156,7 +6342,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.771
+    "min_freq": -7.139
   },
   "Zr2C-CN-NCO": {
     "formula": "Zr2C-CN-NCO",
@@ -4170,7 +6356,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.99
+    "min_freq": -1.773
+  },
+  "Hf2N-PO-OCN": {
+    "formula": "Hf2N-PO-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.918
   },
   "Ti2C-NCO-OH": {
     "formula": "Ti2C-NCO-OH",
@@ -4185,7 +6386,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.259
+    "min_freq": -0.864
   },
   "Sc2N-O-Br": {
     "formula": "Sc2N-O-Br",
@@ -4214,7 +6415,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.284
+    "min_freq": -5.274
   },
   "Zr2C-PO-F": {
     "formula": "Zr2C-PO-F",
@@ -4229,7 +6430,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.962
+    "min_freq": -5.367
   },
   "Zr2C-NO-Cl": {
     "formula": "Zr2C-NO-Cl",
@@ -4244,7 +6445,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.52
+    "min_freq": -6.469
   },
   "Sc2C-PO-O": {
     "formula": "Sc2C-PO-O",
@@ -4288,7 +6489,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.094
+    "min_freq": -0.0
   },
   "Ti2N-NCO-Cl": {
     "formula": "Ti2N-NCO-Cl",
@@ -4303,7 +6504,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.04
+    "min_freq": -1.091
   },
   "Zr2C-OCl-Br": {
     "formula": "Zr2C-OCl-Br",
@@ -4318,7 +6519,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.317
+    "min_freq": -3.242
   },
   "Ti2C-CN-Cl": {
     "formula": "Ti2C-CN-Cl",
@@ -4332,7 +6533,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.396
+    "min_freq": -1.53
   },
   "Zr2C-OCl-PO": {
     "formula": "Zr2C-OCl-PO",
@@ -4347,7 +6548,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -10.734
+    "min_freq": -9.189
+  },
+  "Hf2N-CN-OH": {
+    "formula": "Hf2N-CN-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.539
   },
   "Zr2C-OH-OCN": {
     "formula": "Zr2C-OH-OCN",
@@ -4361,8 +6577,36 @@
     "atoms_per_cell": 8,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-OCl-Cl": {
+    "formula": "Hf2N-OCl-Cl",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.7
+    "min_freq": -4.52
+  },
+  "Hf2N-OCl-O": {
+    "formula": "Hf2N-OCl-O",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.053
   },
   "Zr2C-CN-O": {
     "formula": "Zr2C-CN-O",
@@ -4376,7 +6620,51 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.387
+    "min_freq": -4.006
+  },
+  "Hf2C-H-OCN": {
+    "formula": "Hf2C-H-OCN",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-OCl-Cl": {
+    "formula": "Zr2N-OCl-Cl",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.389
+  },
+  "Zr2N-OCl-OH": {
+    "formula": "Zr2N-OCl-OH",
+    "elements": [
+      "Cl",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.265
   },
   "Zr2C-Cl-Cl": {
     "formula": "Zr2C-Cl-Cl",
@@ -4389,7 +6677,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.29
+    "min_freq": -0.0
   },
   "Ti2C-OCl-F": {
     "formula": "Ti2C-OCl-F",
@@ -4404,7 +6692,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.13
+    "min_freq": -8.628
   },
   "Sc2C-H-OCN": {
     "formula": "Sc2C-H-OCN",
@@ -4421,6 +6709,20 @@
     "unstable": "Yes",
     "min_freq": -1.063
   },
+  "Hf2C-NCS-SCN": {
+    "formula": "Hf2C-NCS-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Zr2C-CN-PO": {
     "formula": "Zr2C-CN-PO",
     "elements": [
@@ -4434,7 +6736,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.934
+    "min_freq": -5.591
+  },
+  "Hf2C-OCl-NCO": {
+    "formula": "Hf2C-OCl-NCO",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.743
   },
   "Ti2C-NCO-SCN": {
     "formula": "Ti2C-NCO-SCN",
@@ -4449,7 +6766,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.087
+    "min_freq": -0.696
   },
   "Zr2C-PO-PO": {
     "formula": "Zr2C-PO-PO",
@@ -4463,7 +6780,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -5.91
+    "min_freq": -5.366
   },
   "Zr2C-SCN-OCN": {
     "formula": "Zr2C-SCN-OCN",
@@ -4478,7 +6795,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.99
+    "min_freq": -1.188
   },
   "Sc2N-NO-SCN": {
     "formula": "Sc2N-NO-SCN",
@@ -4510,6 +6827,20 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2N-NCS-SCN": {
+    "formula": "Hf2N-NCS-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.881
+  },
   "Sc2C-NO-Cl": {
     "formula": "Sc2C-NO-Cl",
     "elements": [
@@ -4525,6 +6856,20 @@
     "unstable": "Yes",
     "min_freq": -10.583
   },
+  "Zr2N-NO-NCO": {
+    "formula": "Zr2N-NO-NCO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.027
+  },
   "Zr2C-NCO-O": {
     "formula": "Zr2C-NCO-O",
     "elements": [
@@ -4537,7 +6882,37 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.511
+    "min_freq": -6.06
+  },
+  "Hf2C-Cl-OCN": {
+    "formula": "Hf2C-Cl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-NCO-OH": {
+    "formula": "Hf2C-NCO-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2N-NCS-OH": {
     "formula": "Ti2N-NCS-OH",
@@ -4552,8 +6927,23 @@
     "atoms_per_cell": 8,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-SCN-O": {
+    "formula": "Hf2N-SCN-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.728
+    "min_freq": -1.254
   },
   "Ti2N-OCN-OCN": {
     "formula": "Ti2N-OCN-OCN",
@@ -4567,7 +6957,21 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -0.429
+    "min_freq": -0.473
+  },
+  "Hf2N-H-OH": {
+    "formula": "Hf2N-H-OH",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.005
   },
   "Sc2C-NO-Br": {
     "formula": "Sc2C-NO-Br",
@@ -4599,6 +7003,19 @@
     "unstable": "Yes",
     "min_freq": -6.462
   },
+  "Hf2C-O-O": {
+    "formula": "Hf2C-O-O",
+    "elements": [
+      "C",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Zr2C-NCS-Br": {
     "formula": "Zr2C-NCS-Br",
     "elements": [
@@ -4612,7 +7029,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.129
+    "min_freq": -0.0
   },
   "Zr2C-NO-NCO": {
     "formula": "Zr2C-NO-NCO",
@@ -4626,7 +7043,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.273
+    "min_freq": -6.213
   },
   "Sc2C-SCN-OH": {
     "formula": "Sc2C-SCN-OH",
@@ -4671,7 +7088,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.055
+    "min_freq": -3.054
+  },
+  "Hf2N-NCS-O": {
+    "formula": "Hf2N-NCS-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.259
   },
   "Sc2C-CN-Cl": {
     "formula": "Sc2C-CN-Cl",
@@ -4699,7 +7131,37 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.019
+    "min_freq": -8.784
+  },
+  "Zr2N-OCl-NCS": {
+    "formula": "Zr2N-OCl-NCS",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.299
+  },
+  "Hf2N-CN-H": {
+    "formula": "Hf2N-CN-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.657
   },
   "Ti2C-SCN-OH": {
     "formula": "Ti2C-SCN-OH",
@@ -4715,7 +7177,52 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.114
+    "min_freq": -0.0
+  },
+  "Zr2N-SCN-Cl": {
+    "formula": "Zr2N-SCN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.001
+  },
+  "Zr2N-Cl-OCN": {
+    "formula": "Zr2N-Cl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.045
+  },
+  "Hf2C-NCS-F": {
+    "formula": "Hf2C-NCS-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-Cl-Br": {
     "formula": "Sc2C-Cl-Br",
@@ -4731,6 +7238,20 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2N-Cl-H": {
+    "formula": "Hf2N-Cl-H",
+    "elements": [
+      "Cl",
+      "H",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.89
+  },
   "Zr2C-NCO-NCS": {
     "formula": "Zr2C-NCO-NCS",
     "elements": [
@@ -4744,7 +7265,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.967
+    "min_freq": -0.938
+  },
+  "Hf2N-PO-H": {
+    "formula": "Hf2N-PO-H",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.249
   },
   "La2C-O-H": {
     "formula": "La2C-O-H",
@@ -4786,7 +7322,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.034
+    "min_freq": -0.0
+  },
+  "Hf2N-NO-NCS": {
+    "formula": "Hf2N-NO-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -66.954
   },
   "Ti2C-NO-NCO": {
     "formula": "Ti2C-NO-NCO",
@@ -4800,7 +7351,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.84
+    "min_freq": -4.762
   },
   "Ti2C-SCN-OCN": {
     "formula": "Ti2C-SCN-OCN",
@@ -4814,8 +7365,8 @@
     "atoms_per_cell": 9,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.441
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-OCl-OCl": {
     "formula": "Ti2C-OCl-OCl",
@@ -4829,7 +7380,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -5.577
+    "min_freq": -5.681
   },
   "Ti2N-Br-OH": {
     "formula": "Ti2N-Br-OH",
@@ -4844,7 +7395,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.072
+    "min_freq": -0.0
+  },
+  "Hf2N-OH-OH": {
+    "formula": "Hf2N-OH-OH",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -4.581
   },
   "Ti2N-PO-F": {
     "formula": "Ti2N-PO-F",
@@ -4859,7 +7424,50 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.628
+    "min_freq": -4.971
+  },
+  "Hf2N-NO-Cl": {
+    "formula": "Hf2N-NO-Cl",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.551
+  },
+  "Hf2C-NO-NO": {
+    "formula": "Hf2C-NO-NO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -3.364
+  },
+  "Hf2N-OCl-F": {
+    "formula": "Hf2N-OCl-F",
+    "elements": [
+      "Cl",
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -16.052
   },
   "Zr2C-CN-H": {
     "formula": "Zr2C-CN-H",
@@ -4873,7 +7481,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.788
+    "min_freq": -4.072
   },
   "Sc2C-CN-OH": {
     "formula": "Sc2C-CN-OH",
@@ -4902,7 +7510,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.326
+    "min_freq": -5.258
+  },
+  "Hf2N-O-Cl": {
+    "formula": "Hf2N-O-Cl",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-NCO-SCN": {
     "formula": "Sc2N-NCO-SCN",
@@ -4946,7 +7568,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.05
+    "min_freq": -0.0
   },
   "Sc2C-NCS-O": {
     "formula": "Sc2C-NCS-O",
@@ -4976,7 +7598,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.457
+    "min_freq": -6.504
   },
   "Ti2N-SCN-OCN": {
     "formula": "Ti2N-SCN-OCN",
@@ -4991,7 +7613,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.632
+    "min_freq": -1.198
   },
   "Ti2N-NO-OH": {
     "formula": "Ti2N-NO-OH",
@@ -5005,7 +7627,37 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -10.467
+    "min_freq": -10.28
+  },
+  "Hf2N-NCO-SCN": {
+    "formula": "Hf2N-NCO-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.63
+  },
+  "Zr2N-SCN-OCN": {
+    "formula": "Zr2N-SCN-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.818
   },
   "Sc2N-OH-OH": {
     "formula": "Sc2N-OH-OH",
@@ -5033,7 +7685,64 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.143
+    "min_freq": -0.0
+  },
+  "Hf2N-CN-CN": {
+    "formula": "Hf2N-CN-CN",
+    "elements": [
+      "C",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -7.038
+  },
+  "Zr2N-NCO-F": {
+    "formula": "Zr2N-NCO-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.935
+  },
+  "Hf2C-NCS-Br": {
+    "formula": "Hf2C-NCS-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-SCN-SCN": {
+    "formula": "Hf2C-SCN-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Zr2C-CN-CN": {
     "formula": "Zr2C-CN-CN",
@@ -5046,7 +7755,49 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -7.146
+    "min_freq": -5.176
+  },
+  "Hf2N-NO-NO": {
+    "formula": "Hf2N-NO-NO",
+    "elements": [
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -7.404
+  },
+  "Hf2C-NO-OH": {
+    "formula": "Hf2C-NO-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.604
+  },
+  "Zr2N-NO-OH": {
+    "formula": "Zr2N-NO-OH",
+    "elements": [
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.224
   },
   "Ti2N-PO-H": {
     "formula": "Ti2N-PO-H",
@@ -5061,7 +7812,49 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.362
+    "min_freq": -0.79
+  },
+  "Hf2C-Br-OH": {
+    "formula": "Hf2C-Br-OH",
+    "elements": [
+      "Br",
+      "C",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-NO-O": {
+    "formula": "Hf2N-NO-O",
+    "elements": [
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -10.25
+  },
+  "Hf2N-NCS-NCS": {
+    "formula": "Hf2N-NCS-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -1.512
   },
   "Sc2N-PO-F": {
     "formula": "Sc2N-PO-F",
@@ -5078,6 +7871,36 @@
     "unstable": "Yes",
     "min_freq": -7.674
   },
+  "Hf2C-OCl-OH": {
+    "formula": "Hf2C-OCl-OH",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.715
+  },
+  "Hf2C-Cl-OH": {
+    "formula": "Hf2C-Cl-OH",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Zr2C-O-OH": {
     "formula": "Zr2C-O-OH",
     "elements": [
@@ -5090,7 +7913,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.917
+    "min_freq": -1.645
   },
   "Zr2C-H-H": {
     "formula": "Zr2C-H-H",
@@ -5103,7 +7926,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -1.012
+    "min_freq": -0.999
   },
   "Sc2C-O-Br": {
     "formula": "Sc2C-O-Br",
@@ -5172,8 +7995,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.89
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-O-H": {
     "formula": "Sc2C-O-H",
@@ -5189,6 +8012,50 @@
     "unstable": "Yes",
     "min_freq": -3.923
   },
+  "Hf2C-NCS-Cl": {
+    "formula": "Hf2C-NCS-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-O-OCN": {
+    "formula": "Hf2C-O-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.791
+  },
+  "Hf2C-NCO-NCS": {
+    "formula": "Hf2C-NCO-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.983
+  },
   "Zr2C-NO-NCS": {
     "formula": "Zr2C-NO-NCS",
     "elements": [
@@ -5202,7 +8069,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.79
+    "min_freq": -5.731
   },
   "Sc2C-NCO-OH": {
     "formula": "Sc2C-NCO-OH",
@@ -5230,7 +8097,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.126
+    "min_freq": -0.0
   },
   "Sc2N-O-H": {
     "formula": "Sc2N-O-H",
@@ -5271,7 +8138,64 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.15
+    "min_freq": -0.0
+  },
+  "Hf2N-CN-NCO": {
+    "formula": "Hf2N-CN-NCO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.936
+  },
+  "Hf2N-Cl-Cl": {
+    "formula": "Hf2N-Cl-Cl",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-PO-Br": {
+    "formula": "Zr2N-PO-Br",
+    "elements": [
+      "Br",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.359
+  },
+  "Hf2N-Cl-OH": {
+    "formula": "Hf2N-Cl-OH",
+    "elements": [
+      "Cl",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.237
   },
   "Sc2N-OCl-PO": {
     "formula": "Sc2N-OCl-PO",
@@ -5288,6 +8212,22 @@
     "unstable": "Yes",
     "min_freq": -4.221
   },
+  "Hf2N-SCN-PO": {
+    "formula": "Hf2N-SCN-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.995
+  },
   "Ti2N-NCO-NCO": {
     "formula": "Ti2N-NCO-NCO",
     "elements": [
@@ -5300,7 +8240,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -1.163
+    "min_freq": -1.104
   },
   "Sc2N-F-Br": {
     "formula": "Sc2N-F-Br",
@@ -5316,6 +8256,35 @@
     "unstable": "Yes",
     "min_freq": -2.816
   },
+  "Hf2N-OCl-OCl": {
+    "formula": "Hf2N-OCl-OCl",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -20.1
+  },
+  "Hf2N-F-OCN": {
+    "formula": "Hf2N-F-OCN",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.176
+  },
   "Ti2N-Cl-Br": {
     "formula": "Ti2N-Cl-Br",
     "elements": [
@@ -5330,6 +8299,21 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2N-PO-OH": {
+    "formula": "Hf2N-PO-OH",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.89
+  },
   "Sc2C-Br-H": {
     "formula": "Sc2C-Br-H",
     "elements": [
@@ -5343,6 +8327,20 @@
     "space_group_number": 156,
     "unstable": "No",
     "min_freq": -0.0
+  },
+  "Hf2N-PO-PO": {
+    "formula": "Hf2N-PO-PO",
+    "elements": [
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -3.994
   },
   "La2C-H-H": {
     "formula": "La2C-H-H",
@@ -5370,7 +8368,37 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.359
+    "min_freq": -7.308
+  },
+  "Hf2N-SCN-Br": {
+    "formula": "Hf2N-SCN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-NO-SCN": {
+    "formula": "Zr2N-NO-SCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.351
   },
   "Sc2N-PO-OCN": {
     "formula": "Sc2N-PO-OCN",
@@ -5402,6 +8430,35 @@
     "unstable": "Yes",
     "min_freq": -4.561
   },
+  "Hf2N-NO-NCO": {
+    "formula": "Hf2N-NO-NCO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.636
+  },
+  "Zr2N-Br-OH": {
+    "formula": "Zr2N-Br-OH",
+    "elements": [
+      "Br",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Ti2N-H-H": {
     "formula": "Ti2N-H-H",
     "elements": [
@@ -5426,8 +8483,8 @@
     "atoms_per_cell": 9,
     "space_group": "P-3m1",
     "space_group_number": 164,
-    "unstable": "Yes",
-    "min_freq": -1.005
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2N-NCO-NCS": {
     "formula": "Ti2N-NCO-NCS",
@@ -5442,7 +8499,50 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.07
+    "min_freq": -1.33
+  },
+  "Zr2N-Cl-Br": {
+    "formula": "Zr2N-Cl-Br",
+    "elements": [
+      "Br",
+      "Cl",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-O-OH": {
+    "formula": "Hf2C-O-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-SCN-Cl": {
+    "formula": "Hf2N-SCN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.622
   },
   "Ti2N-OCl-H": {
     "formula": "Ti2N-OCl-H",
@@ -5457,7 +8557,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.586
+    "min_freq": -5.71
   },
   "Sc2C-OCl-O": {
     "formula": "Sc2C-OCl-O",
@@ -5486,6 +8586,64 @@
     "unstable": "Yes",
     "min_freq": -2.737
   },
+  "Hf2N-NCS-F": {
+    "formula": "Hf2N-NCS-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.168
+  },
+  "Hf2N-OH-OCN": {
+    "formula": "Hf2N-OH-OCN",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.289
+  },
+  "Hf2N-NO-Br": {
+    "formula": "Hf2N-NO-Br",
+    "elements": [
+      "Br",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.78
+  },
+  "Zr2N-OCN-OCN": {
+    "formula": "Zr2N-OCN-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -1.109
+  },
   "Ti2N-NO-NO": {
     "formula": "Ti2N-NO-NO",
     "elements": [
@@ -5497,7 +8655,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -10.554
+    "min_freq": -8.009
   },
   "La2C-O-F": {
     "formula": "La2C-O-F",
@@ -5526,7 +8684,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.257
+    "min_freq": -0.216
   },
   "Sc2C-Cl-OCN": {
     "formula": "Sc2C-Cl-OCN",
@@ -5555,7 +8713,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.257
+    "min_freq": -3.565
   },
   "Zr2C-F-Cl": {
     "formula": "Zr2C-F-Cl",
@@ -5569,7 +8727,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.108
+    "min_freq": -0.0
   },
   "Ti2N-OCl-F": {
     "formula": "Ti2N-OCl-F",
@@ -5584,7 +8742,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.655
+    "min_freq": -9.53
   },
   "Ti2N-O-H": {
     "formula": "Ti2N-O-H",
@@ -5597,8 +8755,8 @@
     "atoms_per_cell": 5,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.359
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2N-Cl-Br": {
     "formula": "Sc2N-Cl-Br",
@@ -5613,6 +8771,35 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -2.674
+  },
+  "Hf2N-PO-O": {
+    "formula": "Hf2N-PO-O",
+    "elements": [
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.684
+  },
+  "Zr2N-SCN-Br": {
+    "formula": "Zr2N-SCN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-NO-F": {
     "formula": "Sc2C-NO-F",
@@ -5659,6 +8846,36 @@
     "unstable": "Yes",
     "min_freq": -3.696
   },
+  "Hf2N-OCl-OH": {
+    "formula": "Hf2N-OCl-OH",
+    "elements": [
+      "Cl",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.86
+  },
+  "Hf2C-OCl-H": {
+    "formula": "Hf2C-OCl-H",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.687
+  },
   "Sc2N-NO-Cl": {
     "formula": "Sc2N-NO-Cl",
     "elements": [
@@ -5672,6 +8889,20 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -3.931
+  },
+  "Hf2N-CN-OCN": {
+    "formula": "Hf2N-CN-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.61
   },
   "Sc2C-H-H": {
     "formula": "Sc2C-H-H",
@@ -5698,8 +8929,8 @@
     "atoms_per_cell": 9,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "No",
-    "min_freq": -0.299
+    "unstable": "Yes",
+    "min_freq": -0.7
   },
   "Sc2N-PO-Cl": {
     "formula": "Sc2N-PO-Cl",
@@ -5728,7 +8959,23 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.514
+    "min_freq": -9.012
+  },
+  "Hf2C-SCN-OH": {
+    "formula": "Hf2C-SCN-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-NCO-O": {
     "formula": "Sc2C-NCO-O",
@@ -5744,6 +8991,21 @@
     "unstable": "Yes",
     "min_freq": -2.811
   },
+  "Zr2N-NCO-SCN": {
+    "formula": "Zr2N-NCO-SCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.044
+  },
   "Zr2C-CN-NCS": {
     "formula": "Zr2C-CN-NCS",
     "elements": [
@@ -5756,7 +9018,20 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.455
+    "min_freq": -2.251
+  },
+  "Hf2N-H-H": {
+    "formula": "Hf2N-H-H",
+    "elements": [
+      "H",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -3.021
   },
   "Sc2N-SCN-OCN": {
     "formula": "Sc2N-SCN-OCN",
@@ -5785,6 +9060,21 @@
     "space_group_number": 164,
     "unstable": "No",
     "min_freq": -0.0
+  },
+  "Hf2N-F-OH": {
+    "formula": "Hf2N-F-OH",
+    "elements": [
+      "F",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -9.105
   },
   "Sc2C-NCO-H": {
     "formula": "Sc2C-NCO-H",
@@ -5816,6 +9106,49 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Hf2N-PO-Cl": {
+    "formula": "Hf2N-PO-Cl",
+    "elements": [
+      "Cl",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.861
+  },
+  "Hf2N-F-Br": {
+    "formula": "Hf2N-F-Br",
+    "elements": [
+      "Br",
+      "F",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-F-Cl": {
+    "formula": "Zr2N-F-Cl",
+    "elements": [
+      "Cl",
+      "F",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Sc2N-Br-Br": {
     "formula": "Sc2N-Br-Br",
     "elements": [
@@ -5842,7 +9175,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.133
+    "min_freq": -0.0
   },
   "Sc2N-OCl-Cl": {
     "formula": "Sc2N-OCl-Cl",
@@ -5872,6 +9205,21 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Zr2N-Br-OCN": {
+    "formula": "Zr2N-Br-OCN",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.671
+  },
   "Ti2C-SCN-F": {
     "formula": "Ti2C-SCN-F",
     "elements": [
@@ -5885,7 +9233,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.092
+    "min_freq": -0.0
   },
   "Sc2N-NCO-OH": {
     "formula": "Sc2N-NCO-OH",
@@ -5914,7 +9262,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.049
+    "min_freq": -5.663
   },
   "Sc2C-NO-O": {
     "formula": "Sc2C-NO-O",
@@ -5930,6 +9278,49 @@
     "unstable": "Yes",
     "min_freq": -5.828
   },
+  "Hf2C-NO-OCN": {
+    "formula": "Hf2C-NO-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.523
+  },
+  "Hf2C-NO-SCN": {
+    "formula": "Hf2C-NO-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -10.818
+  },
+  "Hf2N-NO-PO": {
+    "formula": "Hf2N-NO-PO",
+    "elements": [
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.128
+  },
   "Ti2C-NO-NO": {
     "formula": "Ti2C-NO-NO",
     "elements": [
@@ -5942,7 +9333,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -10.469
+    "min_freq": -9.845
   },
   "Zr2C-F-OCN": {
     "formula": "Zr2C-F-OCN",
@@ -5956,8 +9347,22 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-OCl-O": {
+    "formula": "Zr2N-OCl-O",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.813
+    "min_freq": -4.993
   },
   "Sc2N-NO-OCl": {
     "formula": "Sc2N-NO-OCl",
@@ -5973,6 +9378,34 @@
     "unstable": "Yes",
     "min_freq": -10.864
   },
+  "Hf2C-CN-CN": {
+    "formula": "Hf2C-CN-CN",
+    "elements": [
+      "C",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -4.61
+  },
+  "Zr2N-SCN-F": {
+    "formula": "Zr2N-SCN-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.42
+  },
   "Ti2N-CN-O": {
     "formula": "Ti2N-CN-O",
     "elements": [
@@ -5985,7 +9418,36 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.997
+    "min_freq": -2.287
+  },
+  "Hf2C-CN-OCl": {
+    "formula": "Hf2C-CN-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.862
+  },
+  "Hf2N-CN-NCS": {
+    "formula": "Hf2N-CN-NCS",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.665
   },
   "Ti2C-OCl-SCN": {
     "formula": "Ti2C-OCl-SCN",
@@ -6001,7 +9463,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -11.023
+    "min_freq": -11.028
   },
   "Sc2N-PO-H": {
     "formula": "Sc2N-PO-H",
@@ -6031,7 +9493,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.506
+    "min_freq": -2.759
   },
   "Sc2C-F-OH": {
     "formula": "Sc2C-F-OH",
@@ -6060,7 +9522,22 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.063
+    "min_freq": -0.0
+  },
+  "Zr2N-OH-OCN": {
+    "formula": "Zr2N-OH-OCN",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.893
   },
   "Sc2N-CN-OCl": {
     "formula": "Sc2N-CN-OCl",
@@ -6077,6 +9554,20 @@
     "unstable": "Yes",
     "min_freq": -5.171
   },
+  "Hf2C-OCl-OCl": {
+    "formula": "Hf2C-OCl-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -5.044
+  },
   "Ti2C-O-O": {
     "formula": "Ti2C-O-O",
     "elements": [
@@ -6088,7 +9579,34 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -7.914
+    "min_freq": -3.434
+  },
+  "Hf2N-F-H": {
+    "formula": "Hf2N-F-H",
+    "elements": [
+      "F",
+      "H",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.586
+  },
+  "Zr2N-Cl-Cl": {
+    "formula": "Zr2N-Cl-Cl",
+    "elements": [
+      "Cl",
+      "N",
+      "Zr"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-OCl-Cl": {
     "formula": "Ti2C-OCl-Cl",
@@ -6102,7 +9620,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.548
+    "min_freq": -6.939
   },
   "Ti2C-NCO-Br": {
     "formula": "Ti2C-NCO-Br",
@@ -6117,7 +9635,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.13
+    "min_freq": -0.727
   },
   "Zr2C-F-H": {
     "formula": "Zr2C-F-H",
@@ -6130,8 +9648,8 @@
     "atoms_per_cell": 5,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -1.719
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-PO-H": {
     "formula": "Ti2C-PO-H",
@@ -6146,7 +9664,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.607
+    "min_freq": -5.807
+  },
+  "Hf2C-OCN-OCN": {
+    "formula": "Hf2C-OCN-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-H-H": {
     "formula": "Ti2C-H-H",
@@ -6159,7 +9691,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -1.266
+    "min_freq": -1.157
   },
   "Zr2C-NCO-F": {
     "formula": "Zr2C-NCO-F",
@@ -6173,8 +9705,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -1.008
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-NCO-PO": {
     "formula": "Ti2C-NCO-PO",
@@ -6189,7 +9721,36 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.418
+    "min_freq": -3.75
+  },
+  "Zr2N-PO-OCN": {
+    "formula": "Zr2N-PO-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.19
+  },
+  "Zr2N-CN-O": {
+    "formula": "Zr2N-CN-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.938
   },
   "Ti2N-OCl-O": {
     "formula": "Ti2N-OCl-O",
@@ -6203,7 +9764,65 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.729
+    "min_freq": -7.813
+  },
+  "Zr2N-NCO-NCS": {
+    "formula": "Zr2N-NCO-NCS",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.878
+  },
+  "Zr2N-SCN-SCN": {
+    "formula": "Zr2N-SCN-SCN",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -70.835
+  },
+  "Hf2C-NO-NCO": {
+    "formula": "Hf2C-NO-NCO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.491
+  },
+  "Hf2C-SCN-OCN": {
+    "formula": "Hf2C-SCN-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.407
   },
   "Ti2N-OCl-NCS": {
     "formula": "Ti2N-OCl-NCS",
@@ -6219,7 +9838,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.392
+    "min_freq": -5.49
+  },
+  "Hf2N-Br-OH": {
+    "formula": "Hf2N-Br-OH",
+    "elements": [
+      "Br",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.415
   },
   "Zr2C-O-OCN": {
     "formula": "Zr2C-O-OCN",
@@ -6233,7 +9867,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.733
+    "min_freq": -5.482
+  },
+  "Hf2N-NCO-OCN": {
+    "formula": "Hf2N-NCO-OCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.453
   },
   "Zr2C-Cl-H": {
     "formula": "Zr2C-Cl-H",
@@ -6246,8 +9894,38 @@
     "atoms_per_cell": 5,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-NCS-PO": {
+    "formula": "Hf2N-NCS-PO",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O",
+      "P",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.628
+    "min_freq": -2.967
+  },
+  "Hf2N-NO-OH": {
+    "formula": "Hf2N-NO-OH",
+    "elements": [
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.277
   },
   "Ti2C-Br-Br": {
     "formula": "Ti2C-Br-Br",
@@ -6260,7 +9938,22 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.106
+    "min_freq": -0.0
+  },
+  "Hf2N-OCl-OCN": {
+    "formula": "Hf2N-OCl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.575
   },
   "Zr2C-CN-OCN": {
     "formula": "Zr2C-CN-OCN",
@@ -6274,7 +9967,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.235
+    "min_freq": -1.864
   },
   "Sc2C-OCl-H": {
     "formula": "Sc2C-OCl-H",
@@ -6304,7 +9997,50 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.995
+    "min_freq": -4.935
+  },
+  "Hf2N-NO-F": {
+    "formula": "Hf2N-NO-F",
+    "elements": [
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.774
+  },
+  "Hf2C-NO-H": {
+    "formula": "Hf2C-NO-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.99
+  },
+  "Zr2N-NCS-NCS": {
+    "formula": "Zr2N-NCS-NCS",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Ti2C-NO-H": {
     "formula": "Ti2C-NO-H",
@@ -6319,7 +10055,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.638
+    "min_freq": -4.724
   },
   "Sc2N-NCS-SCN": {
     "formula": "Sc2N-NCS-SCN",
@@ -6349,6 +10085,36 @@
     "unstable": "Yes",
     "min_freq": -3.287
   },
+  "Hf2C-SCN-H": {
+    "formula": "Hf2C-SCN-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.684
+  },
+  "Zr2N-NCO-PO": {
+    "formula": "Zr2N-NCO-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.166
+  },
   "Zr2C-Cl-OH": {
     "formula": "Zr2C-Cl-OH",
     "elements": [
@@ -6362,7 +10128,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.03
+    "min_freq": -0.0
   },
   "Ti2N-F-OCN": {
     "formula": "Ti2N-F-OCN",
@@ -6377,7 +10143,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.035
+    "min_freq": -0.0
   },
   "Ti2C-NCO-Cl": {
     "formula": "Ti2C-NCO-Cl",
@@ -6392,7 +10158,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.162
+    "min_freq": -0.794
   },
   "Zr2C-OCl-O": {
     "formula": "Zr2C-OCl-O",
@@ -6406,7 +10172,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.742
+    "min_freq": -4.838
   },
   "Ti2N-O-OCN": {
     "formula": "Ti2N-O-OCN",
@@ -6420,7 +10186,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -9.247
+    "min_freq": -8.56
   },
   "Sc2C-NCO-NCO": {
     "formula": "Sc2C-NCO-NCO",
@@ -6450,6 +10216,36 @@
     "unstable": "Yes",
     "min_freq": -3.881
   },
+  "Zr2N-OCl-H": {
+    "formula": "Zr2N-OCl-H",
+    "elements": [
+      "Cl",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.726
+  },
+  "Zr2N-OCl-F": {
+    "formula": "Zr2N-OCl-F",
+    "elements": [
+      "Cl",
+      "F",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.042
+  },
   "Ti2N-NCS-SCN": {
     "formula": "Ti2N-NCS-SCN",
     "elements": [
@@ -6463,6 +10259,22 @@
     "space_group_number": 156,
     "unstable": "No",
     "min_freq": -0.0
+  },
+  "Hf2N-NCS-OH": {
+    "formula": "Hf2N-NCS-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.332
   },
   "Sc2C-NO-H": {
     "formula": "Sc2C-NO-H",
@@ -6479,6 +10291,63 @@
     "unstable": "Yes",
     "min_freq": -10.317
   },
+  "Hf2N-F-Cl": {
+    "formula": "Hf2N-F-Cl",
+    "elements": [
+      "Cl",
+      "F",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-OCl-PO": {
+    "formula": "Hf2C-OCl-PO",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -16.042
+  },
+  "Zr2N-OCl-OCl": {
+    "formula": "Zr2N-OCl-OCl",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -5.379
+  },
+  "Hf2N-Cl-Br": {
+    "formula": "Hf2N-Cl-Br",
+    "elements": [
+      "Br",
+      "Cl",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
   "Zr2C-NO-NO": {
     "formula": "Zr2C-NO-NO",
     "elements": [
@@ -6491,7 +10360,7 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "Yes",
-    "min_freq": -4.271
+    "min_freq": -3.371
   },
   "Zr2C-Br-OH": {
     "formula": "Zr2C-Br-OH",
@@ -6506,7 +10375,36 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.071
+    "min_freq": -0.0
+  },
+  "Hf2C-F-H": {
+    "formula": "Hf2C-F-H",
+    "elements": [
+      "C",
+      "F",
+      "H",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2N-NCO-F": {
+    "formula": "Hf2N-NCO-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.012
   },
   "Ti2N-NO-O": {
     "formula": "Ti2N-NO-O",
@@ -6519,7 +10417,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.722
+    "min_freq": -7.693
+  },
+  "Hf2N-H-OCN": {
+    "formula": "Hf2N-H-OCN",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.981
   },
   "Sc2C-O-OCN": {
     "formula": "Sc2C-O-OCN",
@@ -6549,7 +10462,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.127
+    "min_freq": -0.0
+  },
+  "Hf2C-NO-O": {
+    "formula": "Hf2C-NO-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.479
   },
   "Zr2C-Br-H": {
     "formula": "Zr2C-Br-H",
@@ -6562,8 +10489,8 @@
     "atoms_per_cell": 5,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.473
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Zr2C-F-F": {
     "formula": "Zr2C-F-F",
@@ -6607,7 +10534,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.653
+    "min_freq": -6.42
   },
   "Sc2C-NCO-SCN": {
     "formula": "Sc2C-NCO-SCN",
@@ -6623,6 +10550,20 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -0.704
+  },
+  "Hf2N-O-Br": {
+    "formula": "Hf2N-O-Br",
+    "elements": [
+      "Br",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-SCN-Cl": {
     "formula": "Sc2C-SCN-Cl",
@@ -6651,7 +10592,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.243
+    "min_freq": -2.733
   },
   "Sc2C-OCl-OH": {
     "formula": "Sc2C-OCl-OH",
@@ -6679,6 +10620,37 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
+    "min_freq": -0.062
+  },
+  "Zr2N-OCl-SCN": {
+    "formula": "Zr2N-OCl-SCN",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.399
+  },
+  "Zr2N-NCS-F": {
+    "formula": "Zr2N-NCS-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
     "min_freq": -0.0
   },
   "Ti2C-NCS-Cl": {
@@ -6694,7 +10666,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.183
+    "min_freq": -0.0
   },
   "Zr2C-SCN-H": {
     "formula": "Zr2C-SCN-H",
@@ -6708,8 +10680,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "No",
-    "min_freq": -0.196
+    "unstable": "Yes",
+    "min_freq": -0.526
   },
   "Sc2C-O-Cl": {
     "formula": "Sc2C-O-Cl",
@@ -6737,7 +10709,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.284
+    "min_freq": -2.748
   },
   "Ti2C-CN-H": {
     "formula": "Ti2C-CN-H",
@@ -6751,7 +10723,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.871
+    "min_freq": -2.38
   },
   "Ti2C-NCS-OH": {
     "formula": "Ti2C-NCS-OH",
@@ -6767,7 +10739,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.208
+    "min_freq": -0.0
+  },
+  "Hf2N-CN-SCN": {
+    "formula": "Hf2N-CN-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.299
   },
   "Ti2C-NO-SCN": {
     "formula": "Ti2C-NO-SCN",
@@ -6782,7 +10768,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.058
+    "min_freq": -4.982
   },
   "Ti2C-Br-OH": {
     "formula": "Ti2C-Br-OH",
@@ -6797,7 +10783,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.088
+    "min_freq": -0.0
   },
   "Sc2N-NCS-NCS": {
     "formula": "Sc2N-NCS-NCS",
@@ -6840,7 +10826,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -16.911
+    "min_freq": -16.859
   },
   "Sc2C-NCS-OCN": {
     "formula": "Sc2C-NCS-OCN",
@@ -6867,6 +10853,35 @@
     "atoms_per_cell": 5,
     "space_group": "P-3m1",
     "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-CN-SCN": {
+    "formula": "Hf2C-CN-SCN",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.576
+  },
+  "Hf2C-NCO-Cl": {
+    "formula": "Hf2C-NCO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "No",
     "min_freq": -0.0
   },
@@ -6911,7 +10926,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.05
+    "min_freq": -0.0
+  },
+  "Hf2N-CN-F": {
+    "formula": "Hf2N-CN-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.99
   },
   "Sc2N-NCS-OCN": {
     "formula": "Sc2N-NCS-OCN",
@@ -6940,7 +10969,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.01
+    "min_freq": -6.321
+  },
+  "Hf2C-CN-Br": {
+    "formula": "Hf2C-CN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.61
   },
   "Sc2C-NCS-SCN": {
     "formula": "Sc2C-NCS-SCN",
@@ -6956,6 +10999,33 @@
     "unstable": "Yes",
     "min_freq": -0.368
   },
+  "Hf2C-Br-Br": {
+    "formula": "Hf2C-Br-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-O-F": {
+    "formula": "Hf2C-O-F",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.949
+  },
   "Zr2C-SCN-SCN": {
     "formula": "Zr2C-SCN-SCN",
     "elements": [
@@ -6968,7 +11038,35 @@
     "space_group": "P-3m1",
     "space_group_number": 164,
     "unstable": "No",
-    "min_freq": -0.086
+    "min_freq": -0.0
+  },
+  "Zr2N-NO-O": {
+    "formula": "Zr2N-NO-O",
+    "elements": [
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -9.372
+  },
+  "Hf2C-SCN-Cl": {
+    "formula": "Hf2C-SCN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-CN-SCN": {
     "formula": "Sc2C-CN-SCN",
@@ -6999,6 +11097,64 @@
     "unstable": "Yes",
     "min_freq": -4.404
   },
+  "Hf2C-F-OCN": {
+    "formula": "Hf2C-F-OCN",
+    "elements": [
+      "C",
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-NCO-OCN": {
+    "formula": "Zr2N-NCO-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.16
+  },
+  "Zr2N-OCl-OCN": {
+    "formula": "Zr2N-OCl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.48
+  },
+  "Hf2C-CN-O": {
+    "formula": "Hf2C-CN-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.832
+  },
   "Ti2N-NCO-F": {
     "formula": "Ti2N-NCO-F",
     "elements": [
@@ -7012,7 +11168,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.035
+    "min_freq": -0.547
   },
   "Sc2C-PO-H": {
     "formula": "Sc2C-PO-H",
@@ -7056,7 +11212,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.436
+    "min_freq": -7.253
   },
   "Sc2N-F-OCN": {
     "formula": "Sc2N-F-OCN",
@@ -7072,6 +11228,21 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -4.326
+  },
+  "Hf2N-PO-Br": {
+    "formula": "Hf2N-PO-Br",
+    "elements": [
+      "Br",
+      "Hf",
+      "N",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.303
   },
   "Sc2C-OH-OCN": {
     "formula": "Sc2C-OH-OCN",
@@ -7101,7 +11272,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.334
+    "min_freq": -4.726
+  },
+  "Hf2N-O-F": {
+    "formula": "Hf2N-O-F",
+    "elements": [
+      "F",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.877
   },
   "Ti2C-Cl-OH": {
     "formula": "Ti2C-Cl-OH",
@@ -7116,7 +11301,50 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.105
+    "min_freq": -0.0
+  },
+  "Hf2C-NCO-O": {
+    "formula": "Hf2C-NCO-O",
+    "elements": [
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.085
+  },
+  "Hf2C-CN-OH": {
+    "formula": "Hf2C-CN-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-NO-Br": {
+    "formula": "Zr2N-NO-Br",
+    "elements": [
+      "Br",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.862
   },
   "Sc2C-CN-O": {
     "formula": "Sc2C-CN-O",
@@ -7173,7 +11401,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -6.621
+    "min_freq": -5.516
   },
   "Ti2N-Cl-Cl": {
     "formula": "Ti2N-Cl-Cl",
@@ -7202,6 +11430,21 @@
     "unstable": "Yes",
     "min_freq": -2.6
   },
+  "Zr2N-F-OCN": {
+    "formula": "Zr2N-F-OCN",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.092
+  },
   "Zr2C-CN-F": {
     "formula": "Zr2C-CN-F",
     "elements": [
@@ -7214,7 +11457,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -1.872
+    "min_freq": -1.646
+  },
+  "Hf2N-OCl-Br": {
+    "formula": "Hf2N-OCl-Br",
+    "elements": [
+      "Br",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -11.369
   },
   "Ti2N-Br-H": {
     "formula": "Ti2N-Br-H",
@@ -7228,7 +11486,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.094
+    "min_freq": -0.0
   },
   "Zr2C-O-O": {
     "formula": "Zr2C-O-O",
@@ -7255,7 +11513,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.136
+    "min_freq": -0.0
+  },
+  "Hf2C-Br-OCN": {
+    "formula": "Hf2C-Br-OCN",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-OCl-Br": {
     "formula": "Sc2C-OCl-Br",
@@ -7287,6 +11560,21 @@
     "unstable": "Yes",
     "min_freq": -7.268
   },
+  "Hf2C-PO-Br": {
+    "formula": "Hf2C-PO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.996
+  },
   "Sc2N-NCO-NCS": {
     "formula": "Sc2N-NCO-NCS",
     "elements": [
@@ -7301,6 +11589,21 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -1.37
+  },
+  "Zr2N-OCl-PO": {
+    "formula": "Zr2N-OCl-PO",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.669
   },
   "Sc2C-PO-Cl": {
     "formula": "Sc2C-PO-Cl",
@@ -7331,7 +11634,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.327
+    "min_freq": -2.515
   },
   "Ti2N-NO-Br": {
     "formula": "Ti2N-NO-Br",
@@ -7345,7 +11648,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.902
+    "min_freq": -7.637
   },
   "Sc2C-CN-OCN": {
     "formula": "Sc2C-CN-OCN",
@@ -7387,7 +11690,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.051
+    "min_freq": -5.011
   },
   "Sc2N-SCN-H": {
     "formula": "Sc2N-SCN-H",
@@ -7403,6 +11706,21 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -4.311
+  },
+  "Hf2C-NCO-H": {
+    "formula": "Hf2C-NCO-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-Br-OCN": {
     "formula": "Sc2C-Br-OCN",
@@ -7432,7 +11750,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.114
+    "min_freq": -0.0
   },
   "Ti2N-NCS-Cl": {
     "formula": "Ti2N-NCS-Cl",
@@ -7447,7 +11765,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.174
+    "min_freq": -0.0
   },
   "Sc2N-SCN-F": {
     "formula": "Sc2N-SCN-F",
@@ -7464,6 +11782,21 @@
     "unstable": "Yes",
     "min_freq": -4.235
   },
+  "Zr2N-H-OCN": {
+    "formula": "Zr2N-H-OCN",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.481
+  },
   "Ti2C-O-OH": {
     "formula": "Ti2C-O-OH",
     "elements": [
@@ -7476,7 +11809,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.064
+    "min_freq": -3.205
   },
   "Ti2C-NCO-O": {
     "formula": "Ti2C-NCO-O",
@@ -7490,7 +11823,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -8.881
+    "min_freq": -7.812
   },
   "Zr2C-NO-OCl": {
     "formula": "Zr2C-NO-OCl",
@@ -7505,7 +11838,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.225
+    "min_freq": -7.666
   },
   "Sc2C-OCl-OCN": {
     "formula": "Sc2C-OCl-OCN",
@@ -7534,7 +11867,23 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -15.087
+    "min_freq": -13.452
+  },
+  "Hf2N-OCl-NCS": {
+    "formula": "Hf2N-OCl-NCS",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.198
   },
   "Sc2C-CN-PO": {
     "formula": "Sc2C-CN-PO",
@@ -7579,7 +11928,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.128
+    "min_freq": -0.0
   },
   "Sc2C-SCN-OCN": {
     "formula": "Sc2C-SCN-OCN",
@@ -7623,8 +11972,95 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Hf2C-PO-H": {
+    "formula": "Hf2C-PO-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "O",
+      "P"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.45
+    "min_freq": -8.714
+  },
+  "Hf2C-OCl-SCN": {
+    "formula": "Hf2C-OCl-SCN",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O",
+      "S"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.563
+  },
+  "Zr2N-NO-Cl": {
+    "formula": "Zr2N-NO-Cl",
+    "elements": [
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.028
+  },
+  "Zr2N-SCN-O": {
+    "formula": "Zr2N-SCN-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.967
+  },
+  "Hf2C-CN-Cl": {
+    "formula": "Hf2C-CN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.908
+  },
+  "Hf2C-H-H": {
+    "formula": "Hf2C-H-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.131
   },
   "Zr2C-NCS-F": {
     "formula": "Zr2C-NCS-F",
@@ -7638,8 +12074,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Yes",
-    "min_freq": -0.392
+    "unstable": "No",
+    "min_freq": -0.0
   },
   "Sc2C-H-OH": {
     "formula": "Sc2C-H-OH",
@@ -7655,6 +12091,20 @@
     "unstable": "No",
     "min_freq": -0.0
   },
+  "Zr2N-CN-NO": {
+    "formula": "Zr2N-CN-NO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.871
+  },
   "Zr2C-SCN-Br": {
     "formula": "Zr2C-SCN-Br",
     "elements": [
@@ -7668,7 +12118,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "No",
-    "min_freq": -0.084
+    "min_freq": -0.0
+  },
+  "Hf2C-NO-Cl": {
+    "formula": "Hf2C-NO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.859
   },
   "Ti2N-PO-OCN": {
     "formula": "Ti2N-PO-OCN",
@@ -7683,7 +12148,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -3.699
+    "min_freq": -3.287
   },
   "Sc2C-CN-Br": {
     "formula": "Sc2C-CN-Br",
@@ -7726,7 +12191,22 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -2.513
+    "min_freq": -2.225
+  },
+  "Zr2N-NCO-H": {
+    "formula": "Zr2N-NCO-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.342
   },
   "Ti2N-NCS-H": {
     "formula": "Ti2N-NCS-H",
@@ -7740,8 +12220,23 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0
+  },
+  "Zr2N-OCl-Br": {
+    "formula": "Zr2N-OCl-Br",
+    "elements": [
+      "Br",
+      "Cl",
+      "N",
+      "O",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -0.472
+    "min_freq": -20.636
   },
   "Sc2C-O-O1": {
     "formula": "Sc2C-O-O1",
@@ -7768,7 +12263,21 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -7.783
+    "min_freq": -7.1
+  },
+  "Zr2N-PO-O": {
+    "formula": "Zr2N-PO-O",
+    "elements": [
+      "N",
+      "O",
+      "P",
+      "Zr"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.439
   },
   "Sc2N-NCO-H": {
     "formula": "Sc2N-NCO-H",
@@ -7798,7 +12307,37 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -4.518
+    "min_freq": -4.629
+  },
+  "Hf2N-NCS-H": {
+    "formula": "Hf2N-NCS-H",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "S"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.929
+  },
+  "Hf2C-NO-OCl": {
+    "formula": "Hf2C-NO-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.893
   },
   "Ti2N-OCl-PO": {
     "formula": "Ti2N-OCl-PO",
@@ -7813,7 +12352,7 @@
     "space_group": "P3m1",
     "space_group_number": 156,
     "unstable": "Yes",
-    "min_freq": -5.453
+    "min_freq": -5.632
   },
   "Sc2C-PO-F": {
     "formula": "Sc2C-PO-F",
@@ -7829,5 +12368,35 @@
     "space_group_number": 156,
     "unstable": "Yes",
     "min_freq": -7.776
+  },
+  "Hf2N-NCO-OH": {
+    "formula": "Hf2N-NCO-OH",
+    "elements": [
+      "C",
+      "H",
+      "Hf",
+      "N",
+      "O"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.952
+  },
+  "Zr2N-NO-NCS": {
+    "formula": "Zr2N-NO-NCS",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Zr"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.237
   }
 }
