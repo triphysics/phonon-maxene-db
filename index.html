@@ -108,8 +108,8 @@
     </div>
   </div>
 
-  <!-- Terminations below -->
-  <h2 style="margin-top:2rem;">Surface Termination</h2>
+  <!-- Functional Groups below -->
+  <h2 style="margin-top:2rem;">Functional Groups</h2>
   <div class="group terminations" id="terminations"></div>
 
   <!-- Compounds table -->
@@ -120,10 +120,11 @@
       <tr>
         <th>Formula</th>
         <th>Elements</th>
+        <th>Functional Groups</th>
         <th>Atoms/Cell</th>
         <th>Space Group</th>
         <th>Unstable</th>
-	<th>Min freq (THz)</th>
+        <th>Min freq (THz)</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -134,7 +135,7 @@
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script>
     const metals = ["Ti","Sc","Hf","Zr","Y","La"];
-    const carbides = ["C","N"];
+    const carbides = ["C","N"]; // will be treated as Carbide/Nitride classification
     const terminations = ["H","O","Cl","Br","F","CN","NCS","NCO","NO","OCl","OCN","OH","PO","SCN"];
     let table;
 
@@ -144,11 +145,11 @@
         const compounds = Object.entries(data).map(([formula, props]) => ({
           formula,
           elements: props.elements ? props.elements.join(", ") : "",
+          functional_groups: props.functional_groups ? props.functional_groups.join(", ") : "",
           atoms: props.atoms_per_cell || "",
           group: props.space_group || "",
           stable: props.unstable || "",
-	  mfreq: props.min_freq || ""
-		
+          mfreq: props.min_freq || ""
         }));
 
         table = $('#compounds-table').DataTable({
@@ -156,32 +157,61 @@
           columns: [
             { data: "formula", render: d => `<a href="viewer.html?material=${d}" target="_blank">${d.replace(/(\\d+)/g,"<sub>$1</sub>")}</a>` },
             { data: "elements" },
+            { data: "functional_groups" },
             { data: "atoms" },
             { data: "group" },
             { data: "stable" },
-	    { data: "mfreq" }
+            { data: "mfreq" }
           ]
         });
+
+        // Show initial total count
+        updateCount(Object.keys(data).length);
       });
 
-    function renderGroup(id, items) {
+    function renderGroup(id, items, type) {
       const container = document.getElementById(id);
       items.forEach(sym => {
         const btn = document.createElement("button");
         btn.className = "element element-btn";
         btn.textContent = sym;
-        btn.onclick = () => filterByElement(sym);
+        btn.onclick = () => filterByCategory(sym, type);
         container.appendChild(btn);
       });
     }
 
-    function filterByElement(el) {
+    function filterByCategory(value, type) {
       if (!table) return;
-      table.column(1).search(el).draw();
-      const count = table.rows({ search: 'applied' }).count();
-      document.getElementById("compound-count").textContent =
-        `MXene Compounds with "${el}" : ${count} MXenes found`;
-      document.getElementById("table-title").scrollIntoView({ behavior: 'smooth' });
+
+      if (type === "metal") {
+        table.column(1).search(value).draw();
+        setHeader(`MXene Compounds with "${value}" :`);
+      } 
+      else if (type === "functional") {
+        table.column(2).search(value).draw();
+        setHeader(`MXenes with functional group "${value}" :`);
+      } 
+      else if (type === "carbide_nitride") {
+        // clear search
+        table.search("").columns().search("").draw();
+
+        // manual filtering by formula root
+        table.rows().every(function() {
+          const formula = this.data().formula;
+          const isCarbide = formula.includes("C-");
+          const isNitride = formula.includes("N-");
+          if ((value === "C" && isCarbide) || (value === "N" && isNitride)) {
+            $(this.node()).show();
+          } else {
+            $(this.node()).hide();
+          }
+        });
+
+        setHeader(value === "C" ? "Carbide MXenes :" : "Nitride MXenes :");
+      }
+
+      const count = document.querySelectorAll('#compounds-table tbody tr:visible').length;
+      document.getElementById("compound-count").textContent += ` ${count} MXenes found`;
     }
 
     function searchCompound() {
@@ -194,9 +224,19 @@
       document.getElementById("table-title").scrollIntoView({ behavior: 'smooth' });
     }
 
-    renderGroup("metals", metals);
-    renderGroup("carbides", carbides);
-    renderGroup("terminations", terminations);
+    function setHeader(prefix) {
+      document.getElementById("compound-count").textContent = prefix;
+      document.getElementById("table-title").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updateCount(total) {
+      document.getElementById("compound-count").textContent = `Showing ${total} MXenes`;
+    }
+
+    // Render button groups
+    renderGroup("metals", metals, "metal");
+    renderGroup("carbides", carbides, "carbide_nitride");
+    renderGroup("terminations", terminations, "functional");
   </script>
 </body>
 </html>
