@@ -135,7 +135,7 @@
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script>
     const metals = ["Ti","Sc","Hf","Zr","Y","La"];
-    const carbides = ["C","N"]; // will be treated as Carbide/Nitride classification
+    const carbides = ["C","N"]; // classification buttons
     const terminations = ["H","O","Cl","Br","F","CN","NCS","NCO","NO","OCl","OCN","OH","PO","SCN"];
     let table;
 
@@ -183,19 +183,20 @@
     function filterByCategory(value, type) {
       if (!table) return;
 
+      // reset search
+      table.search("").columns().search("").draw();
+      $("#compounds-table tbody tr").show(); // reset visibility
+
       if (type === "metal") {
         table.column(1).search(value).draw();
-        setHeader(`MXene Compounds with "${value}" :`);
+        updateFilteredCount(`MXene Compounds with "${value}" :`);
       } 
       else if (type === "functional") {
         table.column(2).search(value).draw();
-        setHeader(`MXenes with functional group "${value}" :`);
+        updateFilteredCount(`MXenes with functional group "${value}" :`);
       } 
       else if (type === "carbide_nitride") {
-        // clear search
-        table.search("").columns().search("").draw();
-
-        // manual filtering by formula root
+        // manual filtering by formula
         table.rows().every(function() {
           const formula = this.data().formula;
           const isCarbide = formula.includes("C-");
@@ -207,11 +208,19 @@
           }
         });
 
-        setHeader(value === "C" ? "Carbide MXenes :" : "Nitride MXenes :");
+        if (value === "C") {
+          updateFilteredCount("Carbide MXenes :");
+        } else {
+          updateFilteredCount("Nitride MXenes :");
+        }
       }
+    }
 
-      const count = document.querySelectorAll('#compounds-table tbody tr:visible').length;
-      document.getElementById("compound-count").textContent += ` ${count} MXenes found`;
+    function updateFilteredCount(prefix) {
+      const visibleRows = document.querySelectorAll('#compounds-table tbody tr:visible').length;
+      document.getElementById("compound-count").textContent =
+        `${prefix} ${visibleRows} MXenes found`;
+      document.getElementById("table-title").scrollIntoView({ behavior: 'smooth' });
     }
 
     function searchCompound() {
@@ -221,11 +230,6 @@
       const count = table.rows({ search: 'applied' }).count();
       document.getElementById("compound-count").textContent =
         `Search results for "${query}" : ${count} found`;
-      document.getElementById("table-title").scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function setHeader(prefix) {
-      document.getElementById("compound-count").textContent = prefix;
       document.getElementById("table-title").scrollIntoView({ behavior: 'smooth' });
     }
 
