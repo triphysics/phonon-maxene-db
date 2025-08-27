@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MX-PHon – MXene PHonon Database</title>
+  <title>MX-PHon – MXene Phonon Database</title>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   <style>
     body {
@@ -83,16 +83,16 @@
   <!-- Header -->
   <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
     <img src="mxphon-logo.png" alt="MX-PHon Logo" style="height: 140px;">
-    <h1>MXene PHonon Database</h1>
+    <h1>MXene Phonon Database</h1>
   </div>
 
   <!-- Intro -->
-  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of 1065 MXenes.</p>
+  <p><strong>MXenes</strong> are a family of two-dimensional materials composed of transition metal carbides, nitrides, or carbonitrides, derived from their bulk MAX phases. They exhibit metallic conductivity, tunable surface chemistry, and a layered structure—making them attractive for energy storage, electronics, and sensors. This database provides crystal structures and phonon dispersions of selected MXenes.</p>
   <p>Select a chemical building block below or search directly for a compound:</p>
 
   <!-- Search -->
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search compound (e.g. La2C-Br-Cl)">
+    <input type="text" id="searchInput" placeholder="Search compound (e.g. La2C_Cl2)">
     <button onclick="searchCompound()">Search</button>
   </div>
 
@@ -119,6 +119,7 @@
     <thead>
       <tr>
         <th>Formula</th>
+        <th>Elements</th>
         <th>Functional Groups</th>
         <th>Atoms/Cell</th>
         <th>Space Group</th>
@@ -151,6 +152,7 @@
           const mxene_type = root.endsWith("C") ? "carbide" : (root.endsWith("N") ? "nitride" : "other");
           return {
             formula,
+            elements,
             functional_groups: fgroups,
             atoms: props.atoms_per_cell || "",
             group: props.space_group || "",
@@ -164,6 +166,7 @@
           data: rows,
           columns: [
             { data: "formula", render: d => `<a href="viewer.html?material=${d}" target="_blank">${d.replace(/(\\d+)/g,"<sub>$1</sub>")}</a>` },
+            { data: "elements" },
             { data: "functional_groups" },
             { data: "atoms" },
             { data: "group" },
@@ -206,7 +209,7 @@
 
       if (type === "metal") {
         table.column(1).search(value).draw();
-        updateFilteredCount(`MXenes with "${value}" :`);
+        updateFilteredCount(`MXene Compounds with "${value}" :`);
       } else if (type === "functional") {
         table.column(2).search(value).draw();
         updateFilteredCount(`MXenes with functional group "${value}" :`);
@@ -242,7 +245,7 @@
     }
 
     function updateCount(total) {
-      document.getElementById("compound-count").textContent = `Total ${total} MXenes`;
+      document.getElementById("compound-count").textContent = `Showing ${total} MXenes`;
     }
 
     // Render button groups
