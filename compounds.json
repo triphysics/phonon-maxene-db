@@ -4741,8 +4741,8 @@
     "atoms_per_cell": 7,
     "space_group": "P3m1",
     "space_group_number": 156,
-    "unstable": "Unknown",
-    "min_freq": null,
+    "unstable": "Yes",
+    "min_freq": -8.718,
     "functional_groups": [
       "PO",
       "OH"
