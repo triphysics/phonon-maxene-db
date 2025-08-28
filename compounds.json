@@ -1,4 +1,42 @@
 {
+  "Y2C-OCl-H": {
+    "formula": "Y2C-OCl-H",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.757,
+    "functional_groups": [
+      "OCl",
+      "H"
+    ]
+  },
+  "Y2C-NCS-H": {
+    "formula": "Y2C-NCS-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCS",
+      "H"
+    ]
+  },
   "Hf2C-Br-H": {
     "formula": "Hf2C-Br-H",
     "elements": [
@@ -73,6 +111,25 @@
       "Br"
     ]
   },
+  "Y2C-NO-OH": {
+    "formula": "Y2C-NO-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.009,
+    "functional_groups": [
+      "NO",
+      "OH"
+    ]
+  },
   "Sc2N-OCl-H": {
     "formula": "Sc2N-OCl-H",
     "elements": [
@@ -127,6 +184,25 @@
     "functional_groups": [
       "CN",
       "F"
+    ]
+  },
+  "Y2C-H-OCN": {
+    "formula": "Y2C-H-OCN",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.408,
+    "functional_groups": [
+      "H",
+      "OCN"
     ]
   },
   "Hf2C-SCN-PO": {
@@ -577,6 +653,25 @@
       "OCN"
     ]
   },
+  "Y2C-OH-OCN": {
+    "formula": "Y2C-OH-OCN",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.338,
+    "functional_groups": [
+      "OH",
+      "OCN"
+    ]
+  },
   "Sc2C-OCl-NCO": {
     "formula": "Sc2C-OCl-NCO",
     "elements": [
@@ -653,6 +748,25 @@
       "O"
     ]
   },
+  "Y2C-CN-OCl": {
+    "formula": "Y2C-CN-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -19.522,
+    "functional_groups": [
+      "CN",
+      "OCl"
+    ]
+  },
   "Sc2N-H-OCN": {
     "formula": "Sc2N-H-OCN",
     "elements": [
@@ -687,6 +801,24 @@
     "min_freq": -1.706,
     "functional_groups": [
       "CN",
+      "H"
+    ]
+  },
+  "Y2C-Cl-H": {
+    "formula": "Y2C-Cl-H",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "Cl",
       "H"
     ]
   },
@@ -814,6 +946,24 @@
     "functional_groups": [
       "O",
       "H"
+    ]
+  },
+  "Y2C-PO-O": {
+    "formula": "Y2C-PO-O",
+    "elements": [
+      "C",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.587,
+    "functional_groups": [
+      "PO",
+      "O"
     ]
   },
   "Zr2C-NCO-H": {
@@ -945,6 +1095,24 @@
       "OH"
     ]
   },
+  "Y2C-NO-OCN": {
+    "formula": "Y2C-NO-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.056,
+    "functional_groups": [
+      "NO",
+      "OCN"
+    ]
+  },
   "Hf2C-NCO-Br": {
     "formula": "Hf2C-NCO-Br",
     "elements": [
@@ -1038,6 +1206,25 @@
     "functional_groups": [
       "F",
       "OH"
+    ]
+  },
+  "Y2C-NO-Cl": {
+    "formula": "Y2C-NO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.844,
+    "functional_groups": [
+      "NO",
+      "Cl"
     ]
   },
   "Sc2C-NCO-NCS": {
@@ -1169,6 +1356,23 @@
     "functional_groups": [
       "NCS",
       "O"
+    ]
+  },
+  "Y2C-Cl-Cl": {
+    "formula": "Y2C-Cl-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "Cl",
+      "Cl"
     ]
   },
   "Sc2N-H-OH": {
@@ -1893,6 +2097,26 @@
       "H"
     ]
   },
+  "Y2C-SCN-PO": {
+    "formula": "Y2C-SCN-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.822,
+    "functional_groups": [
+      "SCN",
+      "PO"
+    ]
+  },
   "Hf2C-NO-PO": {
     "formula": "Hf2C-NO-PO",
     "elements": [
@@ -1966,6 +2190,24 @@
     "functional_groups": [
       "F",
       "OCN"
+    ]
+  },
+  "Y2C-Br-H": {
+    "formula": "Y2C-Br-H",
+    "elements": [
+      "Br",
+      "C",
+      "H",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "Br",
+      "H"
     ]
   },
   "Ti2N-NCO-PO": {
@@ -2190,6 +2432,25 @@
       "CN"
     ]
   },
+  "Y2C-NO-SCN": {
+    "formula": "Y2C-NO-SCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.157,
+    "functional_groups": [
+      "NO",
+      "SCN"
+    ]
+  },
   "Ti2C-NCS-Br": {
     "formula": "Ti2C-NCS-Br",
     "elements": [
@@ -2207,6 +2468,24 @@
     "functional_groups": [
       "NCS",
       "Br"
+    ]
+  },
+  "Y2C-NCO-OCN": {
+    "formula": "Y2C-NCO-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.424,
+    "functional_groups": [
+      "NCO",
+      "OCN"
     ]
   },
   "Zr2C-NCS-OCN": {
@@ -2228,6 +2507,24 @@
       "OCN"
     ]
   },
+  "Y2C-F-H": {
+    "formula": "Y2C-F-H",
+    "elements": [
+      "C",
+      "F",
+      "H",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "F",
+      "H"
+    ]
+  },
   "Ti2N-H-OH": {
     "formula": "Ti2N-H-OH",
     "elements": [
@@ -2244,6 +2541,23 @@
     "functional_groups": [
       "H",
       "OH"
+    ]
+  },
+  "Y2C-H-H": {
+    "formula": "Y2C-H-H",
+    "elements": [
+      "C",
+      "H",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "H",
+      "H"
     ]
   },
   "Zr2N-PO-Cl": {
@@ -2283,6 +2597,24 @@
       "OCl"
     ]
   },
+  "Y2C-O-Cl": {
+    "formula": "Y2C-O-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.218,
+    "functional_groups": [
+      "O",
+      "Cl"
+    ]
+  },
   "Sc2C-OCN-OCN": {
     "formula": "Sc2C-OCN-OCN",
     "elements": [
@@ -2318,6 +2650,24 @@
     "functional_groups": [
       "NCO",
       "F"
+    ]
+  },
+  "Y2C-O-OH": {
+    "formula": "Y2C-O-OH",
+    "elements": [
+      "C",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.354,
+    "functional_groups": [
+      "O",
+      "OH"
     ]
   },
   "Zr2N-F-H": {
@@ -2372,6 +2722,25 @@
     "functional_groups": [
       "NCO",
       "NCO"
+    ]
+  },
+  "Y2C-NO-PO": {
+    "formula": "Y2C-NO-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.882,
+    "functional_groups": [
+      "NO",
+      "PO"
     ]
   },
   "Zr2C-OCl-F": {
@@ -2675,6 +3044,25 @@
       "OH"
     ]
   },
+  "Y2C-SCN-F": {
+    "formula": "Y2C-SCN-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.583,
+    "functional_groups": [
+      "SCN",
+      "F"
+    ]
+  },
   "Hf2N-NO-SCN": {
     "formula": "Hf2N-NO-SCN",
     "elements": [
@@ -2840,6 +3228,45 @@
     "functional_groups": [
       "NCS",
       "H"
+    ]
+  },
+  "Y2C-OCl-SCN": {
+    "formula": "Y2C-OCl-SCN",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -6.244,
+    "functional_groups": [
+      "OCl",
+      "SCN"
+    ]
+  },
+  "Y2C-PO-Br": {
+    "formula": "Y2C-PO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.74,
+    "functional_groups": [
+      "PO",
+      "Br"
     ]
   },
   "Hf2C-SCN-Br": {
@@ -3140,6 +3567,25 @@
       "SCN"
     ]
   },
+  "Y2C-NCO-PO": {
+    "formula": "Y2C-NCO-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.785,
+    "functional_groups": [
+      "NCO",
+      "PO"
+    ]
+  },
   "Zr2N-CN-Cl": {
     "formula": "Zr2N-CN-Cl",
     "elements": [
@@ -3156,6 +3602,43 @@
     "functional_groups": [
       "CN",
       "Cl"
+    ]
+  },
+  "Y2C-PO-PO": {
+    "formula": "Y2C-PO-PO",
+    "elements": [
+      "C",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -8.47,
+    "functional_groups": [
+      "PO",
+      "PO"
+    ]
+  },
+  "Y2C-OCl-Br": {
+    "formula": "Y2C-OCl-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Cl",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.023,
+    "functional_groups": [
+      "OCl",
+      "Br"
     ]
   },
   "Ti2N-NCS-F": {
@@ -3319,6 +3802,24 @@
     "functional_groups": [
       "NCS",
       "O"
+    ]
+  },
+  "Y2C-H-OH": {
+    "formula": "Y2C-H-OH",
+    "elements": [
+      "C",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "H",
+      "OH"
     ]
   },
   "Zr2N-CN-H": {
@@ -3561,6 +4062,25 @@
       "H"
     ]
   },
+  "Y2C-SCN-Cl": {
+    "formula": "Y2C-SCN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.51,
+    "functional_groups": [
+      "SCN",
+      "Cl"
+    ]
+  },
   "Zr2N-O-Br": {
     "formula": "Zr2N-O-Br",
     "elements": [
@@ -3710,6 +4230,24 @@
     "functional_groups": [
       "SCN",
       "PO"
+    ]
+  },
+  "Y2C-NCS-SCN": {
+    "formula": "Y2C-NCS-SCN",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.865,
+    "functional_groups": [
+      "NCS",
+      "SCN"
     ]
   },
   "Ti2C-OCl-Br": {
@@ -4155,6 +4693,24 @@
       "SCN"
     ]
   },
+  "Y2C-CN-F": {
+    "formula": "Y2C-CN-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.562,
+    "functional_groups": [
+      "CN",
+      "F"
+    ]
+  },
   "Zr2C-OCl-Cl": {
     "formula": "Zr2C-OCl-Cl",
     "elements": [
@@ -4171,6 +4727,25 @@
     "functional_groups": [
       "OCl",
       "Cl"
+    ]
+  },
+  "Y2C-PO-OH": {
+    "formula": "Y2C-PO-OH",
+    "elements": [
+      "C",
+      "H",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Unknown",
+    "min_freq": null,
+    "functional_groups": [
+      "PO",
+      "OH"
     ]
   },
   "Ti2C-OCN-OCN": {
@@ -4242,6 +4817,25 @@
     "functional_groups": [
       "Br",
       "Br"
+    ]
+  },
+  "Y2C-Cl-OCN": {
+    "formula": "Y2C-Cl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.36,
+    "functional_groups": [
+      "Cl",
+      "OCN"
     ]
   },
   "Zr2C-PO-Cl": {
@@ -4353,6 +4947,24 @@
     "functional_groups": [
       "OCl",
       "O"
+    ]
+  },
+  "Y2C-CN-SCN": {
+    "formula": "Y2C-CN-SCN",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -3.153,
+    "functional_groups": [
+      "CN",
+      "SCN"
     ]
   },
   "Hf2N-NCS-Br": {
@@ -4629,6 +5241,25 @@
     "functional_groups": [
       "SCN",
       "PO"
+    ]
+  },
+  "Y2C-Br-OCN": {
+    "formula": "Y2C-Br-OCN",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.515,
+    "functional_groups": [
+      "Br",
+      "OCN"
     ]
   },
   "Ti2C-NCS-H": {
@@ -4910,6 +5541,26 @@
       "O"
     ]
   },
+  "Y2C-OCl-NCS": {
+    "formula": "Y2C-OCl-NCS",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -18.712,
+    "functional_groups": [
+      "OCl",
+      "NCS"
+    ]
+  },
   "Sc2N-NCO-Br": {
     "formula": "Sc2N-NCO-Br",
     "elements": [
@@ -5024,6 +5675,24 @@
       "H"
     ]
   },
+  "Y2C-SCN-SCN": {
+    "formula": "Y2C-SCN-SCN",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -0.626,
+    "functional_groups": [
+      "SCN",
+      "SCN"
+    ]
+  },
   "Sc2C-CN-CN": {
     "formula": "Sc2C-CN-CN",
     "elements": [
@@ -5039,6 +5708,25 @@
     "functional_groups": [
       "CN",
       "CN"
+    ]
+  },
+  "Y2C-SCN-Br": {
+    "formula": "Y2C-SCN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.444,
+    "functional_groups": [
+      "SCN",
+      "Br"
     ]
   },
   "Ti2C-OCl-PO": {
@@ -5114,6 +5802,24 @@
     "functional_groups": [
       "NCS",
       "OH"
+    ]
+  },
+  "Y2C-F-Cl": {
+    "formula": "Y2C-F-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "F",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "F",
+      "Cl"
     ]
   },
   "Sc2C-O-F": {
@@ -5301,6 +6007,44 @@
       "NCS"
     ]
   },
+  "Y2C-NCO-Cl": {
+    "formula": "Y2C-NCO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCO",
+      "Cl"
+    ]
+  },
+  "Y2C-OCl-OH": {
+    "formula": "Y2C-OCl-OH",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -13.689,
+    "functional_groups": [
+      "OCl",
+      "OH"
+    ]
+  },
   "Hf2C-NCS-NCS": {
     "formula": "Hf2C-NCS-NCS",
     "elements": [
@@ -5335,6 +6079,23 @@
     "functional_groups": [
       "SCN",
       "SCN"
+    ]
+  },
+  "Y2C-O-O": {
+    "formula": "Y2C-O-O",
+    "elements": [
+      "C",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "O",
+      "O"
     ]
   },
   "Sc2N-NO-OCN": {
@@ -5431,6 +6192,25 @@
       "Br"
     ]
   },
+  "Y2C-NCO-OH": {
+    "formula": "Y2C-NCO-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCO",
+      "OH"
+    ]
+  },
   "Zr2C-PO-OCN": {
     "formula": "Zr2C-PO-OCN",
     "elements": [
@@ -5484,6 +6264,24 @@
     "functional_groups": [
       "NO",
       "H"
+    ]
+  },
+  "Y2C-O-F": {
+    "formula": "Y2C-O-F",
+    "elements": [
+      "C",
+      "F",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.669,
+    "functional_groups": [
+      "O",
+      "F"
     ]
   },
   "Sc2N-NO-NO": {
@@ -5650,6 +6448,25 @@
     "functional_groups": [
       "F",
       "Br"
+    ]
+  },
+  "Y2C-OCl-F": {
+    "formula": "Y2C-OCl-F",
+    "elements": [
+      "C",
+      "Cl",
+      "F",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -11.457,
+    "functional_groups": [
+      "OCl",
+      "F"
     ]
   },
   "Sc2N-Cl-H": {
@@ -6007,6 +6824,25 @@
       "NCO"
     ]
   },
+  "Y2C-Br-OH": {
+    "formula": "Y2C-Br-OH",
+    "elements": [
+      "Br",
+      "C",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "Br",
+      "OH"
+    ]
+  },
   "Ti2N-Br-OCN": {
     "formula": "Ti2N-Br-OCN",
     "elements": [
@@ -6341,6 +7177,24 @@
       "H"
     ]
   },
+  "Y2C-CN-NO": {
+    "formula": "Y2C-CN-NO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.124,
+    "functional_groups": [
+      "CN",
+      "NO"
+    ]
+  },
   "Hf2C-Cl-Br": {
     "formula": "Hf2C-Cl-Br",
     "elements": [
@@ -6541,6 +7395,24 @@
     "functional_groups": [
       "NO",
       "PO"
+    ]
+  },
+  "Y2C-CN-Cl": {
+    "formula": "Y2C-CN-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.823,
+    "functional_groups": [
+      "CN",
+      "Cl"
     ]
   },
   "Hf2N-SCN-OH": {
@@ -7148,6 +8020,24 @@
       "F"
     ]
   },
+  "Y2C-O-OCN": {
+    "formula": "Y2C-O-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.324,
+    "functional_groups": [
+      "O",
+      "OCN"
+    ]
+  },
   "Zr2N-SCN-OH": {
     "formula": "Zr2N-SCN-OH",
     "elements": [
@@ -7388,6 +8278,44 @@
       "Cl"
     ]
   },
+  "Y2C-NO-OCl": {
+    "formula": "Y2C-NO-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.32,
+    "functional_groups": [
+      "NO",
+      "OCl"
+    ]
+  },
+  "Y2C-OCl-NCO": {
+    "formula": "Y2C-OCl-NCO",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.334,
+    "functional_groups": [
+      "OCl",
+      "NCO"
+    ]
+  },
   "Ti2C-NCS-PO": {
     "formula": "Ti2C-NCS-PO",
     "elements": [
@@ -7423,6 +8351,25 @@
     "functional_groups": [
       "Cl",
       "Cl"
+    ]
+  },
+  "Y2C-CN-PO": {
+    "formula": "Y2C-CN-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.82,
+    "functional_groups": [
+      "CN",
+      "PO"
     ]
   },
   "Ti2C-NCO-NCS": {
@@ -7832,6 +8779,24 @@
       "OCN"
     ]
   },
+  "Y2C-CN-NCO": {
+    "formula": "Y2C-CN-NCO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.718,
+    "functional_groups": [
+      "CN",
+      "NCO"
+    ]
+  },
   "Ti2C-O-F": {
     "formula": "Ti2C-O-F",
     "elements": [
@@ -7869,6 +8834,24 @@
       "PO"
     ]
   },
+  "Y2C-NCO-O": {
+    "formula": "Y2C-NCO-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.384,
+    "functional_groups": [
+      "NCO",
+      "O"
+    ]
+  },
   "Ti2C-F-H": {
     "formula": "Ti2C-F-H",
     "elements": [
@@ -7885,6 +8868,24 @@
     "functional_groups": [
       "F",
       "H"
+    ]
+  },
+  "Y2C-Cl-Br": {
+    "formula": "Y2C-Cl-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Cl",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "Cl",
+      "Br"
     ]
   },
   "Zr2C-NCS-OH": {
@@ -7961,6 +8962,24 @@
       "NCO"
     ]
   },
+  "Y2C-CN-Br": {
+    "formula": "Y2C-CN-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.967,
+    "functional_groups": [
+      "CN",
+      "Br"
+    ]
+  },
   "Hf2C-PO-OH": {
     "formula": "Hf2C-PO-OH",
     "elements": [
@@ -8015,6 +9034,24 @@
     "min_freq": -0.0,
     "functional_groups": [
       "NCS",
+      "Br"
+    ]
+  },
+  "Y2C-O-Br": {
+    "formula": "Y2C-O-Br",
+    "elements": [
+      "Br",
+      "C",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.319,
+    "functional_groups": [
+      "O",
       "Br"
     ]
   },
@@ -8296,6 +9333,25 @@
     "functional_groups": [
       "NCO",
       "Cl"
+    ]
+  },
+  "Y2C-F-OH": {
+    "formula": "Y2C-F-OH",
+    "elements": [
+      "C",
+      "F",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "F",
+      "OH"
     ]
   },
   "Zr2C-OCl-Br": {
@@ -8875,6 +9931,25 @@
       "OCN"
     ]
   },
+  "Y2C-NCS-O": {
+    "formula": "Y2C-NCS-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.971,
+    "functional_groups": [
+      "NCS",
+      "O"
+    ]
+  },
   "Hf2N-H-OH": {
     "formula": "Hf2N-H-OH",
     "elements": [
@@ -9155,6 +10230,25 @@
       "OH"
     ]
   },
+  "Y2C-NCO-H": {
+    "formula": "Y2C-NCO-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.128,
+    "functional_groups": [
+      "NCO",
+      "H"
+    ]
+  },
   "Zr2N-SCN-Cl": {
     "formula": "Zr2N-SCN-Cl",
     "elements": [
@@ -9304,6 +10398,43 @@
       "H"
     ]
   },
+  "Y2C-CN-NCS": {
+    "formula": "Y2C-CN-NCS",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.739,
+    "functional_groups": [
+      "CN",
+      "NCS"
+    ]
+  },
+  "Y2C-PO-F": {
+    "formula": "Y2C-PO-F",
+    "elements": [
+      "C",
+      "F",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.723,
+    "functional_groups": [
+      "PO",
+      "F"
+    ]
+  },
   "Sc2N-NO-PO": {
     "formula": "Sc2N-NO-PO",
     "elements": [
@@ -9412,6 +10543,65 @@
     "functional_groups": [
       "OCl",
       "OCl"
+    ]
+  },
+  "Y2C-SCN-OH": {
+    "formula": "Y2C-SCN-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.647,
+    "functional_groups": [
+      "SCN",
+      "OH"
+    ]
+  },
+  "Y2C-F-OCN": {
+    "formula": "Y2C-F-OCN",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.269,
+    "functional_groups": [
+      "F",
+      "OCN"
+    ]
+  },
+  "Y2C-NCS-PO": {
+    "formula": "Y2C-NCS-PO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.733,
+    "functional_groups": [
+      "NCS",
+      "PO"
     ]
   },
   "Ti2N-Br-OH": {
@@ -9929,6 +11119,24 @@
       "OH"
     ]
   },
+  "Y2C-NCO-NCO": {
+    "formula": "Y2C-NCO-NCO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCO",
+      "NCO"
+    ]
+  },
   "Zr2N-NO-OH": {
     "formula": "Zr2N-NO-OH",
     "elements": [
@@ -9985,6 +11193,25 @@
       "OH"
     ]
   },
+  "Y2C-NCO-NCS": {
+    "formula": "Y2C-NCO-NCS",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCO",
+      "NCS"
+    ]
+  },
   "Hf2N-NO-O": {
     "formula": "Hf2N-NO-O",
     "elements": [
@@ -10020,6 +11247,25 @@
       "NCS"
     ]
   },
+  "Y2C-NCO-F": {
+    "formula": "Y2C-NCO-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCO",
+      "F"
+    ]
+  },
   "Sc2N-PO-F": {
     "formula": "Sc2N-PO-F",
     "elements": [
@@ -10037,6 +11283,26 @@
     "functional_groups": [
       "PO",
       "F"
+    ]
+  },
+  "Y2C-NCS-OH": {
+    "formula": "Y2C-NCS-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCS",
+      "OH"
     ]
   },
   "Hf2C-OCl-OH": {
@@ -10075,6 +11341,25 @@
     "functional_groups": [
       "Cl",
       "OH"
+    ]
+  },
+  "Y2C-OCl-OCN": {
+    "formula": "Y2C-OCl-OCN",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -9.584,
+    "functional_groups": [
+      "OCl",
+      "OCN"
     ]
   },
   "Zr2C-O-OH": {
@@ -10181,6 +11466,24 @@
     "functional_groups": [
       "Cl",
       "Cl"
+    ]
+  },
+  "Y2C-OCN-OCN": {
+    "formula": "Y2C-OCN-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -1.543,
+    "functional_groups": [
+      "OCN",
+      "OCN"
     ]
   },
   "Zr2C-CN-OH": {
@@ -10419,6 +11722,24 @@
       "Cl"
     ]
   },
+  "Y2C-OCl-OCl": {
+    "formula": "Y2C-OCl-OCl",
+    "elements": [
+      "C",
+      "Cl",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -1.366,
+    "functional_groups": [
+      "OCl",
+      "OCl"
+    ]
+  },
   "Zr2N-PO-Br": {
     "formula": "Zr2N-PO-Br",
     "elements": [
@@ -10455,6 +11776,25 @@
     "functional_groups": [
       "Cl",
       "OH"
+    ]
+  },
+  "Y2C-NO-H": {
+    "formula": "Y2C-NO-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -7.513,
+    "functional_groups": [
+      "NO",
+      "H"
     ]
   },
   "Sc2N-OCl-PO": {
@@ -10567,6 +11907,25 @@
     "functional_groups": [
       "F",
       "OCN"
+    ]
+  },
+  "Y2C-NO-Br": {
+    "formula": "Y2C-NO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.899,
+    "functional_groups": [
+      "NO",
+      "Br"
     ]
   },
   "Ti2N-Cl-Br": {
@@ -10791,6 +12150,24 @@
       "OH"
     ]
   },
+  "Y2C-OCl-Cl": {
+    "formula": "Y2C-OCl-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -10.011,
+    "functional_groups": [
+      "OCl",
+      "Cl"
+    ]
+  },
   "Ti2N-H-H": {
     "formula": "Ti2N-H-H",
     "elements": [
@@ -10917,6 +12294,25 @@
     "functional_groups": [
       "OCl",
       "H"
+    ]
+  },
+  "Y2C-Cl-OH": {
+    "formula": "Y2C-Cl-OH",
+    "elements": [
+      "C",
+      "Cl",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "Cl",
+      "OH"
     ]
   },
   "Sc2C-OCl-O": {
@@ -11154,6 +12550,24 @@
     "functional_groups": [
       "OCl",
       "F"
+    ]
+  },
+  "Y2C-NO-O": {
+    "formula": "Y2C-NO-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NO",
+      "O"
     ]
   },
   "Ti2N-O-H": {
@@ -11637,6 +13051,25 @@
       "Cl"
     ]
   },
+  "Y2C-OCl-PO": {
+    "formula": "Y2C-OCl-PO",
+    "elements": [
+      "C",
+      "Cl",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -11.044,
+    "functional_groups": [
+      "OCl",
+      "PO"
+    ]
+  },
   "Hf2N-F-Br": {
     "formula": "Hf2N-F-Br",
     "elements": [
@@ -11762,6 +13195,23 @@
     "functional_groups": [
       "Br",
       "OCN"
+    ]
+  },
+  "Y2C-F-F": {
+    "formula": "Y2C-F-F",
+    "elements": [
+      "C",
+      "F",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "F",
+      "F"
     ]
   },
   "Ti2C-SCN-F": {
@@ -12132,6 +13582,23 @@
     "functional_groups": [
       "F",
       "OH"
+    ]
+  },
+  "Y2C-O-O1": {
+    "formula": "Y2C-O-O1",
+    "elements": [
+      "C",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "O",
+      "O1"
     ]
   },
   "Ti2C-SCN-SCN": {
@@ -12907,6 +14374,44 @@
       "PO"
     ]
   },
+  "Y2C-NCS-F": {
+    "formula": "Y2C-NCS-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCS",
+      "F"
+    ]
+  },
+  "Y2C-SCN-OCN": {
+    "formula": "Y2C-SCN-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.511,
+    "functional_groups": [
+      "SCN",
+      "OCN"
+    ]
+  },
   "Zr2C-Cl-OH": {
     "formula": "Zr2C-Cl-OH",
     "elements": [
@@ -12982,6 +14487,25 @@
       "O"
     ]
   },
+  "Y2C-NCS-Br": {
+    "formula": "Y2C-NCS-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.013,
+    "functional_groups": [
+      "NCS",
+      "Br"
+    ]
+  },
   "Ti2N-O-OCN": {
     "formula": "Ti2N-O-OCN",
     "elements": [
@@ -13053,6 +14577,25 @@
     "functional_groups": [
       "OCl",
       "H"
+    ]
+  },
+  "Y2C-NCS-OCN": {
+    "formula": "Y2C-NCS-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.316,
+    "functional_groups": [
+      "NCS",
+      "OCN"
     ]
   },
   "Zr2N-OCl-F": {
@@ -13168,6 +14711,24 @@
       "PO"
     ]
   },
+  "Y2C-CN-O": {
+    "formula": "Y2C-CN-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -4.666,
+    "functional_groups": [
+      "CN",
+      "O"
+    ]
+  },
   "Zr2N-OCl-OCl": {
     "formula": "Zr2N-OCl-OCl",
     "elements": [
@@ -13202,6 +14763,24 @@
     "functional_groups": [
       "Cl",
       "Br"
+    ]
+  },
+  "Y2C-OCl-O": {
+    "formula": "Y2C-OCl-O",
+    "elements": [
+      "C",
+      "Cl",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -1.012,
+    "functional_groups": [
+      "OCl",
+      "O"
     ]
   },
   "Zr2C-NO-NO": {
@@ -13332,6 +14911,25 @@
       "OCN"
     ]
   },
+  "Y2C-PO-H": {
+    "formula": "Y2C-PO-H",
+    "elements": [
+      "C",
+      "H",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.687,
+    "functional_groups": [
+      "PO",
+      "H"
+    ]
+  },
   "Ti2N-SCN-OH": {
     "formula": "Ti2N-SCN-OH",
     "elements": [
@@ -13405,6 +15003,24 @@
       "F"
     ]
   },
+  "Y2C-NO-NO": {
+    "formula": "Y2C-NO-NO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NO",
+      "NO"
+    ]
+  },
   "Sc2N-NCS-Cl": {
     "formula": "Sc2N-NCS-Cl",
     "elements": [
@@ -13461,6 +15077,23 @@
     "functional_groups": [
       "NCO",
       "SCN"
+    ]
+  },
+  "Y2C-CN-CN": {
+    "formula": "Y2C-CN-CN",
+    "elements": [
+      "C",
+      "N",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "Yes",
+    "min_freq": -3.054,
+    "functional_groups": [
+      "CN",
+      "CN"
     ]
   },
   "Hf2N-O-Br": {
@@ -13612,6 +15245,25 @@
       "Cl"
     ]
   },
+  "Y2C-SCN-O": {
+    "formula": "Y2C-SCN-O",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.704,
+    "functional_groups": [
+      "SCN",
+      "O"
+    ]
+  },
   "Zr2C-SCN-H": {
     "formula": "Zr2C-SCN-H",
     "elements": [
@@ -13703,6 +15355,25 @@
     "functional_groups": [
       "NCS",
       "OH"
+    ]
+  },
+  "Y2C-NCS-Cl": {
+    "formula": "Y2C-NCS-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCS",
+      "Cl"
     ]
   },
   "Hf2N-CN-SCN": {
@@ -13797,6 +15468,25 @@
       "OH"
     ]
   },
+  "Y2C-CN-OH": {
+    "formula": "Y2C-CN-OH",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.544,
+    "functional_groups": [
+      "CN",
+      "OH"
+    ]
+  },
   "Ti2N-NO-NCS": {
     "formula": "Ti2N-NO-NCS",
     "elements": [
@@ -13887,6 +15577,43 @@
     "functional_groups": [
       "NCO",
       "Cl"
+    ]
+  },
+  "Y2C-PO-Cl": {
+    "formula": "Y2C-PO-Cl",
+    "elements": [
+      "C",
+      "Cl",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.822,
+    "functional_groups": [
+      "PO",
+      "Cl"
+    ]
+  },
+  "Y2C-OH-OH": {
+    "formula": "Y2C-OH-OH",
+    "elements": [
+      "C",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "OH",
+      "OH"
     ]
   },
   "Sc2N-OCl-Br": {
@@ -14017,6 +15744,24 @@
       "Br"
     ]
   },
+  "Y2C-CN-OCN": {
+    "formula": "Y2C-CN-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.8,
+    "functional_groups": [
+      "CN",
+      "OCN"
+    ]
+  },
   "Sc2C-NCS-SCN": {
     "formula": "Sc2C-NCS-SCN",
     "elements": [
@@ -14142,6 +15887,25 @@
       "SCN"
     ]
   },
+  "Y2C-NO-F": {
+    "formula": "Y2C-NO-F",
+    "elements": [
+      "C",
+      "F",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.482,
+    "functional_groups": [
+      "NO",
+      "F"
+    ]
+  },
   "Sc2N-OH-OCN": {
     "formula": "Sc2N-OH-OCN",
     "elements": [
@@ -14233,6 +15997,25 @@
     "functional_groups": [
       "CN",
       "O"
+    ]
+  },
+  "Y2C-NO-NCS": {
+    "formula": "Y2C-NO-NCS",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.978,
+    "functional_groups": [
+      "NO",
+      "NCS"
     ]
   },
   "Ti2N-NCO-F": {
@@ -14423,6 +16206,25 @@
       "OH"
     ]
   },
+  "Y2C-NCO-Br": {
+    "formula": "Y2C-NCO-Br",
+    "elements": [
+      "Br",
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCO",
+      "Br"
+    ]
+  },
   "Hf2C-NCO-O": {
     "formula": "Hf2C-NCO-O",
     "elements": [
@@ -14458,6 +16260,24 @@
     "functional_groups": [
       "CN",
       "OH"
+    ]
+  },
+  "Y2C-NCS-NCS": {
+    "formula": "Y2C-NCS-NCS",
+    "elements": [
+      "C",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "NCS",
+      "NCS"
     ]
   },
   "Zr2N-NO-Br": {
@@ -14549,6 +16369,25 @@
     "functional_groups": [
       "O",
       "Cl"
+    ]
+  },
+  "Y2C-SCN-H": {
+    "formula": "Y2C-SCN-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 7,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.636,
+    "functional_groups": [
+      "SCN",
+      "H"
     ]
   },
   "Ti2N-Cl-Cl": {
@@ -14658,6 +16497,25 @@
     "functional_groups": [
       "Br",
       "H"
+    ]
+  },
+  "Y2C-NCO-SCN": {
+    "formula": "Y2C-NCO-SCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "S",
+      "Y"
+    ],
+    "atoms_per_cell": 9,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -0.876,
+    "functional_groups": [
+      "NCO",
+      "SCN"
     ]
   },
   "Zr2C-O-O": {
@@ -14809,6 +16667,23 @@
       "PO"
     ]
   },
+  "Y2C-Br-Br": {
+    "formula": "Y2C-Br-Br",
+    "elements": [
+      "Br",
+      "C",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P-3m1",
+    "space_group_number": 164,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "Br",
+      "Br"
+    ]
+  },
   "Sc2C-PO-Cl": {
     "formula": "Sc2C-PO-Cl",
     "elements": [
@@ -14846,6 +16721,25 @@
     "functional_groups": [
       "NCS",
       "PO"
+    ]
+  },
+  "Y2C-PO-OCN": {
+    "formula": "Y2C-PO-OCN",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "P",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -8.804,
+    "functional_groups": [
+      "PO",
+      "OCN"
     ]
   },
   "Ti2N-NO-Br": {
@@ -15390,6 +17284,24 @@
       "H"
     ]
   },
+  "Y2C-F-Br": {
+    "formula": "Y2C-F-Br",
+    "elements": [
+      "Br",
+      "C",
+      "F",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "No",
+    "min_freq": -0.0,
+    "functional_groups": [
+      "F",
+      "Br"
+    ]
+  },
   "Zr2C-NCS-F": {
     "formula": "Zr2C-NCS-F",
     "elements": [
@@ -15445,6 +17357,24 @@
       "NO"
     ]
   },
+  "Y2C-CN-H": {
+    "formula": "Y2C-CN-H",
+    "elements": [
+      "C",
+      "H",
+      "N",
+      "Y"
+    ],
+    "atoms_per_cell": 6,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -2.656,
+    "functional_groups": [
+      "CN",
+      "H"
+    ]
+  },
   "Zr2C-SCN-Br": {
     "formula": "Zr2C-SCN-Br",
     "elements": [
@@ -15483,6 +17413,24 @@
       "Cl"
     ]
   },
+  "Y2C-NO-NCO": {
+    "formula": "Y2C-NO-NCO",
+    "elements": [
+      "C",
+      "N",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 8,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.529,
+    "functional_groups": [
+      "NO",
+      "NCO"
+    ]
+  },
   "Ti2N-PO-OCN": {
     "formula": "Ti2N-PO-OCN",
     "elements": [
@@ -15518,6 +17466,24 @@
     "functional_groups": [
       "CN",
       "Br"
+    ]
+  },
+  "Y2C-O-H": {
+    "formula": "Y2C-O-H",
+    "elements": [
+      "C",
+      "H",
+      "O",
+      "Y"
+    ],
+    "atoms_per_cell": 5,
+    "space_group": "P3m1",
+    "space_group_number": 156,
+    "unstable": "Yes",
+    "min_freq": -5.342,
+    "functional_groups": [
+      "O",
+      "H"
     ]
   },
   "Sc2N-CN-PO": {
